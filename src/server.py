@@ -1024,5 +1024,10 @@ TRANSCRIPT:
 REGISTERED = _register()
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Console-script entrypoint: serve over stdio."""
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()
