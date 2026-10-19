@@ -34,7 +34,7 @@ from starlette.responses import JSONResponse, Response
 from starlette.routing import Route
 from starlette.types import ASGIApp, Receive, Scope, Send
 
-from src.db import DATA_DIR
+from src.db import corpus_hash
 from src.server import mcp
 
 DEFAULT_HOST = "127.0.0.1"
@@ -82,15 +82,6 @@ def validate_startup(host: str, tokens: List[str], env: Optional[Dict[str, str]]
         raise StartupError(
             f"Refusing to run unauthenticated on non-loopback host {host!r}. Configure bearer tokens."
         )
-
-
-def corpus_hash() -> str:
-    """SHA-256 over the bundled regulation JSON files, so clients can pin the corpus version."""
-    digest = hashlib.sha256()
-    for path in sorted(Path(DATA_DIR).glob("*.json")):
-        digest.update(path.name.encode())
-        digest.update(path.read_bytes())
-    return digest.hexdigest()
 
 
 class TokenBucket:
