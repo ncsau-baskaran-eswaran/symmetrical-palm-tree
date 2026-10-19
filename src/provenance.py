@@ -42,6 +42,8 @@ def _rule(rule: Rule) -> list:
         list(rule.prompt_gate), list(rule.prompt_exclude), list(rule.requires_absent),
         [_ref(o) for o in rule.obligations],
         rule.severity, rule.material_severity, rule.always_material, rule.review_only, rule.refusal_veto,
+        # Triggers decide which reporting deadlines a finding starts, so they are part of a rule's behaviour.
+        list(rule.triggers), list(rule.material_triggers), rule.context_terms_key,
     ]
 
 
