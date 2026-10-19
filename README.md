@@ -118,7 +118,8 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | `GUARDIAN_JUDGE_PROVIDER` | `ollama`, `anthropic`, `openai` (optional semantic judge) | off |
 | `GUARDIAN_JUDGE_WHEN` | `always`, `rule_clean`, `off`: when the judge runs | `rule_clean` |
 | `GUARDIAN_JUDGE_BUDGET_MS` | Hard wall-clock budget per judge call | 4000 |
-| `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address and date of birth in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
+| `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address, date of birth and person names in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
+| `GUARDIAN_REDACT_NAMES` | `0` turns off person-name masking only (names after cues such as customer or Mr, and common given names followed by a surname, become `[NAME]`); inherits `GUARDIAN_REDACT` | `1` |
 | `GUARDIAN_STATE` | `NSW`, `VIC`, `QLD`, `WA`, `SA`, `TAS`, `ACT` or `NT`: state public holidays in business-day deadlines (2025-2027; other years use national holidays and say so in `day_basis`) | national only |
 
 `GUARDIAN_SECTORS` scopes the server to an insurer's lines. A health fund sets `phi` and sees only private health
