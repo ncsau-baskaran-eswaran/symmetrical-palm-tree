@@ -90,6 +90,16 @@ Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai` or `ollama` (with the pro
 response, and its findings are REVIEW flags, never automatic breaches. Without it the screen is fully offline and
 deterministic.
 
+Latency controls (a local 14B judge takes about 12 seconds per call):
+
+- `GUARDIAN_JUDGE_WHEN`: `rule_clean` (default) skips the judge when the rules already found a breach, since the
+  verdict is FAILED anyway; `always` runs it on every reply; `off` disables it. `context["judge_when"]` overrides per call.
+- `GUARDIAN_JUDGE_BUDGET_MS` (default 4000): hard wall-clock budget for one judge call. On expiry the audit falls back
+  to rules only and `coverage_scope.judge` reads `timeout after <n> ms (rules only)`. `context["judge_budget_ms"]` overrides per call.
+- The runtime guardrail (`guarded` mode in `src/agent_service/brains.py`) passes `judge_when=rule_clean` and
+  `judge_budget_ms=1500`. In the live path the rules decide blocking; the judge's job is to raise REVIEW flags for
+  human follow-up. For full judge coverage run it asynchronously (a second audit with a larger budget) off the reply path.
+
 ---
 
 ## MCP tools, resources and prompts
@@ -106,6 +116,8 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | `GUARDIAN_TOOLSETS` | comma-separated `core`, `reference`, `governance`, `redteam`, `demo`, `legacy`, or `all` | `core,reference` |
 | `GUARDIAN_SECTORS` | comma-separated `gi`, `life`, `phi`, `banking` | `gi,life,phi` |
 | `GUARDIAN_JUDGE_PROVIDER` | `ollama`, `anthropic`, `openai` (optional semantic judge) | off |
+| `GUARDIAN_JUDGE_WHEN` | `always`, `rule_clean`, `off`: when the judge runs | `rule_clean` |
+| `GUARDIAN_JUDGE_BUDGET_MS` | Hard wall-clock budget per judge call | 4000 |
 | `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address and date of birth in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
 
 `GUARDIAN_SECTORS` scopes the server to an insurer's lines. A health fund sets `phi` and sees only private health

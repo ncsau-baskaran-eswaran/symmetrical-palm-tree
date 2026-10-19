@@ -254,7 +254,11 @@ def run_audit(
         "coverage_scope": {
             "rules_evaluated": len(applicable),
             "rule_families": sorted({r.family for r in applicable}),
-            "judge": judge_result.get("status", "disabled"),
+            "judge": (
+                f"timeout after {judge_result.get('budget_ms', 0):g} ms (rules only)"
+                if judge_result.get("status") == "timeout"
+                else judge_result.get("status", "disabled")
+            ),
         },
         **conversation_info,
         "governance_advisory": (

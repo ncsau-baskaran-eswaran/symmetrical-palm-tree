@@ -15,6 +15,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Multi-turn screening | Done | `prior_turns` on the audit tool; history-aware gates and omission checks |
 | Remote server with authentication | Done | `src/http_server.py`: bearer tokens, rate limit, body limit, `/healthz`, refuses to start unauthenticated off loopback |
 | Corpus change monitoring | Done | `scripts/check_corpus_freshness.py` (`staleness`, `snapshot`, `diff`, `review-pack`); baseline lock of 44 sources |
+| Judge latency budget for the runtime guardrail | Done | `GUARDIAN_JUDGE_WHEN` (default `rule_clean`) and `GUARDIAN_JUDGE_BUDGET_MS` (default 4000) with per-call overrides; guarded mode uses 1500 ms; timeout falls back to rules only; `tests/test_judge_budget.py` |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
 Test suite: 286 tests pass in all three CI configurations.
@@ -29,7 +30,6 @@ Test suite: 286 tests pass in all three CI configurations.
 | Weekly `diff` job | Suggested in `docs/CORPUS_REVIEW.md`; not yet a scheduled workflow |
 | Reduce false "changed" results in `diff` | Whole-page hashing flags navigation or banner changes on source sites |
 | Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
-| Judge latency budget for the runtime guardrail | The local judge adds about 12 seconds; run it asynchronously or only on rule-clean replies |
 
 ## Needs people
 
