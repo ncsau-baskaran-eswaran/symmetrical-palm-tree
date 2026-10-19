@@ -1,0 +1,176 @@
+{
+  "code": "CPS 510",
+  "title": "Prudential Standard CPS 510 Governance",
+  "short_name": "Governance",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2023L01535",
+  "effective_date": "2024-01-01",
+  "amended_date": "2024-01-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-510",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Banking, Insurance, Life Insurance and Health Insurance (prudential standard) determination No. 1 of 2023 (dated 20 November 2023), commencing 1 January 2024. APRA released a consolidated draft CPS 510 for consultation on 16 June 2026 (consultation closed 28 August 2026; final standard and CPG 510 expected Q4 2026; new requirements expected to take effect in early 2028), proposing extension of independence requirements to subsidiaries, a 12 year default tenure limit for non-executive directors, triennial external board performance reviews for SFIs, conflicts management for banks and insurers, and absorption of CPS 520 fit and proper policy requirements. Those proposals are not law on 2026-10-19 and are summarised from APRA consultation pages only.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 220 Risk Management",
+    "CPS 520 Fit and Proper",
+    "CPS 511 Remuneration",
+    "FAR Act 2023",
+    "APRA governance review consultation (June 2026 draft CPS 510)"
+  ],
+  "summary": "CPS 510 sets minimum governance requirements for ADIs, general insurers, life companies and private health insurers: the Board is ultimately responsible for sound and prudent management, must have at least five directors with a majority of independent directors and an independent chair, and must have Board Audit and Board Risk Committees of non-executive directors with independent chairs. It covers Board charters, skills, renewal and performance review, internal audit, auditor independence and rotation, and prohibits impeding anyone from disclosing information to APRA.",
+  "clauses": [
+    {
+      "id": "CPS510-16",
+      "clause_number": "16",
+      "section_name": "Board of directors",
+      "heading": "Board ultimately responsible",
+      "text": "The Board of a locally incorporated APRA-regulated institution is ultimately responsible for oversight of the sound and prudent management of the institution; it must have a formal charter (para 17) and ensure directors and senior management collectively have the full range of skills needed (para 19).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "board responsibility",
+        "skills"
+      ],
+      "notes": "Board AI literacy expectations in APRA's April 2026 letter build on para 19.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS510-26",
+      "clause_number": "26",
+      "section_name": "Board composition",
+      "heading": "Board size and independence",
+      "text": "The Board must have at least five directors at all times (para 26), a majority of independent directors (para 27) and an independent chair (para 28) who has not been CEO in the previous three years (para 30).",
+      "subclauses": [
+        "26 Minimum five directors.",
+        "27 Majority independent.",
+        "28 Independent chair.",
+        "30 Chair not CEO in past three years."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "board composition",
+        "independence"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS510-51",
+      "clause_number": "51",
+      "section_name": "Board Audit Committee",
+      "heading": "Board Audit Committee",
+      "text": "The institution must have a Board Audit Committee providing objective non-executive review of the effectiveness of financial reporting and the risk management framework, with at least three non-executive members, a majority independent and an independent chair who is not the Board chair (paras 51 to 55).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "audit committee",
+        "assurance"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS510-79",
+      "clause_number": "79",
+      "section_name": "Board Risk Committee",
+      "heading": "Board Risk Committee",
+      "text": "The Board must have a Board Risk Committee providing objective non-executive oversight of the risk management framework, with at least three non-executive members, a majority independent and an independent chair (paras 79 to 84).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk committee",
+        "risk oversight"
+      ],
+      "notes": "The natural forum for oversight of AI risk.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS510-85",
+      "clause_number": "85",
+      "section_name": "Board Risk Committee",
+      "heading": "CRO appointment and removal",
+      "text": "The Board Risk Committee must endorse the appointment or removal of the CRO; if the CRO is removed, the reasons must be discussed with APRA as soon as practicable and within 10 business days after the Committee's endorsement.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Within 10 business days after the Committee endorses removal of the CRO.",
+      "key_topics": [
+        "CRO",
+        "APRA notification"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS510-88",
+      "clause_number": "88",
+      "section_name": "Communication with APRA",
+      "heading": "No impediment to disclosing information to APRA",
+      "text": "No current, prospective or former officer, employee or contractor of the institution may be constrained or impeded (for example by confidentiality clauses) from disclosing information to APRA; internal policies and contracts must not restrict or discourage communication with APRA (para 89).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "whistleblowing",
+        "APRA access"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

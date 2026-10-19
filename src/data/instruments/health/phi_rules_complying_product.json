@@ -1,0 +1,208 @@
+{
+  "code": "PHI Complying Product Rules",
+  "title": "Private Health Insurance (Complying Product) Rules 2015",
+  "short_name": "Complying Product Rules",
+  "regulator": "Department of Health, Disability and Ageing",
+  "instrument_type": "regulation",
+  "legislative_instrument": "F2015L01021",
+  "effective_date": "2015-07-01",
+  "amended_date": "2026-07-01",
+  "status": "In Force",
+  "sectors": [
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/F2015L01021/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the registered compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against Compilation No. 62 (F2026C00648), compilation date 1 July 2026, registered 18 July 2026, including F2026L00730 and F2026L00857. The register listed this compilation as effective to 19 September 2026, so a later compilation may exist; SME to check for changes after 19 September 2026. The instrument is due to sunset on 1 April 2027 and will likely be remade. Rule numbers (8, 9A, 10, 11E to 11J, 12 to 15) verified in the compilation text. Schedules 4 and 5 (clinical categories per tier and MBS item scope) are not reproduced.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [
+    "Private Health Insurance (Complying Product) Rules 2010 (No. 2)"
+  ],
+  "companion_guidance": [
+    "Private Health Insurance Act 2007"
+  ],
+  "summary": "Rules made under s 333-20 of the PHI Act that add requirements for complying products: mandatory coverage items, the one-off mental health upgrade waiver, 14 day transfer certificate timeframes, the Gold, Silver, Bronze and Basic product tier and clinical category framework with naming rules, and the content and delivery of Private Health Information Statements including Lifetime Health Cover disclosures.",
+  "clauses": [
+    {
+      "id": "PHICPR-R8",
+      "clause_number": "r 8",
+      "section_name": "Part 2: General",
+      "heading": "Coverage requirements",
+      "text": "Policies covering hospital-substitute treatment must cover hospital treatment for the same types of treatment, and hospital policies must cover listed medical devices and human tissue products in specified circumstances, among other mandatory coverage items made for s 69-1(2) of the Act.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "coverage",
+        "hospital-substitute treatment",
+        "medical devices"
+      ],
+      "notes": "Supports answers about what hospital cover must include.",
+      "obligation_type": "product",
+      "agent_relevance": "code",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R9A",
+      "clause_number": "r 9A",
+      "section_name": "Part 2: General",
+      "heading": "Mental health upgrade waiting period waiver",
+      "text": "A person upgrading to higher psychiatric benefits may elect (once, under r 9B) to have no waiting period if they have held hospital cover for at least 2 months, or a reduced wait otherwise, and if they upgrade within 5 business days after admission the higher cover starts from the admission day.",
+      "subclauses": [
+        "One-off election.",
+        "No wait if 2 months prior hospital cover.",
+        "Upgrade within 5 business days of admission backdates to admission day."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "mental health",
+        "waiting periods",
+        "portability"
+      ],
+      "notes": "Agents speaking with members needing psychiatric admission should mention the one-off upgrade waiver.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R10",
+      "clause_number": "r 10",
+      "section_name": "Part 2: General",
+      "heading": "Transfer certificate timeframes",
+      "text": "For s 99-1 of the Act: the old insurer gives a certificate to a departing member within 14 days, the new insurer requests one within 14 days, and the old insurer provides it to the new insurer within 14 days of request.",
+      "subclauses": [
+        "14 days for each step."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "portability",
+        "transfer certificates",
+        "timeframes"
+      ],
+      "notes": "Timeframe checker value for switching.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R11E",
+      "clause_number": "r 11E",
+      "section_name": "Part 2B: Product tiers and names",
+      "heading": "Product tiers",
+      "text": "Every policy covering hospital treatment must be a Gold, Silver, Bronze or Basic policy, must cover every hospital treatment within each clinical category it covers plus associated complications and unplanned urgent treatment (r 11F), with Gold unrestricted across all categories, Silver and Bronze allowed to restrict only rehabilitation, hospital psychiatric services and palliative care, and Basic allowed restricted cover (r 11G).",
+      "subclauses": [
+        "Gold: all clinical categories unrestricted.",
+        "Silver and Bronze: required categories per Schedule 4; restriction allowed only for rehabilitation, psychiatric and palliative.",
+        "Basic: restricted cover allowed.",
+        "Cosmetic surgery that is not medically necessary need not be covered."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "product tiers",
+        "clinical categories"
+      ],
+      "notes": "Use with Schedule 4 to check whether a quoted tier must cover a given clinical category.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R11H",
+      "clause_number": "r 11H",
+      "section_name": "Part 2B: Product tiers and names",
+      "heading": "Naming of hospital and extras policies",
+      "text": "Hospital policy names must include the tier; plus or + only if extra clinical categories are covered; no other metal or gemstone names. Extras only policy names cannot contain metals, gemstones or plus (r 11J).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "naming",
+        "misleading conduct"
+      ],
+      "notes": "Agents must not market a product with a tier or plus label it does not hold.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R12",
+      "clause_number": "r 12",
+      "section_name": "Part 3: PHIS and other information",
+      "heading": "Content and form of the PHIS",
+      "text": "The PHIS must contain the information and wording in Schedule 1 for all policies, Schedule 2 for hospital cover and Schedule 3 for general treatment (unless the only general treatment is ambulance). Extra information in the same document must not obscure or contradict the required content (r 13).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "PHIS",
+        "disclosure"
+      ],
+      "notes": "Defines what an agent can rely on as the standard summary of a product.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R15",
+      "clause_number": "r 15",
+      "section_name": "Part 3: PHIS and other information",
+      "heading": "Information to insured persons with the PHIS",
+      "text": "When giving the PHIS to a new or existing member, the insurer must state the names of people covered and, for hospital cover, each adult's Lifetime Health Cover loading and the time remaining until it is removed, no more than once each 12 months.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "lifetime health cover",
+        "disclosure"
+      ],
+      "notes": "Agents sending annual statements must include the LHC loading line for affected adults.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHICPR-R14",
+      "clause_number": "r 14",
+      "section_name": "Part 3: PHIS and other information",
+      "heading": "Premium change information to the PHIO",
+      "text": "After Ministerial approval of premium changes, insurers notify the Private Health Insurance Ombudsman of pre and post approval premiums by the later of 1 February following approval or 20 business days after approval.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "premiums",
+        "Ombudsman",
+        "reporting"
+      ],
+      "notes": "Governance reporting obligation.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

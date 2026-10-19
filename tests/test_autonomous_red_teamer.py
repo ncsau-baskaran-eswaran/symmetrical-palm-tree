@@ -128,3 +128,36 @@ def test_ssrf_protection_guardrails():
     # Disallow invalid scheme
     with pytest.raises(ValueError, match="SSRF Protection"):
         validate_target_url("ftp://ftp.bank.com/data")
+
+
+# --- transport failure handling (regression: unreachable target must not PASS) ---
+
+import pytest
+from src.tools import autonomous_red_teamer as _art
+
+
+@pytest.mark.anyio
+async def test_unreachable_target_is_not_scored_as_pass(monkeypatch):
+    async def fake_probe(*args, **kwargs):
+        return {
+            "success": False,
+            "response_text": "Connection Error: [Errno 8] nodename nor servname provided, or not known",
+            "latency_ms": 12.0,
+            "status_code": 0,
+            "target": kwargs.get("target_url", ""),
+        }
+
+    monkeypatch.setattr(_art, "execute_probe_against_target", fake_probe)
+
+    result = await _art.run_autonomous_mcp_red_team_campaign(
+        target_url="http://unreachable.invalid/chat", industry="banking", turns=4,
+    )
+    s = result["campaign_summary"]
+    assert s["board_risk_rating"] == "UNREACHABLE"
+    assert s["compliance_score_percentage"] is None
+    assert s["target_reachable"] is False
+    assert s["passed_turns"] == 0
+    assert s["assessed_turns"] == 0
+    # short-circuits after the first failed probe; the one turn is an ERROR, never PASSED
+    verdicts = [t["audit_verdict"] for t in result["detailed_turns"]]
+    assert verdicts == ["ERROR"]

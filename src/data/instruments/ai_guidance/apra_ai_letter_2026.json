@@ -1,0 +1,160 @@
+{
+  "code": "APRA AI Letter 2026",
+  "title": "APRA Letter to Industry on Artificial Intelligence (AI), 30 April 2026",
+  "short_name": "APRA AI letter",
+  "regulator": "APRA",
+  "instrument_type": "guidance",
+  "legislative_instrument": "",
+  "effective_date": "2026-04-30",
+  "amended_date": "2026-04-30",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
+  "licence": "APRA publication. Paraphrased with attribution.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Letter page on apra.gov.au read on 2026-10-19: dated 30 April 2026, addressed to all APRA-regulated entities, signed by APRA Member Therese McCarthy Hockey, based on a targeted engagement with selected large entities in late 2025. The attachment setting out expectations of accountable executives (CRO, CTO, CISO) was not separately retrieved. The letter does not create new requirements; APRA has said it is not proposing additional AI-specific requirements at this stage and relies on existing prudential standards (it does not name specific standards; CPS 220, CPS 230 and CPS 234 are the author's mapping). Later APRA material (May 2026 System Risk Outlook, August 2026 joint APRA and ASIC statement on frontier AI, 2026-27 Corporate Plan) repeats these expectations; those were seen only in search summaries.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 220 Risk Management",
+    "CPS 230 Operational Risk Management",
+    "CPS 234 Information Security",
+    "CPG 235 Managing Data Risk",
+    "ASIC REP 798",
+    "Guidance for AI Adoption (October 2025)"
+  ],
+  "summary": "APRA found AI adoption among regulated entities was outpacing governance, risk management, assurance and operational resilience. It expects boards to have enough AI literacy to set direction and challenge management, to oversee an AI strategy consistent with risk appetite with monitoring (including of third parties) and defined triggers linked to resilience objectives; entities to maintain an AI inventory, clear lifecycle ownership and human involvement in high-risk decisions; to map the AI supply chain, manage concentration risk and secure contractual transparency; to adapt cyber controls to AI-specific attack paths such as prompt injection, data leakage and misuse of autonomous agents; and to build integrated, continuous assurance over AI systems. Entities that fail to manage AI risk proportionately face stronger supervisory action and possible enforcement.",
+  "clauses": [
+    {
+      "id": "APRAAI-BOARD",
+      "clause_number": "Board",
+      "section_name": "Expectations",
+      "heading": "Board literacy and AI strategy",
+      "text": "Boards should maintain sufficient AI understanding to set strategic direction and challenge management (not relying mainly on vendor presentations), and oversee an AI strategy consistent with risk appetite and tolerance, with monitoring including of third parties and defined triggers linked to resilience objectives for when AI behaves unexpectedly.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "board oversight",
+        "AI literacy",
+        "risk appetite"
+      ],
+      "notes": "Ties to CPS 220 para 9 (Board responsibility for the risk management framework).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "APRAAI-GOV",
+      "clause_number": "Governance",
+      "section_name": "Expectations",
+      "heading": "AI governance, inventory and human involvement",
+      "text": "Entities should treat AI risk as distinct from ordinary technology risk (given its predictive, adaptive, bias and privacy characteristics), maintain policies, standards and reporting lines for safe adoption, keep an inventory of AI tools and use cases, assign clear ownership across the AI lifecycle including post-deployment monitoring, change management and decommissioning, ensure human involvement in high-risk decisions, and train staff on use, misuse, limitations and secure practice.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI inventory",
+        "lifecycle governance",
+        "human in the loop",
+        "training"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "APRAAI-3P",
+      "clause_number": "Third parties",
+      "section_name": "Expectations",
+      "heading": "Supply chain and concentration risk",
+      "text": "Entities should map the full AI supply chain including upstream foundation models, secure contracts giving transparency and auditability (audit rights, model updates, incident notification, data handling), understand model behaviour and changes, and actively manage concentration risk including tested exit or substitution plans for plausible failure scenarios.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "third-party risk",
+        "concentration risk",
+        "foundation models",
+        "exit planning"
+      ],
+      "notes": "Ties to CPS 230 material service provider requirements.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "APRAAI-CYBER",
+      "clause_number": "Cyber",
+      "section_name": "Expectations",
+      "heading": "Cyber and information security for AI",
+      "text": "Entities should address AI-specific attack paths such as prompt injection, data leakage and misuse of autonomous agents; adapt identity and privileged access controls to non-human actors; control agentic workflows; security test AI-generated code and libraries; patch promptly; harden configurations; use automated vulnerability discovery and penetration testing; restrict unapproved staff use of AI tools by technical means, not policy alone; and maintain fallback processes where AI supports critical operations.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "prompt injection",
+        "agentic AI",
+        "non-human identities",
+        "shadow AI",
+        "data leakage"
+      ],
+      "notes": "Ties to CPS 234. Directly relevant to runtime guardrails and red teaming of insurer AI agents.",
+      "obligation_type": "security",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "APRAAI-ASSURE",
+      "clause_number": "Assurance",
+      "section_name": "Expectations",
+      "heading": "Risk assessment and assurance",
+      "text": "Entities should use recognised control frameworks, integrate assurance across cyber, data, model, resilience, privacy and conduct risks, build second line and internal audit capability to assess AI systems and agentic workflows, and assess risk before deployment and continuously afterwards in proportion to use-case criticality, rather than relying on point-in-time sample testing.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "assurance",
+        "continuous monitoring",
+        "internal audit",
+        "model drift"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

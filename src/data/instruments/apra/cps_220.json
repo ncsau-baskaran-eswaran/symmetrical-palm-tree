@@ -1,0 +1,228 @@
+{
+  "code": "CPS 220",
+  "title": "Prudential Standard CPS 220 Risk Management",
+  "short_name": "Risk Management",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2019L00669",
+  "effective_date": "2019-07-01",
+  "amended_date": "2019-07-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-220",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au/standard/cps-220) on 2026-10-19, which reproduces Banking, Insurance, Life Insurance and Health Insurance (prudential standard) determination No. 1 of 2019 (dated 3 May 2019, register F2019L00669) commencing 1 July 2019. Summary-level stub: only selected paragraphs are captured. The register ID was taken from the handbook page and not separately opened on legislation.gov.au.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPG 220 Risk Management",
+    "CPS 230 Operational Risk Management",
+    "CPS 234 Information Security",
+    "CPS 510 Governance"
+  ],
+  "summary": "CPS 220 requires each APRA-regulated institution (ADIs, general insurers, life companies and private health insurers) to maintain a Board-approved risk management framework covering all material risks (credit, market and investment, liquidity, insurance, operational, strategic and other risks), including a risk appetite statement, a risk management strategy, a rolling three-year business plan, an independent risk management function led by a CRO, a compliance function, annual audit review and a comprehensive review at least every three years. The Board makes an annual risk management declaration to APRA, and APRA must be notified within 10 business days of significant breaches of, or material deviations from, the framework. AI risk sits within this framework.",
+  "clauses": [
+    {
+      "id": "CPS220-9",
+      "clause_number": "9",
+      "section_name": "The role of the Board",
+      "heading": "Board responsibility for the risk management framework",
+      "text": "The Board is ultimately responsible for the institution's risk management framework and its oversight. It must set the risk appetite and approve the risk appetite statement and risk management strategy, form a view of risk culture, ensure senior management manages all material risks within appetite, and ensure adequate resources are dedicated to risk management.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "board oversight",
+        "risk appetite",
+        "risk culture"
+      ],
+      "notes": "APRA's April 2026 AI letter expects boards to have enough AI literacy to discharge this responsibility for AI risk.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-26",
+      "clause_number": "26",
+      "section_name": "Risk management framework",
+      "heading": "Material risks the framework must address",
+      "text": "The risk management framework must, at a minimum, address credit risk, market and investment risk, liquidity risk, insurance risk, operational risk, risks from strategic objectives and business plans, and other risks that may have a material impact.",
+      "subclauses": [
+        "(a) to (g) credit, market and investment, liquidity, insurance, operational, strategic and other material risks."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "material risks",
+        "operational risk",
+        "AI risk"
+      ],
+      "notes": "AI model and agent risk is an operational (and potentially conduct and insurance) risk that must be captured.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-27",
+      "clause_number": "27",
+      "section_name": "Risk appetite",
+      "heading": "Risk appetite statement",
+      "text": "The institution must maintain a clear and concise risk appetite statement addressing its material risks; the Board sets the risk appetite and approves the statement.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk appetite"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-29",
+      "clause_number": "29",
+      "section_name": "Risk management strategy",
+      "heading": "Risk management strategy (RMS)",
+      "text": "The institution must maintain a Board-approved risk management strategy that addresses each material risk and describes the key elements of the framework that give effect to it.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk management strategy"
+      ],
+      "notes": "The RMS must be given to APRA on adoption and after material revisions (para 52).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-38",
+      "clause_number": "38",
+      "section_name": "Risk management function",
+      "heading": "Chief Risk Officer",
+      "text": "The institution must designate a CRO responsible for the risk management function, with authority to effectively challenge decisions that may materially affect the risk profile. The CRO must be independent of business lines and finance (para 39) and have a direct line to the CEO and unfettered access to the Board and Board Risk Committee (para 40).",
+      "subclauses": [
+        "37 Independent risk management function.",
+        "39 Independence; CRO cannot be CEO, CFO, Appointed Actuary or Head of Internal Audit.",
+        "40 Reporting lines."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "CRO",
+        "second line",
+        "independence"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-45",
+      "clause_number": "45",
+      "section_name": "Review of the risk management framework",
+      "heading": "Comprehensive review at least every three years",
+      "text": "In addition to annual audit review of compliance and effectiveness (para 44), the appropriateness, effectiveness and adequacy of the framework must be comprehensively reviewed by operationally independent, competent persons at least every three years, with results reported to the Board Risk Committee.",
+      "subclauses": [
+        "44 Annual internal or external audit review.",
+        "45 Triennial comprehensive review."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "independent review",
+        "assurance"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-49",
+      "clause_number": "49",
+      "section_name": "Risk management declaration",
+      "heading": "Annual risk management declaration to APRA",
+      "text": "The Board must make an annual risk management declaration to APRA in line with Attachment A, signed by the Board chair and the Board Risk Committee chair, and must qualify it for any significant breach of, or material deviation from, the framework (para 50).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "declaration",
+        "board attestation"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS220-53",
+      "clause_number": "53",
+      "section_name": "Notification requirements",
+      "heading": "Notify APRA of significant breaches within 10 business days",
+      "text": "The institution must notify APRA as soon as practicable, and within 10 business days, after becoming aware of a significant breach of, or material deviation from, its risk management framework, or that the framework did not adequately address a material risk. Para 54 requires similar notice of material changes to size, business mix and complexity.",
+      "subclauses": [
+        "(a) Significant breach of, or material deviation from, the framework.",
+        "(b) The framework did not adequately address a material risk."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "As soon as practicable and no more than 10 business days after becoming aware.",
+      "key_topics": [
+        "APRA notification",
+        "10 business days",
+        "breach"
+      ],
+      "notes": "An uncontrolled AI deployment causing material harm may show the framework did not adequately address a material risk.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

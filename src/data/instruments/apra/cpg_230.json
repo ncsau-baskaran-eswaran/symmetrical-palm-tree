@@ -1,0 +1,173 @@
+{
+  "code": "CPG 230",
+  "title": "Prudential Practice Guide CPG 230 Operational Risk Management",
+  "short_name": "Operational Risk Management (guide)",
+  "regulator": "APRA",
+  "instrument_type": "prudential_practice_guide",
+  "legislative_instrument": "Not a legislative instrument (APRA prudential practice guide)",
+  "effective_date": "2024-06-01",
+  "amended_date": "2026-07-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://handbook.apra.gov.au/ppg/cpg-230",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Prudential practice guides set out APRA's view of sound practice and do not create enforceable requirements. Summary-level stub: only selected paragraphs are captured. The handbook page interleaves CPS 230 paragraphs (shown in boxes) with CPG 230 guidance paragraphs that use their own numbering; the clause numbers below are CPG paragraph numbers. Publication month (June 2024) is from the handbook date metadata and general knowledge; the handbook lists the guide as 'Current' with a date of 1 July 2026, which may reflect the CPS 230 non-SFI service provider transition date or a re-issue; an SME should confirm whether CPG 230 was revised in 2026.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 230 Operational Risk Management",
+    "CPS 900 Resolution Planning",
+    "CPG 234 Information Security"
+  ],
+  "summary": "CPG 230 explains APRA's expectations for implementing CPS 230: start by identifying outward-facing critical operations, set tolerance levels for their disruption, map the people, processes, technology and material service providers needed to deliver them, use severe but plausible scenario analysis, maintain and test business continuity plans, and manage material service providers including fourth parties and non-traditional service providers. CPS 230 notification clocks it references include 72 hours for material operational risk incidents, 24 hours for disruption of a critical operation outside tolerance, and 20 business days after entering or materially changing a material arrangement supporting a critical operation.",
+  "clauses": [
+    {
+      "id": "CPG230-2",
+      "clause_number": "2",
+      "section_name": "Introduction",
+      "heading": "Start with critical operations",
+      "text": "A prudent entity would first identify its critical operations (CPS 230 para 35 sets the minimum list), set tolerance levels for their disruption, and identify the processes and resources, including material service providers, needed to deliver them; it would then use this to assess its operational risk profile (para 3).",
+      "subclauses": [
+        "(a) Identify critical operations.",
+        "(b) Set tolerance levels.",
+        "(c) Identify processes, resources and material service providers."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "critical operations",
+        "tolerance levels"
+      ],
+      "notes": "AI agents that deliver claims or policy servicing form part of the resources supporting critical operations.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG230-15",
+      "clause_number": "15",
+      "section_name": "Business continuity: identify critical operations",
+      "heading": "Outward-facing focus",
+      "text": "In identifying critical operations an entity would focus on outward-facing services to policyholders and other customers and the broader financial system; para 16 adds operations whose disruption would have direct or indirect material adverse impacts on customers or could impact the financial system, and para 18 expects reasons for not classifying an APRA-listed operation as critical to be documented, approved by an accountable person and reviewed annually.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "critical operations",
+        "customer impact"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG230-22",
+      "clause_number": "22",
+      "section_name": "Operational risk management",
+      "heading": "Scenario analysis",
+      "text": "Risk profiles should be informed by scenario analysis testing severe but plausible events, to identify gaps and opportunities to improve operational risk management.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "scenario analysis",
+        "severe but plausible"
+      ],
+      "notes": "AI-specific failure scenarios (model outage, prompt injection, provider failure) fit here.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG230-32",
+      "clause_number": "32",
+      "section_name": "Business continuity: tolerance levels",
+      "heading": "Setting tolerance levels",
+      "text": "In setting and reviewing tolerance levels a prudent entity would consider customer and stakeholder impact, financial and reputational impact on the entity and the system, legal and regulatory requirements (including APRA-set tolerances) and recovery objectives, and would reassess them after disruptions and testing (para 33).",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "tolerance levels"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG230-46",
+      "clause_number": "46",
+      "section_name": "Management of service provider arrangements",
+      "heading": "Material service providers",
+      "text": "Material service providers are those relied on to undertake a critical operation or that expose the entity to material operational risk; CPS 230 para 49 gives a minimum list. A prudent entity's register would identify the responsible person, the critical operations or material risks each arrangement supports, and, where a critical operation depends on it, fourth parties (para 48). Reasons for not classifying an APRA-listed provider as material would be documented and approved by an accountable person (para 49).",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "material service providers",
+        "fourth parties",
+        "AI vendors"
+      ],
+      "notes": "Foundation model and AI platform providers supporting critical operations are likely material service providers.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG230-62",
+      "clause_number": "62",
+      "section_name": "Management of service provider arrangements",
+      "heading": "Non-traditional service providers",
+      "text": "Where a non-traditional service provider cannot provide certain information because of SOCI Act restrictions, APRA expects the entity to obtain as much information as practicable and use publicly available information.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "non-traditional service providers",
+        "SOCI"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

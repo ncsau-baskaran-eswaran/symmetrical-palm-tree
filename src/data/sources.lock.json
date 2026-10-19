@@ -1,0 +1,622 @@
+{
+  "generated_at": "2026-10-19T12:52:25+00:00",
+  "sources": {
+    "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-271-internal-dispute-resolution/": {
+      "content_length": 68277,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-271-internal-dispute-resolution",
+      "instruments": [
+        "RG 271"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "ff676a2ce8b5d388e91aa5cda3133414e2a6e6355d4f70facb6841c6fbaf02d2",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-274-product-design-and-distribution-obligations/": {
+      "content_length": 68524,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-274-product-design-and-distribution-obligations",
+      "instruments": [
+        "RG 274"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "ac5553c837a78c93e7fe74b30ac5dd54d311e87bb4f0f13c18c17fb00310c2b8",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-38-the-hawking-prohibition/": {
+      "content_length": 66233,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-38-the-hawking-prohibition",
+      "instruments": [
+        "RG 38"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "08daf4fc577c5447c1f23f7d521be286d7356ea06380ee57d3c2b02314bbb8af",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-78-breach-reporting-by-afs-licensees-and-credit-licensees/": {
+      "content_length": 66229,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-78-breach-reporting-by-afs-licensees-and-credit-licensees",
+      "instruments": [
+        "RG 78"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "348745c9b01dfbe23de4c06c82e885d4d6999926ddd75ef228b7d05fe3bc323f",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://asic.gov.au/regulatory-resources/find-a-document/reports/rep-768-navigating-the-storm-asic-s-review-of-home-insurance-claims/": {
+      "content_length": 66171,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-768-navigating-the-storm-asics-review-of-home-insurance-claims",
+      "instruments": [
+        "REP 768"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "6699adb968ce4fa805a4e267ee37f5a0a6065b22c481c1bd7564bfd13d478414",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://cali.org.au/wp-content/uploads/2025/02/CALI_LICOP_2025_web.pdf": {
+      "content_length": 2813174,
+      "etag": "\"6a8bfb10-2aecf6\"",
+      "final_url": "https://cali.org.au/wp-content/uploads/2025/02/CALI_LICOP_2025_web.pdf",
+      "instruments": [
+        "Life Code"
+      ],
+      "last_modified": "Mon, 24 Aug 2026 08:04:32 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "097c000e25211eb42e924326b74cc0eaa5b1e106cfb9cd2a8b0fd01f341e42bc",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/": {
+      "content_length": 335740,
+      "etag": "\"1792405135\"",
+      "final_url": "https://www.apra.gov.au/about-us/our-functions/apras-prudential-handbook",
+      "instruments": [
+        "APRA Insurer Capital and Valuation"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 10:18:55 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "26787ecbe9dd097f76e4f3f453b8f3e446e2f85d0b423c0cf740ab6d2a93bb70",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/ppg/cpg-230": {
+      "content_length": 420939,
+      "etag": "\"1792413630\"",
+      "final_url": "https://www.apra.gov.au/practice-guides/cpg-230",
+      "instruments": [
+        "CPG 230"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 12:40:30 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "95fac68a92c0e6417cd1660b012ae22f9441dfa4f8ff8b76b301927f08f38baa",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/ppg/cpg-234": {
+      "content_length": 472873,
+      "etag": "\"1792395288\"",
+      "final_url": "https://www.apra.gov.au/practice-guides/cpg-234",
+      "instruments": [
+        "CPG 234"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 07:34:48 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "6c8ff6aaf7f87317ebd4eebcf713b3ac10ddf005dd7e6712260daddc15be9e88",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/ppg/cpg-235": {
+      "content_length": 438711,
+      "etag": "\"1792394091\"",
+      "final_url": "https://www.apra.gov.au/practice-guides/cpg-235",
+      "instruments": [
+        "CPG 235"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 07:14:51 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "5ca491333948a3f94cda9c3f74cd67561f1a3a59222fc3a64a2837b1b40c272d",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-190": {
+      "content_length": 372645,
+      "etag": "\"1792400045\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-190",
+      "instruments": [
+        "CPS 190"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 08:54:05 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "38b134e6d4679a18d61ad8d7de0537d115a0d5b9bdbaef7745a5fa3d44cf81c0",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-220": {
+      "content_length": 402593,
+      "etag": "\"1792395284\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-220",
+      "instruments": [
+        "CPS 220"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 07:34:44 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "54cc75b93361c6a925fc4e4b9010f536f5acbb18af5d8a8b421272eb768fab56",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-510": {
+      "content_length": 448065,
+      "etag": "\"1792393685\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-510",
+      "instruments": [
+        "CPS 510"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 07:08:05 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "11f63ce8a4419dacd7f6fbf036de5f0bb72f559b4b0367e19629461879e46acf",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-511": {
+      "content_length": 478449,
+      "etag": "\"1792413661\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-511",
+      "instruments": [
+        "CPS 511"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 12:41:01 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "2798d615ce6e10c9ef465922013cf7e08ba8ddd13285c78662956ff7a45c1c3d",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-520": {
+      "content_length": 438711,
+      "etag": "\"1792396686\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-520",
+      "instruments": [
+        "CPS 520"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 07:58:06 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "012ff1a7b14a5f54655db34c972dc84beb1b4caa29ce8f55fb91c70e3950c21c",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/cps-900": {
+      "content_length": 368717,
+      "etag": "\"1792413661\"",
+      "final_url": "https://www.apra.gov.au/standards/cps-900",
+      "instruments": [
+        "CPS 900"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 12:41:01 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "c58300af923ca164ea3e42892aa0ebcad937f4e51d43fc9bdd0f7d6d5a290309",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/gps-230": {
+      "content_length": 396036,
+      "etag": "\"1792403145\"",
+      "final_url": "https://www.apra.gov.au/standards/gps-230",
+      "instruments": [
+        "GPS 230"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 09:45:45 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "ac2330b47b9c35c4477ac0ef20fffb2903a9579fb07ca0f32b8be9e85ecfb8c9",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://handbook.apra.gov.au/standard/lps-230": {
+      "content_length": 361264,
+      "etag": "\"1792414050\"",
+      "final_url": "https://www.apra.gov.au/standards/lps-230",
+      "instruments": [
+        "LPS 230"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 12:47:30 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "4ee6a3e892075cb4b68c0cb2c6c83753e266bcdb351541aee6503354c56b9a46",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://insurancecouncil.com.au/wp-content/uploads/2023/11/2023-COP_UPDATE_October_FINAL.pdf": {
+      "content_length": 5473974,
+      "etag": "\"6a846e0b-5386b6\"",
+      "final_url": "https://insurancecouncil.com.au/wp-content/uploads/2023/11/2023-COP_UPDATE_October_FINAL.pdf",
+      "instruments": [
+        "GI Code"
+      ],
+      "last_modified": "Tue, 18 Aug 2026 14:36:59 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "d4624d40a53f34a5158d2ee1bf8e39b5a3b086172fadfe5d250c70d740697c0a",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://privatehealthcareaustralia.org.au/wp-content/uploads/PHI-Code-of-Conduct-October-2025.pdf": {
+      "content_length": 360833,
+      "etag": "\"68de5f83-58181\"",
+      "final_url": "https://privatehealthcareaustralia.org.au/wp-content/uploads/PHI-Code-of-Conduct-October-2025.pdf",
+      "instruments": [
+        "PHI Code"
+      ],
+      "last_modified": "Thu, 02 Oct 2025 11:18:27 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "cf16c912233f15d26adb3f959c7723fdebf09fd4905e4da790d88775382a314a",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance": {
+      "content_length": 218145,
+      "etag": "\"1792036405\"",
+      "final_url": "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance",
+      "instruments": [
+        "Guidance for AI Adoption"
+      ],
+      "last_modified": "Thu, 15 Oct 2026 03:53:25 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "49aad788e18fd9e6c9d40eb552767fef322511e47c17697f74ecbd51400154f8",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai": {
+      "content_length": 331115,
+      "etag": "\"1792405707\"",
+      "final_url": "https://www.apra.gov.au/news-and-publications/apra-letter-industry-artificial-intelligence-ai",
+      "instruments": [
+        "APRA AI Letter 2026"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 10:28:27 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "e6d8a06d4d6a52edd332e3a953f9a9a9bb1ecf48ffd914bac32eaf2f7124f465",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation": {
+      "content_length": 66655,
+      "etag": null,
+      "final_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation",
+      "instruments": [
+        "ASIC REP 798"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "4403d1161dcc23311e317a33be2deed88fb982312e25ae65959fb5039c531f3f",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.cdr.gov.au/rollout": {
+      "content_length": 31842,
+      "etag": "\"1792413662\"",
+      "final_url": "https://www.cdr.gov.au/rollout",
+      "instruments": [
+        "CDR"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 12:41:02 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "f6496c12fb586ed64e6f706fec60af29f459a9839c64d2b55993124cdd3c5ec3",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails": {
+      "content_length": 253455,
+      "etag": "\"1792401229\"",
+      "final_url": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+      "instruments": [
+        "VAISS"
+      ],
+      "last_modified": "Mon, 19 Oct 2026 09:13:49 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "41a361a0653a1c36df47a7f4b4d3ee138c9d2558dfe799a704cbf17bb398de04",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.industry.gov.au/sites/default/files/2025-12/national-ai-plan.pdf": {
+      "content_length": 1839966,
+      "etag": "\"692e113e-1c135e\"",
+      "final_url": "https://www.industry.gov.au/sites/default/files/2025-12/national-ai-plan.pdf",
+      "instruments": [
+        "National AI Plan 2025"
+      ],
+      "last_modified": "Mon, 01 Dec 2025 22:05:50 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "726535cb0003e33b9c08b70d437c7ece445ec1fc46799a6a683102c5b65e269f",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A00109/latest/text": {
+      "content_length": 1359955,
+      "etag": "W/\"14c053-cdzti72qQVLnqYBfFXc+MF0HJKw\"",
+      "final_url": "https://www.legislation.gov.au/C2004A00109/latest/text",
+      "instruments": [
+        "ACL"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00405",
+      "reachable": true,
+      "sha256": "d55ae1368985b60ce67b16b7215ec49ffabff57159d51588470394d2f7f43a5e",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A00818/latest/text": {
+      "content_length": 2827586,
+      "etag": "W/\"2b2542-TXxtHbEpAOz33HfSG5Hr0zkoJhs\"",
+      "final_url": "https://www.legislation.gov.au/C2004A00818/latest/text",
+      "instruments": [
+        "Corporations Act 2001"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00432",
+      "reachable": true,
+      "sha256": "30b1a219bb868c92c534a13c1036c21fc51804d0299c57dbe2ef8ab7363bbcb4",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A00819/latest/text": {
+      "content_length": 418826,
+      "etag": "W/\"6640a-xrM7E6oawKp9LpR2liHWSaXaH5s\"",
+      "final_url": "https://www.legislation.gov.au/C2004A00819/latest/text",
+      "instruments": [
+        "ASIC Act 2001"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00429",
+      "reachable": true,
+      "sha256": "7176a299ae7fb3c7025a48457be89f76be4968ac02bf96134d5062deb6a1729a",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A01302/latest/text": {
+      "content_length": 116636,
+      "etag": "W/\"1c79c-M5H1M39qAOMtFOzRA6KSeh1VqXE\"",
+      "final_url": "https://www.legislation.gov.au/C2004A01302/latest/text",
+      "instruments": [
+        "ADA 2004"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00266",
+      "reachable": true,
+      "sha256": "79ebcfe241bac48ff0f92cb048feec12c2316148c8107e1a6dec96de865a2e17",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A02868/latest/text": {
+      "content_length": 126328,
+      "etag": "W/\"1ed78-HZmmomnuqBn1HmZheSspo+k5jPY\"",
+      "final_url": "https://www.legislation.gov.au/C2004A02868/latest/text",
+      "instruments": [
+        "SDA 1984"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2025C00597",
+      "reachable": true,
+      "sha256": "b7375e2bdb2196fc27114b837c6978810be8861e3677df8c9aca8294f4b53d5e",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A02944/latest/text": {
+      "content_length": 153436,
+      "etag": "W/\"2575c-dJ6Ybvhq3q8LNuBjkV6a3ev1V4I\"",
+      "final_url": "https://www.legislation.gov.au/C2004A02944/latest/text",
+      "instruments": [
+        "ICA 1984"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2024C00063",
+      "reachable": true,
+      "sha256": "885bc354ead18916d57082de790d7622064ec1ad8cae82d98e6e6813cf39e4c5",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A03712/latest/text": {
+      "content_length": 298794,
+      "etag": "W/\"48f2a-yzeRoM82G6YnnwcMnwBlkToyg4w\"",
+      "final_url": "https://www.legislation.gov.au/C2004A03712/latest/text",
+      "instruments": [
+        "Privacy Act 1988"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00227",
+      "reachable": true,
+      "sha256": "983e2ff671d3126b90a6c68f0c08f37bb9daa10ac0455d6f0e659d2283b1251c",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A04426/latest/text": {
+      "content_length": 121526,
+      "etag": "W/\"1dab6-Sh5VfGEgWRNDDnpWOshPH12mRik\"",
+      "final_url": "https://www.legislation.gov.au/C2004A04426/latest/text",
+      "instruments": [
+        "DDA 1992"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00456",
+      "reachable": true,
+      "sha256": "ca9bb686109d9316f5b3cf2e8111eb39fe9bf8746525dcd58536605cc874cb83",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2006A00169/latest/text": {
+      "content_length": 289235,
+      "etag": "W/\"469d3-aqdcSRM8BRwok7qjlYy8ybyNNro\"",
+      "final_url": "https://www.legislation.gov.au/C2006A00169/latest/text",
+      "instruments": [
+        "AML/CTF Act 2006"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00447",
+      "reachable": true,
+      "sha256": "6269cef88e81e4921b63bf2c9f8576e94cf7b5f8ae22f9658c6939812188a4b1",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2007A00031/latest/text": {
+      "content_length": 254368,
+      "etag": "W/\"3e1a0-g+PNexKXslVtKsNrykhkS8M7/co\"",
+      "final_url": "https://www.legislation.gov.au/C2007A00031/latest/text",
+      "instruments": [
+        "PHI Act 2007"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00412",
+      "reachable": true,
+      "sha256": "efd209d5bd87568394332d762196387c26d1460dfb4117d42e6acc2d1e1bf35e",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2018A00029/latest/text": {
+      "content_length": 212266,
+      "etag": "W/\"33d2a-U7E/G6WZpYEbtOG3Rln8/X35tgI\"",
+      "final_url": "https://www.legislation.gov.au/C2018A00029/latest/text",
+      "instruments": [
+        "SOCI Act 2018"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00213",
+      "reachable": true,
+      "sha256": "8d45272b725d691259a18e5bd8d31378c7e8eed0d345d558aec08f894ff2769c",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2023A00067/latest/text": {
+      "content_length": 139834,
+      "etag": "W/\"2223a-WxBvlNWcLYlaWa9zP9hY+gNXj2s\"",
+      "final_url": "https://www.legislation.gov.au/C2023A00067/latest/text",
+      "instruments": [
+        "FAR Act 2023"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2025C00148",
+      "reachable": true,
+      "sha256": "8c821c9dc8fe7e52d394e31b172b5fe3908b14620205b77629ad4eb8cf65287f",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2024A00098/latest/text": {
+      "content_length": 132863,
+      "etag": "W/\"206ff-x31M1jPcNFXju9ic9UAlOXOv0U8\"",
+      "final_url": "https://www.legislation.gov.au/C2024A00098/latest/text",
+      "instruments": [
+        "Cyber Security Act 2024"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "62fddb1c435957e7cec0736732e2ced00f7351ce1156eeb70efa8e097289d055",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2025A00015/asmade/text": {
+      "content_length": 77269,
+      "etag": "W/\"12dd5-qdGEJ0jM9BXu4OyQIuuXC0OlBsI\"",
+      "final_url": "https://www.legislation.gov.au/C2025A00015/asmade/text",
+      "instruments": [
+        "SPF Act 2025"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "e25d8ff28a4c8c150ddbcb9df4e2a439cdf417d22a4628e1818d04ac7b75ad45",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2026A00035/asmade/text": {
+      "content_length": 91437,
+      "etag": "W/\"1652d-Y9QK6r4O6ayWub/Wsj8FIinxOMc\"",
+      "final_url": "https://www.legislation.gov.au/C2026A00035/asmade/text",
+      "instruments": [
+        "Genetic Testing Ban"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "c1dfd8954c6d22398005c0ffb061d7b4577cbdcf375d1c5e9c117d55ba2a6811",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2015L01021/latest/text": {
+      "content_length": 106857,
+      "etag": "W/\"1a169-0RrpW8CgFRY3tNZqz/iw8xirhFU\"",
+      "final_url": "https://www.legislation.gov.au/F2015L01021/latest/text",
+      "instruments": [
+        "PHI Complying Product Rules"
+      ],
+      "last_modified": null,
+      "legislation_id": "F2026C00648",
+      "reachable": true,
+      "sha256": "38c89b2e5c3516b81d97910255b57eba3a85fdd23f2d60d3c601e71e671bfe10",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2018L01745/latest/text": {
+      "content_length": 76820,
+      "etag": "W/\"12c14-KBrMXqTlAayT3g7OJKpOSOm3MMM\"",
+      "final_url": "https://www.legislation.gov.au/F2018L01745/latest/text",
+      "instruments": [
+        "CPS 234"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "b53885c9e92b7837342d61330b1fab2d040983a93f4b415ac78e669ec196e7ba",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2026L00475/latest/text": {
+      "content_length": 76674,
+      "etag": "W/\"12b82-Km0+GyI2o8aozUQHLI1RUXRFcis\"",
+      "final_url": "https://www.legislation.gov.au/F2026L00475/latest/text",
+      "instruments": [
+        "CPS 230"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "456350cde8d4746dffca4b8c7200aa2a1b895d7104be2881586da7c624b71b0c",
+      "signal": "html_main",
+      "status": 200
+    }
+  },
+  "user_agent": "guardian-compliance-mcp-freshness-check/1.0 (polite, low-volume)"
+}

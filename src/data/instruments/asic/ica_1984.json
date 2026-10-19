@@ -1,0 +1,390 @@
+{
+  "code": "ICA 1984",
+  "title": "Insurance Contracts Act 1984 (Cth)",
+  "short_name": "Insurance Contracts Act",
+  "regulator": "ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A02944",
+  "effective_date": "1986-01-01",
+  "amended_date": "2024-03-01",
+  "status": "In Force",
+  "sectors": ["general_insurance", "life_insurance"],
+  "entity_types": ["General Insurer", "Life Company"],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2004A02944/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the authorised compilation on the Federal Register of Legislation: Compilation No. 32, compilation date 1 March 2024 (C2024C00063), which was still the latest compilation on 2026-10-19. Register ID for this Act is C2004A02944 (the C2004A02911 example ID in src/data/instruments/README.md resolves to a different Act and should be corrected). Confirmed from the amendment history: s13(2A) civil penalty (5,000 penalty units) inserted by Act No 17 of 2019, Sch 4, commencing 13 March 2019; s14A ASIC powers inserted by Act No 75 of 2013; Part IV Division 1A (ss20A to 20C, consumer duty to take reasonable care) inserted by Act No 135 of 2020, Sch 2 commencing 1 January 2021 with application to consumer contracts entered into, renewed, varied, extended or reinstated on or after 5 October 2021 (application date taken from Sch 2 transitional provisions as described in secondary sources; SME should confirm the item 37 application provision); s21A repealed by Act No 135 of 2020; s15(2)(d) carve-out for ASIC Act s12BF inserted by Act No 2 of 2020, Sch 1 items 8 to 10, commencing 5 April 2021. Commencement date of 1 January 1986 for the principal Act is from general knowledge and was not re-checked on the Register. ICA does not apply to private health insurers' health insurance business or health-related business (s9(1)(b) and (ba)).",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "ASIC Act 2001 s12BF (unfair contract terms, applies to insurance from 5 April 2021)",
+    "Corporations Act 2001 s766G and s912A (claims handling and settling as a financial service)",
+    "ASIC Information Sheet 253 Claims handling and settling",
+    "General Insurance Code of Practice",
+    "Life Insurance Code of Practice"
+  ],
+  "summary": "The Insurance Contracts Act regulates the terms and conduct of insurance contracts for general and life insurance in Australia. It implies a duty of utmost good faith on insurers and insureds (with a civil penalty and ASIC licensing powers for insurer breaches), replaces the duty of disclosure with a duty to take reasonable care not to make a misrepresentation for consumer insurance contracts, limits insurer remedies for non-disclosure and misrepresentation, restricts reliance on unusual terms and post-contract acts, and sets claims-related protections such as interest on late claims and renewal notices. It does not apply to private health insurance business, reinsurance, or marine insurance.",
+  "clauses": [
+    {
+      "id": "ICA-S13",
+      "clause_number": "13",
+      "section_name": "Part II: The duty of the utmost good faith",
+      "heading": "The duty of the utmost good faith",
+      "text": "Every contract of insurance is treated as based on utmost good faith. The Act implies a term requiring each party (including a third party beneficiary once the contract exists) to act towards the other with utmost good faith on any matter arising under or in relation to the contract. A failure to comply is a breach of the Act, and an insurer that fails to comply contravenes a civil penalty provision.",
+      "subclauses": [
+        "(1) Implied term that each party acts with utmost good faith in respect of any matter under or in relation to the contract.",
+        "(2) Failure by a party to comply is a breach of the requirements of the Act.",
+        "(2A) An insurer that fails to comply with the implied term contravenes a civil penalty provision. The section specifies a civil penalty of 5,000 penalty units (how that maximum is scaled for a body corporate depends on the enforcement framework applied to the ICA and should be confirmed by an SME).",
+        "(3) and (4) Third party beneficiaries are treated as parties, but only after the contract is entered into."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["utmost good faith", "claims handling", "civil penalty", "fair dealing"],
+      "notes": "Core conduct obligation for any AI agent acting for an insurer at sale, renewal or claim. The agent must not mislead, delay unreasonably, exploit ambiguity, or rely on technicalities against the customer. Civil penalty applies to insurers from 13 March 2019 (Act No 17 of 2019). Breach can also be a reportable situation under Corporations Act s912D because ICA is a core obligation via reg 7.6.02A. ASIC can use licensing and banning powers for claims-handling breaches (s14A).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S14",
+      "clause_number": "14",
+      "section_name": "Part II: The duty of the utmost good faith",
+      "heading": "Parties not to rely on provisions except in the utmost good faith",
+      "text": "A party cannot rely on a contract term if doing so would amount to a failure to act with utmost good faith. When deciding whether an insurer's reliance on a term breaches this standard, a court considers any notice of that term given to the insured, including a notice of an unusual term under s37.",
+      "subclauses": [
+        "(1) No reliance on a provision where reliance would be a failure of utmost good faith.",
+        "(2) Does not limit s13.",
+        "(3) Court has regard to any notification of the provision given to the insured."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["utmost good faith", "reliance on terms", "claims decisions", "exclusions"],
+      "notes": "An agent applying exclusions or conditions to decline or reduce a claim must check that reliance is fair in context and that the customer was properly told about the term. Pairs with s37 for unusual terms.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S14A",
+      "clause_number": "14A",
+      "section_name": "Part II: The duty of the utmost good faith",
+      "heading": "Powers of ASIC: insurer's failure to comply with the duty of the utmost good faith in relation to handling or settlement of claims",
+      "text": "If an insurer fails to act with utmost good faith in handling or settling a claim or potential claim, ASIC may use its AFS licence variation, suspension, cancellation and banning powers as if the failure were a breach of a financial services law.",
+      "subclauses": [
+        "(1) Applies where an insurer breaches utmost good faith in handling or settling a claim or potential claim.",
+        "(2) ASIC may exercise Corporations Act Part 7.6 Div 4 Subdiv C and Div 8 Subdiv A powers as if the failure were a breach of a financial services law."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["ASIC powers", "claims handling", "licensing", "banning orders"],
+      "notes": "Gives regulatory teeth to claims-handling conduct by AI agents. Inserted in 2013 and amended in 2023. Works alongside the claims handling and settling financial service in Corporations Act s766G.",
+      "obligation_type": "claims",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S15",
+      "clause_number": "15",
+      "section_name": "Part II: The duty of the utmost good faith",
+      "heading": "Certain other laws not to apply",
+      "text": "Insurance contracts are generally shielded from review under other Commonwealth, State or Territory laws on grounds such as harshness, unconscionability or unfairness, and from other laws giving relief for misrepresentation. The shield does not extend to compensatory damages or to relief relating to the unfair contract terms provision in ASIC Act s12BF.",
+      "subclauses": [
+        "(1) and (2)(a) to (b) Excludes judicial review of the contract for harshness or unfairness and statutory misrepresentation relief under other laws.",
+        "(2)(c) Compensatory damages are not excluded.",
+        "(2)(d) Relief relating to ASIC Act s12BF (unfair contract terms) is not excluded."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["unfair contract terms", "exclusion of other laws", "UCT application to insurance"],
+      "notes": "The s15(2)(d) carve-out means the UCT regime applies to insurance contracts entered into, renewed or varied on or after 5 April 2021 (Act No 2 of 2020). Product wording that an agent quotes or relies on must be reviewed for UCT risk; civil penalties for proposing or relying on unfair terms apply from 9 November 2023 (see ASIC Act s12BF).",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S20B",
+      "clause_number": "20B",
+      "section_name": "Part IV Division 1A: Consumer insurance contracts: insured's duty to take reasonable care not to make a misrepresentation",
+      "heading": "The insured's duty to take reasonable care not to make a misrepresentation",
+      "text": "For consumer insurance contracts, the insured's pre-contract duty is to take reasonable care not to make a misrepresentation to the insurer, judged on all relevant circumstances. Relevant factors include the product type and target market, the insurer's explanatory material, how clear and specific the insurer's questions were, how clearly the insurer explained the importance of answering and the consequences of not doing so, whether an agent acted for the insured, and whether it was a new contract or a renewal, variation, extension or reinstatement. Known or reasonably knowable characteristics of the insured are taken into account. Failing to answer or giving an obviously incomplete answer is not itself a misrepresentation; a fraudulent misrepresentation is always a breach.",
+      "subclauses": [
+        "(1) Duty to take reasonable care not to make a misrepresentation before the contract is entered into.",
+        "(2) and (3) Assessed on all relevant circumstances, including product type, target market, insurer materials, clarity of questions, warnings given, use of an agent, and transaction type.",
+        "(4) Particular characteristics of the insured the insurer knew or ought to have known about are taken into account.",
+        "(5) Non-answers and obviously incomplete or irrelevant answers are not misrepresentations.",
+        "(6) Fraudulent misrepresentation breaches the duty."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["duty to take reasonable care", "misrepresentation", "consumer insurance contract", "question design", "vulnerability"],
+      "notes": "Directly shapes how an AI sales or onboarding agent asks underwriting questions: questions must be clear and specific, the agent must explain why answers matter and the consequences of inaccurate answers, and it must adapt to known customer characteristics (for example language or cognitive vulnerability). Do not ask open-ended 'tell us anything relevant' questions. Applies to consumer insurance contracts (s11AB: wholly or predominantly personal, domestic or household purposes) entered into, renewed, varied, extended or reinstated from 5 October 2021. Inserted by Act No 135 of 2020.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S21",
+      "clause_number": "21",
+      "section_name": "Part IV Division 1: Other contracts: insured's duty of disclosure",
+      "heading": "The insured's duty of disclosure",
+      "text": "For insurance contracts that are not consumer insurance contracts, the insured must disclose before entry every matter it knows that it knows, or a reasonable person in the circumstances would know, is relevant to the insurer's decision to accept the risk and on what terms. Matters that reduce the risk, are common knowledge, are known or ought to be known by the insurer, or have been waived need not be disclosed. If a proposal question is left unanswered or answered in an obviously incomplete way, the insurer is treated as having waived disclosure on that matter.",
+      "subclauses": [
+        "(1) Duty to disclose known matters relevant to the insurer's decision, on a knowledge or reasonable person test.",
+        "(2) Exceptions: risk-diminishing matters, common knowledge, matters the insurer knows or ought to know, and waived matters.",
+        "(3) Deemed waiver where a proposal question is unanswered or answered in an obviously incomplete or irrelevant way."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["duty of disclosure", "non-consumer contracts", "business insurance"],
+      "notes": "Since 5 October 2021 this duty applies only to non-consumer contracts (s20E), such as business and commercial policies. An agent must determine which regime applies before collecting underwriting information. Not relevant to private health insurance.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S21A",
+      "clause_number": "21A",
+      "section_name": "Part IV Division 1: Other contracts: insured's duty of disclosure (repealed)",
+      "heading": "Eligible contracts of insurance: limited duty of disclosure (repealed)",
+      "text": "Repealed. This section previously limited the duty of disclosure for prescribed eligible contracts (such as home, motor, contents, sickness and accident, consumer credit and travel) to answering specific questions asked by the insurer. It was repealed by the Financial Sector Reform (Hayne Royal Commission Response) Act 2020 when the consumer duty to take reasonable care (s20B) replaced it.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["repealed", "eligible contracts", "duty of disclosure history"],
+      "notes": "Kept for citation lookup only. The amendment history shows s21A as added 1998, substituted 2013 and repealed by Act No 135 of 2020. For consumer contracts use s20B; for other contracts use s21. Do not build detection rules on this clause.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "none",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S22",
+      "clause_number": "22",
+      "section_name": "Part IV Division 1: Other contracts: insured's duty of disclosure",
+      "heading": "Insurer to inform of duty of disclosure",
+      "text": "For non-consumer contracts, before entry the insurer must clearly tell the insured in writing about the general nature and effect of the duty of disclosure, that it applies until the contract is entered into, and for life insurance the effect of s27AA(2). For life contracts, any other proposed life insured must also be told. If acceptance or a counter-offer comes more than 2 months after the insured's last disclosure, a reminder that the duty continues until entry must accompany it. An insurer that does not comply cannot rely on a failure to disclose unless the failure was fraudulent.",
+      "subclauses": [
+        "(1) Written notice of the general nature and effect of the duty and that it applies until entry.",
+        "(2) For life insurance, notice also to other proposed life insureds.",
+        "(3) Reminder notice with acceptance or counter-offer made more than 2 months after the last disclosure.",
+        "(4) to (5) Prescribed form may be used; consequence of non-compliance limits insurer remedies except for fraud."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "before_entry",
+      "key_topics": ["duty of disclosure notice", "pre-contract disclosure", "2 month reminder"],
+      "notes": "Agents selling business or other non-consumer cover must deliver the written disclosure warning before binding. Substituted in 2013 and amended by Act No 135 of 2020. Section 22(5) consequence wording was not re-read in full; SME should confirm.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S26",
+      "clause_number": "26",
+      "section_name": "Part IV Division 2: Misrepresentations",
+      "heading": "Certain statements not misrepresentations",
+      "text": "An untrue statement is not a misrepresentation if it was based on a belief that a reasonable person in the circumstances would have held. A statement is also not a misrepresentation unless the person knew, or a reasonable person would have known, that it was relevant to the insurer's decision to accept the risk and on what terms. This extends to cover for members of superannuation or group life schemes and RSA holders.",
+      "subclauses": [
+        "(1) Reasonable belief defence for untrue statements.",
+        "(2) Relevance requirement: statement must be known or reasonably knowable as relevant to the insurer's decision.",
+        "(3) Extends to group life, superannuation and RSA cover."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["misrepresentation", "reasonable belief", "relevance"],
+      "notes": "Claims and underwriting agents assessing alleged misrepresentation must consider reasonable belief and relevance before treating an answer as a relevant failure under s27AA.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S27AA",
+      "clause_number": "27AA",
+      "section_name": "Part IV Division 3: Remedies for relevant failures",
+      "heading": "Meaning of relevant failure",
+      "text": "A relevant failure is, for a consumer insurance contract, a misrepresentation made in breach of the duty to take reasonable care, and otherwise a failure to comply with the duty of disclosure or a pre-contract misrepresentation. For life contracts, a misrepresentation by a separate life insured that would have breached the reasonable care duty is also a relevant failure.",
+      "subclauses": [
+        "(1)(a) Consumer contracts: misrepresentation in breach of the reasonable care duty.",
+        "(1)(b) Other contracts: non-disclosure or pre-contract misrepresentation.",
+        "(2) Life insured's misrepresentation can be a relevant failure."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["relevant failure", "remedies", "misrepresentation"],
+      "notes": "Gateway definition for the insurer remedies in s28 and s29. Inserted by Act No 135 of 2020.",
+      "obligation_type": "claims",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S28",
+      "clause_number": "28",
+      "section_name": "Part IV Division 3: Remedies for relevant failures",
+      "heading": "General insurance",
+      "text": "Where a relevant failure occurs for a general insurance contract, the insurer has a remedy only if it would not have entered the contract on the same premium and terms had the failure not occurred. If the failure was fraudulent the insurer may avoid the contract. Otherwise, the insurer's liability on a claim is reduced to the amount that puts it in the position it would have been in without the failure.",
+      "subclauses": [
+        "(1) No remedy if the insurer would have written the same contract anyway.",
+        "(2) Avoidance only for fraudulent failure.",
+        "(3) Otherwise, proportionate reduction of liability to the position absent the failure."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["remedies", "avoidance", "proportionate reduction", "claims decisions"],
+      "notes": "An AI claims agent must not decline a general insurance claim outright for non-fraudulent misrepresentation; the remedy is a calculated reduction, and the insurer must be able to show what it would have done. Declines and reductions trigger RG 271 written IDR response obligations if complained about.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "ICA-S29",
+      "clause_number": "29",
+      "section_name": "Part IV Division 3: Remedies for relevant failures",
+      "heading": "Life insurance",
+      "text": "Where a relevant failure occurs for a life insurance contract, remedies apply unless the insurer would have entered the contract anyway or the failure concerned a date of birth. The insurer may avoid the contract for fraud. For non-fraudulent failure, the insurer may avoid within 3 years of entry only if it would not have offered life cover on any terms. Otherwise it may vary the sum insured by a statutory formula, or for certain contracts vary to reflect what it would have offered, within set time limits.",
+      "subclauses": [
+        "(1) No remedy if the insurer would have entered the contract anyway, or the failure was about date of birth.",
+        "(2) Avoidance for fraudulent failure.",
+        "(3) Avoidance within 3 years for non-fraudulent failure only if no cover would have been offered on any terms.",
+        "(4) to (10) Variation of sum insured by formula or to the terms the insurer would have offered, subject to time limits."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "3_years",
+      "key_topics": ["life insurance", "avoidance", "3 year limit", "variation of sum insured"],
+      "notes": "Life claims agents must check contract age and fraud before proposing avoidance. Avoidance outside 3 years for innocent failure is not available. Amended by Act No 135 of 2020. Not applicable to private health insurance.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["life_insurance"]
+    },
+    {
+      "id": "ICA-S35",
+      "clause_number": "35",
+      "section_name": "Part V Division 1: Standard cover",
+      "heading": "Notification of certain provisions",
+      "text": "For prescribed contracts (classes of general insurance set by regulation, such as motor vehicle, home buildings, home contents, sickness and accident, consumer credit and travel), the insurer cannot refuse to pay at least the prescribed minimum (standard cover) for a prescribed event merely because the policy gives less or no cover, unless before entry it clearly informed the insured in writing of the lesser cover or exclusion, or the insured knew or reasonably should have known.",
+      "subclauses": [
+        "(1) Insurer must pay the minimum amount for prescribed events despite narrower policy terms.",
+        "(2) Exception where the insurer clearly informed the insured in writing before entry, or the insured knew or should reasonably have known.",
+        "(3) to (4) Regulations take effect 60 days after registration; transitional rules for amendments."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "before_entry",
+      "key_topics": ["standard cover", "prescribed contracts", "exclusions disclosure", "home and motor"],
+      "notes": "Sales agents for home, contents, motor, travel and similar policies must ensure departures from standard cover are clearly disclosed in writing (usually via the PDS) before entry. Claims agents must apply standard cover minimums where disclosure cannot be proven. The list of prescribed contracts is in the Insurance Contracts Regulations 2017 and was not re-checked.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "ICA-S37",
+      "clause_number": "37",
+      "section_name": "Part V Division 1: Standard cover",
+      "heading": "Notification of unusual terms",
+      "text": "An insurer cannot rely on a term that is not usually included in policies giving similar cover (other than in prescribed contracts) unless, before entry, it clearly informed the insured in writing of the term's effect.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "before_entry",
+      "key_topics": ["unusual terms", "pre-contract disclosure", "reliance on terms"],
+      "notes": "Agents must surface unusual exclusions or conditions in writing before binding. Claims agents must not rely on unusual terms where written notice cannot be evidenced. Relevant to s14(3).",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S47",
+      "clause_number": "47",
+      "section_name": "Part V Division 2: General provisions relating to insurance contracts",
+      "heading": "Pre-existing sickness or disability",
+      "text": "If a claim arises from a sickness or disability the person has or had, the insurer cannot rely on a pre-existing condition exclusion where, at the time of entry, the insured was not aware, and a reasonable person in the circumstances could not be expected to have been aware, of the sickness or disability.",
+      "subclauses": [
+        "(1) Applies to losses caused wholly or partly by a sickness or disability.",
+        "(2) Pre-existing condition exclusions cannot be relied on where the insured was not, and could not reasonably have been, aware of the condition at entry."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["pre-existing conditions", "claims decisions", "life and disability", "travel insurance"],
+      "notes": "Claims agents for life, income protection, travel and sickness and accident products must test the insured's actual and reasonable awareness before declining under a pre-existing condition exclusion. ASIC's HCF Life litigation concerned how such terms interact with s47 and UCT; the Federal Court found the HCF term liable to mislead and the Full Federal Court in 2026 ([2026] FCAFC 81) dismissed ASIC's appeal on the unfair term finding.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S54",
+      "clause_number": "54",
+      "section_name": "Part V Division 3: Remedies",
+      "heading": "Insurer may not refuse to pay claims in certain circumstances",
+      "text": "Where a policy would let the insurer refuse a claim because of an act or omission of the insured or another person after the contract was made, the insurer cannot refuse merely because of that act; instead its liability is reduced to reflect the prejudice it suffered. The insurer may refuse if the act could reasonably be regarded as capable of causing or contributing to the loss, but not to the extent the insured proves the act did not cause the loss, and not where the act was needed to protect safety or property or was not reasonably avoidable.",
+      "subclauses": [
+        "(1) Post-contract acts: no refusal, only reduction for prejudice.",
+        "(2) Refusal permitted where the act was capable of causing or contributing to the loss.",
+        "(3) and (4) Insured may prove the act did not cause all or part of the loss.",
+        "(5) No refusal where the act was to protect safety or property, or could not reasonably be avoided.",
+        "(6) Act includes omission."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["claims decisions", "post-contract conduct", "prejudice", "late notification"],
+      "notes": "A frequent source of AFCA disputes. Claims agents must not decline for technical breaches (for example late notification, unlisted driver, unoccupied home) without assessing causation and prejudice. Outcome must be explained clearly in any IDR response.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S56",
+      "clause_number": "56",
+      "section_name": "Part VI: Claims",
+      "heading": "Fraudulent claims",
+      "text": "If a claim is made fraudulently, the insurer may refuse to pay it but may not avoid the contract. A court may order payment of a just and equitable amount where only a minimal part of the claim was fraudulent and refusing the rest would be harsh and unfair, having regard to the need to deter fraud.",
+      "subclauses": [
+        "(1) Fraudulent claim may be refused; contract cannot be avoided.",
+        "(2) Court discretion to order part payment where fraud is minimal and refusal would be harsh and unfair.",
+        "(3) Court considers deterrence of insurance fraud."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["fraud", "claims refusal", "proportionality"],
+      "notes": "Fraud flags raised by an AI model are not a basis to decline on their own; a fraud finding needs evidence and human review. The agent must not accuse the customer of fraud or threaten cancellation, consistent with utmost good faith and ASIC Act s12DJ.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S57",
+      "clause_number": "57",
+      "section_name": "Part VI: Claims",
+      "heading": "Interest on claims",
+      "text": "When an insurer is liable to pay an amount under the contract or the Act, it must also pay interest from the date it became unreasonable to withhold payment until payment is made or posted, at the rate set by regulation. This displaces other interest laws.",
+      "subclauses": [
+        "(1) Interest is payable on amounts the insurer is liable to pay.",
+        "(2) Period runs from when withholding became unreasonable to payment or posting.",
+        "(3) Rate prescribed by regulation.",
+        "(4) and (5) Applies to the exclusion of other statutory or general law."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["interest on claims", "claims delays", "payments"],
+      "notes": "Claims workflow automation should calculate and pay s57 interest when settlement is delayed beyond a reasonable time. Delays are a leading complaint driver (ASIC REP 768).",
+      "obligation_type": "claims",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ICA-S58",
+      "clause_number": "58",
+      "section_name": "Part VII: Expiration, renewal and cancellation",
+      "heading": "Insurer to notify of expiration of contracts of general insurance",
+      "text": "For renewable general insurance cover, the insurer must give the insured (or the insured's agent) written notice at least 14 days before the cover expires, stating the expiry date and time and whether the insurer is willing to negotiate renewal or extension. If it fails to do so and the insured has not replaced the cover, the cover continues by force of law for an equivalent period (subject to cancellation and premium rules).",
+      "subclauses": [
+        "(1) Renewable insurance cover means cover for a set period of a kind usually renewed.",
+        "(2) Written notice no later than 14 days before expiry stating expiry date and time and willingness to renew.",
+        "(3) to (4) Deemed continuation of cover if notice not given and no replacement cover obtained."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "14_days_before_expiry",
+      "key_topics": ["renewal notice", "expiry", "deemed cover"],
+      "notes": "Renewal automation must send the s58 notice at least 14 days before expiry. Many insurers also disclose last year's premium on renewal under the General Insurance Code. Remaining subsections (exceptions, premium on deemed cover) were not re-read in detail.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance"]
+    }
+  ]
+}

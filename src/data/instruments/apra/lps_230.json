@@ -1,0 +1,72 @@
+{
+  "code": "LPS 230",
+  "title": "Prudential Standard LPS 230 Reinsurance Management",
+  "short_name": "Reinsurance Management (life insurance)",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2018L00243",
+  "effective_date": "2018-04-01",
+  "amended_date": "2018-04-01",
+  "status": "In Force",
+  "sectors": [
+    "life_insurance"
+  ],
+  "entity_types": [
+    "Life Company",
+    "Friendly Society"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/lps-230",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Life insurance (prudential standards) determination No. 1 of 2018 (dated 6 March 2018), commencing 1 April 2018 (para 3). The handbook titles it Reinsurance Management; some earlier references title it LPS 230 Reinsurance. Note for the corpus owner: GPS 230 and LPS 230 are reinsurance management standards; they are not industry-specific versions of CPS 230 Operational Risk Management, which applies across industries directly.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "LPG 240 Life Insurance Risk and Life Reinsurance Management",
+    "CPS 220 Risk Management"
+  ],
+  "summary": "LPS 230 requires life companies (including friendly societies) to give APRA an annual reinsurance report within three months of financial year end setting out particulars of reinsurance contracts in force, and to obtain APRA's prior written approval before entering into, or modifying arrangements into, a Referable Reinsurance Arrangement (an arrangement with limited risk transfer or significant financing features), which APRA may treat as reinsurance or financing for capital and reporting purposes. Note for the corpus owner: GPS 230 and LPS 230 are reinsurance management standards; they are not industry-specific versions of CPS 230 Operational Risk Management, which applies across industries directly.",
+  "clauses": [
+    {
+      "id": "LPS230-6",
+      "clause_number": "6",
+      "section_name": "Reinsurance report",
+      "heading": "Annual reinsurance report",
+      "text": "A life company must give APRA a reinsurance report for each financial year within three months after year end, setting out particulars of each reinsurance contract or group of contracts in force during the year (para 7).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Within three months after the end of each financial year.",
+      "key_topics": [
+        "reinsurance report"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LPS230-8",
+      "clause_number": "8",
+      "section_name": "Referable Reinsurance Arrangements",
+      "heading": "Prior APRA approval for Referable Reinsurance Arrangements",
+      "text": "A life company may only enter into a proposed Referable Reinsurance Arrangement, or modify an arrangement so it becomes one, with APRA's prior written approval; APRA may approve it as reinsurance or as a financing arrangement (para 10).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "financial reinsurance",
+        "APRA approval"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "life_insurance"
+      ]
+    }
+  ]
+}

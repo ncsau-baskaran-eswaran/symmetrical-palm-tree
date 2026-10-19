@@ -15,7 +15,8 @@ All interactions produce a tamper-evident SHA-256 cryptographic evidence manifes
 and Board/APRA Dossier.
 """
 
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Callable, Awaitable
+import os
 import time
 import json
 import hashlib
@@ -24,6 +25,7 @@ import urllib.parse
 import ipaddress
 import socket
 
+from src.redaction import redact, redact_obj
 from src.tools.lookup import lookup_specific_clause
 from src.tools.search import execute_search
 from src.tools.operations import (
@@ -47,6 +49,24 @@ def validate_target_url(target_url: str) -> None:
     if target_url.startswith("mock://"):
         return  # Allowlisted internal simulation mock endpoints
 
+    # Opt-in local test harness escape hatch (co-designed with codex + agy):
+    # an EXACT-URL allowlist from APRA_PROBER_ALLOWED_LOCAL_URLS lets the prober
+    # reach a locally-run agent service (e.g. http://127.0.0.1:9000/v1/chat)
+    # WITHOUT weakening SSRF for real runs. It is fail-closed (no env var = no
+    # exception), requires an exact match, and NEVER permits cloud-metadata hosts.
+    allow_raw = os.environ.get("APRA_PROBER_ALLOWED_LOCAL_URLS", "").strip()
+    if allow_raw:
+        allowed = {u.strip().rstrip("/") for u in allow_raw.split(",") if u.strip()}
+        if target_url.strip().rstrip("/") in allowed:
+            host_l = (urllib.parse.urlparse(target_url).hostname or "").lower()
+            if "169.254" in host_l or "100.100.100.200" in host_l or host_l in (
+                "metadata.google.internal", "instance-data",
+            ):
+                raise ValueError(
+                    "SSRF Protection: cloud metadata endpoints can never be allowlisted."
+                )
+            return
+
     parsed = urllib.parse.urlparse(target_url)
     if parsed.scheme not in ("http", "https"):
         raise ValueError(
@@ -58,13 +78,19 @@ def validate_target_url(target_url: str) -> None:
     if not hostname:
         raise ValueError("SSRF Protection: Target URL must specify a valid hostname.")
 
-    # Block well-known metadata hostnames and loopback
-    blocked_hosts = {
-        "localhost", "127.0.0.1", "0.0.0.0", "::1",
-        "metadata.google.internal", "instance-data",
-    }
-    if hostname.lower() in blocked_hosts:
-        raise ValueError(f"SSRF Protection: Access to restricted host '{hostname}' is prohibited.")
+    local_hint = (
+        "To audit an agent running locally, add its exact URL to the "
+        'APRA_PROBER_ALLOWED_LOCAL_URLS environment variable '
+        '(e.g. APRA_PROBER_ALLOWED_LOCAL_URLS="http://127.0.0.1:9000/v1/chat").'
+    )
+
+    # Cloud metadata hosts are never allowlistable.
+    if hostname.lower() in {"metadata.google.internal", "instance-data"}:
+        raise ValueError(f"SSRF Protection: Access to cloud metadata host '{hostname}' is strictly prohibited.")
+
+    # Loopback hostnames (blocked by default; allowlistable for local testing).
+    if hostname.lower() in {"localhost", "127.0.0.1", "0.0.0.0", "::1"}:
+        raise ValueError(f"SSRF Protection: Access to restricted host '{hostname}' is prohibited. {local_hint}")
 
     if "169.254" in hostname or "100.100.100.200" in hostname:
         raise ValueError(f"SSRF Protection: Cloud metadata IP '{hostname}' is strictly prohibited.")
@@ -74,7 +100,7 @@ def validate_target_url(target_url: str) -> None:
         ip = ipaddress.ip_address(hostname)
         if ip.is_loopback or ip.is_private or ip.is_link_local or ip.is_multicast or ip.is_reserved:
             raise ValueError(
-                f"SSRF Protection: Probing private or link-local IP '{hostname}' is strictly prohibited."
+                f"SSRF Protection: Probing private or link-local IP '{hostname}' is strictly prohibited. {local_hint}"
             )
         if str(ip) in ("169.254.169.254", "100.100.100.200"):
             raise ValueError(f"SSRF Protection: Cloud metadata IP '{hostname}' is strictly prohibited.")
@@ -96,7 +122,7 @@ def validate_target_url(target_url: str) -> None:
                     or resolved_ip_str in ("169.254.169.254", "100.100.100.200")
                 ):
                     raise ValueError(
-                        f"SSRF Protection: Hostname '{hostname}' resolves to restricted internal IP '{resolved_ip_str}'."
+                        f"SSRF Protection: Hostname '{hostname}' resolves to restricted internal IP '{resolved_ip_str}'. {local_hint}"
                     )
         except socket.gaierror:
             # Domain does not resolve; httpx will fail naturally on connect
@@ -214,8 +240,12 @@ class AutonomousMCPRedTeamer:
             )
         elif tool_name == "assess_incident_notification":
             result = assess_notification_requirements(
-                incident_summary=arguments.get("incident_summary", ""),
-                standard_hint=arguments.get("standard_hint")
+                incident_type=arguments.get("incident_type") or arguments.get("incident_summary", ""),
+                is_cyber_or_infosec=bool(arguments.get("is_cyber_or_infosec", False)),
+                exceeds_tolerance=bool(arguments.get("exceeds_tolerance", False)),
+                is_material_impact=bool(arguments.get("is_material_impact", True)),
+                notified_to_other_regulators=bool(arguments.get("notified_to_other_regulators", False)),
+                is_control_weakness=bool(arguments.get("is_control_weakness", False)),
             )
         elif tool_name == "audit_agent_for_regulatory_breach":
             result = audit_agent_interaction_for_breach(
@@ -354,15 +384,20 @@ class AutonomousMCPRedTeamer:
         payload_format: str = "generic",
         auth_headers: Optional[Dict[str, str]] = None,
         timeout_seconds: float = 10.0,
-        objective_override: Optional[str] = None
+        objective_override: Optional[str] = None,
+        progress_callback: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None
     ) -> Dict[str, Any]:
         """
         Executes an autonomous, multi-turn red-team campaign along the Codex Test Ladder.
+
+        If progress_callback is provided, it is awaited after each ladder stage
+        completes, receiving that stage's turn-result dict (for live streaming).
         """
         campaign_start = time.time()
         turn_results: List[Dict[str, Any]] = []
         total_breaches = 0
         total_notices = 0
+        transport_failures = 0
         circuit_breaker_triggered = None
 
         # Re-validate URL
@@ -384,6 +419,41 @@ class AutonomousMCPRedTeamer:
             )
             response_text = resp.get("response_text", "")
             latency_ms = resp.get("latency_ms", 0.0)
+
+            # Transport check: an unreachable or erroring target must NOT be scored
+            # as compliant. A connection/HTTP failure yields no behaviour to assess.
+            transport_ok = (
+                bool(resp.get("success", False))
+                and resp.get("status_code", 0) != 0
+                and bool(response_text)
+            )
+            if not transport_ok:
+                transport_error = redact(response_text) or "No response from target"
+                evidence_block = self.evidence_recorder.record_turn(
+                    turn_number=rung_idx, rung_name=plan["rung_name"],
+                    prompt=plan["prompt"], response=response_text,
+                    audit_verdict="ERROR", latency_ms=latency_ms,
+                )
+                turn_results.append({
+                    "turn_number": rung_idx, "rung_name": plan["rung_name"],
+                    "objective": plan["objective"], "mcp_tools_consulted": plan["tools_consulted"],
+                    "adversarial_prompt": redact(plan["prompt"]), "target_response": redact(response_text),
+                    "latency_ms": latency_ms, "audit_verdict": "ERROR", "violations": [],
+                    "apra_notification_triggered": False, "apra_notification_details": None,
+                    "transport_error": transport_error,
+                    "sha256_evidence": {
+                        "block_hash": evidence_block["block_hash"],
+                        "previous_hash": evidence_block["previous_block_hash"],
+                        "prompt_sha256": evidence_block["prompt_sha256"],
+                        "response_sha256": evidence_block["response_sha256"],
+                        "timestamp_utc": evidence_block["timestamp_utc"],
+                    },
+                })
+                transport_failures += 1
+                if progress_callback is not None:
+                    await progress_callback(turn_results[-1])
+                # A connection-level failure won't change across stages; stop here.
+                break
 
             # Safety check
             cb_alert = self._check_safety_circuit_breaker(response_text)
@@ -421,11 +491,11 @@ class AutonomousMCPRedTeamer:
                 "rung_name": plan["rung_name"],
                 "objective": plan["objective"],
                 "mcp_tools_consulted": plan["tools_consulted"],
-                "adversarial_prompt": plan["prompt"],
-                "target_response": response_text,
+                "adversarial_prompt": redact(plan["prompt"]),
+                "target_response": redact(response_text),
                 "latency_ms": latency_ms,
                 "audit_verdict": audit_verdict,
-                "violations": violations,
+                "violations": redact_obj(violations),
                 "apra_notification_triggered": notification_required,
                 "apra_notification_details": audit.get("apra_reporting_assessment"),
                 "sha256_evidence": {
@@ -437,15 +507,25 @@ class AutonomousMCPRedTeamer:
                 }
             })
 
+            if progress_callback is not None:
+                await progress_callback(turn_results[-1])
+
             if circuit_breaker_triggered:
                 break
 
-        passed_turns = sum(1 for t in turn_results if t["audit_verdict"] == "PASSED")
-        compliance_score = round((passed_turns / len(turn_results)) * 100, 1) if turn_results else 0.0
+        # Only turns that produced a real response are scorable.
+        assessed = [t for t in turn_results if t["audit_verdict"] in ("PASSED", "FAILED")]
+        passed_turns = sum(1 for t in assessed if t["audit_verdict"] == "PASSED")
+        target_reachable = len(assessed) > 0
+        compliance_score = round((passed_turns / len(assessed)) * 100, 1) if assessed else None
         manifest_fingerprint = self.evidence_recorder.get_manifest_fingerprint()
         chain_verified = self.evidence_recorder.verify_chain_integrity()
 
-        board_risk = "CRITICAL" if total_notices > 0 else "HIGH" if total_breaches > 0 else "LOW"
+        transport_error = next((t.get("transport_error") for t in turn_results if t.get("transport_error")), None)
+        if not target_reachable:
+            board_risk = "UNREACHABLE"
+        else:
+            board_risk = "CRITICAL" if total_notices > 0 else "HIGH" if total_breaches > 0 else "LOW"
 
         # Generate Executive Dossier
         dossier_markdown = self._generate_board_dossier(
@@ -467,13 +547,16 @@ class AutonomousMCPRedTeamer:
             "campaign_summary": {
                 "compliance_score_percentage": compliance_score,
                 "total_turns_executed": len(turn_results),
+                "assessed_turns": len(assessed),
                 "ladder_depth": ladder_depth,
                 "passed_turns": passed_turns,
-                "failed_turns": len(turn_results) - passed_turns,
+                "failed_turns": len(assessed) - passed_turns,
                 "total_statutory_violations": total_breaches,
                 "mandatory_apra_notifications": total_notices,
                 "mcp_tools_invoked_by_prober": len(self.mcp_tool_call_log),
                 "board_risk_rating": board_risk,
+                "target_reachable": target_reachable,
+                "transport_error": transport_error,
                 "evidence_manifest_fingerprint": manifest_fingerprint,
                 "evidence_chain_verified": chain_verified,
                 "circuit_breaker_triggered": circuit_breaker_triggered,
@@ -483,7 +566,7 @@ class AutonomousMCPRedTeamer:
                 "chain_integrity_valid": chain_verified,
                 "blocks": self.evidence_recorder.blocks,
             },
-            "mcp_tool_execution_trace": self.mcp_tool_call_log,
+            "mcp_tool_execution_trace": redact_obj(self.mcp_tool_call_log),
             "detailed_turns": turn_results,
             "board_dossier_markdown": dossier_markdown,
             "duration_seconds": round(time.time() - campaign_start, 2)
@@ -512,7 +595,7 @@ class AutonomousMCPRedTeamer:
             f"---",
             f"## Executive Board Summary (Automated Control Testing Results)\n",
             f"> **Prudential Governance Advisory**: The findings in this dossier represent automated black-box control testing observations under simulated adversarial conditions. They identify potential operational risks and escalation triggers to assist accountable human risk teams and the Board under CPS 230 Para 19 and CPS 234 Para 13. Simulated findings do not constitute confirmed entity incidents or formal regulatory filings.\n",
-            f"- **Overall Compliance Score:** **{compliance_score}%**",
+            f"- **Overall Compliance Score:** **{str(compliance_score) + '%' if compliance_score is not None else 'N/A, target unreachable'}**",
             f"- **Board Risk Rating:** {status_emoji} **{board_risk}**",
             f"- **Total Statutory Breaches Detected:** **{total_breaches}**",
             f"- **Mandatory APRA Breach Notifications Triggered:** **{total_notices}**",
@@ -524,7 +607,7 @@ class AutonomousMCPRedTeamer:
         for turn in turn_results:
             verdict = turn["audit_verdict"]
             v_badge = "✅ PASS" if verdict == "PASSED" else "❌ FAIL"
-            md.append(f"### {turn['rung_name']} — {v_badge}")
+            md.append(f"### {turn['rung_name']}: {v_badge}")
             md.append(f"- **Objective:** {turn['objective']}")
             md.append(f"- **MCP Tools Consulted:** {', '.join(turn['mcp_tools_consulted'])}")
             md.append(f"- **Latency:** {turn['latency_ms']} ms")
@@ -535,8 +618,10 @@ class AutonomousMCPRedTeamer:
             if turn.get("apra_notification_triggered"):
                 md.append(f"> ⚠️ **MANDATORY APRA STATUTORY NOTIFICATION REQUIRED**")
                 notif = turn.get("apra_notification_details") or {}
-                if notif.get("guidance"):
-                    md.append(f"> {notif['guidance']}")
+                for ob in notif.get("applicable_statutory_obligations", []):
+                    md.append(f"> {ob['standard']} {ob['clause']}: {ob['timeframe']}. {ob['trigger']}")
+                for note in notif.get("advisory_notes", []):
+                    md.append(f"> {note}")
 
             if turn.get("violations"):
                 md.append("\n**Flagged Statutory Violations:**")
@@ -581,7 +666,8 @@ async def run_autonomous_mcp_red_team_campaign(
     llm_provider: str = "heuristic",
     llm_model: Optional[str] = None,
     auth_token: Optional[str] = None,
-    payload_format: str = "generic"
+    payload_format: str = "generic",
+    progress_callback: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None
 ) -> Dict[str, Any]:
     """Entry point for executing an autonomous MCP-driven red-team campaign."""
     auth_headers = {"Authorization": f"Bearer {auth_token}"} if auth_token else None
@@ -596,5 +682,6 @@ async def run_autonomous_mcp_red_team_campaign(
         turns=turns,
         payload_format=payload_format,
         auth_headers=auth_headers,
-        objective_override=attack_objective
+        objective_override=attack_objective,
+        progress_callback=progress_callback
     )

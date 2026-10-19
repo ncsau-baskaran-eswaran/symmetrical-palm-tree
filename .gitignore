@@ -20,3 +20,7 @@ htmlcov/
 
 # OS metadata
 .DS_Store
+
+# Agent worktrees and design-tool working files
+.claude/worktrees/
+.impeccable/

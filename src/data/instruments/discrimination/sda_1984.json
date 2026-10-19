@@ -1,0 +1,65 @@
+{
+  "code": "SDA 1984",
+  "title": "Sex Discrimination Act 1984 (Cth)",
+  "short_name": "Sex Discrimination Act",
+  "regulator": "Australian Human Rights Commission",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A02868",
+  "effective_date": "1984-08-01",
+  "amended_date": "2025-11-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company"
+  ],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2004A02868/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Section 41 read from compilation C2025C00597 (compilation date 1 November 2025), the latest on the Federal Register of Legislation on 2026-10-19. The s41 exemption applies only to discrimination on the ground of sex; whether similar exemptions exist for other attributes protected by the SDA (for example sexual orientation, gender identity, intersex status, marital or relationship status, pregnancy) was not checked and should be confirmed by an SME (s41A to s41B cover superannuation). The principal Act's commencement date (1 August 1984) is from general knowledge.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Australian Human Rights Commission guidance on insurance and superannuation",
+    "General Insurance Code of Practice",
+    "Life Insurance Code of Practice"
+  ],
+  "summary": "The SDA makes it unlawful to discriminate on the ground of sex and other protected attributes in the provision of goods and services, which includes insurance. Section 41 provides a narrow exemption permitting an insurer to discriminate on the ground of the client's sex in the terms on which an insurance policy (including annuities, life, accident and illness policies) is offered, only where the discrimination is based on actuarial or statistical data from a source on which it is reasonable to rely, is reasonable having regard to that data, and the insurer provides the data to the client on written request.",
+  "clauses": [
+    {
+      "id": "SDA-S41",
+      "clause_number": "41",
+      "anchor": "insurance_exemption",
+      "section_name": "Part II, Division 4: Exemptions",
+      "heading": "Insurance",
+      "text": "Discrimination by an insurer against a client on the ground of the client's sex is not unlawful if it relates to the terms on which an insurance policy is offered or may be obtained, is based on actuarial or statistical data from a source on which it is reasonable for the insurer to rely, is reasonable having regard to the data, and, if the client asks in writing, the insurer gives the client the data or makes it available for inspection and copying.",
+      "subclauses": [
+        "(1)(a) and (b) Covers only discrimination on the ground of sex, and only in the terms on which a policy is offered or may be obtained (not outright refusal).",
+        "(1)(c) and (d) Must be based on reasonably reliable actuarial or statistical data and be reasonable having regard to it.",
+        "(1)(e) On written request, give the client a document containing the data or make it available for inspection and copying.",
+        "(1A) The data disclosure requirement does not apply if the Commission has granted an exemption under s44.",
+        "(2) Insurance policy includes an annuity, life assurance policy, accident insurance policy and illness insurance policy."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Provide the actuarial or statistical data when a client makes a written request.",
+      "key_topics": [
+        "sex discrimination",
+        "actuarial data",
+        "pricing",
+        "data disclosure"
+      ],
+      "notes": "Pricing or AI models that use sex as a rating factor must be supported by reliable data, and an AI agent must be able to route a customer's written request for the supporting data. The exemption does not cover refusing cover on the ground of sex, or discrimination on other SDA attributes. Complaints go to the Australian Human Rights Commission.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    }
+  ]
+}

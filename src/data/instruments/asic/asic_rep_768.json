@@ -1,0 +1,139 @@
+{
+  "code": "REP 768",
+  "title": "ASIC Report 768 Navigating the storm: ASIC's review of home insurance claims",
+  "short_name": "Home insurance claims review",
+  "regulator": "ASIC",
+  "instrument_type": "report",
+  "legislative_instrument": "ASIC REP 768 (released 16 August 2023)",
+  "effective_date": "2023-08-16",
+  "amended_date": "2023-08-16",
+  "status": "In Force",
+  "sectors": ["general_insurance"],
+  "entity_types": ["General Insurer"],
+  "enforceability": "guidance",
+  "source_url": "https://asic.gov.au/regulatory-resources/find-a-document/reports/rep-768-navigating-the-storm-asic-s-review-of-home-insurance-claims/",
+  "licence": "ASIC report (copyright ASIC). Paraphrased only; consult the published report.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the published PDF (rep768-published-16-august-2023.pdf) downloaded from asic.gov.au on 2026-10-19. The report has no numbered paragraphs, so clause_number values are short topic labels taken from the report's structure; page references are to the PDF. Statistics (six insurers, about 63% of the general insurance market by gross written premium; 218,256 home claims lodged 1 January to 31 March 2022; 150 claim files; 40 consumer interviews and 25 case studies) confirmed from pages 3 to 5. REP 768 is a review report, not binding guidance; the obligations it references are in Corporations Act s912A, ICA s13, INFO 253, RG 271 and the General Insurance Code of Practice. Later ASIC claims-handling work (for example any follow-up reports after 2023) was not reviewed.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "ASIC Information Sheet 253 Claims handling and settling: How to comply with your AFS licence obligations",
+    "ASIC Regulatory Guide 271 Internal dispute resolution",
+    "General Insurance Code of Practice",
+    "ASIC Corporations (Internal Dispute Resolution Data Reporting) Instrument 2022/205"
+  ],
+  "summary": "REP 768 sets out ASIC's findings from its 2022 to 2023 review of home insurance claims handling by six large general insurers, covering the first period after claims handling and settling became a regulated financial service on 1 January 2022 and the February to March 2022 floods (CAT221). ASIC observed good and poor practice across all six insurers and identified five areas for improvement: communication about decisions and delays, project management and oversight of third parties, recognition and handling of expressions of dissatisfaction as complaints, identification and treatment of vulnerable consumers, and resourcing of claims handling and dispute resolution.",
+  "clauses": [
+    {
+      "id": "REP768-SCOPE",
+      "clause_number": "Scope",
+      "section_name": "Executive summary (pp. 3 to 5)",
+      "heading": "Scope and method of the review",
+      "text": "ASIC reviewed quantitative data on 218,256 home building and contents claims lodged with six insurers between 1 January and 31 March 2022, reviewed 150 claim files, and commissioned qualitative research with 40 consumer interviews and 25 case studies. In the data snapshot, 76% of claims were accepted or partly accepted and 8% declined; 11% of claims had at least one complaint and 11% at least one potential or actual Code breach; only 2% of consumers were identified as vulnerable.",
+      "subclauses": [
+        "Participants: AAI (Suncorp), Allianz, Auto & General, IAG, QBE and Youi.",
+        "November 2022 ASIC letter to general insurers: be prepared, proactive, transparent, consumer-centric and responsive, and review claims resourcing."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["claims handling review", "home insurance", "CAT221", "data snapshot"],
+      "notes": "Context for benchmarking an AI claims agent: ASIC expects claims handling under the s912A efficiently, honestly and fairly standard and ICA s13 utmost good faith.",
+      "obligation_type": "claims",
+      "agent_relevance": "none",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "REP768-COMMS",
+      "clause_number": "Communication",
+      "section_name": "Key observations (pp. 6 to 8, 12 to 13, 16)",
+      "heading": "Communication about decisions, delays and complications",
+      "text": "Poor communication was a constant source of dissatisfaction, especially failing to update consumers in a timely way. Clear, proactive communication and a map of the claims process produced high satisfaction even when claims were delayed or declined. Insurers should give key information at first inquiry, close information gaps early, explicitly state when a claim or part of a claim is declined and why, share assessment reports, and better explain wear and tear and maintenance exclusions.",
+      "subclauses": [
+        "Act in a timely way, in the least onerous and intrusive way, fairly and transparently, and supportively (INFO 253 Table 4).",
+        "Explicitly state partial denials and reasons.",
+        "Explain maintenance and wear and tear exclusions at sale and claim."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["claims communication", "transparency", "declined claims", "exclusions"],
+      "notes": "Directly applicable to AI claims agents: provide proactive status updates, never leave partial declines implicit, and explain exclusions in plain language. Failures here also feed complaints and potential ICA s13 and ASIC Act s12DA risk.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "REP768-VULN",
+      "clause_number": "Vulnerability",
+      "section_name": "Key observations (pp. 14 to 15)",
+      "heading": "Identification and treatment of vulnerable consumers",
+      "text": "Some consumers flagged as vulnerable were not treated accordingly, and others showing clear indicators (including distress and mentions of self-harm) were not identified or triaged. Insurers must identify vulnerability without relying on self-identification, train representatives to recognise it, and tailor claims handling; they may need default vulnerability flags, for example for elderly consumers or those in remote or disaster-affected areas.",
+      "subclauses": [
+        "Do not rely on consumers to self-identify vulnerability.",
+        "Consider default flags for elderly, remote or disaster-affected consumers.",
+        "Recognise that vulnerability is broader than financial hardship (General Insurance Code Part 9)."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["vulnerability", "self-harm indicators", "triage", "financial hardship"],
+      "notes": "An AI agent must detect vulnerability cues (distress, self-harm language, disability, financial hardship) and escalate to a trained human immediately, recording the indicators on the claim file. Treat any self-harm mention as an urgent safety escalation.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "REP768-COMPLAINTS",
+      "clause_number": "Complaints",
+      "section_name": "Key observations (pp. 32 to 33)",
+      "heading": "Recognising and resolving expressions of dissatisfaction",
+      "text": "Insurers did not always recognise expressions of dissatisfaction as complaints, and some complaint handling was dismissive or left consumers at a dead end. AFCA reported a sharp rise in general insurance complaints, with a lower early-resolution rate for CAT221 matters, suggesting more should be resolved at IDR. Insurers must train staff to recognise expressions of dissatisfaction (RG 271.27 to RG 271.28), handle complaints objectively and within RG 271 timeframes, and resource dispute resolution adequately. General insurers report IDR data to ASIC every six months from 31 August 2023.",
+      "subclauses": [
+        "Recognise complaints without the consumer using the word 'complaint'.",
+        "Meet RG 271.56 maximum timeframes and resource IDR teams (RG 271.142).",
+        "IDR data reporting under ASIC Instrument 2022/205 (as amended by Instrument 2023/282)."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["complaint recognition", "IDR", "AFCA", "IDR data reporting"],
+      "notes": "Confirms the main AI agent risk ASIC already sees in human channels: failing to treat dissatisfaction as a complaint. Pairs with RG 271 anchors complaint_definition and idr_response_timeframe.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "REP768-RESOURCING",
+      "clause_number": "Resourcing",
+      "section_name": "Key observations (pp. 4, 7 to 8)",
+      "heading": "Resourcing of claims handling and dispute resolution",
+      "text": "Responses to ASIC showed increased claims resourcing with heavy reliance on temporary staff, and under-resourcing of dispute resolution. ASIC asked insurers to analyse claims resourcing and immediately address dispute resolution under-resourcing, to prepare for more frequent severe weather events by uplifting resources in advance, and to track claims and disputes handled per full-time equivalent staff and the ratio of temporary to permanent staff.",
+      "subclauses": [
+        "Track claims and disputes per FTE (IDR and EDR).",
+        "Track proportion of temporary to permanent FTE.",
+        "Plan for overlapping catastrophe events."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["resourcing", "catastrophe readiness", "dispute resolution capacity"],
+      "notes": "AI agents are often deployed to absorb surge volumes. ASIC's expectation is that service quality, complaint recognition and vulnerable customer treatment do not degrade under surge, and that human escalation capacity is planned (s912A(1)(d) adequate resources, including technological resources).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance"]
+    },
+    {
+      "id": "REP768-THIRDPARTIES",
+      "clause_number": "Third parties",
+      "section_name": "Key observations (pp. 6, 15)",
+      "heading": "Project management and oversight of third parties",
+      "text": "Insurers often failed to proactively manage builders, assessors and other third parties or to tell consumers who would attend their property, when and why. Insurers must maintain sufficient oversight of insurer-appointed third parties and ensure consumers know what to expect, including assessment reports.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["third party oversight", "assessors", "builders", "claims project management"],
+      "notes": "An AI agent coordinating third parties should give consumers clear information on who is attending and why, and keep records that support insurer oversight.",
+      "obligation_type": "claims",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance"]
+    }
+  ]
+}

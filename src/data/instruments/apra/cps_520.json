@@ -1,0 +1,125 @@
+{
+  "code": "CPS 520",
+  "title": "Prudential Standard CPS 520 Fit and Proper",
+  "short_name": "Fit and Proper",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2018L01390",
+  "effective_date": "2019-07-01",
+  "amended_date": "2019-07-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-520",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Banking, Insurance, Life Insurance and Health Insurance (prudential standard) determination No. 2 of 2018 (dated 14 September 2018), commencing 1 July 2019. APRA's June 2026 governance consultation proposes folding fit and proper policy requirements into a consolidated CPS 510 and removing routine fit and proper notifications in favour of FAR reporting; not law on 2026-10-19.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPG 520 Fit and Proper",
+    "CPS 510 Governance",
+    "FAR Act 2023"
+  ],
+  "summary": "CPS 520 requires APRA-regulated institutions to maintain a Board-approved Fit and Proper Policy, assess the fitness and propriety of responsible persons (directors, senior managers, auditors, Appointed Actuaries and others) before appointment and annually, act where a person is not fit and proper, protect whistleblowing to APRA, and notify APRA of responsible person information and of adverse assessments.",
+  "clauses": [
+    {
+      "id": "CPS520-12",
+      "clause_number": "12",
+      "section_name": "Fit and Proper Policy",
+      "heading": "Fit and Proper Policy",
+      "text": "The institution must prudently manage the risks posed by responsible persons who are not fit and proper by maintaining a documented Fit and Proper Policy, approved by the Board (para 13) and forming part of the risk management framework (para 15).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "fit and proper",
+        "policy"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS520-20",
+      "clause_number": "20",
+      "section_name": "Responsible persons",
+      "heading": "Who is a responsible person",
+      "text": "Responsible persons are defined per institution type in the attachments (Attachment C for general insurers, E for life companies, G for private health insurers) and include directors, senior managers, auditors and Appointed Actuaries; APRA may determine others.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "responsible persons",
+        "senior managers"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS520-41",
+      "clause_number": "41",
+      "section_name": "Fit and proper assessment",
+      "heading": "Assessment before appointment and annually",
+      "text": "A fit and proper assessment must be completed before a person takes up a responsible person position (interim appointments of up to 90 days are permitted, para 42), and reassessed annually or as close to annually as practicable (para 43).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "assessment",
+        "annual review"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS520-57",
+      "clause_number": "57",
+      "section_name": "Notification to APRA",
+      "heading": "Notify APRA of adverse assessments within 10 business days",
+      "text": "The institution must notify APRA within 10 business days if it assesses that a responsible person is not fit and proper; if the person remains in the position, the notice must state why and what action is being taken. Para 55 requires responsible person information to be notified to APRA and kept correct.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Within 10 business days of assessing a responsible person as not fit and proper.",
+      "key_topics": [
+        "APRA notification",
+        "10 business days"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

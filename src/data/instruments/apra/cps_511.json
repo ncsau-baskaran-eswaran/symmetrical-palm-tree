@@ -1,0 +1,152 @@
+{
+  "code": "CPS 511",
+  "title": "Prudential Standard CPS 511 Remuneration",
+  "short_name": "Remuneration",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2023L01348",
+  "effective_date": "2023-07-01",
+  "amended_date": "2024-01-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-511",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Banking, Insurance, Life Insurance, Health Insurance and Superannuation (prudential standard) determination No. 3 of 2023 (dated 28 September 2023), instrument commencing 1 January 2024. Para 10: applies to insurer SFIs from 1 July 2023 and to other APRA-regulated entities from 1 January 2024; disclosure requirements apply from the first full financial year starting on or after 1 January 2024 (para 11). Deferral (para 41) and clawback (para 36) sit in the SFI requirements; non-SFI requirements start at para 74. Effective date recorded as the insurer SFI application date.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPG 511 Remuneration",
+    "FAR Act 2023 Part 5 (deferred remuneration)",
+    "CPS 510 Governance"
+  ],
+  "summary": "CPS 511 requires a Board-approved remuneration framework that aligns with the business plan and risk management framework, promotes management of financial and non-financial risks and supports prevention of conduct risk. Variable remuneration must reflect non-financial risk outcomes and be subject to adjustment tools including malus and (for senior managers and highly paid material risk-takers) clawback; significant financial institutions must defer large portions of variable remuneration for four to six years and make public remuneration disclosures.",
+  "clauses": [
+    {
+      "id": "CPS511-10",
+      "clause_number": "10",
+      "section_name": "Application and commencement",
+      "heading": "Commencement for insurers",
+      "text": "CPS 511 applied to general insurers, life companies and private health insurers that are significant financial institutions (SFIs) from 1 July 2023, and to all other APRA-regulated entities from 1 January 2024.",
+      "subclauses": [
+        "(a) ADI SFIs: 1 January 2023.",
+        "(b) Insurer and RSE licensee SFIs: 1 July 2023.",
+        "(c) Other entities: 1 January 2024."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "commencement",
+        "SFI"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS511-21",
+      "clause_number": "21",
+      "section_name": "Remuneration framework",
+      "heading": "Remuneration framework objectives",
+      "text": "The entity must maintain a remuneration framework that aligns with its business plan, strategy and risk management framework, promotes effective management of financial and non-financial risks, sustainable performance and long-term soundness, and supports the prevention and mitigation of conduct risk. The Board is ultimately responsible (para 23) and approves the remuneration policy (para 24).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "remuneration",
+        "conduct risk",
+        "non-financial risk"
+      ],
+      "notes": "Incentives tied to AI-driven sales or claims cost reduction must not reward poor customer outcomes.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS511-33",
+      "clause_number": "33",
+      "section_name": "Variable remuneration design",
+      "heading": "Variable remuneration and adjustment tools",
+      "text": "Variable remuneration must reflect financial and non-financial risks, use payout and vesting schedules sensitive to risk time horizons, and include adjustment tools (board discretion, in-period adjustment, malus and, where appropriate, clawback) with clear triggers. Malus applies to all variable remuneration (para 35) and clawback of at least two years applies to senior managers, executive directors and highly paid material risk-takers (para 36).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "malus",
+        "clawback",
+        "risk adjustment"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS511-41",
+      "clause_number": "41",
+      "section_name": "Deferral (SFIs)",
+      "heading": "Minimum deferral of variable remuneration",
+      "text": "An SFI must defer at least 60% of CEO variable remuneration over at least six years, and at least 40% for other senior managers and executive directors over at least five years (vesting no earlier than four years) and for highly paid material risk-takers over at least four years (vesting no earlier than two years), each vesting no faster than pro rata.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "deferral",
+        "SFI"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS511-63",
+      "clause_number": "63",
+      "section_name": "Disclosure",
+      "heading": "Public remuneration disclosure",
+      "text": "The entity must make clear, comprehensive, meaningful, consistent and comparable public disclosure of its remuneration framework and practices in accordance with the standard.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "disclosure"
+      ],
+      "notes": "",
+      "obligation_type": "disclosure",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

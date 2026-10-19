@@ -1,0 +1,67 @@
+{
+  "code": "National AI Plan 2025",
+  "title": "National AI Plan (Australian Government, December 2025)",
+  "short_name": "National AI Plan",
+  "regulator": "Department of Industry, Science and Resources",
+  "instrument_type": "guidance",
+  "legislative_instrument": "",
+  "effective_date": "2025-12-02",
+  "amended_date": "2025-12-02",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://www.industry.gov.au/sites/default/files/2025-12/national-ai-plan.pdf",
+  "licence": "Commonwealth of Australia, CC BY 4.0. Paraphrased.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Read the 'Keep Australians Safe' section (pages 27 to 32) of the National AI Plan 2025 PDF from industry.gov.au. Release date of 2 December 2025 is from news coverage (InDaily, The New Daily, CommBank newsroom), not from the PDF itself. AI Safety Institute funding (about 29.9 million dollars per ministerial statements, 29.8 million dollars over 4 years per the Government response to the Senate committee) was not checked in the Plan text. This is a policy document with no legal force; it records the Government's decision to rely on existing technology-neutral laws and regulators rather than introduce mandatory AI guardrails legislation.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Guidance for AI Adoption (October 2025)",
+    "APRA Letter to Industry on Artificial Intelligence (30 April 2026)",
+    "ASIC REP 798",
+    "Privacy Act 1988 APP 1.7 (automated decisions, from 10 December 2026)"
+  ],
+  "summary": "The National AI Plan sets the Government's approach to AI: build on existing, largely technology-neutral legal and regulatory frameworks, with agencies and regulators keeping responsibility for AI harms in their domains, rather than enacting a standalone AI law or mandatory guardrails. It establishes an AI Safety Institute to monitor, test and share information on emerging AI capabilities and risks and to advise regulators. It names APRA and ASIC as providing guidance for AI use in banking, insurance and financial services, including operational risk and governance standards, and adopts the 6 essential practices in the Guidance for AI Adoption as the basis for NAIC tools.",
+  "clauses": [
+    {
+      "id": "NAIP-SAFE",
+      "clause_number": "Keep Australians Safe",
+      "section_name": "Keep Australians Safe (Action 7: Mitigate harms)",
+      "heading": "Regulatory approach to AI",
+      "text": "AI risks are to be managed through existing laws and regulators, which retain responsibility for identifying and addressing AI harms in their domains, with targeted law changes where needed. Every organisation developing or using AI is responsible for identifying and responding to AI harms. An AI Safety Institute will monitor and test emerging AI and support regulators. APRA and ASIC provide AI guidance for banking, insurance and financial services.",
+      "subclauses": [
+        "No standalone AI Act or mandatory guardrails; reliance on existing technology-neutral frameworks.",
+        "AI Safety Institute: monitor, test and share information; independent advice to regulators.",
+        "Regulators such as APRA and ASIC provide guidance for AI use in insurance, including operational risk and governance standards.",
+        "The 6 essential practices in the Guidance for AI Adoption underpin new NAIC tools."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI policy",
+        "existing laws",
+        "AI Safety Institute",
+        "mandatory guardrails"
+      ],
+      "notes": "For insurers, compliance for AI agents is assessed under existing law (ICA, Corporations Act, ASIC Act, Privacy Act, anti-discrimination Acts, prudential standards and industry codes), not a dedicated AI statute.",
+      "obligation_type": "governance",
+      "agent_relevance": "none",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "code": "FAR Act 2023",
+  "title": "Financial Accountability Regime Act 2023 (Cth)",
+  "short_name": "Financial Accountability Regime",
+  "regulator": "APRA and ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2023A00067",
+  "effective_date": "2023-09-15",
+  "amended_date": "2025-02-21",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Authorised NOHC of a General Insurer",
+    "Life Company",
+    "Registered NOHC of a Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2023A00067/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Read from Compilation No. 2 (C2025C00148, compilation date 21 February 2025, includes Act No. 14 of 2025), the latest compilation on 2026-10-19. Confirmed: the Act commenced 15 September 2023 (s2); under s9(3) and (4) general insurers, authorised NOHCs of general insurers, life companies, registered NOHCs of life companies and private health insurers (and RSE licensees) became accountable entities 18 months after commencement, which is 15 March 2025. Notification period in s31(6) is 30 days unless the Regulator rules prescribe another period; APRA guidance confirms forms are lodged in APRA Connect within 30 days. The enhanced notification threshold is set by the FAR Minister Rules; APRA and ASIC information states it as total assets above 10 billion dollars for general insurers and life companies and 3 billion dollars for private health insurers, which was not checked against the Minister Rules text. APRA and ASIC announced FAR changes to reduce administrative burden in 2026 (media release 26-121MR), including raising the materiality threshold for change notifications and Government proposals for accountability statements and maps to be provided only on request; status of those changes on 2026-10-19 was not confirmed and an SME should check the current Regulator and Minister Rules.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [
+    "Banking Executive Accountability Regime (BEAR), Banking Act 1959 Part IIAA (repealed for ADIs on FAR commencement)"
+  ],
+  "companion_guidance": [
+    "Financial Accountability Regime Minister Rules 2024",
+    "Financial Accountability Regime (Regulator) Rules 2024",
+    "APRA and ASIC Financial Accountability Regime: Information for accountable entities (July 2024, RG 279)",
+    "CPS 511 Remuneration",
+    "CPS 520 Fit and Proper",
+    "ASIC REP 798 (FAR accountable persons and AI use, question 4)"
+  ],
+  "summary": "FAR imposes accountability obligations on banks, insurers and RSE licensees and on their accountable persons (senior executives with actual or effective senior executive responsibility for management or control of the entity or a significant part of its operations, plus prescribed roles). Insurers became accountable entities on 15 March 2025. Entities must conduct business with honesty, integrity, due skill, care and diligence, deal with APRA and ASIC openly, prevent matters adversely affecting prudential standing, ensure accountable persons meet their obligations, and cover all parts of the group with accountable persons. They must defer variable remuneration of accountable persons and notify the Regulator of specified events within 30 days. Larger entities must also lodge accountability statements and maps. Civil penalties for bodies corporate reach the greatest of 50,000 penalty units, three times the benefit, or 10% of turnover capped at 2.5 million penalty units. FAR is jointly administered by APRA and ASIC.",
+  "clauses": [
+    {
+      "id": "FAR-S9",
+      "clause_number": "9",
+      "anchor": "commencement_insurers",
+      "section_name": "Chapter 1, Part 2: Interpretation",
+      "heading": "Meaning of accountable entity",
+      "text": "A general insurer, an authorised NOHC of a general insurer, a life company, a registered NOHC of a life company, a private health insurer and an RSE licensee that is a constitutionally covered body is an accountable entity from the later of 18 months after the Act commenced and the day it became such a body. As the Act commenced on 15 September 2023, insurers became accountable entities on 15 March 2025. ADIs and their NOHCs became accountable entities 6 months after commencement (15 March 2024).",
+      "subclauses": [
+        "(1) and (2) ADIs and authorised NOHCs of ADIs: accountable from 6 months after commencement (15 March 2024).",
+        "(3)(a)(i) to (v) General insurers, authorised NOHCs of general insurers, life companies, registered NOHCs of life companies and private health insurers (and (vi) RSE licensees).",
+        "(4) Accountable from the later of 18 months after commencement (15 March 2025) and the day the body becomes covered."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "FAR commencement",
+        "accountable entity",
+        "insurers",
+        "15 March 2025"
+      ],
+      "notes": "Every general, life and private health insurer is now an accountable entity. Accountable persons should include whoever is responsible for AI use and outcomes in key functions (see ASIC REP 798).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "FAR-S10",
+      "clause_number": "10",
+      "anchor": "accountable_persons",
+      "section_name": "Chapter 1, Part 2: Interpretation",
+      "heading": "Meaning of accountable person",
+      "text": "An individual is an accountable person if, because of a position held in the accountable entity or a parent body corporate, they have actual or effective senior executive responsibility for management or control of the accountable entity, or of a significant or substantial part or aspect of the operations of the entity or its relevant group. Individuals holding responsibilities or positions prescribed by the Minister rules are also accountable persons, as are equivalent persons in significant related entities and in Australian branches of foreign accountable entities.",
+      "subclauses": [
+        "(1) Senior executive responsibility test for management or control of the entity or a significant or substantial part of its operations.",
+        "(2) to (4) Responsibilities and positions prescribed by the Minister rules (for example, the CEO, CRO, CFO and heads of key functions).",
+        "(5) Branches of foreign accountable entities.",
+        "(6) Persons in significant related entities with senior executive responsibility for the accountable entity.",
+        "s11 Exclusions; s24 prohibited persons; s40 and s41 register of accountable persons."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountable person",
+        "senior executive responsibility",
+        "key functions"
+      ],
+      "notes": "For AI governance, the entity should be able to name the accountable person responsible for each AI-enabled business function (claims handling, underwriting, customer servicing).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "FAR-S21",
+      "clause_number": "21",
+      "anchor": "accountability_obligations",
+      "section_name": "Chapter 2, Part 3: Accountability obligations",
+      "heading": "The accountability obligations of an accountable person (and of the entity under section 20)",
+      "text": "An accountable person must conduct the responsibilities of their position by acting with honesty and integrity and with due skill, care and diligence, by dealing with APRA and ASIC in an open, constructive and cooperative way, and by taking reasonable steps to prevent matters that would adversely affect the entity's prudential standing or prudential reputation, or would result in a material contravention of specified financial sector laws. The accountable entity has parallel obligations under section 20, including taking reasonable steps to ensure its accountable persons meet their obligations.",
+      "subclauses": [
+        "s21(1)(a) Act with honesty, integrity, due skill, care and diligence.",
+        "s21(1)(b) Deal with the Regulator openly, constructively and cooperatively.",
+        "s21(1)(c) Take reasonable steps to prevent matters adversely affecting prudential standing or reputation.",
+        "s21(1)(d) Take reasonable steps to prevent material contraventions by the entity of specified laws.",
+        "s20(a) to (e) Entity obligations: honesty and integrity, open dealing with the Regulator, protecting prudential standing, ensuring accountable persons comply, and ensuring significant related entities comply.",
+        "s22 Taking reasonable steps includes having appropriate governance, control and risk management.",
+        "s23 Key personnel obligations: accountable persons must cover all parts of the group and prescribed responsibilities.",
+        "s25 to s30 Deferred remuneration obligations and proportionate reduction of variable remuneration for breaches."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability obligations",
+        "reasonable steps",
+        "prudential standing",
+        "material contravention"
+      ],
+      "notes": "Deploying an AI agent that causes systemic misconduct (for example unfair claims denials) may engage the 'reasonable steps' obligations of the accountable person responsible for that function. Civil penalties apply to the entity (s80, s83: greatest of 50,000 penalty units, three times the benefit, or 10% of turnover capped at 2.5 million penalty units); accountable persons face disqualification (s42).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "FAR-S31",
+      "clause_number": "31",
+      "anchor": "notification_obligations",
+      "section_name": "Chapter 2, Part 6: Notification obligations",
+      "heading": "The notification obligations of an accountable entity (and notifiable events under section 32)",
+      "text": "An accountable entity must notify the Regulator, in the approved form, of each event listed in section 32 within 30 days after the event (or another period prescribed by the Regulator rules), and take reasonable steps to ensure its significant related entities do the same. Entities that meet the enhanced notification threshold must also give the Regulator an accountability statement for each accountable person and an accountability map, and notify material changes to them within the same period.",
+      "subclauses": [
+        "s31(1) Core obligation: notify section 32 events within the s31(6) period, in the approved form.",
+        "s31(2) Enhanced obligation (if the threshold in the Minister rules is met): accountability statements (s33), accountability map (s34), and notice of material changes.",
+        "s31(6) Period: 30 days, or another period prescribed by the Regulator rules.",
+        "s32(a) A person ceases to be an accountable person.",
+        "s32(b) An accountable person is dismissed or suspended for failing to meet their accountability obligations.",
+        "s32(c) An accountable person's variable remuneration is reduced for such a failure.",
+        "s32(d) The entity has reasonable grounds to believe it, or an accountable person, has breached accountability or key personnel obligations.",
+        "s32(e) A material change to register information about an accountable person."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Within 30 days after a section 32 event or a material change (unless the Regulator rules prescribe another period); lodged with APRA via APRA Connect.",
+      "key_topics": [
+        "FAR notification",
+        "30 days",
+        "accountability statement",
+        "accountability map",
+        "breach notification"
+      ],
+      "notes": "A reasonable belief that an accountable person failed to take reasonable steps to control a harmful AI deployment would be a s32(d) notifiable event. Enhanced notification threshold per APRA and ASIC information: total assets above 10 billion dollars for general insurers and life companies, 3 billion dollars for private health insurers (SME to confirm against the Minister Rules and any 2026 changes).",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,47 @@
 {
   "code": "CPS 230",
   "title": "Prudential Standard CPS 230 Operational Risk Management",
+  "short_name": "Operational Risk Management",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2026L00475",
+  "effective_date": "2025-07-01",
+  "amended_date": "2026-07-01",
+  "status": "In Force",
+  "sectors": [
+    "banking",
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance",
+    "superannuation"
+  ],
+  "entity_types": [
+    "Authorised Deposit-taking Institution (ADI)",
+    "General Insurer",
+    "Life Company / Friendly Society",
+    "Private Health Insurer",
+    "Registrable Superannuation Entity (RSE) Licensee"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://www.legislation.gov.au/F2026L00475/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Text condensed; consult the registered instrument.",
+  "text_kind": "condensed",
+  "verified_on": "",
+  "verification_notes": "Carried over from the original APRA-MCP corpus; not yet re-verified against the registered instrument.",
+  "superseded_standards": [
+    "CPS 231 Outsourcing",
+    "CPS 232 Business Continuity Management",
+    "SPS 231 Outsourcing",
+    "SPS 232 Business Continuity Management",
+    "HPS 231 Outsourcing"
+  ],
+  "companion_guidance": [
+    "Prudential Practice Guide CPG 230 Operational Risk Management",
+    "CPS 220 Risk Management",
+    "CPS 190 Recovery and Exit Planning",
+    "CPS 234 Information Security"
+  ],
+  "summary": "CPS 230 sets out requirements for APRA-regulated entities to be resilient to operational risks and disruptions. It covers three main pillars: (1) Operational Risk Management (identifying, assessing, controlling, and reporting operational risks); (2) Business Continuity Management (defining critical operations, setting Board-approved tolerance levels for downtime, data loss, and service degradation, and testing credible BCPs); and (3) Service Provider Management (managing material service providers, fourth parties, mandatory agreement clauses, and submitting annual MSP registers to APRA).",
   "clauses": [
     {
       "id": "CPS230-OBJ",
@@ -15,7 +56,11 @@
       ],
       "is_mandatory": false,
       "notification_trigger": null,
-      "key_topics": ["objectives", "operational_resilience", "three_pillars"],
+      "key_topics": [
+        "objectives",
+        "operational_resilience",
+        "three_pillars"
+      ],
       "notes": "Establishes the three pillars: (1) Operational Risk, (2) Business Continuity, (3) Service Provider Management."
     },
     {
@@ -27,7 +72,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["authority", "statutory_powers"],
+      "key_topics": [
+        "authority",
+        "statutory_powers"
+      ],
       "notes": "Covers Banking, General Insurance, Life Insurance, Health Insurance, and Superannuation."
     },
     {
@@ -45,7 +93,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["application", "scope", "regulated_entities", "banking", "insurance"],
+      "key_topics": [
+        "application",
+        "scope",
+        "regulated_entities",
+        "banking",
+        "insurance"
+      ],
       "notes": "Comprehensive scope across all prudential sectors."
     },
     {
@@ -57,7 +111,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["application", "foreign_branches"],
+      "key_topics": [
+        "application",
+        "foreign_branches"
+      ],
       "notes": "Applicable to Australian branch activities."
     },
     {
@@ -69,7 +126,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["group_compliance", "head_of_group"],
+      "key_topics": [
+        "group_compliance",
+        "head_of_group"
+      ],
       "notes": "Requirements flow down throughout corporate groups."
     },
     {
@@ -81,7 +141,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["commencement", "transition"],
+      "key_topics": [
+        "commencement",
+        "transition"
+      ],
       "notes": "Replaces CPS 231, CPS 232, SPS 231, SPS 232, HPS 231."
     },
     {
@@ -97,7 +160,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["principles", "operational_risk", "conduct", "compliance"],
+      "key_topics": [
+        "principles",
+        "operational_risk",
+        "conduct",
+        "compliance"
+      ],
       "notes": "Foundational mandate covering processes, systems, people, and external events."
     },
     {
@@ -116,7 +184,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["risk_management_framework", "cps_220", "governance", "internal_controls"],
+      "key_topics": [
+        "risk_management_framework",
+        "cps_220",
+        "governance",
+        "internal_controls"
+      ],
       "notes": "Integrates directly into CPS 220 / SPS 220 overall risk framework."
     },
     {
@@ -128,7 +201,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["governance", "board_accountability", "oversight"],
+      "key_topics": [
+        "governance",
+        "board_accountability",
+        "oversight"
+      ],
       "notes": "Clear non-delegable Board accountability."
     },
     {
@@ -144,7 +221,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["board_approvals", "tolerance_levels", "bcp_approval", "msp_oversight"],
+      "key_topics": [
+        "board_approvals",
+        "tolerance_levels",
+        "bcp_approval",
+        "msp_oversight"
+      ],
       "notes": "Specific statutory items requiring explicit Board sign-off."
     },
     {
@@ -161,7 +243,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["operational_risk_scope", "technology_risk", "conduct_risk", "end_to_end"],
+      "key_topics": [
+        "operational_risk_scope",
+        "technology_risk",
+        "conduct_risk",
+        "end_to_end"
+      ],
       "notes": "Emphasizes end-to-end process accountability."
     },
     {
@@ -173,7 +260,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["technology_risk", "it_capability", "asset_health", "cps_234_overlap"],
+      "key_topics": [
+        "technology_risk",
+        "it_capability",
+        "asset_health",
+        "cps_234_overlap"
+      ],
       "notes": "Direct legislative link between CPS 230 and CPS 234."
     },
     {
@@ -189,7 +281,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["mapping", "interdependencies", "critical_operations", "scenario_analysis"],
+      "key_topics": [
+        "mapping",
+        "interdependencies",
+        "critical_operations",
+        "scenario_analysis"
+      ],
       "notes": "Requires detailed dependency mapping across technology, people, vendors, and facilities."
     },
     {
@@ -201,7 +298,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["internal_controls", "testing", "remediation", "root_cause"],
+      "key_topics": [
+        "internal_controls",
+        "testing",
+        "remediation",
+        "root_cause"
+      ],
       "notes": "Mandates root-cause remediation and tracking open issues in the operational risk profile."
     },
     {
@@ -213,7 +315,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["incidents", "near_misses", "escalation", "recording"],
+      "key_topics": [
+        "incidents",
+        "near_misses",
+        "escalation",
+        "recording"
+      ],
       "notes": "Explicitly requires tracking 'near misses' alongside actual incidents."
     },
     {
@@ -228,7 +335,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": "72_hours",
-      "key_topics": ["notification", "72_hours", "material_incident", "critical_operations"],
+      "key_topics": [
+        "notification",
+        "72_hours",
+        "material_incident",
+        "critical_operations"
+      ],
       "notes": "Footnote 11: A notification of an information security incident reported under CPS 234 does not need to be separately reported under the notification requirements of this Prudential Standard."
     },
     {
@@ -246,7 +358,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["business_continuity", "critical_operations", "bcp", "disaster_recovery"],
+      "key_topics": [
+        "business_continuity",
+        "critical_operations",
+        "bcp",
+        "disaster_recovery"
+      ],
       "notes": "Requires DR planning for critical assets and quick recovery."
     },
     {
@@ -263,7 +380,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["critical_operations", "adi", "banking", "insurance", "mandatory_classification"],
+      "key_topics": [
+        "critical_operations",
+        "adi",
+        "banking",
+        "insurance",
+        "mandatory_classification"
+      ],
       "notes": "Essential baseline: ADIs must classify payments/deposits/settlements; Insurers must classify claims processing."
     },
     {
@@ -279,7 +402,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["tolerance_levels", "downtime", "data_loss", "service_levels"],
+      "key_topics": [
+        "tolerance_levels",
+        "downtime",
+        "data_loss",
+        "service_levels"
+      ],
       "notes": "Every critical operation must have all three tolerances defined and Board-approved."
     },
     {
@@ -296,7 +424,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": "24_hours",
-      "key_topics": ["notification", "24_hours", "disruption", "outside_tolerance", "critical_operation"],
+      "key_topics": [
+        "notification",
+        "24_hours",
+        "disruption",
+        "outside_tolerance",
+        "critical_operation"
+      ],
       "notes": "Most urgent APRA notification timeframe (24 hours). Triggers as soon as an outage exceeds approved tolerance."
     },
     {
@@ -314,7 +448,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["bcp", "business_continuity_plan", "triggers", "communications_strategy"],
+      "key_topics": [
+        "bcp",
+        "business_continuity_plan",
+        "triggers",
+        "communications_strategy"
+      ],
       "notes": "BCP must be executable and account for external dependencies."
     },
     {
@@ -330,7 +469,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["testing", "bcp_testing", "annual_exercise", "internal_audit", "severe_scenarios"],
+      "key_topics": [
+        "testing",
+        "bcp_testing",
+        "annual_exercise",
+        "internal_audit",
+        "severe_scenarios"
+      ],
       "notes": "APRA may also mandate an APRA-determined scenario for an entity to test."
     },
     {
@@ -346,7 +491,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["service_providers", "policy", "fourth_parties", "subcontracting", "exit_strategy"],
+      "key_topics": [
+        "service_providers",
+        "policy",
+        "fourth_parties",
+        "subcontracting",
+        "exit_strategy"
+      ],
       "notes": "Footnote 14: Fourth party is a party that a service provider relies on to deliver services to the regulated entity."
     },
     {
@@ -363,7 +514,15 @@
       ],
       "is_mandatory": true,
       "notification_trigger": "annual_register",
-      "key_topics": ["material_service_providers", "msp", "adi", "banking", "insurance", "core_technology", "annual_register"],
+      "key_topics": [
+        "material_service_providers",
+        "msp",
+        "adi",
+        "banking",
+        "insurance",
+        "core_technology",
+        "annual_register"
+      ],
       "notes": "Annual register submission to APRA is mandatory."
     },
     {
@@ -383,7 +542,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["agreements", "contracts", "due_diligence", "subcontracting_liability", "apra_access_rights"],
+      "key_topics": [
+        "agreements",
+        "contracts",
+        "due_diligence",
+        "subcontracting_liability",
+        "apra_access_rights"
+      ],
       "notes": "Mandatory terms that must be present in every material contract."
     },
     {
@@ -395,7 +560,12 @@
       "subclauses": [],
       "is_mandatory": false,
       "notification_trigger": null,
-      "key_topics": ["exemptions", "non_traditional_service_providers", "central_banks", "clearing_houses"],
+      "key_topics": [
+        "exemptions",
+        "non_traditional_service_providers",
+        "central_banks",
+        "clearing_houses"
+      ],
       "notes": "Introduced in updated standard F2026L00475 to provide relief for arrangements like RBA, ASX, SWIFT."
     },
     {
@@ -407,7 +577,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": "20_business_days",
-      "key_topics": ["notification", "20_business_days", "service_agreement", "material_change"],
+      "key_topics": [
+        "notification",
+        "20_business_days",
+        "service_agreement",
+        "material_change"
+      ],
       "notes": "Triggered when entering or materially amending an agreement underpinning a critical operation."
     },
     {
@@ -419,7 +594,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": "prior_to_entering",
-      "key_topics": ["notification", "offshoring", "prior_notification", "cloud_data"],
+      "key_topics": [
+        "notification",
+        "offshoring",
+        "prior_notification",
+        "cloud_data"
+      ],
       "notes": "Footnote 16: Must notify APRA *prior* to entering arrangement or shifting data/personnel offshore."
     },
     {
@@ -431,7 +611,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["internal_audit", "outsourcing", "critical_operation", "board_reporting"],
+      "key_topics": [
+        "internal_audit",
+        "outsourcing",
+        "critical_operation",
+        "board_reporting"
+      ],
       "notes": "Requires internal audit involvement prior to executing material outsourcing of critical operations."
     },
     {
@@ -451,7 +636,13 @@
       ],
       "is_mandatory": false,
       "notification_trigger": null,
-      "key_topics": ["exempt_service_providers", "infrastructure", "payment_systems", "swift", "rba"],
+      "key_topics": [
+        "exempt_service_providers",
+        "infrastructure",
+        "payment_systems",
+        "swift",
+        "rba"
+      ],
       "notes": "Relieves entities from having to negotiate bespoke contracts with monopoly or sovereign infrastructures."
     }
   ]

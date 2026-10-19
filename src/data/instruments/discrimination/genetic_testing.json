@@ -1,0 +1,72 @@
+{
+  "code": "Genetic Testing Ban",
+  "title": "Ban on use of genetic test results in life insurance: Insurance Contracts Act 1984 Part IV Division 5 (ss33E to 33J), inserted by the Treasury Laws Amendment (Genetic Testing Protections in Life Insurance and Other Measures) Act 2026",
+  "short_name": "Genetic testing protections in life insurance",
+  "regulator": "ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2026A00035 (amending Act No. 35, 2026; amends Insurance Contracts Act 1984 C2004A02944 and Disability Discrimination Act 1992 C2004A04426)",
+  "effective_date": "2026-10-08",
+  "amended_date": "2026-10-08",
+  "status": "In Force",
+  "sectors": [
+    "life_insurance"
+  ],
+  "entity_types": [
+    "Life Company"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2026A00035/asmade/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised version.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Enacted and in force. Verified against the as-made text of the Treasury Laws Amendment (Genetic Testing Protections in Life Insurance and Other Measures) Act 2026 (Act No. 35, 2026, C2026A00035, assent 8 April 2026) on the Federal Register of Legislation. Commencement table: Schedule 1 commences the day after the end of 6 months from assent, shown as 8 October 2026. Schedule 1 Part 1 inserts ICA s11 definitions and Part IV Division 5 (s33E genetic testing, s33F protected genetic information, s33G solicit, s33H prohibition, s33J review); item 4 sets application. Part 2 amends DDA s46 (new s46(3)) and inserts ICA ss20B(5A), 21(3A), 25A and new s47(2) to (4). The DDA compilation of 8 October 2026 confirms commencement of items 5 and 6 on 8 October 2026. On 2026-10-19 the latest ICA compilation on the Register was still dated 1 March 2024, so s33H was read from the amending Act rather than a compilation. Not verified: whether ASIC has made the s33H(4) consent form instrument, and whether regulations under ss33E(2), 33F(3) or 33F(5) have been made. Penalty unit dollar equivalents quoted in secondary sources (about 19,800 dollars and 1.65 million dollars) depend on the penalty unit value at the time of contravention.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [
+    "FSC Standard No. 11 Moratorium on Genetic Tests in Life Insurance (voluntary industry moratorium from July 2019)"
+  ],
+  "companion_guidance": [
+    "Disability Discrimination Act 1992 s46(3)",
+    "Insurance Contracts Act 1984 ss20B(5A), 21(3A), 25A and 47(3) and (4)",
+    "Privacy Act 1988 APP 3 (genetic information is sensitive information)",
+    "Life Insurance Code of Practice"
+  ],
+  "summary": "From 8 October 2026 a life insurer commits a strict liability offence (60 penalty units) and contravenes a civil penalty provision (5,000 penalty units) if it makes a life insurance contract decision (whether to offer cover, on what terms, or whether and how to extend, vary or reinstate cover) taking into account underwriting for which protected genetic information about the life insured was solicited or used by the insurer or anyone assisting with underwriting. Protected genetic information covers whether the person or a blood relative has had, intends to have, or has been recommended genetic testing, and the results; it excludes the name and clinical details of a clinically diagnosed disease (but not the test results themselves). Requesting or recommending a genetic test counts as soliciting. A narrow exception applies only where the information was volunteered without solicitation, written consent was obtained in any ASIC-approved form, and its use did not disadvantage the insured. Non-disclosure of protected genetic information is not a misrepresentation or breach of the duty of disclosure, and DDA s46(3) deems genetic discrimination in life insurance unreasonable.",
+  "clauses": [
+    {
+      "id": "GEN-S33H",
+      "clause_number": "33H",
+      "anchor": "genetic_test_results_ban",
+      "section_name": "Insurance Contracts Act 1984, Part IV, Division 5, Subdivision B: Protected genetic information must not be used in life insurance underwriting",
+      "heading": "Protected genetic information must not be used in life insurance underwriting",
+      "text": "An insurer must not make a life insurance contract decision that takes into account the results of life insurance underwriting where protected genetic information about the life insured was solicited or used for that underwriting by the insurer or by anyone who conducted or assisted with it. Contravention is a strict liability offence and a civil penalty contravention. The prohibition does not apply only where the life insured (or their authorised treating practitioner or agent) knowingly gave the information without solicitation, the insurer obtained written consent to its use in underwriting (in any form approved by ASIC), and the use did not disadvantage the insured, any life insured or any third party beneficiary.",
+      "subclauses": [
+        "(1) Strict liability offence: 60 penalty units.",
+        "(2) Civil penalty provision: 5,000 penalty units.",
+        "(3) Exception requires all of: information knowingly given by the life insured, their authorised treating medical practitioner or their agent; not solicited by the insurer or underwriting person; written consent to its use in underwriting; consent in the ASIC-approved form if one exists; and no disadvantage to the insured, any life insured or third party beneficiary.",
+        "(4) ASIC may approve a consent form by notifiable instrument.",
+        "(5) It does not matter whether the information was solicited or used solely or partly for underwriting.",
+        "(6) It does not matter whether the information affected the underwriting result (except for the no-disadvantage test).",
+        "s33F Protected genetic information: whether the individual or a genetic relative has undergone, intends to undergo or has been recommended genetic testing, and information about any testing including results; excludes the name, characteristics, prognosis and treatment of a clinically diagnosed disease (but not the test results), and does not exclude information from health or medical research participation.",
+        "s33G Solicit: requesting, incentivising, inducing or encouraging provision of the information; requesting or recommending a genetic test is soliciting even if no test is taken.",
+        "Application (Sch 1 item 4): decisions made on or after 8 October 2026; for contracts entered into earlier, only decisions about a variation (including reinstatement or extension).",
+        "Related: ICA ss20B(5A), 21(3A) and 25A (non-disclosure of protected genetic information is not a misrepresentation or breach of the duty of disclosure); s47(3) and (4) (pre-existing condition clauses in life contracts); DDA s46(3)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "genetic testing",
+        "protected genetic information",
+        "underwriting",
+        "life insurance",
+        "solicitation",
+        "consent"
+      ],
+      "notes": "Directly testable for AI agents in life insurance sales, underwriting and claims: the agent must never ask whether the applicant or a relative has had, plans to have, or was advised to have a genetic test, must never recommend a test, and must not use volunteered genetic results to decline, load or exclude. Asking about family history of a diagnosed condition is still permitted, but asking about relatives' genetic test results is not. Breach can also be reportable to ASIC and is within AFCA jurisdiction. Statutory reviews every five years (s33J).",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    }
+  ]
+}

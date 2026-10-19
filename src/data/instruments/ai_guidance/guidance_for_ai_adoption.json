@@ -1,0 +1,207 @@
+{
+  "code": "Guidance for AI Adoption",
+  "title": "Guidance for AI Adoption: 6 essential practices (Foundations and Implementation guidance)",
+  "short_name": "Guidance for AI Adoption",
+  "regulator": "Department of Industry, Science and Resources (National AI Centre)",
+  "instrument_type": "guidance",
+  "legislative_instrument": "",
+  "effective_date": "2025-10-21",
+  "amended_date": "2026-05-05",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance",
+  "licence": "Commonwealth of Australia, CC BY 4.0. Paraphrased.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Practice and sub-practice headings read from the implementation guidance page (now hosted on ai.gov.au, page marked 'Published 05 May 2026'). The industry.gov.au VAISS page states the Guidance for AI Adoption was published on 21 October 2025 and evolves the Voluntary AI Safety Standard (10 guardrails condensed into 6 practices). The National AI Plan (December 2025) states the 6 essential practices will underpin new NAIC tools and resources. Two versions exist: Foundations (organisations starting out) and Implementation practices (higher-risk or complex use, with developer-specific items marked DEV). Voluntary; no legal force. The 5 May 2026 date may reflect a site migration or content update rather than a substantive revision; not confirmed.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [
+    "Voluntary AI Safety Standard (VAISS), September 2024"
+  ],
+  "companion_guidance": [
+    "National AI Plan (December 2025)",
+    "APRA Letter to Industry on Artificial Intelligence (30 April 2026)",
+    "ASIC REP 798",
+    "OAIC guidance on privacy and AI"
+  ],
+  "summary": "The Australian Government's current voluntary AI governance guidance replaces the 10 VAISS guardrails with 6 essential practices for organisations that develop or deploy AI: decide who is accountable; understand impacts and plan accordingly; measure and manage risks; share essential information; test and monitor; and maintain human control. The implementation guidance adds detailed requirements such as an AI register, supply chain accountabilities, contestability and redress mechanisms, incident reporting, pre-deployment testing, ongoing monitoring, cyber and data controls, and decommissioning. For insurers it is the recommended baseline alongside APRA and ASIC expectations, which rely on existing laws rather than AI-specific legislation.",
+  "clauses": [
+    {
+      "id": "GAA-P1",
+      "clause_number": "P1",
+      "section_name": "Essential practices",
+      "heading": "Decide who is accountable",
+      "text": "Assign, document and communicate accountability for the AI management system and each AI system, including across the AI supply chain; define competencies and resources for accountable people; build AI literacy and training; and document and operate an AI governance framework with compliance monitoring.",
+      "subclauses": [
+        "1.1 Accountable people",
+        "1.2 Supply chain accountabilities",
+        "1.3 AI literacy and training",
+        "1.4 AI governance framework"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability",
+        "AI governance",
+        "AI literacy"
+      ],
+      "notes": "Aligns with FAR accountable persons and APRA's expectation of board AI literacy.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "GAA-P2",
+      "clause_number": "P2",
+      "section_name": "Essential practices",
+      "heading": "Understand impacts and plan accordingly",
+      "text": "Identify and engage stakeholders, document each AI system's scope, intended use and foreseeable misuse, analyse benefits and harms (including for vulnerable groups), and implement accessible feedback, contestability and redress mechanisms so people can understand, challenge and appeal AI use and decisions.",
+      "subclauses": [
+        "2.1 Identify and engage stakeholders",
+        "2.2 Establish feedback and redress processes"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "impact assessment",
+        "contestability",
+        "vulnerable customers",
+        "redress"
+      ],
+      "notes": "Contestability for automated claims and underwriting outcomes should connect to IDR under RG 271.",
+      "obligation_type": "complaints",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "GAA-P3",
+      "clause_number": "P3",
+      "section_name": "Essential practices",
+      "heading": "Measure and manage risks",
+      "text": "Implement a fit-for-purpose AI risk management framework, assess each AI system's risks, implement controls, and monitor and report AI incidents.",
+      "subclauses": [
+        "3.1 Establish a fit-for-purpose risk management framework",
+        "3.2 Assess AI system risks",
+        "3.3 Implement controls for AI system risks",
+        "3.4 Monitor and report incidents"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk assessment",
+        "controls",
+        "incident reporting"
+      ],
+      "notes": "For APRA entities, integrate with CPS 220 and CPS 230 incident processes.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "GAA-P4",
+      "clause_number": "P4",
+      "section_name": "Essential practices",
+      "heading": "Share essential information",
+      "text": "Maintain an AI register, provide system transparency and explainability appropriate to the audience, maintain transparency across the supply chain, and make AI-generated content identifiable.",
+      "subclauses": [
+        "4.1 Maintain an AI register",
+        "4.2 AI system transparency and explainability",
+        "4.3 Supply chain transparency",
+        "4.4 AI-generated content transparency"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI register",
+        "transparency",
+        "explainability",
+        "AI disclosure"
+      ],
+      "notes": "Supports Privacy Act APP 1.7 automated decision disclosures from 10 December 2026.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "GAA-P5",
+      "clause_number": "P5",
+      "section_name": "Essential practices",
+      "heading": "Test and monitor",
+      "text": "Test AI systems before deployment, monitor performance in operation, conduct additional testing proportionate to risk, and implement robust data and cyber security measures.",
+      "subclauses": [
+        "5.1 Pre-deployment testing",
+        "5.2 Monitor system performance",
+        "5.3 Conduct additional testing proportionate to risk",
+        "5.4 Implement robust data and cybersecurity measures"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "testing",
+        "monitoring",
+        "red teaming",
+        "cyber security"
+      ],
+      "notes": "Agent probing and red teaming evidence supports this practice.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "GAA-P6",
+      "clause_number": "P6",
+      "section_name": "Essential practices",
+      "heading": "Maintain human control",
+      "text": "Maintain meaningful human oversight and control over AI systems, with the ability to intervene, and decommission systems when appropriate.",
+      "subclauses": [
+        "6.1 Maintain human oversight and control",
+        "6.2 Decommission when appropriate"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "human oversight",
+        "intervention",
+        "decommissioning"
+      ],
+      "notes": "APRA's April 2026 letter likewise expects human involvement in high-risk decisions.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

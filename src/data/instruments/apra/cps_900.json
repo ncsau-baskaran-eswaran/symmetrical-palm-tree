@@ -1,0 +1,129 @@
+{
+  "code": "CPS 900",
+  "title": "Prudential Standard CPS 900 Resolution Planning",
+  "short_name": "Resolution Planning",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2023L01384",
+  "effective_date": "2024-01-01",
+  "amended_date": "2024-01-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-900",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Banking, Insurance, Life Insurance, Health Insurance and Superannuation (prudential standard) determination No. 4 of 2023 (dated 10 October 2023), commencing 1 January 2024; an entity is subject to the requirements only after notification from APRA (para 7).",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPG 900 Resolution Planning",
+    "CPS 190 Recovery and Exit Planning",
+    "CPS 230 Operational Risk Management (critical functions are critical operations)"
+  ],
+  "summary": "CPS 900 supports APRA in preparing resolution plans for entities it notifies. The entity and its Board must support APRA's resolution planning, may be required to analyse critical functions, assess resolvability, implement pre-positioning plans, maintain financial resources (including loss-absorbing capacity for non-RSE entities) and maintain capabilities to support resolution, and must notify APRA of material changes that may create barriers to resolution.",
+  "clauses": [
+    {
+      "id": "CPS900-7",
+      "clause_number": "7",
+      "section_name": "Application and commencement",
+      "heading": "Application on APRA notification",
+      "text": "The standard commenced on 1 January 2024, but an entity is subject to its requirements only after APRA notifies it.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "applicability"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS900-14",
+      "clause_number": "14",
+      "section_name": "Resolution planning",
+      "heading": "Support APRA's resolution plan",
+      "text": "The entity must support APRA in developing and maintaining a resolution plan, and the Board is ultimately responsible for ensuring the entity meets the standard (para 16).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "resolution",
+        "board"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS900-28",
+      "clause_number": "28",
+      "section_name": "Capabilities",
+      "heading": "Resolution capabilities",
+      "text": "The entity must establish and maintain the capabilities required to support the resolution plan, including resolution governance arrangements, operational capabilities, financial management, data and systems, and where appropriate a restructuring plan; APRA may require additional capabilities (para 29).",
+      "subclauses": [
+        "(a) Resolution governance arrangements.",
+        "(b) Operational capabilities.",
+        "(c) Financial management.",
+        "(d) Data and systems.",
+        "(e) Where appropriate, a restructuring plan."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "operational continuity",
+        "critical functions"
+      ],
+      "notes": "Critical functions under CPS 900 are expected to be classified as critical operations under CPS 230 (CPG 230 para 17).",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS900-34",
+      "clause_number": "34",
+      "section_name": "Notification",
+      "heading": "Notify barriers to resolution",
+      "text": "The entity must notify APRA of material changes to its business or operations that may create a barrier to resolution.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "On a material change that may create a barrier to resolution (no fixed period stated).",
+      "key_topics": [
+        "APRA notification"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

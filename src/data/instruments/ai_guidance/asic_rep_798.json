@@ -1,0 +1,294 @@
+{
+  "code": "ASIC REP 798",
+  "title": "ASIC Report 798 Beware the gap: Governance arrangements in the face of AI innovation",
+  "short_name": "Beware the gap (AI governance)",
+  "regulator": "ASIC",
+  "instrument_type": "report",
+  "legislative_instrument": "",
+  "effective_date": "2024-10-29",
+  "amended_date": "2024-10-29",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance"
+  ],
+  "entity_types": [
+    "AFS Licensee (General Insurer)",
+    "AFS Licensee (Life Company)"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation",
+  "licence": "ASIC report. Paraphrased with attribution; consult the published report.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Read from the published PDF (download.asic.gov.au, REP 798 published 29 October 2024): foreword, executive summary and the 'AI governance: Questions for licensees' pages (pages 8 and 35 to 36). Review covered 23 AFS and credit licensees and 624 AI use cases as at December 2023 across banking, credit, insurance and financial advice. Question numbering (1 to 11) follows pages 35 to 36. REP 798 is a report, not a regulatory guide, and creates no new obligations; it restates that existing technology-neutral obligations apply. ASIC's support for mandatory guardrails in REP 798 predates the National AI Plan (December 2025), under which the Government decided to rely on existing laws rather than AI-specific legislation. Private health insurers are generally not AFS licensees for health insurance products, so PHI is not listed as a sector.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Corporations Act 2001 s912A (efficiently, honestly and fairly; risk management)",
+    "ASIC Act 2001 Part 2 Division 2 (misleading conduct, unconscionable conduct)",
+    "Voluntary AI Safety Standard (September 2024) and Guidance for AI Adoption (October 2025)",
+    "APRA Letter to Industry on Artificial Intelligence (30 April 2026)",
+    "FAR Act 2023 (accountable persons for AI in key functions)"
+  ],
+  "summary": "ASIC's first review of how AFS and credit licensees use AI where it affects consumers found AI use was mostly cautious and supported human decisions, but that a governance gap could emerge because some licensees were adopting AI faster than they were updating risk and governance arrangements. Only 12 of 23 licensees had AI policies referencing fairness or related principles, and only 10 referenced disclosure of AI use to affected consumers. ASIC stressed that licensee obligations, consumer protection laws and director duties are technology neutral and already apply, and posed 11 governance questions for licensees covering inventory, strategy, fairness, accountability, risk, alignment, policies, resourcing, oversight, third parties and regulatory reform.",
+  "clauses": [
+    {
+      "id": "REP798-Q1",
+      "clause_number": "Q1",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Taking stock: AI inventory",
+      "text": "Licensees should know where AI is used across the organisation and maintain an AI inventory that is kept current.",
+      "subclauses": [
+        "Where on your AI journey are you, and do you know where AI is used?",
+        "Do you have an adequately maintained AI inventory?"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI inventory",
+        "AI register",
+        "governance"
+      ],
+      "notes": "An insurer should be able to list every AI agent and model touching customers, including vendor-embedded AI.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q2",
+      "clause_number": "Q2",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "AI strategy",
+      "text": "Licensees should have a clear, documented AI strategy for now and the future that aligns with business objectives and risk appetite.",
+      "subclauses": [
+        "Is there a documented strategy for AI aligned with business objectives and risk appetite?"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI strategy",
+        "risk appetite"
+      ],
+      "notes": "Links to APRA's expectation that boards oversee an AI strategy consistent with risk appetite.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q3",
+      "clause_number": "Q3",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Ethics and fairness",
+      "text": "Licensees should identify the ethical challenges raised by their AI use and show how they continue to provide financial services efficiently, honestly and fairly when using AI.",
+      "subclauses": [
+        "What ethical challenges does your AI use raise?",
+        "How do you meet the efficiently, honestly and fairly obligation when using AI?"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "fairness",
+        "bias",
+        "efficiently honestly and fairly",
+        "discrimination"
+      ],
+      "notes": "ASIC identified bias and discrimination, false information, exploitation of vulnerabilities and behavioural biases, and loss of trust as key consumer harms. Underwriting and claims models in insurance were cited as use cases.",
+      "obligation_type": "conduct",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q4",
+      "clause_number": "Q4",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Accountability",
+      "text": "Licensees should know who is accountable for AI use and outcomes at model level and overall, ensure they receive adequate reporting, measure consumer outcomes, and, for FAR accountable entities, consider AI use in key functions when assigning accountable persons.",
+      "subclauses": [
+        "Who is accountable for AI use and outcomes, at model level and overall?",
+        "How are consumer outcomes from AI measured?",
+        "For FAR entities, has AI use in key functions been considered in assigning accountable persons?"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability",
+        "FAR",
+        "consumer outcomes"
+      ],
+      "notes": "Insurers became FAR accountable entities on 15 March 2025.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q5",
+      "clause_number": "Q5",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Risk",
+      "text": "Licensees should understand conduct and regulatory compliance risks from AI, set a risk tolerance, and identify, mitigate and monitor risk across the AI lifecycle with documented, multidisciplinary assessments that remain adequate as the risk profile changes.",
+      "subclauses": [
+        "Clarity on conduct and compliance risk and tolerance.",
+        "Lifecycle risk identification, mitigation and monitoring, documented.",
+        "Multidisciplinary risk assessment, not only technical experts."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk management",
+        "AI lifecycle",
+        "conduct risk"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q6",
+      "clause_number": "Q6",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Alignment",
+      "text": "Governance arrangements should lead, not lag, AI use, including as the licensee moves to more complex and opaque AI such as generative AI.",
+      "subclauses": [
+        "Do governance arrangements lead current and planned AI use?",
+        "What changes are needed for generative AI?"
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "governance gap",
+        "generative AI"
+      ],
+      "notes": "The central finding of the report.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q7",
+      "clause_number": "Q7",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Policies and procedures",
+      "text": "Licensees should translate their AI strategy and risk assessment into risk-based staff policies across the AI lifecycle, keep them fit for purpose, and ensure staff adhere to them.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI policy",
+        "staff guidance"
+      ],
+      "notes": "Only 12 of 23 licensees had AI policies referencing fairness or related principles; only 10 referenced disclosure of AI use to consumers.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q8",
+      "clause_number": "Q8",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Resourcing",
+      "text": "Licensees should have the technological and human resources, including skilled compliance and internal audit staff, to manage AI as its use grows.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "capability",
+        "skills",
+        "internal audit"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q9",
+      "clause_number": "Q9",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Oversight and monitoring",
+      "text": "Licensees should define expected human oversight, have procedures for when things go wrong including unexpected model outputs, and ensure business continuity, backup and disaster recovery plans cover AI systems.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "human oversight",
+        "incident response",
+        "business continuity"
+      ],
+      "notes": "Directly relevant to runtime guardrails and escalation design for insurer AI agents.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q10",
+      "clause_number": "Q10",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Third parties",
+      "text": "Licensees should manage the challenges of relying on third-party AI models, including how they validate, monitor and review them.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "third-party models",
+        "vendor risk",
+        "model validation"
+      ],
+      "notes": "Aligns with CPS 230 material service provider requirements.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "REP798-Q11",
+      "clause_number": "Q11",
+      "section_name": "AI governance: Questions for licensees",
+      "heading": "Regulatory reform",
+      "text": "Licensees should engage with AI regulatory reform proposals.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "regulatory reform"
+      ],
+      "notes": "Since REP 798, the Government's National AI Plan (December 2025) chose to rely on existing laws and an AI Safety Institute rather than mandatory guardrails legislation.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    }
+  ]
+}

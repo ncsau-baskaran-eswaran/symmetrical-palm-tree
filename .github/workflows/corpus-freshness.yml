@@ -1,0 +1,71 @@
+name: corpus-freshness
+
+# Weekly check that the sources cited by the corpus have not changed since src/data/sources.lock.json was taken.
+# Change detection uses content signals (legislation compilation id, PDF hash, main-content hash), not whole pages.
+on:
+  schedule:
+    - cron: "0 21 * * 1"   # Monday 21:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install httpx
+
+      - name: Staleness (informational, never fails the job)
+        run: python scripts/check_corpus_freshness.py staleness || true
+
+      - name: Diff sources against the lock
+        id: diff
+        run: |
+          set +e
+          python scripts/check_corpus_freshness.py diff --json > corpus-diff.json
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          # Exit 2 means sources changed; anything else non-zero is a real failure.
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then exit "$code"; fi
+
+      - name: Upload report
+        if: steps.diff.outputs.exit_code == '2'
+        uses: actions/upload-artifact@v4
+        with:
+          name: corpus-diff
+          path: corpus-diff.json
+
+      - name: Open or update issue
+        if: steps.diff.outputs.exit_code == '2'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Corpus sources changed since the lock was taken"
+          python - <<'PY' > issue-body.md
+          import json, os
+          r = json.load(open("corpus-diff.json"))
+          print(f"The weekly corpus freshness check found {r['counts']['changed']} changed source(s) "
+                f"(lock from {r['lock_generated_at']}, checked {r['checked_at']}).\n")
+          print("| Source | Signal | Cited by | Detail |\n| --- | --- | --- | --- |")
+          for c in r["changed"]:
+              print(f"| {c['url']} | {c['signal']} | {', '.join(c['instruments'])} | {'; '.join(c['details'])} |")
+          if r["unreachable"]:
+              print(f"\n{len(r['unreachable'])} source(s) were unreachable and are not counted as changes.")
+          print(f"\nFull report: the `corpus-diff` artifact on {os.environ['RUN_URL']}.")
+          print("\nAfter a reviewer accepts the new state, refresh the lock with "
+                "`python scripts/check_corpus_freshness.py snapshot`.")
+          PY
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file issue-body.md
+          else
+            gh issue create --title "$title" --body-file issue-body.md
+          fi

@@ -1,0 +1,36 @@
+{
+  "code": "APRA Insurer Capital and Valuation",
+  "title": "APRA capital adequacy, valuation, audit and statutory fund prudential standards for general, life and private health insurers",
+  "short_name": "Insurer capital and valuation standards",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "Multiple APRA prudential standards (GPS, LPS and HPS series)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Titles confirmed on the APRA Prudential Handbook on 2026-10-19 for: GPS 110, 112, 114, 115, 116, 117, 118, 120, 310, 340; LPS 110, 112, 114, 115, 117, 118, 310, 340, 360, 600; HPS 110, 112, 114, 115, 117, 118, 310, 340. The handbook flags a 'Future' version of LPS 115 (a revised Insurance Risk Charge not yet in force); an SME should confirm its effective date. Handbook pages for GPS 113, GPS 320, LPS 320, HPS 320 and HPS 100 were not found at the expected addresses; actuarial and related matters requirements may sit in other standards (for example the Appointed Actuary provisions of CPS 510 and CPS 520) and should be confirmed. No paragraphs are captured: these standards set quantitative capital and valuation requirements that an AI customer agent cannot be tested against.",
+  "coverage_default": "out_of_scope_not_agent_testable",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 220 Risk Management (ICAAP links)",
+    "GPS 230 and LPS 230 Reinsurance Management",
+    "APRA reporting standards (GRS, LRS, HRS series)"
+  ],
+  "summary": "Reference list of APRA quantitative prudential standards for insurers, captured for completeness of the regulatory map and treated as out of scope for agent testing. General insurance: GPS 110 Capital Adequacy; GPS 112 Measurement of Capital; GPS 114 Asset Risk Charge; GPS 115 Insurance Risk Charge; GPS 116 Insurance Concentration Risk Charge; GPS 117 Asset Concentration Risk Charge; GPS 118 Operational Risk Charge; GPS 120 Assets in Australia; GPS 310 Audit and Related Matters; GPS 340 Insurance Liability Valuation. Life insurance: LPS 110 Capital Adequacy; LPS 112 Measurement of Capital; LPS 114 Asset Risk Charge; LPS 115 Insurance Risk Charge (a future version is flagged); LPS 117 Asset Concentration Risk Charge; LPS 118 Operational Risk Charge; LPS 310 Audit and Related Matters; LPS 340 Valuation of Policy Liabilities; LPS 360 Termination Values, Minimum Surrender Values and Paid-up Values; LPS 600 Statutory Funds. Private health insurance: HPS 110 Capital Adequacy; HPS 112 Measurement of Capital; HPS 114 Asset Risk Charge; HPS 115 Insurance Risk Charge; HPS 117 Asset Concentration Risk Charge; HPS 118 Operational Risk Charge; HPS 310 Audit and Related Matters; HPS 340 Insurance Liability Valuation.",
+  "clauses": []
+}
