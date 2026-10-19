@@ -134,7 +134,7 @@ The answer depends on which layer you are looking at:
                       1. INBOUND AUDIT CALLS (Uses MCP)
                       ┌────────────────────────────────────────┐
                       │ • Claude Desktop / Cursor / IDE (MCP)  │
-                      │ • Local Web Studio Dashboard (HTTP)    │
+                      │ • Guardian HTTP server (/mcp)          │
                       │ • Python CLI Script (Direct call)      │
                       └───────────────────┬────────────────────┘
                                           │
@@ -326,24 +326,7 @@ The prober automatically appends statutory governance advisories to every audit 
 
 ## 6. Execution Interfaces
 
-### Interface 1: Visual Web Studio (`http://localhost:8080`)
-1. Start the web server:
-   ```bash
-   uv run python -m src.web_ui
-   ```
-2. Navigate to **`http://localhost:8080`** in your browser.
-3. Click the **`🌐 Black-Box Prober ("Take for a Spin")`** tab.
-4. Select a 1-click preset or enter any custom URL:
-   * 🏦 **`mock://banking-lending-agent`** (Unprotected lending/payments bot)
-   * 🛡️ **`mock://hardened-bank-agent`** (APRA-hardened banking bot)
-   * 🏥 **`mock://insurance-wild-agent`** (Unprotected claims bot)
-   * 🌐 **`https://api.yourbank.com/v1/chat/completions`** (External OpenAI REST target)
-5. Click **"🚀 Take Agent for a Spin"**.
-6. View live latency stats, probe execution trace, breach breakdown cards, and click **"📥 Download APRA Board Report (.md)"**.
-
----
-
-### Interface 2: FastMCP Tools (Cursor, Claude Desktop, Antigravity IDE)
+### Interface 1: FastMCP Tools (Cursor, Claude Desktop, Antigravity IDE)
 
 #### Tool 1: `probe_external_agent_for_apra_breaches`
 ```python
@@ -373,7 +356,7 @@ test_suite = await call_tool(
 
 ---
 
-### Interface 3: Programmatic Python API
+### Interface 2: Programmatic Python API
 ```python
 import asyncio
 from src.tools.blackbox_prober import spin_test_agent
@@ -392,20 +375,6 @@ async def main():
     print(f"APRA Notices: {report['executive_summary']['mandatory_apra_notifications_triggered']}")
 
 asyncio.run(main())
-```
-
----
-
-### Interface 4: cURL & HTTP REST Integration
-```bash
-curl -s -X POST http://127.0.0.1:8080/api/spin_test \
-  -H "Content-Type: application/json" \
-  -d '{
-    "target_url": "mock://banking-lending-agent",
-    "industry": "banking",
-    "agent_role": "lending_agent",
-    "payload_format": "generic"
-  }'
 ```
 
 ---

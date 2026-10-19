@@ -6,9 +6,7 @@ A dedicated technical manual and execution guide for the **Autonomous MCP-Powere
 ---
 
 ## 1. Quick Navigation
-* 📘 **Step-by-Step Runbook**: See [**AUTONOMOUS_AGENT_GUIDE.md**](AUTONOMOUS_AGENT_GUIDE.md) for detailed CLI commands, mock profiles, and the full OpenAI Codex review assessment.
 * 📖 **Full Regulatory Specification**: See [**BLACKBOX_PROBER.md**](BLACKBOX_PROBER.md) for DAST attack batteries, 24h/72h notification trees, and Board liability analyses.
-* 💻 **Web Studio Dashboard**: Running locally at **`http://localhost:8080`**.
 
 ---
 
@@ -86,17 +84,7 @@ uv run python run_autonomous_agent.py --target mock://insurance-wild-agent --ind
 uv run python run_autonomous_agent.py --target https://api.mybank.com/v1/chat --turns 4 --output board_dossier.md
 ```
 
-### Option 2: Interactive Visual Web Studio
-1. Start the web server:
-   ```bash
-   uv run python -m src.web_ui
-   ```
-2. Navigate to **`http://localhost:8080`**.
-3. In the **🌐 Black-Box Prober** tab, toggle the **AUDIT ENGINE** switcher to **`🧠 Autonomous Red-Teamer (Codex Test Ladder)`**.
-4. Select a target preset or enter an endpoint URL, select ladder depth (1–4 rungs), and click **`⚡ Launch Autonomous Red-Team Campaign`**.
-5. View live cards, latency metrics, SHA-256 block digests, and click **`📥 Download APRA Board Report (.md)`**.
-
-### Option 3: FastMCP Tool Call
+### Option 2: FastMCP Tool Call
 In Claude Desktop, Cursor, or MCP Inspector:
 ```json
 {
