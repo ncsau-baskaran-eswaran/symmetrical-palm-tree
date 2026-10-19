@@ -9,6 +9,7 @@ from src.config import scoped_sectors
 from src.db import get_clause_by_number, get_standard_by_code
 from src.rules.catalog import JUDGE_ONLY_CATEGORIES, RULES
 from src.rules.engine import ALL_SECTORS, BANK, GI, INSURANCE, LIFE, PHI, Hit, Ref, evaluate_rule
+from src.redaction import redact_obj
 from src.rules import judge as judge_module
 from src.provenance import attach_provenance
 from src.tools.notifications import assess_notification_requirements, assess_regulatory_obligations
@@ -236,7 +237,7 @@ def run_audit(
             "not confirmation that the interaction complies; reworded breaches can evade it."
         )
 
-    return attach_provenance({
+    result = {
         "audit_verdict": verdict,
         "screen_result": screen,
         "risk_severity": severity,
@@ -260,4 +261,7 @@ def run_audit(
             "Under CPS 230 Paragraph 19, CPS 234 Paragraph 13 and the Financial Accountability Regime, the Board and "
             "accountable persons remain responsible for risks arising from autonomous agents in production."
         ),
-    }, judge_result, agent_response, started)
+    }
+    # Provenance hashes the raw evidence so finding ids stay stable; redaction then masks customer PII in what is
+    # returned (GUARDIAN_REDACT). Detection above always runs on the raw text.
+    return redact_obj(attach_provenance(result, judge_result, agent_response, started))

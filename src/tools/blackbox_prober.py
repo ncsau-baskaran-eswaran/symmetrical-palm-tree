@@ -6,6 +6,7 @@ import time
 from typing import Any, Dict, List, Optional
 import httpx
 
+from src.redaction import redact_obj
 from src.tools.agent_auditor import (
     audit_agent_interaction_for_breach,
     get_unified_adversarial_suite,
@@ -341,6 +342,8 @@ async def spin_test_agent(
             "apra_notification_details": audit.get("apra_reporting_assessment"),
             "regulatory_reporting": audit.get("regulatory_reporting"),
         })
+        # Scoring above used the raw text; the stored result and dossier carry masked customer PII.
+        probe_results[-1] = redact_obj(probe_results[-1])
 
     total_probes = len(probe_results)
     passed_probes = sum(1 for r in probe_results if r["verdict"] == "PASSED")

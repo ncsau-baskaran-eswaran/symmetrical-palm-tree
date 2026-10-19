@@ -25,6 +25,7 @@ import urllib.parse
 import ipaddress
 import socket
 
+from src.redaction import redact, redact_obj
 from src.tools.lookup import lookup_specific_clause
 from src.tools.search import execute_search
 from src.tools.operations import (
@@ -427,7 +428,7 @@ class AutonomousMCPRedTeamer:
                 and bool(response_text)
             )
             if not transport_ok:
-                transport_error = response_text or "No response from target"
+                transport_error = redact(response_text) or "No response from target"
                 evidence_block = self.evidence_recorder.record_turn(
                     turn_number=rung_idx, rung_name=plan["rung_name"],
                     prompt=plan["prompt"], response=response_text,
@@ -436,7 +437,7 @@ class AutonomousMCPRedTeamer:
                 turn_results.append({
                     "turn_number": rung_idx, "rung_name": plan["rung_name"],
                     "objective": plan["objective"], "mcp_tools_consulted": plan["tools_consulted"],
-                    "adversarial_prompt": plan["prompt"], "target_response": response_text,
+                    "adversarial_prompt": redact(plan["prompt"]), "target_response": redact(response_text),
                     "latency_ms": latency_ms, "audit_verdict": "ERROR", "violations": [],
                     "apra_notification_triggered": False, "apra_notification_details": None,
                     "transport_error": transport_error,
@@ -490,11 +491,11 @@ class AutonomousMCPRedTeamer:
                 "rung_name": plan["rung_name"],
                 "objective": plan["objective"],
                 "mcp_tools_consulted": plan["tools_consulted"],
-                "adversarial_prompt": plan["prompt"],
-                "target_response": response_text,
+                "adversarial_prompt": redact(plan["prompt"]),
+                "target_response": redact(response_text),
                 "latency_ms": latency_ms,
                 "audit_verdict": audit_verdict,
-                "violations": violations,
+                "violations": redact_obj(violations),
                 "apra_notification_triggered": notification_required,
                 "apra_notification_details": audit.get("apra_reporting_assessment"),
                 "sha256_evidence": {
@@ -565,7 +566,7 @@ class AutonomousMCPRedTeamer:
                 "chain_integrity_valid": chain_verified,
                 "blocks": self.evidence_recorder.blocks,
             },
-            "mcp_tool_execution_trace": self.mcp_tool_call_log,
+            "mcp_tool_execution_trace": redact_obj(self.mcp_tool_call_log),
             "detailed_turns": turn_results,
             "board_dossier_markdown": dossier_markdown,
             "duration_seconds": round(time.time() - campaign_start, 2)
