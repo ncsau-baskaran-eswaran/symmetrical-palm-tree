@@ -1,6 +1,7 @@
 """Runs the rule catalogue (and optionally the semantic judge) over one agent interaction."""
 
 import re
+import time
 from functools import lru_cache
 from typing import Any, Dict, FrozenSet, List, Optional, Tuple
 
@@ -9,6 +10,7 @@ from src.db import get_clause_by_number, get_standard_by_code
 from src.rules.catalog import JUDGE_ONLY_CATEGORIES, RULES
 from src.rules.engine import ALL_SECTORS, BANK, GI, INSURANCE, LIFE, PHI, Hit, Ref, evaluate_rule
 from src.rules import judge as judge_module
+from src.provenance import attach_provenance
 from src.tools.notifications import assess_notification_requirements, assess_regulatory_obligations
 
 DEFAULT_MATERIALITY_THRESHOLD = 50_000.0
@@ -102,6 +104,7 @@ def run_audit(
     context: Optional[Dict[str, Any]] = None,
     sector: Optional[str] = None,
 ) -> Dict[str, Any]:
+    started = time.perf_counter()
     context = context or {}
     explicit = sector or context.get("sector")
     sectors = resolve_sectors(agent_role, explicit)
@@ -210,7 +213,7 @@ def run_audit(
             "not confirmation that the interaction complies; reworded breaches can evade it."
         )
 
-    return {
+    return attach_provenance({
         "audit_verdict": verdict,
         "screen_result": screen,
         "risk_severity": severity,
@@ -233,4 +236,4 @@ def run_audit(
             "Under CPS 230 Paragraph 19, CPS 234 Paragraph 13 and the Financial Accountability Regime, the Board and "
             "accountable persons remain responsible for risks arising from autonomous agents in production."
         ),
-    }
+    }, judge_result, agent_response, started)

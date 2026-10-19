@@ -149,6 +149,11 @@ def _stored_hash() -> Optional[str]:
         return None
 
 
+def stored_corpus_hash() -> Optional[str]:
+    """Corpus hash recorded in the registry database (read-only), or None if the database is not built."""
+    return _stored_hash()
+
+
 def init_db(force: bool = False) -> None:
     """Build the registry database if it is missing or the corpus has changed.
 

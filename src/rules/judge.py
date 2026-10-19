@@ -8,6 +8,7 @@ REVIEW flags, never automatic breaches: a human confirms anything the rules did 
 import json
 import os
 import re
+import time
 from typing import Any, Callable, Dict, FrozenSet, Iterable, List, Optional
 
 from src.rules.catalog import JUDGE_ONLY_CATEGORIES, RULES
@@ -110,6 +111,14 @@ def _parse(raw: str, allowed: Iterable[str], agent_response: str) -> List[Dict[s
     return findings
 
 
+def effective_judge(context: Dict[str, Any]) -> Dict[str, str]:
+    """Provider and model the judge would use for this context (an injected judge reports as 'injected')."""
+    if _injected:
+        return {"provider": "injected", "model": "injected"}
+    provider = (context.get("judge_provider") or os.environ.get("GUARDIAN_JUDGE_PROVIDER", "")).lower().strip()
+    return {"provider": provider, "model": os.environ.get("GUARDIAN_JUDGE_MODEL") or DEFAULT_MODELS.get(provider, "")}
+
+
 def maybe_judge(
     agent_role: str,
     user_prompt: str,
@@ -124,14 +133,18 @@ def maybe_judge(
     if context.get("judge") is False or (not _injected and provider in ("", "none", "off", "disabled")):
         return {"enabled": False, "status": "disabled (rules only)", "findings": []}
 
+    started = time.perf_counter()
+    identity = effective_judge(context)
     categories = _category_descriptions(set(rule_categories) | set(extra_categories))
     prompt = build_prompt(agent_role, user_prompt, agent_response, sectors, categories)
     try:
         raw = _injected(prompt) if _injected else _call_provider(provider, prompt)
         findings = _parse(raw, categories, agent_response)
     except Exception as exc:  # the judge must never break the deterministic screen
-        return {"enabled": True, "status": f"error: {type(exc).__name__}", "findings": []}
-    return {"enabled": True, "status": f"enabled ({'injected' if _injected else provider})", "findings": findings}
+        return {"enabled": True, "status": f"error: {type(exc).__name__}", "findings": [], **identity,
+                "elapsed_ms": (time.perf_counter() - started) * 1000}
+    return {"enabled": True, "status": f"enabled ({'injected' if _injected else provider})", "findings": findings, **identity,
+            "elapsed_ms": (time.perf_counter() - started) * 1000}
 
 
 def as_review_flag(finding: Dict[str, Any], sectors: FrozenSet[str]) -> Dict[str, Any]:
