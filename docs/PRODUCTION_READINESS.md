@@ -19,6 +19,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Shared rate limiting and stateless HTTP sessions | Done | `GUARDIAN_HTTP_STATELESS=1` (FastMCP `stateless_http` + JSON responses) and `GUARDIAN_HTTP_RATE_BACKEND=redis` (lazy `redis`, fixed-window); tests in `tests/test_http_server.py`; recipe in README "Remote deployment" |
 | Judge latency budget for the runtime guardrail | Done | `GUARDIAN_JUDGE_WHEN` (default `rule_clean`) and `GUARDIAN_JUDGE_BUDGET_MS` (default 4000) with per-call overrides; guarded mode uses 1500 ms; timeout falls back to rules only; `tests/test_judge_budget.py` |
 | Weekly `diff` job and fewer false "changed" results | Done | `.github/workflows/corpus-freshness.yml` (Monday 21:00 UTC, `staleness` then `diff --json`, artifact plus issue on change); `diff` now uses per-source signals (legislation compilation id, PDF hash and length, main-content hash) recorded in `sources.lock.json`; lock regenerated and 44 of 44 sources unchanged on an immediate re-run |
+| State public holidays | Done | `state` argument or `GUARDIAN_STATE`; verified 2025-2027 data in `src/data/holidays/au_public_holidays.json` (verified 2026-10-19), national fallback reported in `day_basis`; `tests/test_holidays.py` |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
 Test suite: 286 tests pass in all three CI configurations.
@@ -27,7 +28,6 @@ Test suite: 286 tests pass in all three CI configurations.
 
 | Item | Why it matters |
 | :--- | :--- |
-| State public holidays | Business-day clocks exclude national holidays only |
 | Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
 | Unfixed Debian base CVEs | 44 high findings await Debian fixes; re-scan weekly, or move to a minimal base (for example a distroless or Wolfi Python image) once it supports Python 3.12+ with pinned tags |
 

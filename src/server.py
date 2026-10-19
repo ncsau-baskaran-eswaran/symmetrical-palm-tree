@@ -232,6 +232,7 @@ def assess_regulatory_obligations(
     exceeds_tolerance: bool = False,
     is_material_impact: bool = False,
     is_control_weakness: bool = False,
+    state: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Dated reporting deadlines across APRA, ASIC, OAIC, Code committees and the ACSC, from audit triggers or
@@ -243,6 +244,7 @@ def assess_regulatory_obligations(
         detected_at: ISO 8601 detection time
         soci_critical_insurance_asset: entity runs a SOCI critical insurance asset
         incident_type, is_cyber_or_infosec, exceeds_tolerance, is_material_impact, is_control_weakness: APRA incident flags
+        state: NSW, VIC, QLD, WA, SA, TAS, ACT or NT for state public holidays (default GUARDIAN_STATE)
     """
     triggers = list(triggers or [])
     apra = None
@@ -269,6 +271,7 @@ def assess_regulatory_obligations(
         sectors=sectors or sorted(SECTORS),
         detected_at=detected_at,
         entity_profile={"soci_critical_insurance_asset": soci_critical_insurance_asset},
+        state=state,
     )
     if apra:
         result["apra_assessment"] = apra
@@ -325,6 +328,7 @@ def check_claim_timeframe(
     today: Optional[str] = None,
     product: Optional[str] = None,
     last_update_on: Optional[str] = None,
+    state: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Check a general or life claim against Code of Practice decision, overall and update timeframes.
@@ -336,10 +340,11 @@ def check_claim_timeframe(
         today: YYYY-MM-DD (default today)
         product: life product, e.g. income_protection, tpd, trauma, death
         last_update_on: YYYY-MM-DD of the last customer update
+        state: NSW, VIC, QLD, WA, SA, TAS, ACT or NT for state public holidays (default GUARDIAN_STATE)
     """
     return compute_claim_timeframe(
         sector=sector, lodged_on=lodged_on, info_complete_on=info_complete_on, today=today,
-        product=product, last_update_on=last_update_on,
+        product=product, last_update_on=last_update_on, state=state,
     )
 
 
