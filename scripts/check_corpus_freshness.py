@@ -2,11 +2,15 @@
 
     .venv/bin/python scripts/check_corpus_freshness.py staleness [--max-age-days 90] [--fail-on-unverified]
     .venv/bin/python scripts/check_corpus_freshness.py snapshot      # online, writes src/data/sources.lock.json
-    .venv/bin/python scripts/check_corpus_freshness.py diff          # online, exit 2 if any source changed
+    .venv/bin/python scripts/check_corpus_freshness.py diff [--json]  # online, exit 2 if any source changed
     .venv/bin/python scripts/check_corpus_freshness.py review-pack   # writes docs/CORPUS_REVIEW.md
 
 `staleness` and `review-pack` are offline. `snapshot` and `diff` fetch every unique `source_url` with a polite
 User-Agent, a timeout and small concurrency, and never raise on network failure (failures are recorded).
+
+Change detection uses the strongest content signal available per source, recorded as `signal` in the lock:
+`legislation_id` (legislation.gov.au compilation id), `pdf` (raw sha256 plus Content-Length), `html_main` (main
+content only) or `html_body` (body with navigation chrome removed). Page chrome therefore cannot raise a change.
 """
 
 import argparse
@@ -17,8 +21,9 @@ import sys
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
 
@@ -142,18 +147,110 @@ def unique_sources(instruments: List[Dict[str, Any]]) -> Dict[str, List[str]]:
     return dict(sources)
 
 
-def normalise_body(body: bytes) -> bytes:
-    """Strip scripts, styles, comments, tags and whitespace so cosmetic page churn does not change the hash.
+# Tags whose whole subtree is chrome or non-content.
+_DROP_TAGS = frozenset({"script", "style", "noscript", "template", "nav", "header", "footer", "aside", "form"})
+# class/id tokens (split on non-alphanumerics, matched by prefix) that mark chrome.
+_DROP_TOKENS = ("nav", "menu", "breadcrumb", "banner", "cookie", "footer")
+_VOID_TAGS = frozenset(
+    {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+)
+_ROOT_TAGS = frozenset({"html", "body", "main", "article"})
 
-    Non-text bodies (PDFs) are returned unchanged.
+
+class _Node:
+    __slots__ = ("tag", "attrs", "children")
+
+    def __init__(self, tag: str, attrs: Dict[str, str]) -> None:
+        self.tag = tag
+        self.attrs = attrs
+        self.children: List[Any] = []  # _Node or str
+
+
+class _TreeBuilder(HTMLParser):
+    """Tolerant DOM builder on the stdlib parser: unmatched end tags are ignored, unclosed tags close at EOF."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.root = _Node("#root", {})
+        self.stack = [self.root]
+
+    def handle_starttag(self, tag, attrs):
+        node = _Node(tag, {k: (v or "") for k, v in attrs})
+        self.stack[-1].children.append(node)
+        if tag not in _VOID_TAGS:
+            self.stack.append(node)
+
+    def handle_startendtag(self, tag, attrs):
+        self.stack[-1].children.append(_Node(tag, {k: (v or "") for k, v in attrs}))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, 0, -1):
+            if self.stack[i].tag == tag:
+                del self.stack[i:]
+                return
+
+    def handle_data(self, data):
+        self.stack[-1].children.append(data)
+
+
+def _is_chrome(node: _Node) -> bool:
+    if node.tag in _DROP_TAGS:
+        return True
+    if node.tag in _ROOT_TAGS:
+        return False
+    tokens = re.split(r"[^a-z0-9]+", f"{node.attrs.get('class', '')} {node.attrs.get('id', '')}".lower())
+    return any(t.startswith(k) for t in tokens for k in _DROP_TOKENS)
+
+
+def _find(node: _Node, pred) -> Optional[_Node]:
+    """First node in document order that satisfies pred (depth first)."""
+    for child in node.children:
+        if isinstance(child, _Node):
+            if pred(child):
+                return child
+            hit = _find(child, pred)
+            if hit:
+                return hit
+    return None
+
+
+def _text(node: _Node, out: List[str]) -> None:
+    for child in node.children:
+        if isinstance(child, str):
+            out.append(child)
+        elif not _is_chrome(child):
+            out.append(" ")
+            _text(child, out)
+            out.append(" ")
+
+
+def html_signal(body: bytes) -> Tuple[str, bytes]:
+    """Return (signal, normalised content) for an HTML body.
+
+    Prefers <main>, <article> or role="main" (signal html_main); otherwise the body minus navigation chrome
+    (signal html_body). Whitespace is collapsed so cosmetic churn does not change the hash.
     """
+    builder = _TreeBuilder()
+    builder.feed(body.decode("utf-8", errors="replace"))
+    builder.close()
+    tree = builder.root
+    main = (
+        _find(tree, lambda n: n.tag == "main")
+        or _find(tree, lambda n: n.tag == "article")
+        or _find(tree, lambda n: n.attrs.get("role", "").lower() == "main")
+    )
+    signal = "html_main" if main else "html_body"
+    scope = main or _find(tree, lambda n: n.tag == "body") or tree
+    parts: List[str] = []
+    _text(scope, parts)
+    return signal, re.sub(r"\s+", " ", "".join(parts)).strip().encode("utf-8")
+
+
+def normalise_body(body: bytes) -> bytes:
+    """Main-content text of an HTML page (see html_signal). Non-text bodies (PDFs) are returned unchanged."""
     if body[:5] == b"%PDF-":
         return body
-    text = body.decode("utf-8", errors="replace")
-    text = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1\s*>", " ", text)
-    text = re.sub(r"(?s)<!--.*?-->", " ", text)
-    text = re.sub(r"(?s)<[^>]+>", " ", text)
-    return re.sub(r"\s+", " ", text).strip().encode("utf-8")
+    return html_signal(body)[1]
 
 
 def extract_legislation_id(url: str, body: bytes) -> Optional[str]:
@@ -162,6 +259,17 @@ def extract_legislation_id(url: str, body: bytes) -> Optional[str]:
         return None
     ids = _LEG_ID_RE.findall(body.decode("utf-8", errors="replace"))
     return Counter(ids).most_common(1)[0][0] if ids else None
+
+
+def classify_content(url: str, body: bytes) -> Dict[str, Any]:
+    """Pick the strongest change signal for a body and return its record fields."""
+    if body[:5] == b"%PDF-":
+        return {"signal": "pdf", "sha256": hashlib.sha256(body).hexdigest(), "legislation_id": None}
+    signal, content = html_signal(body)
+    leg_id = extract_legislation_id(url, body)
+    if leg_id:
+        signal = "legislation_id"  # the page hash is still recorded for information, but not compared
+    return {"signal": signal, "sha256": hashlib.sha256(content).hexdigest(), "legislation_id": leg_id}
 
 
 def make_client() -> httpx.Client:
@@ -184,10 +292,9 @@ def fetch_source(client: httpx.Client, url: str) -> Dict[str, Any]:
         "status": resp.status_code,
         "final_url": str(resp.url),
         "content_length": len(body),
-        "sha256": hashlib.sha256(normalise_body(body)).hexdigest(),
         "etag": resp.headers.get("etag"),
         "last_modified": resp.headers.get("last-modified"),
-        "legislation_id": extract_legislation_id(url, body),
+        **classify_content(url, body),
     }
 
 
@@ -216,18 +323,31 @@ def cmd_snapshot(_: argparse.Namespace) -> int:
     return 0
 
 
-def compare_record(old: Dict[str, Any], new: Dict[str, Any]) -> List[str]:
-    """Describe differences between a locked record and a fresh fetch (empty list means unchanged)."""
-    diffs = []
-    for key in ("sha256", "legislation_id", "final_url"):
-        if old.get(key) != new.get(key):
-            diffs.append(f"{key}: {old.get(key)} -> {new.get(key)}")
-    return diffs
+def compare_record(old: Dict[str, Any], new: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Compare a locked record with a fresh fetch using the locked record's signal.
+
+    Returns None when unchanged, otherwise {"signal": ..., "details": [...]}. The legislation compilation id decides
+    for legislation.gov.au pages (page chrome is ignored); PDFs compare raw sha256 and Content-Length; HTML compares
+    the main-content hash. If a signal cannot be applied (for example the id vanished), the content hash decides.
+    """
+    signal = old.get("signal") or "html_body"
+    if signal == "legislation_id" and old.get("legislation_id") and new.get("legislation_id"):
+        if old["legislation_id"] != new["legislation_id"]:
+            return {"signal": signal, "details": [f"legislation_id: {old['legislation_id']} -> {new['legislation_id']}"]}
+        return None
+    if signal == "legislation_id":
+        signal = "html_main"
+    details = []
+    if old.get("sha256") != new.get("sha256"):
+        details.append(f"sha256: {old.get('sha256')} -> {new.get('sha256')}")
+    if signal == "pdf" and old.get("content_length") != new.get("content_length"):
+        details.append(f"content_length: {old.get('content_length')} -> {new.get('content_length')}")
+    return {"signal": signal, "details": details} if details else None
 
 
 def diff_against_lock(lock: Dict[str, Any], fetched: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
-    """Classify each locked source as changed, unreachable or unchanged."""
-    changed: Dict[str, List[str]] = {}
+    """Classify each locked source as changed (with signal and details), unreachable or unchanged."""
+    changed: Dict[str, Dict[str, Any]] = {}
     unreachable: Dict[str, str] = {}
     unchanged: List[str] = []
     for url, old in lock.get("sources", {}).items():
@@ -235,26 +355,41 @@ def diff_against_lock(lock: Dict[str, Any], fetched: Dict[str, Dict[str, Any]]) 
         if not new.get("reachable"):
             unreachable[url] = str(new.get("status") or new.get("error"))
         elif not old.get("reachable"):
-            changed[url] = ["previously unreachable, now reachable"]
-        elif diffs := compare_record(old, new):
-            changed[url] = diffs
+            changed[url] = {"signal": "reachability", "details": ["previously unreachable, now reachable"]}
+        elif result := compare_record(old, new):
+            changed[url] = result
         else:
             unchanged.append(url)
     return {"changed": changed, "unreachable": unreachable, "unchanged": unchanged}
 
 
-def cmd_diff(_: argparse.Namespace) -> int:
+def cmd_diff(args: argparse.Namespace) -> int:
     if not LOCK_PATH.exists():
         print(f"No lock file at {LOCK_PATH}; run `snapshot` first.", file=sys.stderr)
         return 1
     lock = json.loads(LOCK_PATH.read_text(encoding="utf-8"))
     report = diff_against_lock(lock, fetch_all(sorted(lock.get("sources", {}))))
+    if args.json:
+        payload = {
+            "lock_generated_at": lock.get("generated_at"),
+            "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "counts": {k: len(report[k]) for k in ("changed", "unreachable", "unchanged")},
+            "changed": [
+                {"url": u, "signal": c["signal"], "details": c["details"],
+                 "instruments": lock["sources"][u].get("instruments", [])}
+                for u, c in report["changed"].items()
+            ],
+            "unreachable": [{"url": u, "reason": why} for u, why in report["unreachable"].items()],
+            "unchanged": report["unchanged"],
+        }
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return EXIT_CHANGED if report["changed"] else 0
     print(f"changed={len(report['changed'])} unreachable={len(report['unreachable'])} "
           f"unchanged={len(report['unchanged'])} (lock from {lock.get('generated_at')})")
-    for url, diffs in report["changed"].items():
+    for url, change in report["changed"].items():
         cited = ", ".join(lock["sources"][url].get("instruments", []))
-        print(f"  CHANGED {url} [{cited}]")
-        for d in diffs:
+        print(f"  CHANGED [{change['signal']}] {url} [{cited}]")
+        for d in change["details"]:
             print(f"      {d}")
     for url, why in report["unreachable"].items():
         print(f"  UNREACHABLE {url}: {why}")
@@ -308,28 +443,13 @@ Apply to each instrument you are signing off:
 - [ ] Licensing: no verbatim copyrighted text (industry codes especially).
 - [ ] `verification_notes` updated, and `verified_on` set to the review date.
 
-## Optional CI step: weekly source drift check
+## Weekly source drift check
 
-Another workstream owns `.github/workflows/ci.yml`, so this is a suggestion only. A scheduled job that fails (exit
-code 2) when any cited source changes against `src/data/sources.lock.json`:
-
-```yaml
-name: corpus-freshness
-on:
-  schedule:
-    - cron: "0 22 * * 0"   # weekly, Monday 08:00 AEST
-  workflow_dispatch:
-jobs:
-  diff:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {{ python-version: "3.12" }}
-      - run: pip install httpx
-      - run: python scripts/check_corpus_freshness.py staleness --fail-on-unverified
-      - run: python scripts/check_corpus_freshness.py diff
-```
+`.github/workflows/corpus-freshness.yml` runs weekly (Monday 21:00 UTC) and on demand. It runs `staleness` (never
+fails the job) and `diff --json`; when a cited source changes against `src/data/sources.lock.json` it uploads the
+JSON report as an artifact and opens or updates a single GitHub issue. Change detection uses the strongest signal per
+source (legislation compilation id, PDF hash and length, or main-content hash), so site navigation and banner
+changes do not raise issues. After a reviewer accepts the new state of a source, refresh the lock with `snapshot`.
 
 ## Instruments
 """
@@ -395,7 +515,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     st.add_argument("--fail-on-unverified", action="store_true", help="exit 1 if any verified_on is empty")
     st.set_defaults(func=cmd_staleness)
     sub.add_parser("snapshot", help="online: fetch sources and write the lock file").set_defaults(func=cmd_snapshot)
-    sub.add_parser("diff", help="online: compare sources to the lock (exit 2 on change)").set_defaults(func=cmd_diff)
+    df = sub.add_parser("diff", help="online: compare sources to the lock (exit 2 on change)")
+    df.add_argument("--json", action="store_true", help="print a machine-readable report for CI")
+    df.set_defaults(func=cmd_diff)
     sub.add_parser("review-pack", help="offline: write docs/CORPUS_REVIEW.md").set_defaults(func=cmd_review_pack)
     args = ap.parse_args(argv)
     return args.func(args)

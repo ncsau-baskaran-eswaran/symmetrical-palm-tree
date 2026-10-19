@@ -18,6 +18,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Container image | Done | `Dockerfile.http` builds (286 MB, non-root uid 10001, HEALTHCHECK on /healthz); refuses to start without tokens (exit 2); 401 without and 200 with a token; optional build-time CA secret for TLS-intercepting proxies, not written to any layer; `pip-audit` reports no known vulnerabilities in its 29 Python packages. OS-package scan still needs Docker Scout (Docker Hub login) or Trivy |
 | Shared rate limiting and stateless HTTP sessions | Done | `GUARDIAN_HTTP_STATELESS=1` (FastMCP `stateless_http` + JSON responses) and `GUARDIAN_HTTP_RATE_BACKEND=redis` (lazy `redis`, fixed-window); tests in `tests/test_http_server.py`; recipe in README "Remote deployment" |
 | Judge latency budget for the runtime guardrail | Done | `GUARDIAN_JUDGE_WHEN` (default `rule_clean`) and `GUARDIAN_JUDGE_BUDGET_MS` (default 4000) with per-call overrides; guarded mode uses 1500 ms; timeout falls back to rules only; `tests/test_judge_budget.py` |
+| Weekly `diff` job and fewer false "changed" results | Done | `.github/workflows/corpus-freshness.yml` (Monday 21:00 UTC, `staleness` then `diff --json`, artifact plus issue on change); `diff` now uses per-source signals (legislation compilation id, PDF hash and length, main-content hash) recorded in `sources.lock.json`; lock regenerated and 44 of 44 sources unchanged on an immediate re-run |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
 Test suite: 286 tests pass in all three CI configurations.
@@ -27,8 +28,6 @@ Test suite: 286 tests pass in all three CI configurations.
 | Item | Why it matters |
 | :--- | :--- |
 | State public holidays | Business-day clocks exclude national holidays only |
-| Weekly `diff` job | Suggested in `docs/CORPUS_REVIEW.md`; not yet a scheduled workflow |
-| Reduce false "changed" results in `diff` | Whole-page hashing flags navigation or banner changes on source sites |
 | Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
 
 ## Needs people
