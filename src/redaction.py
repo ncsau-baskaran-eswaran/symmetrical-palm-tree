@@ -4,15 +4,23 @@ Audit evidence and probe dossiers quote the agent's own words, which can carry T
 bank details, contact details and dates of birth. Detection always runs on the raw text; only the output is redacted,
 so a PII finding still fires while the copy an insurer stores holds typed placeholders instead of the identifier.
 
-    GUARDIAN_REDACT   "1" (default) masks; "0" disables, for internal debugging only.
+    GUARDIAN_REDACT         "1" (default) masks; "0" disables, for internal debugging only.
+    GUARDIAN_REDACT_NAMES   person-name masking; inherits GUARDIAN_REDACT, "0" turns off names only.
 
 Patterns are stricter than the PRV-01 detection patterns: cards must pass Luhn, 9-digit numbers must pass the TFN
 checksum unless labelled, and Medicare numbers must pass the check digit unless labelled. Dollar amounts, clause
 references, claim numbers and dates in obligations are left alone.
+
+Names are masked with precision first and no ML: a capitalised name after a cue ("customer", "Mr", "my name is") is
+always masked, and an unlabelled "First Last" is masked only when the first token is a bundled common given name and
+the pair is not a known non-person term (regulator, instrument, insurer, place, product). Ambiguous words such as
+Mark, Will or Grace are not in the given-name list, so they mask only when a cue precedes them.
 """
 
 import os
 import re
+from functools import lru_cache
+from pathlib import Path
 from typing import Any, Callable, FrozenSet, Match
 
 # Keys whose string values carry customer or agent text. Nothing else (citations, clauses, categories,
@@ -27,6 +35,11 @@ _NOT_WORD = r"(?<![\w$.,/-])"  # not inside a longer token, an amount, a claim n
 
 def redaction_enabled() -> bool:
     return os.environ.get("GUARDIAN_REDACT", "1").strip().lower() not in ("0", "false", "off", "no")
+
+
+def names_redaction_enabled() -> bool:
+    default = "1" if redaction_enabled() else "0"
+    return os.environ.get("GUARDIAN_REDACT_NAMES", default).strip().lower() not in ("0", "false", "off", "no")
 
 
 def _digits(s: str) -> str:
@@ -83,6 +96,134 @@ _DATE = (
 _DOB = re.compile(r"(\b(?:dob|d\.o\.b\.?|date of birth|born(?: on)?)\b[:\s]*)" + _DATE, re.I)
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# Person names
+# ---------------------------------------------------------------------------------------------------------------
+
+_GIVEN_NAMES_FILE = Path(__file__).parent / "data" / "given_names.txt"
+
+
+@lru_cache(maxsize=1)
+def _given_names() -> FrozenSet[str]:
+    try:
+        lines = _GIVEN_NAMES_FILE.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return frozenset()
+    return frozenset(l.strip().lower() for l in lines if l.strip() and not l.startswith("#"))
+
+
+# One capitalised name token: O'Brien, McDonald, Smith-Jones, Anne, or an initial such as "J.".
+_TOK = r"(?:[A-Z]['\u2019][A-Z][a-z]+|Mc[A-Z][a-z]+(?:-[A-Z][a-z]+)*|[A-Z][a-z]+(?:-[A-Z][a-z]+)*|[A-Z]\.)"
+_TOK_RE = re.compile(_TOK)
+_SEQ = _TOK + r"(?:[ ]" + _TOK + r"){0,3}"
+
+# Words that are capitalised in ordinary insurance prose and are never (part of) a person name.
+_NON_NAME_WORDS: FrozenSet[str] = frozenset(w.lower() for w in """
+The This That These Those Our Your Their His Her Its My We You They It He She There Here What When Where Which Who Why
+How And But Or If As At By For From In Of On To With Is Are Was Were Be Not No Yes Please Thanks Thank Sorry Hello Hi
+Dear Regards Sincerely Kind Best Good Great Welcome Sure Certainly Unfortunately Happy Glad Afraid Unable Currently
+Service Services Support Team Teams Number Numbers Details Detail Data Information Name Names Account Accounts Portal
+Satisfaction Experience Benefits Benefit Policy Policies Claim Claims Cover Coverage Insurance Insurer Insurers Group
+Limited Ltd Pty Australia Australian Bank Life Health Care Code Act Acts Regulations Regulation Rules Rule Standard
+Standards Authority Commission Court Tribunal Ombudsman Scheme Department Fund Financial Park Street Road Hospital
+Clinic Centre Center University College School Council Association Society Union Network Plan Plans Plus Line
+Assessor Officer Manager Department Desk Helpdesk Representative Adviser Advisor Consultant Agent Agents Assistant
+Monday Tuesday Wednesday Thursday Friday Saturday Sunday January February March April May June July August
+September October November December News Notice Notices Period Date Dates Form Forms Process Review Reviews Complaint
+Complaints Dispute Disputes Decision Decisions Letter Letters Email Phone Address Contact Status Update Updates
+Payment Payments Premium Premiums Excess Limit Limits Exclusion Exclusions Condition Conditions Terms Schedule
+Disclosure Statement Statements Product Products Document Documents Guide Guides Summary Section Part Schedule
+Medical Travel Home Motor Car Contents Building Buildings Business Commercial Personal Private Public National
+Federal State Territory Government Industry Management Risk Compliance Operations Customer Customers Member Members
+Sir Madam Medicare Centrelink Suncorp Allianz Medibank Bupa Nib Qbe Aami Youi Cgu Hcf Hbf Ahm Tower Budget Woolworths Coles
+Policyholder Policyholders Claimant Claimants Insured Beneficiary Applicant Patient Driver Name Hardship Fair Unfair
+Conduct Practice Practices Principle Principles Duty Obligation Obligations General Special Standard Super Wealth
+""".split())
+
+# Whole phrases that look like "Given Surname" or a name after a cue but are not people.
+_NON_PERSON_PHRASES: FrozenSet[str] = frozenset(p.lower() for p in """
+New South Wales|South Australia|Western Australia|Northern Territory|Australian Capital Territory|Good News|Good News
+Claims Team|Gold Coast|Sunshine Coast|Port Macquarie|Alice Springs|Mount Isa|Coffs Harbour|Great Barrier Reef
+Sunshine Guardian|Insurance Contracts Act|General Insurance Code|Privacy Act|Corporations Act|Competition Act
+Hunter Valley|Blue Mountains|Snowy Mountains|Murray Darling|Victoria Park|Kings Cross|Bondi Beach
+""".replace("\n", "|").split("|") if p.strip())
+
+_CUE_WORDS = (
+    r"policy ?holders?|customers?|members?|claimants?|insureds?|beneficiar(?:y|ies)|applicants?|patients?|drivers?"
+    r"|name is|name's|name:|full name:?|my name's|(?:account|policy) holder|(?:first|last|sur)name:?"
+)
+# Weaker cues: a single capitalised word after them is a name only when it is a known given name, because
+# "regarding Medicare" or "called Sydney" must survive.
+_STRICT_CUE_WORDS = (
+    r"named|called|dear|on behalf of|spoke (?:to|with)|speaking (?:to|with)|regarding|attention:?|attn:?|caller:?|hi|hello|hey|thanks|thank you"
+)
+# Cue (case-insensitive) then a case-sensitive capitalised sequence.
+_LABELLED = re.compile(r"((?i:\b(?:" + _CUE_WORDS + r")[:,]?)[ ]+)(" + _SEQ + r")")
+_LABELLED_STRICT = re.compile(r"((?i:\b(?:" + _STRICT_CUE_WORDS + r")[:,]?)[ ]+)(" + _SEQ + r")")
+_TITLED = re.compile(r"\b((?:Mr|Mrs|Ms|Miss|Mx|Dr|Prof|Professor)\.?[ ]+)(" + _SEQ + r")")
+_IM = re.compile(r"((?i:\b(?:I'm|I\u2019m|I am))[ ]+)(" + _SEQ + r")")
+_POSSESSIVE_CLAIM = re.compile(
+    r"\b(" + _TOK + r")(['\u2019]s)(?= (?:claim|policy|account|case|file|application|premium|cover|medical|"
+    r"diagnosis|treatment|payout|settlement|details|record|address|number|surgery|injury|accident)\b)")
+_UNLABELLED = re.compile(r"(?<![\w@'\u2019-])(" + _SEQ + r")(?![\w@])")
+
+
+def _leading_name(seq: str, need_given_or_surname: bool = False) -> int:
+    """Length (in chars) of the leading run of `seq` that reads as a person name, or 0 when it does not."""
+    toks = list(_TOK_RE.finditer(seq))
+    keep = []
+    for m in toks:
+        t = m.group(0)
+        if t.lower() in _NON_NAME_WORDS:
+            break
+        keep.append(m)
+    if not keep:
+        return 0
+    if need_given_or_surname and len(keep) < 2 and keep[0].group(0).lower() not in _given_names():
+        return 0
+    phrase = " ".join(m.group(0) for m in keep).lower()
+    if any(phrase == p or phrase.startswith(p + " ") for p in _NON_PERSON_PHRASES):
+        return 0
+    return keep[-1].end()
+
+
+def _mask_after_cue(m: Match[str], strict: bool = False) -> str:
+    n = _leading_name(m.group(2), need_given_or_surname=strict)
+    if not n:
+        return m.group(0)
+    return m.group(1) + "[NAME]" + m.group(2)[n:]
+
+
+def _mask_unlabelled(m: Match[str]) -> str:
+    seq = m.group(1)
+    toks = list(_TOK_RE.finditer(seq))
+    # A run longer than the 3 tokens of a plausible name is a heading or product string: leave it.
+    if len(toks) < 2 or len(toks) > 3:
+        return seq
+    first = toks[0].group(0)
+    if first.lower() not in _given_names():
+        return seq
+    if any(t.group(0).lower() in _NON_NAME_WORDS for t in toks[1:]):
+        return seq
+    if any(len(t.group(0)) == 1 for t in toks[1:2]):  # "Jane J" with no real surname
+        return seq
+    phrase = seq.lower()
+    if any(phrase == p or phrase.startswith(p + " ") for p in _NON_PERSON_PHRASES):
+        return seq
+    return "[NAME]"
+
+
+def redact_names(text: str) -> str:
+    """Mask person names: cue-labelled ones always, unlabelled "Given Surname" pairs by given-name list."""
+    text = _LABELLED.sub(_mask_after_cue, text)
+    text = _LABELLED_STRICT.sub(lambda m: _mask_after_cue(m, strict=True), text)
+    text = _TITLED.sub(_mask_after_cue, text)
+    text = _IM.sub(lambda m: _mask_after_cue(m, strict=True), text)
+    text = _POSSESSIVE_CLAIM.sub(
+        lambda m: "[NAME]" + m.group(2) if m.group(1).lower() in _given_names() else m.group(0), text)
+    return _UNLABELLED.sub(_mask_unlabelled, text)
+
+
 def _checked(placeholder: str, ok: Callable[[str], bool]) -> Callable[[Match[str]], str]:
     def repl(m: Match[str]) -> str:
         return placeholder if ok(_digits(m.group(0))) else m.group(0)
@@ -104,6 +245,8 @@ def redact(text: Any) -> Any:
     text = _PHONE.sub("[PHONE]", text)
     text = _ADDRESS.sub("[ADDRESS]", text)
     text = _DOB.sub(lambda m: m.group(1) + "[DOB]", text)
+    if names_redaction_enabled():
+        text = redact_names(text)
     return text
 
 

@@ -12,6 +12,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Continuous integration | Done | `.github/workflows/ci.yml`: tests in default, `GUARDIAN_TOOLSETS=all` and `GUARDIAN_SECTORS=phi`, plus wheel build |
 | Finding provenance and audit trail | Done | `src/provenance.py`: corpus hash, rules hash (including reporting triggers), judge model, finding ids, timing |
 | Personal information redaction | Done | `src/redaction.py`: checksum-validated TFN, Medicare and card masking, plus BSB/account, email, phone, address, DOB |
+| Name redaction | Done | `src/redaction.py` `redact_names()` with `src/data/given_names.txt` (SSA public-domain list plus AU supplement); `GUARDIAN_REDACT_NAMES`. Hand-labelled set: precision 1.00, recall 1.00 (17 names); blind-corpus false positives 0 of 179 capitalised tokens in 200 reply sentences; recall on corpus customer replies about 75% (misses lone first names and ambiguous names such as Mark) |
 | Multi-turn screening | Done | `prior_turns` on the audit tool; history-aware gates and omission checks |
 | Remote server with authentication | Done | `src/http_server.py`: bearer tokens, rate limit, body limit, `/healthz`, refuses to start unauthenticated off loopback |
 | Corpus change monitoring | Done | `scripts/check_corpus_freshness.py` (`staleness`, `snapshot`, `diff`, `review-pack`); baseline lock of 44 sources |
@@ -28,7 +29,7 @@ Test suite: 286 tests pass in all three CI configurations.
 | State public holidays | Business-day clocks exclude national holidays only |
 | Weekly `diff` job | Suggested in `docs/CORPUS_REVIEW.md`; not yet a scheduled workflow |
 | Reduce false "changed" results in `diff` | Whole-page hashing flags navigation or banner changes on source sites |
-| Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
+| Non-AU identifiers and lone names | Names are masked by cue or given-name list; a lone surname or single given name with no cue, and non-AU identifiers, are not masked |
 | Judge latency budget for the runtime guardrail | The local judge adds about 12 seconds; run it asynchronously or only on rule-clean replies |
 
 ## Needs people
