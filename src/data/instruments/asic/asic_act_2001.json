@@ -1,0 +1,227 @@
+{
+  "code": "ASIC Act 2001",
+  "title": "Australian Securities and Investments Commission Act 2001 (Cth), Part 2 Division 2 (consumer protection in relation to financial services)",
+  "short_name": "ASIC Act",
+  "regulator": "ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A00819",
+  "effective_date": "2002-03-11",
+  "amended_date": "2026-09-19",
+  "status": "In Force",
+  "sectors": ["general_insurance", "life_insurance"],
+  "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Authorised Representative", "Insurance Distributor"],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2004A00819/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the authorised compilation on the Federal Register of Legislation: Compilation No. 109, compilation date 19 September 2026 (C2026C00429). Confirmed: s12BF(2A) and (2C) prohibitions on proposing, applying or relying on unfair terms; s12BI(1)(f) and (4) insurance-specific main subject matter and excess carve-outs; s12GBA(6) lists Subdiv BA (UCT), Subdiv C (unconscionable conduct), Subdiv D other than s12DA, and Subdiv DA (add-on insurance) as civil penalty provisions; s12GBCA maximum penalty for a body corporate is the greatest of 50,000 penalty units, 3 times the benefit, or 10% of annual turnover capped at 2.5 million penalty units (some ASIC material quotes the higher Australian Consumer Law figures; those do not apply to the ASIC Act). Application of UCT to insurance from 5 April 2021 confirmed from ICA s15(2)(d) and the ICA legislation history (Act No 2 of 2020 Sch 1 items 8 to 10). The 9 November 2023 commencement of UCT civil penalties (Treasury Laws Amendment (More Competition, Better Prices) Act 2022, Sch 2) is from ASIC web material; the endnotes giving that date were not in the downloaded volumes. Commencement date of 11 March 2002 for the principal Act is from general knowledge. Health insurance provided as part of a health insurance business, and health-related business through a health benefits fund, are not financial products for Div 2 (s12BAA(8)(b) and (ba)), so these provisions do not apply to private health insurance products; the Australian Consumer Law (ACCC) covers that conduct instead.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "ASIC Regulatory Guide 275 The deferred sales model for add-on insurance",
+    "ASIC Regulatory Guide 38 The hawking prohibition",
+    "ASIC Information Sheet on unfair contract terms and insurance",
+    "Insurance Contracts Act 1984 s15(2)(d)",
+    "Corporations Act 2001 s1041H"
+  ],
+  "summary": "Part 2 Division 2 of the ASIC Act contains the financial services consumer protections administered by ASIC: unfair contract terms in standard form consumer and small business contracts (applying to insurance contracts since 5 April 2021 and carrying civil penalties since 9 November 2023), unconscionable conduct, misleading or deceptive conduct, false or misleading representations, conduct liable to mislead the public, harassment and coercion, and the deferred sales model for add-on insurance. Most of these are civil penalty provisions (s12DA is civil liability only) and breaches are typically deemed significant for breach reporting. Private health insurance products are excluded from the definition of financial product for this Division.",
+  "clauses": [
+    {
+      "id": "ASICA-S12BF",
+      "clause_number": "12BF",
+      "section_name": "Part 2 Division 2 Subdivision BA: Unfair contract terms",
+      "heading": "Unfair terms of consumer contracts and small business contracts",
+      "text": "An unfair term in a standard form consumer or small business contract for a financial product or financial service is void, and the rest of the contract continues if it can operate without that term. It is also a contravention for a person to propose an unfair term in such a contract (each unfair term is a separate contravention), or to apply or rely on, or purport to apply or rely on, an unfair term. A consumer contract involves an individual acquiring wholly or predominantly for personal, domestic or household use. A small business contract has an upfront price of no more than $5 million and a party with fewer than 100 employees or turnover under $10 million. The section expressly applies to Insurance Contracts Act insurance contracts.",
+      "subclauses": [
+        "(1) to (2) Unfair term in a standard form consumer or small business contract for a financial product or service is void; the contract otherwise continues if workable.",
+        "(2A) and (2B) Contravention to propose an unfair term; separate contravention for each term.",
+        "(2C) Contravention to apply or rely on, or purport to apply or rely on, an unfair term.",
+        "(3) Meaning of consumer contract.",
+        "(4) to (8) Meaning of small business contract: upfront price up to $5,000,000 and a party with fewer than 100 employees or turnover under $10,000,000.",
+        "Note: applies to Insurance Contracts Act insurance contracts in addition to the ICA (ICA s15(2)(d)).",
+        "Related: s12BG meaning of unfair (significant imbalance, not reasonably necessary to protect legitimate interests, would cause detriment), s12BI exclusions including transparent terms defining what is insured (main subject matter), the upfront premium, and disclosed transparent excess terms."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["unfair contract terms", "insurance contracts", "standard form contracts", "civil penalty", "small business"],
+      "notes": "Applies to insurance contracts entered into, renewed or varied on or after 5 April 2021. From 9 November 2023 proposing, applying or relying on an unfair term is a civil penalty contravention (body corporate maximum: greatest of 50,000 penalty units, 3 times benefit, or 10% of turnover capped at 2.5 million penalty units under s12GBCA). An AI agent must not rely on terms flagged as potentially unfair (for example broad notification, cancellation, or discretion terms) to decline or reduce claims, and product wording it generates or presents must be reviewed. For insurance, the main subject matter exclusion is narrow: only terms describing what is being insured (s12BI(4)). ASIC's first insurance UCT cases (Auto & General; HCF Life) did not succeed on the unfairness point at trial, and the Full Federal Court dismissed ASIC's HCF Life appeal in 2026. Not applicable to private health insurance products.",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12CB",
+      "clause_number": "12CB",
+      "section_name": "Part 2 Division 2 Subdivision C: Unconscionable conduct",
+      "heading": "Unconscionable conduct in connection with financial services",
+      "text": "A person must not, in trade or commerce, engage in conduct that is unconscionable in all the circumstances in connection with supplying or acquiring financial services. The prohibition is not limited to the unwritten law concept and can apply to a system or pattern of conduct without an identified victim. Merely instituting legal proceedings or referring a dispute to arbitration is excluded.",
+      "subclauses": [
+        "(1) Prohibition on unconscionable conduct in connection with supply or acquisition of financial services.",
+        "(2) Exclusion for instituting legal proceedings or referring to arbitration.",
+        "(3) to (4) Not limited by unwritten law; may apply to a system or pattern of conduct (interpretive principles, not re-read in full)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["unconscionable conduct", "vulnerable customers", "pressure selling", "claims handling"],
+      "notes": "Civil penalty provision (s12GBA(6)(a)). Relevant where an AI agent exploits customer vulnerability, uses dark patterns, pressures customers to accept low settlements, or systematically delays claims. Agents should detect vulnerability indicators and escalate. Not applicable to private health insurance products.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DA",
+      "clause_number": "12DA",
+      "section_name": "Part 2 Division 2 Subdivision D: Consumer protection",
+      "heading": "Misleading or deceptive conduct",
+      "text": "A person must not, in trade or commerce, engage in conduct in relation to financial services that is misleading or deceptive or likely to mislead or deceive. Certain conduct already regulated by specific Corporations Act disclosure provisions (for example misleading takeover or fundraising documents, and Chapter 7 disclosure documents) is carved out.",
+      "subclauses": [
+        "(1) General prohibition on misleading or deceptive conduct in relation to financial services.",
+        "(1A) Carve-outs for conduct covered by specific Corporations Act provisions."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["misleading or deceptive conduct", "AI hallucination", "product statements", "claims communications"],
+      "notes": "Not a civil penalty provision (s12GBA(6)(b) excludes s12DA) but gives rise to damages and other orders, and a breach is a deemed significant breach for breach reporting (Corporations Act s912D(4)(c)), so it must be reported to ASIC within 30 days. The highest-risk provision for generative AI agents: any inaccurate statement about cover, exclusions, price, claim status or rights can contravene, regardless of intent. Ground answers in the PDS and policy schedule. Not applicable to private health insurance products.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DB",
+      "clause_number": "12DB",
+      "section_name": "Part 2 Division 2 Subdivision D: Consumer protection",
+      "heading": "False or misleading representations",
+      "text": "In connection with supplying or promoting financial services, a person must not make false or misleading representations about matters including the standard, quality or value of services, testimonials, sponsorship or approval, performance characteristics or benefits, price, the need for services, and the existence, exclusion or effect of any condition, warranty, guarantee, right or remedy. Testimonial representations are presumed misleading unless evidence shows otherwise.",
+      "subclauses": [
+        "(1)(a) to (f) Standard or quality, agreement to acquire, testimonials, sponsorship or approval, performance or benefits, affiliation.",
+        "(1)(g) Price.",
+        "(1)(h) Need for services.",
+        "(1)(i) to (j) Conditions, warranties, guarantees, rights or remedies, and paying for equivalent statutory rights.",
+        "(1A) Testimonials presumed misleading unless evidence to the contrary."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["false representations", "price claims", "rights and remedies", "testimonials", "need for insurance"],
+      "notes": "Offence and civil penalty provision. Agents must not overstate cover, invent testimonials, misstate premiums or discounts, tell a customer they need a product when they do not, or misdescribe the customer's rights (for example cooling off, AFCA access, or claim entitlements). Not applicable to private health insurance products.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DF",
+      "clause_number": "12DF",
+      "section_name": "Part 2 Division 2 Subdivision D: Consumer protection",
+      "heading": "Certain misleading conduct in relation to financial services",
+      "text": "A person must not, in trade or commerce, engage in conduct liable to mislead the public about the nature, characteristics, suitability for purpose or quantity of any financial services. The related offence is one of strict liability.",
+      "subclauses": [
+        "(1) Prohibition on conduct liable to mislead the public about nature, characteristics, suitability or quantity of financial services.",
+        "(2) Strict liability offence."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["misleading the public", "product suitability", "marketing", "AI-generated content"],
+      "notes": "Civil penalty and strict liability offence. Relevant to AI-generated marketing, comparison content, chatbot scripts and product summaries published at scale. The HCF Life pre-existing condition term was found liable to mislead the public under this kind of provision.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DJ",
+      "clause_number": "12DJ",
+      "section_name": "Part 2 Division 2 Subdivision D: Consumer protection",
+      "heading": "Harassment and coercion",
+      "text": "A person must not use physical force, undue harassment or coercion in connection with supplying financial services to a consumer or the consumer's payment for those services. Strict liability applies to the connection element.",
+      "subclauses": [
+        "(1) Prohibition on force, undue harassment or coercion connected with supply of or payment for financial services to a consumer.",
+        "(2) Strict liability applies to paragraph (1)(b)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["harassment", "coercion", "premium collection", "contact frequency"],
+      "notes": "Offence and civil penalty. Sets limits on automated outbound contact (for example repeated renewal, premium arrears or upsell contacts) and on pressure tactics in sales or claims conversations. Agents should enforce contact frequency caps and honour do-not-contact requests.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DO",
+      "clause_number": "12DO",
+      "section_name": "Part 2 Division 2 Subdivision DA: Add-on insurance products",
+      "heading": "Meaning of add-on insurance product",
+      "text": "An add-on insurance product is a financial product offered or sold to a consumer in connection with the consumer acquiring (or committing to acquire) a principal product or service, offered by the principal provider or under an arrangement with it, that manages financial risk relating to the principal product or service and is, or gives the benefit of, a contract of insurance.",
+      "subclauses": [
+        "(1) Elements: connection with principal product or service; offered by provider or arranged party; manages related financial risk; is or confers insurance.",
+        "(2) Contract of insurance includes contracts with insurance provisions.",
+        "(3) Regulations may deem when a commitment to acquire occurs."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["add-on insurance", "deferred sales model", "car dealers", "point of sale"],
+      "notes": "Definition used to scope the deferred sales model. Typical examples: insurance sold by car dealers, retailers or travel and finance providers alongside the principal purchase. Comprehensive motor insurance is excepted (s12DW). Commenced 5 October 2021.",
+      "obligation_type": "product",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DP",
+      "clause_number": "12DP",
+      "section_name": "Part 2 Division 2 Subdivision DA: Add-on insurance products",
+      "heading": "Meaning of add-on insurance deferral period and add-on insurance pre-deferral period",
+      "text": "If the customer is given ASIC-determined information in the required form, a deferral period begins at the later of the commitment (or acquisition) and the giving of that information, and ends at the end of 4 days after the day it begins. If the information is not given, there is no deferral period. The pre-deferral period runs from when the customer indicates an intention to acquire the principal product until the deferral period starts or the commitment is made.",
+      "subclauses": [
+        "(1) Deferral period: starts at the later of commitment and receipt of prescribed information; ends at the end of 4 days after the start day.",
+        "(2) No deferral period if the information is not given in the required form and manner.",
+        "(3) Pre-deferral period definition.",
+        "(4) ASIC determines the information and its form."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "4_days",
+      "key_topics": ["deferral period", "4 day pause", "pre-deferral period", "add-on insurance"],
+      "notes": "An AI sales agent embedded in a principal-product journey must implement the 4 day pause, the prescribed information, and the 6 week window rules. Commenced 5 October 2021.",
+      "obligation_type": "conduct",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DR",
+      "clause_number": "12DR",
+      "section_name": "Part 2 Division 2 Subdivision DA: Add-on insurance products",
+      "heading": "Prohibition on offering add-on insurance product during add-on insurance deferral period",
+      "text": "A principal provider (and in some cases an arranged third party) must not make a non-written offer, request or invitation for an add-on insurance product to a customer acquiring the principal product, except during the pre-deferral period or, where a deferral period exists, after 6 weeks from its first day. Related sections prohibit selling during the deferral period (s12DQ) and offering after the customer opts out (s12DS), and give a right of return and refund (s12DT).",
+      "subclauses": [
+        "(1) Principal provider must not make an add-on offer otherwise than in writing during the restricted window.",
+        "(2) Exceptions: pre-deferral period, or after 6 weeks from the first day of the deferral period.",
+        "Related s12DQ: no sale before the deferral period ends.",
+        "Related s12DS: no offers after the customer says they do not want them.",
+        "Related s12DT: right of return and refund within 1 month after any cooling-off period, or otherwise 1 month and 14 days after sale."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "6_weeks",
+      "key_topics": ["add-on insurance", "deferred sales model", "unsolicited offers", "opt-out"],
+      "notes": "Offence and civil penalty provisions (Subdiv DA is listed in s12GBA(6)(ba)). An outbound AI agent must not call or chat with a customer to offer add-on cover during the restricted window and must honour opt-outs. Commenced 5 October 2021.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "ASICA-S12DY",
+      "clause_number": "12DY",
+      "section_name": "Part 2 Division 2 Subdivision DA: Add-on insurance products",
+      "heading": "Exemption by ASIC",
+      "text": "ASIC may, by notifiable instrument, exempt an add-on insurance product or class sold by a specified person from the deferred sales model prohibitions in ss12DQ, 12DR and 12DS. ASIC must consider evidence of historical value for money, risk of underinsurance or non-insurance, consumer understanding, differences from similar standalone products, and any other relevant matter. Exemptions may carry conditions.",
+      "subclauses": [
+        "(1) ASIC may exempt products or classes sold by a specified person from ss12DQ to 12DS.",
+        "(2) Mandatory considerations: value for money, underinsurance risk, consumer understanding, comparison with standalone products, other matters.",
+        "(3) Exemptions may be conditional; breach of conditions may be an offence."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["deferred sales model", "ASIC exemption", "add-on insurance"],
+      "notes": "Requested as the deferred sales model reference: note that s12DY is the ASIC exemption power, while the operative prohibitions are ss12DQ to 12DS (see 12DR entry). A class exemption also exists by regulation (s12DX) and for comprehensive motor insurance (s12DW). Where an add-on product is exempt from the deferred sales model, the hawking prohibition (Corporations Act s992A) generally applies instead (RG 38.22). Agents must check whether a product holds an exemption before relying on it.",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "code": "PHI Act 2007",
+  "title": "Private Health Insurance Act 2007 (Cth)",
+  "short_name": "Private Health Insurance Act",
+  "regulator": "Department of Health / APRA / ACCC / Commonwealth Ombudsman",
+  "instrument_type": "act",
+  "legislative_instrument": "C2007A00031",
+  "effective_date": "2007-04-01",
+  "amended_date": "2026-09-19",
+  "status": "In Force",
+  "sectors": [
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2007A00031/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the registered compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against Compilation No. 42 (C2026C00412), compilation date 19 September 2026, registered 28 September 2026, including amendments up to Act No. 90 of 2026. Section numbers verified in the compilation text: s 55-5 community rating, s 63-10 complying policy, s 69-1 coverage, s 72-1 hospital benefit requirements (25% schedule fee), s 75-1 and s 75-15 waiting periods and pre-existing conditions, s 78-1 portability, s 93-1 to s 93-30 PHIS, Div 96 information to the PHIO, s 99-1 transfer certificates, s 121-10(3)(a) Medicare benefit exclusion from general treatment. Note: s 22-30 is the income tier table for the rebate and Medicare levy surcharge, not product tiers; Gold, Silver, Bronze and Basic product tiers are in Part 2B of the Complying Product Rules made under s 63-10(g), recorded here as clause 'Pt 2B CPR'. Lifetime Health Cover detail (Part 2-3) is from general knowledge of the Act and the PHI Code definitions; SME to confirm. Commencement date recorded as 1 April 2007 (main operative provisions); SME to confirm. Conduct law perimeter: Corporations Act s 765A(1)(c) exclusion confirmed via search; the Insurance Contracts Act s 9 exclusion is from general knowledge.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [
+    "National Health Act 1953 (Part VI health insurance provisions)"
+  ],
+  "companion_guidance": [
+    "Private Health Insurance (Complying Product) Rules 2015",
+    "Private Health Insurance (Health Insurance Business) Rules 2018",
+    "Private Health Insurance (Benefit Requirements) Rules 2011",
+    "Private Health Insurance (Prudential Supervision) Act 2015",
+    "Ombudsman Act 1976 Part IID",
+    "Competition and Consumer Act 2010 Schedule 2 (Australian Consumer Law)",
+    "Private Health Insurance Code of Conduct"
+  ],
+  "summary": "The PHI Act regulates private health insurance: the rebate and Medicare levy surcharge incentives and Lifetime Health Cover (Chapter 2), complying health insurance products (Chapter 3) including community rating (no discrimination on health, claims or most personal characteristics), coverage and benefit requirements, maximum waiting periods (12 months pre-existing conditions and obstetrics, 2 months otherwise including psychiatric, rehabilitation and palliative care), portability of served waiting periods, Private Health Information Statements and information to the Ombudsman, and what counts as health insurance business (Chapter 4), including the rule that out-of-hospital services attracting Medicare benefits cannot be insured as general treatment. Product tiers are set in the Complying Product Rules. Consumer protection sits with the ACCC (Australian Consumer Law), prudential regulation with APRA, and complaints with the Commonwealth Ombudsman; the Corporations Act financial product regime, the Insurance Contracts Act, ASIC RG 271 and AFCA do not apply.",
+  "timeframes": {
+    "max_waiting_period_pre_existing_months": 12,
+    "max_waiting_period_obstetrics_months": 12,
+    "max_waiting_period_psych_rehab_palliative_months": 2,
+    "max_waiting_period_other_hospital_months": 2,
+    "pre_existing_lookback_months": 6,
+    "transfer_gap_days": 7,
+    "transfer_certificate_days": 14,
+    "phis_reissue_interval_months": 12,
+    "lhc_loading_percent_per_year": 2,
+    "lhc_loading_cap_percent": 70,
+    "lhc_removal_continuous_years": 10,
+    "in_hospital_medical_min_benefit_percent_of_schedule_fee": 25
+  },
+  "clauses": [
+    {
+      "id": "PHIA-Pt2-3",
+      "clause_number": "Pt 2-3",
+      "section_name": "Chapter 2: Incentives",
+      "heading": "Lifetime Health Cover",
+      "text": "People who do not hold private hospital cover by 1 July after their 31st birthday pay a loading of 2% of the premium for each year over age 30 when they later take out hospital cover, capped at 70%, removed after 10 continuous years of cover. Insurers must tell insured adults their loading and remaining years with each PHIS (Complying Product Rules r 15).",
+      "subclauses": [
+        "2% per year over 30, maximum 70%.",
+        "Removed after 10 years continuous hospital cover.",
+        "Does not apply to general treatment (extras) cover."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "lifetime health cover",
+        "pricing",
+        "age"
+      ],
+      "notes": "An age based loading is a permitted exception to community rating; agents quoting premiums must apply and explain LHC accurately.",
+      "obligation_type": "pricing",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIA-S55-5",
+      "clause_number": "s 55-5",
+      "section_name": "Chapter 3, Part 3-2: Principle of community rating",
+      "heading": "Principle of community rating",
+      "text": "A private health insurer must not act, fail to act or make decisions that would improperly discriminate between people who are or want to be insured under a complying policy. Improper discrimination relates to health status or medical conditions, gender, race, sexual orientation, religious belief, age (except as allowed for Lifetime Health Cover, age based discounts and certain dependant premiums), location (except approved state based pricing), any characteristic likely to increase need for treatment such as occupation or leisure pursuits, how often treatment is needed, or claims history. Policies must prohibit breaches of the principle (s 66-1).",
+      "subclauses": [
+        "Prohibited bases: health, claims history, frequency of treatment, gender, race, sexual orientation, religion, occupation or hobbies, age and location except as permitted.",
+        "Permitted: Lifetime Health Cover loading, age based discount for 18 to 29 year olds, state based premiums, restricted access fund eligibility (s 55-5(3))."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "community rating",
+        "discrimination",
+        "pricing",
+        "underwriting"
+      ],
+      "notes": "Agents must never ask health questions to decide whether to insure or what premium to charge, never refuse cover or price based on claims history or occupation, and must not steer customers away based on health status. Medical history is relevant only to pre-existing condition waiting periods, assessed by a fund appointed medical practitioner.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "community_rating"
+    },
+    {
+      "id": "PHIA-S63-10",
+      "clause_number": "s 63-10",
+      "section_name": "Chapter 3, Part 3-3: Requirements for complying health insurance products",
+      "heading": "Complying health insurance policy",
+      "text": "A complying policy must meet community rating (Div 66), coverage (Div 69), hospital benefit (Div 72), waiting period (Div 75), portability (Div 78) and quality assurance (Div 81) requirements and any extra requirements in the Complying Product Rules, which include the product tier rules.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complying product",
+        "product design"
+      ],
+      "notes": "Structural provision linking the Act to the Complying Product Rules.",
+      "obligation_type": "product",
+      "agent_relevance": "code",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIA-S121-10",
+      "clause_number": "s 121-10",
+      "section_name": "Chapter 4, Part 4-2: What is health insurance business?",
+      "heading": "Medicare covered services cannot be general treatment",
+      "text": "General treatment (extras) is treatment intended to manage or prevent a disease, injury or condition that is not hospital treatment, but it excludes any service rendered in Australia for which a Medicare benefit is payable, unless the Health Insurance Business Rules provide otherwise. Combined with the coverage requirements (s 69-1), which only allow complying policies to cover hospital treatment, general treatment and permitted hospital-substitute treatment, this means insurers cannot pay benefits for out-of-hospital medical services that attract Medicare benefits (such as GP or specialist consultations). For in-hospital Medicare services, s 72-1 requires benefits of at least 25% of the MBS schedule fee.",
+      "subclauses": [
+        "Out-of-hospital MBS services: cannot be insured as general treatment.",
+        "In-hospital medical services: insurer pays at least 25% of the schedule fee (s 72-1 table), Medicare pays 75%.",
+        "Hospital-substitute treatment must also be covered as hospital treatment (Complying Product Rules r 8).",
+        "Exceptions only as set by the Private Health Insurance (Health Insurance Business) Rules 2018."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "medicare",
+        "general treatment",
+        "gap cover",
+        "coverage"
+      ],
+      "notes": "Runtime rule: an agent must not tell members that extras or hospital cover will pay for GP visits, out-of-hospital specialist consultations or other Medicare rebated out-of-hospital services. Gap cover applies only to in-hospital medical services.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "medicare_covered_services_restriction"
+    },
+    {
+      "id": "PHIA-S75-1",
+      "clause_number": "s 75-1",
+      "section_name": "Chapter 3, Part 3-3: Requirements for complying health insurance products",
+      "heading": "Maximum waiting periods for hospital benefits",
+      "text": "For a person who has not transferred from another complying policy, waiting periods for hospital or hospital-substitute benefits may be no longer than 12 months for obstetric treatment or treatment of a pre-existing condition, 2 months for psychiatric care, rehabilitation or palliative care (even if pre-existing), and 2 months for any other hospital benefit. A pre-existing condition is one whose signs or symptoms, in the opinion of a fund appointed medical practitioner (who must consider information from the treating practitioner), existed in the 6 months before the person joined (s 75-15). General treatment waiting periods are set by the insurer.",
+      "subclauses": [
+        "Pre-existing conditions (hospital): maximum 12 months.",
+        "Obstetrics: maximum 12 months.",
+        "Psychiatric, rehabilitation, palliative care: maximum 2 months, even if pre-existing.",
+        "All other hospital benefits: maximum 2 months.",
+        "Pre-existing condition: signs or symptoms in the 6 months before joining, judged by fund appointed medical practitioner.",
+        "Extras waiting periods are not capped by the Act.",
+        "Complying Product Rules r 9A: one-off waiver of the psychiatric upgrade waiting period."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "waiting periods",
+        "pre-existing conditions",
+        "obstetrics",
+        "mental health"
+      ],
+      "notes": "Agents must quote waiting periods accurately and must not decide pre-existing status themselves; only the fund's appointed medical practitioner can form that opinion, considering the treating doctor's information.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "waiting_periods"
+    },
+    {
+      "id": "PHIA-S78-1",
+      "clause_number": "s 78-1",
+      "section_name": "Chapter 3, Part 3-3: Requirements for complying health insurance products",
+      "heading": "Portability",
+      "text": "When a person transfers between complying policies (within 7 days of leaving the old policy, or longer if the new insurer allows, with premiums paid up, s 75-10), the new policy can only impose waiting periods for benefits not covered under the old policy, and only the unexpired balance of any waiting period for benefits that were covered. The new policy cannot impose benefit limitation periods on transferred benefits or a higher excess for benefits previously covered at a lower excess beyond the permitted rules. Insurers must issue and request transfer certificates within 14 days (s 99-1; Complying Product Rules r 10).",
+      "subclauses": [
+        "Served waiting periods carry across funds and policies.",
+        "Higher benefits on upgrade attract fresh waiting periods for the difference.",
+        "Transfer gap allowed: 7 days (or longer if the new insurer allows).",
+        "Transfer certificate: 14 days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "portability",
+        "switching",
+        "waiting periods",
+        "transfer certificates"
+      ],
+      "notes": "Agents handling switches must not reimpose served waiting periods on equivalent benefits and should explain that upgraded benefits may carry new waiting periods.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "portability"
+    },
+    {
+      "id": "PHIA-Pt2BCPR",
+      "clause_number": "Pt 2B CPR",
+      "section_name": "Chapter 3, Part 3-3: Requirements for complying health insurance products",
+      "heading": "Product tiers (Gold, Silver, Bronze, Basic)",
+      "text": "Under s 63-10(g) and Part 2B of the Private Health Insurance (Complying Product) Rules 2015, every policy covering hospital treatment must be a Gold, Silver, Bronze or Basic policy (r 11E), covering all treatments in each clinical category it covers (r 11F). Gold covers all clinical categories without restriction; Silver and Bronze may restrict only rehabilitation, hospital psychiatric services and palliative care but must cover their other required categories unrestricted; Basic may restrict cover (r 11G). Policy names must include the tier and may add plus or + only if extra categories are covered, and must not use other metal or gemstone names (r 11H). Extras only policies cannot use metal or gemstone names or plus (r 11J).",
+      "subclauses": [
+        "Four tiers: Gold, Silver, Bronze, Basic (r 11E).",
+        "Clinical categories in Schedules 4 and 5 of the Rules.",
+        "Plus or + only where additional clinical categories are included."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "product tiers",
+        "clinical categories",
+        "naming"
+      ],
+      "notes": "Agents must describe a product by its tier and must not imply that a Bronze Plus or Silver Plus policy covers categories it does not. Detailed category lists live in the Complying Product Rules (see phi_rules_complying_product.json).",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "product_tiers"
+    },
+    {
+      "id": "PHIA-S93-1",
+      "clause_number": "s 93-1",
+      "section_name": "Chapter 3, Part 3-4: Obligations relating to complying health insurance products",
+      "heading": "Private Health Information Statements",
+      "text": "Insurers must maintain an up to date Private Health Information Statement (PHIS) for every product subgroup they sell or insure people under, in the form set by the Complying Product Rules (strict liability offences, 60 penalty units). Anyone asking about a product must be told about the relevant PHIS and given a copy on request (s 93-10). New adult members receive the PHIS, details of cover and how benefits are calculated (s 93-15). Insured adults receive the PHIS at least every 12 months, reasonable advance notice of detrimental rule changes plus the updated PHIS, and answers to cover queries as soon as practicable (s 93-20). Failure to give information is addressed in s 93-30.",
+      "subclauses": [
+        "Up to date PHIS for every product subgroup (offence, 60 penalty units).",
+        "Tell enquirers about the PHIS and provide it on request.",
+        "PHIS to new members and at least annually.",
+        "Reasonable advance notice of detrimental changes."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "phis_on_enquiry",
+      "key_topics": [
+        "PHIS",
+        "disclosure",
+        "information"
+      ],
+      "notes": "When a prospective customer asks about a product, an agent must tell them about the PHIS and how to get it, and supply it if asked. This is a hard statutory disclosure trigger.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "private_health_information_statement"
+    },
+    {
+      "id": "PHIA-Div96",
+      "clause_number": "Div 96",
+      "section_name": "Chapter 3, Part 3-4: Obligations relating to complying health insurance products",
+      "heading": "Information to the Department and the Private Health Insurance Ombudsman; complaints",
+      "text": "Insurers must give the Department and the Private Health Insurance Ombudsman PHIS and other required information, including updated statements and information on request, and premium change information under the Complying Product Rules (r 14). The Private Health Insurance Ombudsman is established by s 20C of the Ombudsman Act 1976 and sits within the Commonwealth Ombudsman; consumers who are dissatisfied with a fund's handling of a complaint escalate to it under Part IID of the Ombudsman Act, funded by the complaints levy.",
+      "subclauses": [
+        "Commonwealth Ombudsman (PHIO function) is the external dispute body for PHI, not AFCA.",
+        "Insurers must provide information requested by the PHIO (s 96-15, s 96-20).",
+        "Premium change information to PHIO by the later of 1 February or 20 business days after approval (CPR r 14)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complaints",
+        "Ombudsman",
+        "EDR"
+      ],
+      "notes": "Agents should refer unresolved PHI complaints to the Commonwealth Ombudsman (ombudsman.gov.au), never to AFCA.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "ombudsman_complaints"
+    },
+    {
+      "id": "PHIA-Conductlawmap",
+      "clause_number": "Conduct law map",
+      "section_name": "Other laws",
+      "heading": "Which consumer and conduct laws apply to private health insurance",
+      "text": "Private health insurance is regulated mainly by the PHI Act (Department of Health, Disability and Ageing), prudentially by APRA under the PHI (Prudential Supervision) Act 2015 and APRA standards (including CPS 230 and CPS 234), for consumer protection by the ACCC under the Australian Consumer Law in the Competition and Consumer Act 2010 (misleading or deceptive conduct, unconscionable conduct, unfair practices), with complaints to the Commonwealth Ombudsman. The Privacy Act 1988 applies. Health insurance provided as part of health insurance business is excluded from the Corporations Act definition of financial product (s 765A(1)(c)), so AFS licensing, design and distribution obligations, the anti-hawking provisions and ASIC's IDR and AFCA framework do not apply. The Insurance Contracts Act 1984 excludes contracts of health insurance business (s 9), so the duty of utmost good faith, the ICA claims handling duties and the 8 October 2026 genetic test ban (s 33H) do not apply to private health insurance. The GI and Life Codes exclude health insurance.",
+      "subclauses": [
+        "Applies: PHI Act and Rules, APRA prudential standards, ACCC Australian Consumer Law, Privacy Act, Spam Act, Do Not Call Register Act.",
+        "Does not apply: Corporations Act Chapter 7 financial product regime (s 765A(1)(c)), Insurance Contracts Act (s 9), ASIC RG 271 and AFCA, GI Code, Life Code."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "regulatory perimeter",
+        "ACCC",
+        "ASIC",
+        "Insurance Contracts Act"
+      ],
+      "notes": "When an agent or detection rule cites a conduct law for PHI, use the ACL (ACCC) and the PHI Act, not the Corporations Act, ICA or ASIC guidance. SME to confirm the exact Insurance Contracts Act s 9 paragraph and the treatment of unfair contract terms for PHI policies.",
+      "obligation_type": "governance",
+      "agent_relevance": "code",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

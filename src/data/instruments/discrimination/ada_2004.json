@@ -1,0 +1,67 @@
+{
+  "code": "ADA 2004",
+  "title": "Age Discrimination Act 2004 (Cth)",
+  "short_name": "Age Discrimination Act",
+  "regulator": "Australian Human Rights Commission",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A01302",
+  "effective_date": "2004-06-23",
+  "amended_date": "2026-07-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company"
+  ],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2004A01302/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Section 37 read from compilation C2026C00266 (compilation date 1 July 2026), the latest on the Federal Register of Legislation on 2026-10-19. The note to s37 refers to s54 (power to require disclosure of the source of actuarial data). The principal Act's commencement date (23 June 2004) is from general knowledge.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Australian Human Rights Commission guidance on insurance and superannuation",
+    "General Insurance Code of Practice",
+    "Life Insurance Code of Practice"
+  ],
+  "summary": "The ADA makes it unlawful to discriminate on the ground of age in the provision of goods and services, which includes insurance. Section 37 exempts insurers that refuse to offer, or set terms for, an annuity, life insurance policy, accident policy or other insurance policy on the ground of age, where the discrimination is based on actuarial or statistical data on which it is reasonable to rely and is reasonable having regard to that data and other relevant factors, or, where no such data is available or obtainable, is reasonable having regard to other relevant factors.",
+  "clauses": [
+    {
+      "id": "ADA-S37",
+      "clause_number": "37",
+      "anchor": "insurance_exemption",
+      "section_name": "Part 4, Division 4: General exemptions",
+      "heading": "Superannuation, insurance and credit: actuarial data etc.",
+      "text": "It is not unlawful to discriminate on the ground of age in the terms or conditions on which, or by refusing to offer, an annuity, life insurance policy, accident policy or other insurance policy, if the discrimination is based on actuarial or statistical data on which it is reasonable to rely and is reasonable having regard to that data and other relevant factors, or, where no such data is available and cannot reasonably be obtained, the discrimination is reasonable having regard to any other relevant factors.",
+      "subclauses": [
+        "(1) Applies to annuities, life insurance policies, accident and other insurance policies, and superannuation fund or scheme membership.",
+        "(2) Covers both the terms or conditions offered and refusal to offer.",
+        "(3)(a) Exempt if based on reasonably reliable actuarial or statistical data and reasonable having regard to that data and other relevant factors.",
+        "(3)(b) Where no such data is available or obtainable, exempt if reasonable having regard to other relevant factors.",
+        "Note: the Commission and the President can require disclosure of the source of the data (s54).",
+        "(4) and (5) Separate credit exemption."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "age discrimination",
+        "actuarial data",
+        "underwriting",
+        "pricing",
+        "age limits"
+      ],
+      "notes": "Age-based eligibility limits, loadings and AI pricing models must be supported by reasonable actuarial or statistical data, and the insurer should retain evidence of the data source because the Commission can require it. An AI agent must not apply age cut-offs that are not in the approved underwriting rules. Complaints go to the Australian Human Rights Commission.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    }
+  ]
+}

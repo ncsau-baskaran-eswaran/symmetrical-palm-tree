@@ -1,0 +1,66 @@
+{
+  "code": "DDA 1992",
+  "title": "Disability Discrimination Act 1992 (Cth)",
+  "short_name": "Disability Discrimination Act",
+  "regulator": "Australian Human Rights Commission",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A04426",
+  "effective_date": "1993-03-01",
+  "amended_date": "2026-10-08",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company"
+  ],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2004A04426/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Section 46 read from compilation C2026C00456 (compilation date 8 October 2026), which incorporates Treasury Laws Amendment (Genetic Testing Protections in Life Insurance and Other Measures) Act 2026 (No. 35, 2026), Schedule 1 items 5 and 6, commencing 8 October 2026. The endnotes of that compilation confirm the commencement. Item 6 application rule (existing policies only affected on an express, non-automatic variation made on or after 8 October 2026) read from the amending Act. The principal Act's commencement date (1 March 1993) is from general knowledge. Section 5 and 6 definitions of direct and indirect discrimination and s24 (goods, services and facilities) were not re-read; the summary of them is from general knowledge.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Australian Human Rights Commission guidelines for providers of insurance and superannuation",
+    "Insurance Contracts Act 1984 Part IV Division 5 (s33H genetic testing ban)",
+    "Life Insurance Code of Practice",
+    "General Insurance Code of Practice"
+  ],
+  "summary": "The DDA makes it unlawful to discriminate on the ground of disability in the provision of goods, services and facilities, which includes insurance. Section 46 provides a limited exemption allowing insurers to refuse, or to set terms for, an annuity, life policy, accident policy or other insurance policy on the ground of disability only where the discrimination is based on actuarial or statistical data on which it is reasonable to rely and is reasonable having regard to that data and other relevant factors, or, where no such data is available or obtainable, is reasonable having regard to other relevant factors. From 8 October 2026, s46(3) deems discrimination based on protected genetic information in life insurance not to be reasonable.",
+  "clauses": [
+    {
+      "id": "DDA-S46",
+      "clause_number": "46",
+      "anchor": "insurance_exemption",
+      "section_name": "Part 2, Division 5: Exemptions",
+      "heading": "Superannuation and insurance",
+      "text": "It is not unlawful for an insurer to discriminate on the ground of disability by refusing to offer, or in the terms or conditions of, an annuity, life insurance policy, accident policy or other insurance policy, if the discrimination is based on actuarial or statistical data on which it is reasonable to rely and is reasonable having regard to the data and other relevant factors, or, where no such data is available and cannot reasonably be obtained, the discrimination is reasonable having regard to other relevant factors. From 8 October 2026, discrimination based on protected genetic information (as defined in the Insurance Contracts Act) is taken not to be reasonable where it relates to refusing a life insurance policy or the terms on which one is offered.",
+      "subclauses": [
+        "(1) Refusal to offer: exempt only if (f) based on reasonable actuarial or statistical data and reasonable having regard to that data and other factors, or (g) where no data is available or obtainable, reasonable having regard to other relevant factors.",
+        "(2) Terms or conditions: the same tests apply to the terms on which a policy is offered or obtained.",
+        "(3) Protected genetic information (life insurance): discrimination based on protected genetic information is taken not to be reasonable if it relates to refusing a life insurance policy or its terms and conditions (inserted by Act No. 35, 2026, from 8 October 2026).",
+        "Application of (3): discrimination on or after 8 October 2026; for policies entered into earlier, only to an express (not automatic) variation, reinstatement or extension agreed on or after that date."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "disability discrimination",
+        "actuarial data",
+        "underwriting",
+        "mental health",
+        "genetic information"
+      ],
+      "notes": "Underwriting rules, pricing models and AI agents that decline, load or exclude on disability (including mental health history) must be supported by reasonable actuarial or statistical data or, failing that, other reasonable factors, and the insurer must be able to evidence this. Blanket exclusions without data are high risk. An AI agent must not decline or vary life cover based on genetic test information. The Australian Human Rights Commission handles complaints; unresolved complaints can proceed to the Federal Court or Federal Circuit and Family Court. AFCA can also consider these matters.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance"
+      ]
+    }
+  ]
+}

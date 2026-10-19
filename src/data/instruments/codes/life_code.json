@@ -1,0 +1,623 @@
+{
+  "code": "Life Code",
+  "title": "Life Insurance Code of Practice (March 2025 version, effective 1 March 2025)",
+  "short_name": "Life Insurance Code of Practice",
+  "regulator": "Life Code Compliance Committee (CALI)",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "effective_date": "2025-03-01",
+  "amended_date": "2025-03-01",
+  "status": "In Force",
+  "sectors": [
+    "life_insurance"
+  ],
+  "entity_types": [
+    "Life Insurer (Code subscriber)",
+    "Authorised Representative",
+    "Independent Service Provider"
+  ],
+  "enforceability": "contractual_code",
+  "source_url": "https://cali.org.au/wp-content/uploads/2025/02/CALI_LICOP_2025_web.pdf",
+  "licence": "Copyright Council of Australian Life Insurers. Paraphrased summary only; no Code text reproduced. Consult the published Code.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Version in force on 2026-10-19: Life Insurance Code of Practice March 2025, effective 1 March 2025 (clause 1.4), published by the Council of Australian Life Insurers (CALI) at the source_url. It replaced the FSC's Life Code version 2 (published 22 June 2022, effective by 1 July 2023) when Code ownership moved from the FSC to CALI; substantive claim, complaint and breach timeframes are unchanged from 2023 but some Section 4 numbering shifted (underwriting decline is now 4.25, cancellation refund 4.29) and HIV underwriting clauses 4.17A to 4.17C were added. Clause numbers were checked against the 2025 PDF. The regulator field keeps the requested label, but the Code owner is now CALI (not the FSC); the Life CCC remains the independent monitor. An independent review led by Peter Kell began 1 October 2025 (interim report 10 April 2026, final report to CALI 30 June 2026); CALI published its industry response around 30 September 2026, committing to changes (real claims contact person, limits on blanket mental health exclusions, premium disclosure, stronger family violence protections, broader sanctions) with claims handling, mental health, First Nations and funeral insurance deferred to consultations running into 2027. No new Code has commenced. Separately, the Treasury Laws Amendment (Genetic Testing Protections in Life Insurance and Other Measures) Act 2026 (Royal Assent 8 April 2026) commenced its Insurance Contracts Act s 33H genetic testing ban on 8 October 2026, overriding the Appendix A Moratorium thresholds. SME to confirm CALI has not issued an updated Code after the review response.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [
+    "Life Insurance Code of Practice v2 (FSC, effective 1 July 2023)",
+    "Life Insurance Code of Practice (FSC, 2017)",
+    "FSC Standard 11 genetic testing moratorium (2019)"
+  ],
+  "companion_guidance": [
+    "ASIC RG 271 Internal dispute resolution",
+    "Insurance Contracts Act 1984 s 33H (genetic test results, from 8 October 2026)",
+    "Life Code Appendix A: Moratorium on Genetic Tests",
+    "Life Code Appendix B: Supporting customers experiencing a mental health condition"
+  ],
+  "summary": "The Life Insurance Code of Practice binds subscribing life insurers (CALI members) and is monitored by the independent Life Code Compliance Committee, which can impose sanctions. It covers term life, TPD, trauma, income protection, business expenses, funeral and life CCI. It sets standards for product design (no blanket mental health exclusions), advertising and sales (no Pressure Selling), underwriting (5 Business Day decisions with reasons, mental health and HIV fairness, genetic test limits), claims (initial contact within 10 Business Days, updates every 20 Business Days, decisions within 2 months for income related and 6 months for lump sum benefits, written decision within 15 Business Days of complete information, 12 month ceiling with senior review), surveillance and interviews, vulnerability and hardship support, complaints (acknowledge within 24 hours, final response within 30 calendar days, 45 for trustee owned cover) and Significant Breach reporting within 30 Business Days. It is not an ASIC approved or enforceable code and CALI is not seeking ASIC designation for now.",
+  "timeframes": {
+    "claim_initial_contact_business_days": 10,
+    "claim_update_interval_business_days": 20,
+    "claim_enquiry_response_business_days": 10,
+    "claim_decision_months": {
+      "income_protection": 2,
+      "salary_continuance": 2,
+      "business_expenses": 2,
+      "income_related_cci": 2,
+      "death": 6,
+      "terminal_illness": 6,
+      "tpd": 6,
+      "trauma": 6,
+      "funeral": 6,
+      "lump_sum_cci": 6
+    },
+    "claim_decision_clock_start": "later of Claim Received Date or end of waiting period",
+    "claim_decision_after_info_business_days": 15,
+    "claim_cbc_senior_review_months": 12,
+    "claim_cbc_update_interval_business_days": 20,
+    "claim_decline_documents_business_days": 10,
+    "report_request_business_days": 20,
+    "income_benefit_payment_business_days": 5,
+    "late_payment_notice_business_days": 5,
+    "benefit_change_notice_months": 3,
+    "interview_max_minutes": 90,
+    "surveillance_max_months": 4,
+    "claim_closure_min_followups": 2,
+    "underwriting_decision_business_days": 5,
+    "underwriting_info_relied_on_business_days": 10,
+    "cancellation_refund_business_days": 15,
+    "cooling_off_min_calendar_days": 30,
+    "cci_deferred_sales_period_days": 4,
+    "error_notification_business_days": 10,
+    "third_party_delay_notice_business_days": 3,
+    "urgent_need_response_business_days": 5,
+    "complaint_acknowledgement_business_days": 1,
+    "complaint_informal_closure_business_days": 5,
+    "complaint_final_response_calendar_days": 30,
+    "complaint_super_trustee_calendar_days": 45,
+    "complaint_documents_business_days": 10,
+    "significant_breach_report_business_days": 30,
+    "life_ccc_sanction_response_business_days": 15,
+    "service_provider_complaint_notice_business_days": 5
+  },
+  "timeframes_source": "Life Code March 2025 clauses 1.19, 2.31, 3.13, 3.15, 4.3, 4.20, 4.25, 4.27, 4.29, 5.5 to 5.10, 5.23, 5.32, 5.42, 5.48 to 5.50, 5.56, 5.58 to 5.60, 5.63, 5.64, 6.26, 7.2, 7.10, 7.13, 7.14, 7.17, 8.13, 8.18, Definitions (Cooling Off Period).",
+  "clauses": [
+    {
+      "id": "LIFE-1_7",
+      "clause_number": "1.7",
+      "section_name": "Section 1: This Code of Practice",
+      "heading": "Products covered",
+      "text": "The Code covers Australian life insurance policies including term life, TPD, trauma or critical illness, disability, income protection or salary continuance, business expenses, funeral insurance and CCI issued by a life insurer. It does not cover whole of life and endowment products, general insurer products, health insurance issued by health insurers, or annuities and investment life products (1.8).",
+      "subclauses": [
+        "Covered: death, terminal illness, TPD, trauma, income protection, business expenses, funeral, life CCI.",
+        "Excluded: whole of life, endowment, investment life, annuities, general and health insurance products."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "scope",
+        "products"
+      ],
+      "notes": "Check product type before applying Life Code timeframes. Superannuation trustees and advisers are not bound unless they adopt the Code (1.10).",
+      "obligation_type": "governance",
+      "agent_relevance": "code",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-1_15",
+      "clause_number": "1.15",
+      "section_name": "Section 1: This Code of Practice",
+      "heading": "Insurer responsible for staff, representatives and service providers",
+      "text": "Subscribers ensure staff and Authorised Representatives comply when acting for them, and require Independent Service Providers to follow the Code principles, seek approval to subcontract, notify complaints within 5 Business Days and keep information confidential (1.18, 1.19). Breach by staff or Authorised Representatives is a breach by the insurer (8.12).",
+      "subclauses": [
+        "Independent Service Providers notify complaints within 5 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability",
+        "outsourcing",
+        "AI agents"
+      ],
+      "notes": "An AI agent deployed by a subscriber is acting on its behalf; its conduct is attributable to the insurer.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-2_1",
+      "clause_number": "2.1",
+      "section_name": "Section 2: Policy design, advertising and sales standards",
+      "heading": "Product design",
+      "text": "New products are designed to meet a genuine need of the target market and do not include a blanket mental health exclusion in the general terms of a standard form contract (individual underwriting exclusions and condition-specific products such as trauma remain possible). Target markets are reviewed at least every 3 years (2.2), and medical definitions for defined event products every 3 years (2.7).",
+      "subclauses": [
+        "No blanket mental health exclusion in standard terms.",
+        "Target market review at least every 3 years.",
+        "Medical definition review at least every 3 years."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "product design",
+        "mental health",
+        "design and distribution"
+      ],
+      "notes": "Mainly a product governance obligation. The 2026 review response commits to moving mental health commitments into the main body of a future Code.",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-2_11",
+      "clause_number": "2.11",
+      "section_name": "Section 2: Policy design, advertising and sales standards",
+      "heading": "Advertising standards",
+      "text": "Advertising must be clear and not misleading, quote prices the target audience is likely to pay, make conditions on benefits clear, avoid misleading use of words like free or guaranteed, not use incentives that encourage buying solely for the incentive, and be consistent with the PDS and target market.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "advertising",
+        "misleading conduct"
+      ],
+      "notes": "Agent generated marketing or quotes must not use misleading free or guaranteed claims or headline prices most customers will not pay.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-2_12",
+      "clause_number": "2.12",
+      "section_name": "Section 2: Policy design, advertising and sales standards",
+      "heading": "Sales rules and Pressure Selling",
+      "text": "Insurers have documented sales rules so salespeople and Authorised Representatives sell lawfully and avoid unacceptable practices such as Pressure Selling, and take reasonable steps for Distributors (2.13). Sales rules cover what is explained about premiums (stepped and level), features, exclusions and the Cooling Off Period, not selling to people unlikely ever to be eligible to claim, stopping when the customer says no, and recording consent (2.14). For verbal or face to face Direct Sales, the salesperson checks understanding, allows questions, explains premiums may change, states clearly when the application starts and gets explicit agreement, does not take payment if the customer wants time to think, and never takes advantage of vulnerable customers (2.27).",
+      "subclauses": [
+        "Stop selling when the customer indicates they do not want the policy.",
+        "Do not sell where the customer is unlikely ever to be eligible to claim.",
+        "Explicit agreement before the application begins.",
+        "No payment details taken if the customer asks for time to think.",
+        "Remediation for unacceptable sales: apology, cancellation, refund with interest, adjusted cover, honouring a claim (2.23).",
+        "Funeral insurance explanations (2.29 to 2.31) and CCI 4 day deferred sales period (2.32 onward)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "sales practices",
+        "pressure selling",
+        "direct sales",
+        "funeral insurance"
+      ],
+      "notes": "Primary runtime check for sales agents. Pressure Selling includes using the Cooling Off Period or deferred payment to close a sale before the customer has decided, and refusing a written quote. The 2026 review interim report floated banning funeral insurance sales to under 50s; not yet adopted.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "sales_practices"
+    },
+    {
+      "id": "LIFE-3_13",
+      "clause_number": "3.13",
+      "section_name": "Section 3: Communicating with you",
+      "heading": "Third party delays and errors",
+      "text": "If a Code deadline for giving information is missed because a third party must consent to release, telling the customer within 3 Business Days after the deadline avoids a breach. Errors, omissions or inconsistencies that disadvantaged a customer are notified within 10 Business Days (3.15), except within broader remediation programs.",
+      "subclauses": [
+        "Notify third party delay within 3 Business Days after the deadline.",
+        "Notify disadvantaging errors within 10 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "communication",
+        "errors",
+        "timeframes"
+      ],
+      "notes": "If an agent detects that it or the insurer made an error that disadvantaged the customer, the 10 Business Day notification clock starts.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-3_16",
+      "clause_number": "3.16",
+      "section_name": "Section 3: Communicating with you",
+      "heading": "Show Cause before avoiding or varying cover",
+      "text": "Before varying or avoiding cover under the Insurance Contracts Act for non-disclosure or misrepresentation, the insurer sends a Show Cause letter with the relevant information, the inconsistencies found, a chance to respond and a response timeframe, and considers any response (3.17). It then confirms its decision in writing with reasons, impact, access to information within 10 Business Days, review rights and complaints process (3.18).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "non-disclosure",
+        "avoidance",
+        "procedural fairness"
+      ],
+      "notes": "An agent must never tell a customer their cover is void or avoided without the Show Cause process.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-4_12",
+      "clause_number": "4.12",
+      "section_name": "Section 4: Buying a Life Insurance Policy",
+      "heading": "Underwriting mental health conditions",
+      "text": "Insurers will not decline before the applicant can provide information on the history, severity or type of a mental health condition, will consider those circumstances, and will try to manage risk through premiums, exclusions, limits or caps before declining (4.13). Alternative terms are explained, including how long they apply and how to seek review (4.14). Family history questions are limited to known first degree relatives (4.15), and since 2025 insurers do not ask about sexual practices to assess STI or HIV risk and treat HIV like any other condition (4.17A, 4.17B).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "underwriting",
+        "mental health",
+        "HIV",
+        "discrimination"
+      ],
+      "notes": "Underwriting agents must invite further mental health detail before any adverse decision and must not ask about sexual practices.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-4_17",
+      "clause_number": "4.17",
+      "section_name": "Section 4: Buying a Life Insurance Policy",
+      "heading": "Genetic tests (Moratorium, Appendix A)",
+      "text": "Insurers comply with the Moratorium on Genetic Tests in Appendix A. Insurers will not ask applicants to take a genetic test, nor ask about research results. Under the Moratorium, adverse genetic test results may only be sought or used where total cover exceeds $500,000 death, $500,000 TPD, $200,000 trauma or $4,000 a month income related cover, and favourable results may always be volunteered. Diagnosed conditions can always be considered.",
+      "subclauses": [
+        "Never require a genetic test.",
+        "Moratorium thresholds: $500,000 death, $500,000 TPD, $200,000 trauma, $4,000 a month income cover.",
+        "Moratorium applies indefinitely from 1 July 2023 until CALI gives notice after review.",
+        "Superseded in practice by statute: Insurance Contracts Act s 33H bans use of adverse genetic test results from 8 October 2026."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "genetic testing",
+        "underwriting",
+        "discrimination",
+        "privacy"
+      ],
+      "notes": "From 8 October 2026 the Treasury Laws Amendment (Genetic Testing Protections in Life Insurance and Other Measures) Act 2026 inserted s 33H into the Insurance Contracts Act, banning life insurers from asking for or using adverse genetic test results (or whether a test was taken) for death, TPD, trauma and income protection cover at any sum insured, for new policies and variations from that date; strict liability offence up to 60 penalty units and civil penalty up to 5,000 penalty units. The statutory ban overrides the higher Moratorium thresholds. Agents must not ask applicants about genetic tests at all; diagnosed conditions, symptoms and family history remain usable.",
+      "obligation_type": "discrimination",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "genetic_testing"
+    },
+    {
+      "id": "LIFE-4_25",
+      "clause_number": "4.25",
+      "section_name": "Section 4: Buying a Life Insurance Policy",
+      "heading": "Declining to insure and explaining underwriting decisions",
+      "text": "Insurers tell applicants within 5 Business Days of having all information and completing enquiries whether they accept and on what terms (4.20), including alternative terms (4.22). If cover is not offered, within 5 Business Days the insurer explains in plain language the reasons, the right to the information relied on, how to correct it, review rights and the complaints process. Information relied on is provided within 10 Business Days of request (4.27). Underwriting information requests should be early, limited and explained (4.9).",
+      "subclauses": [
+        "Underwriting outcome within 5 Business Days of complete information (4.3, 4.20).",
+        "Reasons for decline or alternative terms in plain language.",
+        "Information relied on within 10 Business Days (4.27).",
+        "Review and complaints rights."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "underwriting",
+        "reasons",
+        "timeframes"
+      ],
+      "notes": "An agent communicating an adverse underwriting outcome must give reasons and access, review and complaint rights. Clause numbering follows the March 2025 Code (4.23 to 4.25 in the 2023 version).",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "underwriting_reasons"
+    },
+    {
+      "id": "LIFE-4_29",
+      "clause_number": "4.29",
+      "section_name": "Section 4: Buying a Life Insurance Policy",
+      "heading": "Cancellation refunds and retention",
+      "text": "Refunds owed on cancellation are paid within 15 Business Days. Insurers do not pressure customers to keep a policy they no longer want (4.30) and tell the Policy Owner about the Cooling Off Period, which is at least 30 calendar days (4.28 and Definitions).",
+      "subclauses": [
+        "Refund within 15 Business Days.",
+        "Cooling Off Period at least 30 calendar days.",
+        "No retention pressure."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "cancellation",
+        "retention",
+        "cooling off"
+      ],
+      "notes": "Retention agents must process cancellation requests without pressure.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-5_2",
+      "clause_number": "5.2",
+      "section_name": "Section 5: Claims",
+      "heading": "Not discouraging claims and claim support",
+      "text": "Insurers treat claimants with empathy and will not discourage a claim, help customers who have trouble providing information, including collecting it with permission (5.3), and assign a claims assessor for income related claims (5.4).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "discouraging claims"
+      ],
+      "notes": "Agents must not suggest a claim is pointless or discourage lodgement.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-5_6",
+      "clause_number": "5.6",
+      "section_name": "Section 5: Claims",
+      "heading": "Claim contact and progress updates",
+      "text": "Within 10 Business Days of the Claim Received Date the insurer explains Code access, cover and waiting periods, relevant benefits and the claims process (5.5). It updates the claimant at least every 20 Business Days until a decision or Show Cause letter, unless a different interval is agreed, and responds to information requests within 10 Business Days (5.7).",
+      "subclauses": [
+        "Initial contact within 10 Business Days.",
+        "Updates at least every 20 Business Days.",
+        "Respond to claim enquiries within 10 Business Days.",
+        "3 months notice before income benefit period ends, definition change or benefit reduction (5.8 to 5.10)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "communication",
+        "timeframes"
+      ],
+      "notes": "Timeframe checker: flag claims without a customer update in 20 Business Days.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "claim_updates"
+    },
+    {
+      "id": "LIFE-5_12",
+      "clause_number": "5.12",
+      "section_name": "Section 5: Claims",
+      "heading": "Information requests, medical exams, interviews and surveillance",
+      "text": "Consent is sought for each new claim and use of consent is notified (5.12). Requests are limited to what is reasonably needed, multiple requests minimised (5.13), and non-related conditions only checked on reasonable grounds (5.14). Medical and financial reports are requested within 20 Business Days (5.23, 5.55). Interviews require senior approval, last no more than 90 minutes without written agreement, include breaks every 30 minutes, and cannot be repeated within 24 hours without agreement (5.24 to 5.39). Surveillance only after trying alternatives and senior approval, for no more than 4 months, and never inside the home or in medical facilities (5.40 to 5.44).",
+      "subclauses": [
+        "Report requests: 20 Business Days.",
+        "Interviews: maximum 90 minutes, 5 minute break each 30 minutes.",
+        "Surveillance: maximum 4 months, restricted locations.",
+        "Follow up outstanding information at least twice before closing a claim (5.56)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "privacy",
+        "surveillance",
+        "interviews"
+      ],
+      "notes": "Agents must not collect information beyond what the claim reasonably needs or make fraud allegations; surveillance and interviews are human-approved processes.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-5_48",
+      "clause_number": "5.48",
+      "section_name": "Section 5: Claims",
+      "heading": "Claim decision timeframes",
+      "text": "Unless Circumstances Beyond Our Control apply (5.47), for income related claims the insurer obtains information, completes enquiries (including with reinsurers) and decides within 2 months of the Claim Received Date or, if later, the end of the waiting period. For lump sum claims the period is 6 months (5.49). Once all information is received (including Show Cause responses) the decision is communicated in writing within 15 Business Days (5.50). If Circumstances Beyond Our Control will push past 2 or 6 months, the insurer explains them in writing before the deadline, updates every 20 Business Days and gives complaints information (5.59); beyond 12 months, a senior or committee review is required (5.60).",
+      "subclauses": [
+        "Income related benefits (income protection, salary continuance, business expenses): 2 months.",
+        "Lump sum benefits (death, terminal illness, TPD, trauma, funeral): 6 months.",
+        "Clock starts at the later of the Claim Received Date or end of waiting period.",
+        "Written decision within 15 Business Days of all information.",
+        "Circumstances Beyond Our Control: written notice before the deadline, 20 Business Day updates, complaints information; 12 month senior review.",
+        "Reopened claims are new claims with a new Claim Received Date (5.57)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "cbc_notice_before_deadline",
+      "key_topics": [
+        "claims",
+        "timeframes",
+        "claim decision",
+        "income protection",
+        "TPD",
+        "trauma",
+        "death"
+      ],
+      "notes": "Core claim timeframe for the timeframe checker. Circumstances Beyond Our Control are a defined list (missing third party information, customer non-response, Show Cause pending, uncontactable, rehabilitation, customer requested delay, suspected non-disclosure or fraud); reinsurer delay is not one.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "claim_decision_timeframe"
+    },
+    {
+      "id": "LIFE-5_58",
+      "clause_number": "5.58",
+      "section_name": "Section 5: Claims",
+      "heading": "Reasons when a claim is declined",
+      "text": "If a claim is declined the insurer tells the claimant in writing its reasons and a summary of information relied on, explains the medical connection where a pre-existing condition is the reason, offers copies of documents relied on within 10 Business Days, and explains review rights and the complaints process.",
+      "subclauses": [
+        "Written reasons and summary of information.",
+        "Medical link for pre-existing condition declines.",
+        "Documents within 10 Business Days of request.",
+        "Review and complaints rights."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "claim denial",
+        "reasons"
+      ],
+      "notes": "A decline message lacking any of these elements is a breach indicator.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "claim_decline_reasons"
+    },
+    {
+      "id": "LIFE-5_63",
+      "clause_number": "5.63",
+      "section_name": "Section 5: Claims",
+      "heading": "Paying income benefits promptly",
+      "text": "Ongoing income related benefits are paid by the later of the due date or 5 Business Days after the insurer has the information it needs; if a payment will be late the claimant is told within 5 Business Days (5.64). Payments are not stopped during a non-disclosure investigation unless evidence will likely lead to decline or avoidance (5.65). Lump sums of $25,000 or more trigger a suggestion to seek financial advice (5.61).",
+      "subclauses": [
+        "Pay within 5 Business Days of complete information.",
+        "Late payment notice within 5 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "payments",
+        "timeframes"
+      ],
+      "notes": "Agents handling income benefit queries should quote the 5 Business Day payment standard and proactively warn of delays.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ]
+    },
+    {
+      "id": "LIFE-6_1",
+      "clause_number": "6.1",
+      "section_name": "Section 6: Supporting customers experiencing vulnerability or financial hardship",
+      "heading": "Customers experiencing vulnerability",
+      "text": "Insurers recognise vulnerability from age, disability, injury, mental or physical health conditions, language or literacy barriers, cultural background, remote location, Aboriginal or Torres Strait Islander status, family violence, suicidality or financial distress, and commit to extra care. They take additional care with First Nations customers because of Gratuitous Concurrence (6.3), keep records of support needs (6.4), publish a family violence policy (6.6), work with customers early to find a suitable and compassionate option (6.9), recognise support persons and pay for interpreters (6.13), and flex identity verification (6.14). Appendix B covers customers with mental health conditions.",
+      "subclauses": [
+        "Identify and record vulnerability and support needs.",
+        "Gratuitous Concurrence: confirm genuine consent with First Nations customers.",
+        "Interpreter arranged and paid for by insurer.",
+        "Remote customers: allow for difficulty meeting timeframes (6.17)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "vulnerability",
+        "family violence",
+        "First Nations",
+        "mental health",
+        "suicidality"
+      ],
+      "notes": "Runtime anchor for vulnerability detection. Agents should watch for agreement that may not be genuine, distress or suicidality cues, and escalate to trained humans with warm handover.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "vulnerability_support"
+    },
+    {
+      "id": "LIFE-6_18",
+      "clause_number": "6.18",
+      "section_name": "Section 6: Supporting customers experiencing vulnerability or financial hardship",
+      "heading": "Financial hardship",
+      "text": "If the customer says or the insurer identifies they are struggling to pay premiums due to financial hardship, the insurer contacts them about flexible options to keep cover, such as reducing benefits or sum insured, prioritising a claim, or pausing premiums for a short time (noting events in that period may not be covered). Effects are explained (6.19), the customer is contacted before support ends (6.20), and only reasonable evidence is requested (6.22). Urgent access to benefits requests are answered within 5 Business Days of receiving evidence (6.26).",
+      "subclauses": [
+        "Offer flexible options to maintain cover.",
+        "Explain impacts of premium pause.",
+        "Urgent financial need response within 5 Business Days (6.26).",
+        "Does not apply to Group Policies (6.23)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "financial hardship",
+        "premium relief",
+        "retention"
+      ],
+      "notes": "When a customer mentions being unable to afford premiums, an agent should present hardship options rather than only cancellation or lapse.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "financial_hardship"
+    },
+    {
+      "id": "LIFE-7_13",
+      "clause_number": "7.13",
+      "section_name": "Section 7: Complaints",
+      "heading": "Complaint handling timeframes",
+      "text": "Complaints are not discouraged (7.1) and are acknowledged within 24 hours (or 1 Business Day) or as soon as practicable (7.2), with a named contact (7.4) who was not involved in the decision (7.5). A complaint may be closed within 5 Business Days without a written response only if resolved or explained, and not about hardship, a declined claim, claim value or a trustee decision, and the customer did not ask for writing (7.10 to 7.12). The final written response is given within 30 calendar days, with reasons, a summary of information relied on, access to documents and EDR (AFCA) rights. If delayed, the customer is told before day 30 why, and of AFCA rights (7.15). Super trustee owned policies: trustee responds within 45 calendar days (7.17).",
+      "subclauses": [
+        "Acknowledge within 24 hours or 1 Business Day.",
+        "Informal closure window: 5 Business Days.",
+        "Final response within 30 calendar days.",
+        "Documents relied on within 10 Business Days (7.14).",
+        "Super trustee complaints: 45 calendar days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complaints",
+        "IDR",
+        "AFCA",
+        "timeframes"
+      ],
+      "notes": "Timeframe checker values for life IDR, aligned with ASIC RG 271.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "complaints_timeframe"
+    },
+    {
+      "id": "LIFE-8_13",
+      "clause_number": "8.13",
+      "section_name": "Section 8: Code governance",
+      "heading": "Reporting Significant Breaches",
+      "text": "Insurers report a Significant Breach to the Life Code Compliance Committee within 30 Business Days of discovering it, unless already reported to a regulator that knows it may involve a Code breach, in which case regulatory timeframes apply. Insurers maintain compliance systems, report annually to the Life CCC and to the board (8.11). The Life CCC can investigate, agree corrective action and sanction; insurers have 15 Business Days to respond to proposed sanctions (8.18), and sanctions include Community Benefit Payments up to $100,000 and public naming (8.21).",
+      "subclauses": [
+        "Significant Breach report within 30 Business Days.",
+        "Annual compliance report to Life CCC.",
+        "Sanction response within 15 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "significant_breach_30bd",
+      "key_topics": [
+        "breach reporting",
+        "Life CCC",
+        "governance"
+      ],
+      "notes": "Systemic agent failures may be a Significant Breach. Code provisions cannot be the subject of court proceedings (8.10), but AFCA may consider Code compliance (8.9).",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "life_insurance"
+      ],
+      "anchor": "code_breach_reporting"
+    }
+  ]
+}

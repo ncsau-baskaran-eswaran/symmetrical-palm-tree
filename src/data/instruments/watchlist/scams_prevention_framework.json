@@ -1,0 +1,63 @@
+{
+  "code": "SPF Act 2025",
+  "title": "Scams Prevention Framework Act 2025 (Competition and Consumer Act 2010 Part IVF)",
+  "short_name": "Scams Prevention Framework",
+  "regulator": "ACCC (general regulator); sector regulators as designated",
+  "instrument_type": "act",
+  "legislative_instrument": "C2025A00015",
+  "effective_date": "2025-02-21",
+  "amended_date": "2025-02-20",
+  "status": "In Force (insurance not yet a designated sector)",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2025A00015/asmade/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Act No. 15 of 2025 (C2025A00015), assent 20 February 2025, commencing the day after assent (21 February 2025, from search results; not re-read in the commencement table). Read s58AC from the as-made text: the Minister may designate regulated sectors by legislative instrument, and s58AC(2)(b) expressly lists businesses of insurance (other than State insurance) as a class that could be designated; s58AE requires consideration and consultation before designation. Treasury and ACCC pages (via search) state the first designated sectors are banking, telecommunications and certain digital platforms under the Competition and Consumer (Scams Prevention Framework, Regulated Sectors) Designation 2026, with AFCA membership from 1 September 2026 and most obligations from 31 March 2027; draft SPF codes and rules were consulted on 27 May to 25 June 2026. These dates were not verified on the Federal Register. No insurance designation was found.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Competition and Consumer (Scams Prevention Framework, Regulated Sectors) Designation 2026",
+    "Draft SPF codes and rules (Treasury, 2026)"
+  ],
+  "summary": "The SPF inserts Part IVF into the Competition and Consumer Act, imposing principles-based obligations (governance, prevent, detect, report, disrupt, respond) and sector codes on regulated entities in designated sectors, with AFCA handling complaints and civil penalties for breach. Insurance is expressly named as a class of business that could be designated, but on 2026-10-19 only banking, telecommunications and certain digital platforms have been designated. Insurers are not yet regulated entities; watch for any designation of insurance.",
+  "clauses": [
+    {
+      "id": "SPF-58AC",
+      "clause_number": "58AC",
+      "section_name": "Part IVF, Division 2",
+      "heading": "Regulated sectors (insurance could be designated)",
+      "text": "The Minister may designate businesses or services as regulated sectors; the classes that could be designated include banking, insurance (other than State insurance) and communications, and before designating the Minister must consider specified matters and consult (s58AE).",
+      "subclauses": [
+        "(1) Designation by legislative instrument.",
+        "(2)(b) Businesses of insurance listed as a class that could be designated.",
+        "s58AE Consideration and consultation before designation."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "scams",
+        "designation",
+        "applicability"
+      ],
+      "notes": "Reference only. If insurance is designated, insurer AI agents handling payments, claims payouts or customer contact would face scam prevention and response obligations.",
+      "obligation_type": "conduct",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

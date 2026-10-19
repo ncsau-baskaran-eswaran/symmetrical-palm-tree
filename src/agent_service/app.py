@@ -34,7 +34,7 @@ MAX_PROMPT_CHARS = 20_000
 
 @dataclass
 class AgentConfig:
-    sector: str = "banking"
+    sector: str = "insurance"
     mode: str = "vulnerable"
     name: str = ""
     auth_token: Optional[str] = None
@@ -48,7 +48,7 @@ class AgentConfig:
     @classmethod
     def from_env(cls) -> "AgentConfig":
         return cls(
-            sector=os.environ.get("AGENT_SECTOR", "banking").lower().strip(),
+            sector=os.environ.get("AGENT_SECTOR", "insurance").lower().strip(),
             mode=os.environ.get("AGENT_MODE", "vulnerable").lower().strip(),
             name=os.environ.get("AGENT_NAME", "").strip(),
             auth_token=(os.environ.get("AGENT_AUTH_TOKEN") or None),

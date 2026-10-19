@@ -1,0 +1,890 @@
+{
+  "code": "GI Code",
+  "title": "General Insurance Code of Practice 2020 (updated version, in effect from 5 October 2021, last updated October 2023)",
+  "short_name": "General Insurance Code of Practice",
+  "regulator": "Code Governance Committee (ICA)",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "effective_date": "2021-10-05",
+  "amended_date": "2023-10-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance"
+  ],
+  "entity_types": [
+    "General Insurer (Code subscriber)",
+    "Distributor",
+    "Service Supplier"
+  ],
+  "enforceability": "contractual_code",
+  "source_url": "https://insurancecouncil.com.au/wp-content/uploads/2023/11/2023-COP_UPDATE_October_FINAL.pdf",
+  "licence": "Copyright Insurance Council of Australia. Paraphrased summary only; no Code text reproduced. Consult the published Code.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Version in force on 2026-10-19: the General Insurance Code of Practice 2020, updated version which took effect on 5 October 2021 (most of the 2020 Code commenced 1 July 2021; the October 2021 update cut the complaint decision period from 45 to 30 calendar days to align with ASIC RG 271), with the latest update published 1 October 2023. Source: ICA Code page https://insurancecouncil.com.au/cop/ and the PDF at the source_url (paragraph numbers checked against that PDF). The 2024 independent review led to an ICA redraft announced May 2025; public consultation ran 24 June to 21 July 2026 and lodgement with ASIC for approval under RG 183 slipped to late October 2026 (Insurance Business, 31 July 2026). The redraft is NOT in force and contractual enforceability is not expected before 2027 or 2028. Proposed changes (not yet law): enforceable key commitments, automatic acceptance of home and motor claims undecided after 12 months, a circumstances based vulnerability definition with an Extra Care framework, and broader family violence protections. An SME should re-check https://insurancecouncil.com.au/code-of-practice/ before relying on these timeframes after October 2026. The Code itself does not state a complaint acknowledgement timeframe; the 24 hour or 1 business day figure is from ASIC RG 271 which para 141 incorporates.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [
+    "General Insurance Code of Practice 2014"
+  ],
+  "companion_guidance": [
+    "ASIC RG 271 Internal dispute resolution",
+    "ICA guide: Helping customers affected by family violence",
+    "ICA guide on mental health",
+    "ICA guide on best practice disclosure",
+    "ICA cash settlement fact sheet (December 2025)",
+    "ACCC and ASIC Debt collection guideline: for collectors and creditors"
+  ],
+  "summary": "The General Insurance Code of Practice is the ICA's self-regulatory code for subscribing general insurers, binding through a contract with the ICA and monitored by the independent Code Governance Committee (CGC), which can sanction subscribers. It applies fully to Retail Insurance and sets standards for sales (Pressure Selling banned), cancellation, claims handling (information requests within 10 Business Days, updates every 20 Business Days, decision within 10 Business Days of having all information and within 4 months overall, 12 months in listed exceptions), catastrophe response, vulnerability and family violence support, Financial Hardship for amounts owed to the insurer (decisions within 21 Calendar Days), complaints (30 Calendar Day IDR aligned with ASIC RG 271, with AFCA as EDR), access to information and Significant Breach reporting to the CGC within 10 Business Days. It is not currently an ASIC approved or enforceable code; a redrafted Code is pending ASIC lodgement.",
+  "timeframes": {
+    "claim_initial_info_request_business_days": 10,
+    "claim_update_interval_business_days": 20,
+    "claim_routine_enquiry_response_business_days": 10,
+    "assessor_or_investigator_appointment_notice_business_days": 5,
+    "external_expert_report_request_weeks": 12,
+    "claim_decision_after_info_business_days": 10,
+    "claim_overall_decision_months": 4,
+    "claim_overall_decision_exception_months": 12,
+    "urgent_need_advance_payment_business_days": 5,
+    "claim_reports_copy_business_days": 10,
+    "catastrophe_quick_finalisation_window_months": 1,
+    "catastrophe_review_request_window_months": 12,
+    "cancellation_refund_business_days": 15,
+    "instalment_nonpayment_notice_calendar_days": 14,
+    "cci_deferred_sales_period_days": 4,
+    "hardship_decision_calendar_days": 21,
+    "hardship_customer_info_response_calendar_days": 21,
+    "hardship_decision_after_missed_info_deadline_calendar_days": 7,
+    "complaint_acknowledgement_rg271_business_days": 1,
+    "complaint_update_interval_business_days": 10,
+    "complaint_decision_calendar_days": 30,
+    "complaint_informal_resolution_window_business_days": 5,
+    "complaint_info_relied_on_business_days": 10,
+    "access_to_information_calendar_days": 30,
+    "significant_breach_report_business_days": 10,
+    "distributor_complaint_notice_business_days": 2,
+    "distributor_breach_notice_business_days": 2,
+    "cgc_sanction_response_business_days": 10,
+    "training_records_retention_years": 7
+  },
+  "timeframes_source": "GI Code 2020 (October 2023 update) paras 29, 26-27, 54-56, 64, 68, 70-74, 76-78, 82, 90, 117, 121-122, 146-147, 150-151, 161, 171, 181; acknowledgement via ASIC RG 271.",
+  "clauses": [
+    {
+      "id": "GIC-12",
+      "clause_number": "12",
+      "section_name": "Part 2: How the Code works",
+      "heading": "Retail and Wholesale Insurance",
+      "text": "The whole Code applies to Retail Insurance. Several Parts (Service Suppliers, buying insurance, cancellation, claims, vulnerability and most of the complaints Part) do not apply to Wholesale Insurance. The Code does not cover workers compensation, marine, medical indemnity, motor vehicle injury (CTP) or domestic builders warranty insurance, reinsurance, life insurance or health insurance issued by a registered health insurer (paras 10 and 11).",
+      "subclauses": [
+        "Retail Insurance: whole Code applies.",
+        "Wholesale Insurance: Parts 5 to 9 and most of Part 11 do not apply.",
+        "Excluded products: workers compensation, marine, medical indemnity, motor vehicle injury, domestic builders warranty, reinsurance, life and health insurance."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "scope",
+        "retail insurance",
+        "wholesale insurance"
+      ],
+      "notes": "Before applying any GI Code check, an agent should establish the product is Retail Insurance and not an excluded line. Private health insurance is outside this Code (see the PHI Code of Conduct and the PHI Act).",
+      "obligation_type": "governance",
+      "agent_relevance": "code",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-17",
+      "clause_number": "17",
+      "section_name": "Part 2: How the Code works",
+      "heading": "Responsibility for Employees, Distributors and Service Suppliers",
+      "text": "The insurer is in breach of the Code if its Employees, Distributors or Service Suppliers fail to comply when acting on its behalf. Subscribers contract with the ICA to comply, and the Code Governance Committee can sanction them.",
+      "subclauses": [
+        "Breach by an agent or supplier acting for the insurer is a breach by the insurer.",
+        "The Code works alongside the law; where it sets a higher standard the insurer must meet both, but the law prevails on conflict (paras 18 to 20)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability",
+        "outsourcing",
+        "AI agents"
+      ],
+      "notes": "An AI agent deployed by or for a subscriber is treated as acting on the insurer's behalf, so any agent conduct that falls short of the Code is attributable to the insurer.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-21",
+      "clause_number": "21",
+      "section_name": "Part 3: Our obligation to you",
+      "heading": "Honest, efficient, fair, transparent and timely",
+      "text": "The insurer, its Distributors and Service Suppliers will be honest, efficient, fair, transparent and timely in dealings with customers.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "fairness",
+        "transparency",
+        "timeliness"
+      ],
+      "notes": "Overarching conduct standard. Useful as the catch-all citation when an agent response is misleading, evasive or unreasonably slow even if no specific timeframe is breached.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-23",
+      "clause_number": "23",
+      "section_name": "Part 4: Standards for us and our Distributors",
+      "heading": "Sales policies and procedures",
+      "text": "The insurer will have policies and procedures requiring Employees and Distributors to conduct sales appropriately and prevent unacceptable sales practices, and will only let them provide services matching their expertise (para 24). Distributors must disclose the service they are authorised to provide and that they act for the insurer (para 25).",
+      "subclauses": [
+        "Distributors must tell the insurer of complaints about it or them within 2 Business Days (para 26).",
+        "Distributors must tell the insurer of their own Code breaches within 2 Business Days (para 27).",
+        "Employee and Distributor training records are kept for at least 7 years (para 29)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "complaint_to_distributor_2bd",
+      "key_topics": [
+        "sales practices",
+        "distributors",
+        "training"
+      ],
+      "notes": "An agent selling or servicing policies should identify whose behalf it acts on and stay within its authorised scope. Complaints received by a distributor channel must be routed to the insurer within 2 Business Days.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-32",
+      "clause_number": "32",
+      "section_name": "Part 4: Standards for us and our Distributors",
+      "heading": "Remedy for poor conduct causing material harm",
+      "text": "If Employees or Distributors engaged in poor conduct in breach of policy that caused a customer material harm, the insurer will contact the customer to discuss a remedy, which may include refunding premiums with interest, adjusting cover, correcting information or paying a claim. If the customer is not satisfied, the insurer explains how to complain (para 33).",
+      "subclauses": [
+        "Remedies: premium refund, interest, cover adjustment, correcting information, paying a claim."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "remediation",
+        "sales practices"
+      ],
+      "notes": "Where an agent identifies its own or a human colleague's misconduct, the case should be escalated for remediation rather than resolved informally.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-36",
+      "clause_number": "36",
+      "section_name": "Part 5: Standards for our Service Suppliers",
+      "heading": "Service Supplier obligations",
+      "text": "Service Suppliers must disclose the service they are authorised to provide and that they act for the insurer, tell the insurer about complaints within 2 Business Days, and report Code breaches they are aware of within 2 Business Days (paras 35 to 37). Suppliers must be suitably licensed and qualified, and contracts must reflect the Code (paras 38 to 40).",
+      "subclauses": [
+        "Complaint notification to insurer: 2 Business Days.",
+        "Code breach notification to insurer: 2 Business Days.",
+        "Subcontracting requires the insurer's prior approval."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "supplier_breach_2bd",
+      "key_topics": [
+        "service suppliers",
+        "outsourcing"
+      ],
+      "notes": "Applies to retail insurance only. If an AI claims or servicing tool is supplied by a third party, the vendor contract should mirror these obligations.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-42",
+      "clause_number": "42",
+      "section_name": "Part 6: Buying insurance",
+      "heading": "Plain language and target market policy",
+      "text": "The insurer will take reasonable steps to make communications plain language and will publish a policy on its approach to product development and distribution for appropriate target markets (para 43).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "plain language",
+        "design and distribution"
+      ],
+      "notes": "Agent responses should be in plain language. Target market alignment is a separate statutory obligation under the Corporations Act design and distribution regime.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-44",
+      "clause_number": "44",
+      "section_name": "Part 6: Buying insurance",
+      "heading": "Pressure Selling prohibited",
+      "text": "Pressure Selling of the insurer's products is prohibited and the insurer must make this clear to Employees and Distributors. Pressure Selling means unethical, misleading or extended sales techniques that pressure customers or limit their ability to make an informed decision, including coercing a customer into a policy they do not want.",
+      "subclauses": [
+        "No coercion, false urgency, or extended techniques that wear the customer down.",
+        "Applies to Retail Insurance."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "sales practices",
+        "pressure selling"
+      ],
+      "notes": "Detection target for sales agents: repeated pushing after a customer declines, artificial deadlines, or discouraging the customer from taking time to consider are all indicators of Pressure Selling.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "sales_practices"
+    },
+    {
+      "id": "GIC-47",
+      "clause_number": "47",
+      "section_name": "Part 6: Buying insurance",
+      "heading": "Declining to provide insurance",
+      "text": "If the insurer cannot provide insurance it will give its reasons, tell the applicant they can ask for the information relied on, refer them to the ICA or the National Insurance Brokers Association for alternatives, and explain the complaints process if they are unhappy. Only relevant information may be requested and relied on (para 45), and mistakes in an application are corrected immediately (para 46).",
+      "subclauses": [
+        "Give reasons for refusal.",
+        "Right to request information relied on (Part 12).",
+        "Referral to ICA or NIBA for alternative cover.",
+        "Complaints information if unhappy."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "underwriting",
+        "refusal of cover"
+      ],
+      "notes": "An agent that declines a quote or application must give reasons and the referral information, not just a bare refusal.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-49",
+      "clause_number": "49",
+      "section_name": "Part 6: Buying insurance",
+      "heading": "Automatic renewal, premium comparison and No Claims Discount",
+      "text": "For auto renewing products, at purchase and each renewal the insurer reminds the customer about automatic renewal, the right to opt out, and to check the sum insured. Renewal notices for directly purchased home and private motor products show last year's and this year's premium and explain how it is calculated (para 50). The insurer explains how any No Claims Discount works (para 51). A sum insured calculator is offered for home building cover (para 48).",
+      "subclauses": [
+        "Auto renewal reminder and opt out at each renewal.",
+        "Premium comparison on renewal for home and motor bought direct.",
+        "Explain No Claims Discount.",
+        "Sum insured calculator for home building (not strata)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "renewal",
+        "pricing transparency"
+      ],
+      "notes": "Renewal agents must include the previous year's premium comparison and the opt out reminder.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-52",
+      "clause_number": "52",
+      "section_name": "Part 6: Buying insurance",
+      "heading": "Consumer Credit Insurance deferred sales period",
+      "text": "The insurer will not sell CCI during the deferred sales period, which is 4 days starting on the day after the customer is told their credit is approved (para 54). Before that period starts the customer gets clear information on cost, payment options, duration and key exclusions, and is told buying CCI has no bearing on credit approval (para 53).",
+      "subclauses": [
+        "Deferred sales period: 4 days.",
+        "No binding offer until the period ends."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "consumer credit insurance",
+        "add-on insurance",
+        "deferred sales"
+      ],
+      "notes": "An agent must not make a binding CCI offer within the 4 day deferred sales period. This mirrors the statutory add-on insurance deferred sales model.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-55",
+      "clause_number": "55",
+      "section_name": "Part 7: Cancelling an insurance policy",
+      "heading": "Refunds on cancellation and instalment non-payment",
+      "text": "If a customer cancels and is entitled to a refund, the insurer returns it within 15 Business Days (broker arranged policies may differ). For Instalment Policies the insurer sends a written non-payment notice at least 14 Calendar Days before cancelling, and a second notice either before cancellation or within 14 Calendar Days after it (paras 56 and 57).",
+      "subclauses": [
+        "Refund within 15 Business Days.",
+        "Non-payment notice at least 14 Calendar Days before cancellation.",
+        "Second notice before, or within 14 Calendar Days after, cancellation."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "cancellation",
+        "refunds",
+        "timeframes"
+      ],
+      "notes": "Agents handling cancellations should quote the 15 Business Day refund timeframe and must not cancel instalment policies without the 14 day notice.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-58",
+      "clause_number": "58",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Before making a claim",
+      "text": "A customer can ask whether a loss is covered before claiming. The insurer must not discourage a claim and must say that if a claim is made it will be fully assessed.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "discouraging claims"
+      ],
+      "notes": "Key runtime rule: an agent answering a coverage question must not talk the customer out of lodging a claim and should state that a lodged claim will be fully assessed.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-59",
+      "clause_number": "59",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Information when a claim is made",
+      "text": "When a claim is made the insurer tells the customer about the claims process, any excess, any waiting or no cover periods, and how to contact the insurer. Uninsured third parties are told the claims process and, for accepted motor claims, next steps, complaints and contacts (para 60).",
+      "subclauses": [
+        "Claims process.",
+        "Excess payable.",
+        "Waiting or no cover periods.",
+        "Contact details."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "disclosure"
+      ],
+      "notes": "First notice of loss agents should deliver all four items.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-64",
+      "clause_number": "64",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Fast-tracking urgent claims",
+      "text": "Where an event (such as a natural disaster) caused the claim and left the customer in urgent financial need, the insurer will fast-track assessment and decision and/or pay an advance within 5 Business Days after the customer demonstrates urgent financial need. If unhappy with the response the customer is told about the complaints process (para 66).",
+      "subclauses": [
+        "Advance payment within 5 Business Days of urgent need being shown."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "urgent_need_advance_5bd",
+      "key_topics": [
+        "urgent claims",
+        "catastrophe",
+        "financial hardship"
+      ],
+      "notes": "An agent should actively ask about urgent financial need after disasters and route qualifying customers to fast-track or advance payment.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-68",
+      "clause_number": "68",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Initial claim assessment steps",
+      "text": "If further information or assessment is needed, within 10 Business Days of receiving the claim the insurer tells the customer what information it needs (using best endeavours to do so in one request), appoints a loss assessor or adjuster if needed, and gives an estimate of the likely timeframe and process for a decision. Only relevant information may be requested, with reasons (para 67).",
+      "subclauses": [
+        "Within 10 Business Days: information request, assessor appointment, estimated timeframe.",
+        "Best endeavours to make a single information request."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "timeframes",
+        "information requests"
+      ],
+      "notes": "Claim agents should front-load information requests and give a timeframe estimate within 10 Business Days of lodgement.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-70",
+      "clause_number": "70",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Claim progress updates",
+      "text": "The insurer will tell the customer about the progress of the claim at least every 20 Business Days, and respond to routine enquiries about progress within 10 Business Days (para 71).",
+      "subclauses": [
+        "Proactive update at least every 20 Business Days.",
+        "Routine enquiry response within 10 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "timeframes",
+        "communication"
+      ],
+      "notes": "Timeframe checker: flag any open claim with no customer update in 20 Business Days or an enquiry unanswered after 10 Business Days.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "claim_updates"
+    },
+    {
+      "id": "GIC-72",
+      "clause_number": "72",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Appointing assessors, adjusters, investigators and experts",
+      "text": "The insurer tells the customer within 5 Business Days of appointing a loss assessor, loss adjuster, investigator or employee investigator, and their role (paras 72 and 73). Investigations follow the Part 15 Claims Investigation Standards. External Experts are asked to report within 12 weeks, and the customer is told if that is missed (para 74).",
+      "subclauses": [
+        "Notice of appointment within 5 Business Days.",
+        "External Expert report requested within 12 weeks.",
+        "Investigations must comply with Part 15."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "investigations",
+        "experts"
+      ],
+      "notes": "If an agent triggers referral to an investigator, the customer must be told within 5 Business Days.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-76",
+      "clause_number": "76",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Claim decision once information is complete",
+      "text": "Once the insurer has all relevant information and has completed its enquiries, it will decide whether to accept or deny the claim and tell the customer within 10 Business Days.",
+      "subclauses": [
+        "Decision and notification within 10 Business Days of having all information."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "timeframes",
+        "claim decision"
+      ],
+      "notes": "Core claim timeframe. Timeframe checker should start this 10 Business Day clock when the last requested information or report is received.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "claim_decision_timeframe"
+    },
+    {
+      "id": "GIC-77",
+      "clause_number": "77",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Overall claim decision timeframe",
+      "text": "The decision will be made within 4 months of receiving the claim, unless para 78 applies, and if not the insurer tells the customer in writing about its complaints process. Under para 78, if the claim arises from an Extraordinary Catastrophe, is or is reasonably suspected to be fraudulent, the customer does not respond to reasonable requests, there are communication difficulties beyond the insurer's control, or the customer asks for delay, the decision must be given in writing within 12 months, failing which the customer is told about the complaints process.",
+      "subclauses": [
+        "Standard: decision within 4 months of receiving the claim.",
+        "Exceptions (para 78): Extraordinary Catastrophe, fraud or suspected fraud, customer non-response, communication difficulty, customer requested delay.",
+        "Exception ceiling: 12 months, then complaints information in writing.",
+        "Para 83: alternative timetable may be agreed for complex claims; para 84: limited excuses for non-compliance."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "claim_4_months_complaints_notice",
+      "key_topics": [
+        "claims",
+        "timeframes",
+        "catastrophe",
+        "fraud"
+      ],
+      "notes": "Timeframe checker: 4 months from claim receipt is the default ceiling; only flagged exception categories extend it to 12 months. A delay letter without complaints information is non-compliant. The 2026 redraft proposes automatic acceptance of home and motor claims undecided after 12 months, which is not yet in force.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "claim_overall_timeframe"
+    },
+    {
+      "id": "GIC-79",
+      "clause_number": "79",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Cash settlements and total loss",
+      "text": "If offering a cash settlement under home building cover, the insurer explains how cash settlements work and how decisions are made. For accepted total loss home claims where proof of ownership was destroyed and ownership is clear, the insurer will not demand proof of ownership or an itemised list (para 80).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "cash settlement",
+        "total loss",
+        "home insurance"
+      ],
+      "notes": "Agents should not demand receipts for items destroyed in a total loss where ownership is otherwise clear.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-81",
+      "clause_number": "81",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Reasons when a claim is denied or not paid in full",
+      "text": "If the insurer denies a claim or does not pay in full it tells the customer in writing which aspects are not accepted, the reasons, the right to request the information relied on and copies of Service Supplier or External Expert reports, and the complaints process. Requested information or reports are given within 10 Business Days (para 82).",
+      "subclauses": [
+        "Written decision identifying aspects not accepted.",
+        "Reasons.",
+        "Right to information and expert reports relied on.",
+        "Complaints process.",
+        "Provide requested reports within 10 Business Days."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "claims",
+        "claim denial",
+        "reasons",
+        "complaints"
+      ],
+      "notes": "A denial message from an agent that lacks written reasons, access rights or complaints information is a breach indicator.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "claim_decline_reasons"
+    },
+    {
+      "id": "GIC-86",
+      "clause_number": "86",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Repairers",
+      "text": "Where the insurer selects and directly authorises a repairer, it accepts responsibility for the quality of work and materials, and complaints about the repairer go through the insurer's complaints process. If rectification is needed the insurer arranges and pays reasonable hire car or accommodation beyond policy limits (para 87).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "repairs",
+        "service suppliers"
+      ],
+      "notes": "Agents should not redirect customers to the repairer for complaints about insurer-authorised repairs.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-88",
+      "clause_number": "88",
+      "section_name": "Part 8: Making a claim",
+      "heading": "Responding to Catastrophes",
+      "text": "The insurer responds to Catastrophes efficiently, professionally, practically and compassionately, and cooperates with the ICA's industry catastrophe coordination arrangements (para 89). If a property claim from a Catastrophe was finalised within 1 month of the event, the customer may ask for a review within 12 months of finalisation even if a release was signed, and must be told this in writing with the complaints process (para 90).",
+      "subclauses": [
+        "Catastrophe is an event declared by the ICA.",
+        "Review right: claims finalised within 1 month of the Catastrophe can be reviewed within 12 months of finalisation.",
+        "Extraordinary Catastrophe (declared by the ICA Board) extends decision timeframe to 12 months under para 78."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "catastrophe",
+        "natural disaster",
+        "claims review"
+      ],
+      "notes": "During declared catastrophes agents should prioritise compassionate handling, check urgent need (para 64) and include the review right in quick finalisation letters.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "catastrophe_events"
+    },
+    {
+      "id": "GIC-91",
+      "clause_number": "91",
+      "section_name": "Part 9: Supporting customers experiencing vulnerability",
+      "heading": "Commitment to customers experiencing vulnerability",
+      "text": "The insurer commits to extra care for customers experiencing vulnerability, recognising needs change over time. Vulnerability may arise from age, disability, mental or physical health conditions, family violence, language or literacy barriers, cultural background, Aboriginal or Torres Strait Islander status, remote location or financial distress (para 92). Where the customer discloses or the insurer identifies a need for extra support, it works with them as early as practicable on a suitable, sensitive and compassionate way to proceed while protecting privacy (para 97), and recognises support persons such as lawyers, consumer representatives, interpreters or friends (para 98).",
+      "subclauses": [
+        "Identify vulnerability indicators (para 92).",
+        "Tailor the process early and compassionately (para 97).",
+        "Accept support persons and representatives (para 98).",
+        "Referral to financial counsellors or community services (para 99).",
+        "Flexible ID verification, especially for First Nations and non-English speaking customers (para 100).",
+        "Interpreter access where practicable, recorded (paras 101 to 103).",
+        "Mental health: comply with the Disability Discrimination Act, treat fairly, ask only relevant questions (para 104)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "vulnerability",
+        "support persons",
+        "interpreters",
+        "mental health"
+      ],
+      "notes": "Runtime anchor for vulnerability detection. An agent should notice cues (distress, confusion, disclosed illness, language difficulty, mention of violence or bereavement) and offer adjustments or a human handover, without demanding proof.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "vulnerability_support"
+    },
+    {
+      "id": "GIC-95",
+      "clause_number": "95",
+      "section_name": "Part 9: Supporting customers experiencing vulnerability",
+      "heading": "Family violence policy and handling",
+      "text": "The insurer will publish a policy on its website about how it supports customers affected by family violence, and train staff to identify vulnerability and engage with sensitivity, dignity, respect and compassion (para 96).",
+      "subclauses": [
+        "Public family violence policy.",
+        "Role appropriate training.",
+        "ICA guide: Helping customers affected by family violence (non-binding)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "family violence",
+        "vulnerability",
+        "privacy",
+        "safety"
+      ],
+      "notes": "If a customer discloses family violence an agent must avoid disclosing their details or contact to other policyholders, offer safe contact methods, and escalate to a trained team. The 2026 redraft proposes broader protections including financial abuse, not yet in force.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "family_violence"
+    },
+    {
+      "id": "GIC-111",
+      "clause_number": "111",
+      "section_name": "Part 10: Financial Hardship",
+      "heading": "Identifying Financial Hardship and giving information",
+      "text": "Financial Hardship support applies to individuals who owe the insurer money under a policy (for example an excess) or from whom the insurer is recovering money for damage they caused (para 107). It does not cover help paying premiums (para 108). When the insurer identifies or is told of hardship, it gives details on how to apply and, where appropriate, the National Debt Helpline (1800 007 007). Recovery action is put on hold while the application is assessed (paras 118 to 120).",
+      "subclauses": [
+        "Eligible: individuals owing excess or other amounts, and uninsured third parties being pursued for recovery.",
+        "Premium relief is outside Part 10.",
+        "Give application details and National Debt Helpline.",
+        "Pause recovery and notify collection agents (paras 118 to 120).",
+        "Debt collection follows the ACCC and ASIC Debt collection guideline (para 131)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "financial hardship",
+        "debt recovery",
+        "third party recovery"
+      ],
+      "notes": "An agent that hears an individual cannot pay an excess or recovery demand must offer hardship information and pause collection, not continue pressing for payment.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "financial_hardship"
+    },
+    {
+      "id": "GIC-121",
+      "clause_number": "121",
+      "section_name": "Part 10: Financial Hardship",
+      "heading": "Financial Hardship decision timeframes",
+      "text": "The insurer tells the applicant in writing of its hardship decision within 21 Calendar Days of receiving the application, unless it requested more information. The applicant has 21 Calendar Days to provide requested information (para 117). If provided, the decision follows within 21 Calendar Days of receipt; if not provided by the deadline, the decision follows within 7 Calendar Days of the deadline (para 122). Support options include deferral, instalments (a reasonable instalment request will not be refused), reduced lump sum, deducting excess from the claim and waiving cancellation fees (para 123).",
+      "subclauses": [
+        "Decision within 21 Calendar Days.",
+        "Customer has 21 Calendar Days to supply information.",
+        "Decision within 21 Calendar Days after information, or 7 Calendar Days after a missed deadline.",
+        "Refusal must give reasons and complaints process (para 129)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "financial hardship",
+        "timeframes"
+      ],
+      "notes": "Timeframe checker values for hardship workflows.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-142",
+      "clause_number": "142",
+      "section_name": "Part 11: Complaints",
+      "heading": "Acknowledging a Complaint",
+      "text": "When the insurer receives a Complaint it acknowledges receipt, gives the name and contact details of the person liaising with the customer (para 143), and has it handled by someone with appropriate authority who was not involved in the decision complained about (para 144). The complaints process must comply with ASIC's guidelines (para 141), which in RG 271 set acknowledgement within 24 hours or 1 business day of receipt, or as soon as practicable.",
+      "subclauses": [
+        "Acknowledge receipt (RG 271: within 24 hours or 1 business day).",
+        "Named contact person.",
+        "Independent handler.",
+        "Customer may complain about any aspect of the relationship (para 139)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complaints",
+        "IDR",
+        "acknowledgement"
+      ],
+      "notes": "Any expression of dissatisfaction made to an agent should be recognised as a complaint, acknowledged, and logged, even if resolved in the same conversation. The Code text itself does not state the 24 hour figure; it comes via the RG 271 cross reference.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "complaints_acknowledgement"
+    },
+    {
+      "id": "GIC-147",
+      "clause_number": "147",
+      "section_name": "Part 11: Complaints",
+      "heading": "Complaint decision timeframe",
+      "text": "The insurer decides the Complaint within 30 Calendar Days. If it cannot, before the deadline it tells the customer in writing the reasons for delay and their right to go to AFCA with contact details. Progress updates are given at least every 10 Business Days (para 146). The final decision is in writing with reasons and AFCA rights and time limits (paras 148 and 149). A written response is required for complaints about Financial Hardship, a declined claim or claim value, or where requested; otherwise it may be omitted if resolved to the customer's satisfaction within 5 business days (para 150). Information relied on is provided within 10 Business Days of request (para 151).",
+      "subclauses": [
+        "Decision within 30 Calendar Days.",
+        "Updates at least every 10 Business Days.",
+        "Delay notice with AFCA details before day 30.",
+        "Written response mandatory for hardship, declined claim or claim value complaints.",
+        "Customer may go to AFCA at any time and if unresolved after 30 Calendar Days (para 154)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complaints",
+        "IDR",
+        "AFCA",
+        "timeframes"
+      ],
+      "notes": "Timeframe checker: 30 calendar day IDR ceiling aligned with RG 271. Agents must never discourage escalation to AFCA.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "complaints_timeframe"
+    },
+    {
+      "id": "GIC-161",
+      "clause_number": "161",
+      "section_name": "Part 12: Your access to information",
+      "heading": "Access to information",
+      "text": "On request, and free of charge, the insurer gives access to information relied on for an application, claim or Complaint within 30 Calendar Days (10 Business Days for claim reports and complaint information under paras 82 and 151). Refusals must be reasonable, with reasons and complaints information, and limited to legal, privacy or prejudice grounds; External Expert reports relied on must still be given (para 163).",
+      "subclauses": [
+        "General access: 30 Calendar Days.",
+        "Claim reports and complaint information: 10 Business Days.",
+        "Includes recordings or transcripts of interactions relied on (para 162)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "access to information",
+        "privacy",
+        "recordings"
+      ],
+      "notes": "Recordings or transcripts of agent conversations that were relied on in a decision are accessible to the customer, so agent logs should be retrievable.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GIC-181",
+      "clause_number": "181",
+      "section_name": "Part 13: Enforcement, sanctions and compliance",
+      "heading": "Reporting Significant Breaches",
+      "text": "If the insurer identifies a Significant Breach of the Code it reports it to the Code Governance Committee within 10 Business Days. It maintains board or executive reporting on Code compliance (para 179), systems enabling CGC monitoring and an annual compliance report (para 180), and cooperates with CGC investigations (para 182).",
+      "subclauses": [
+        "Significant Breach report to CGC within 10 Business Days.",
+        "Annual compliance return to the CGC.",
+        "Sanction response within 10 Business Days (para 171).",
+        "Sanctions include rectification, audit, corrective advertising, compensation, publication and community benefit payments up to $100,000 (paras 173 and 174)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "significant_breach_10bd",
+      "key_topics": [
+        "breach reporting",
+        "Code Governance Committee",
+        "governance"
+      ],
+      "notes": "Systemic agent failures (for example missed claim updates across many claims) may constitute a Significant Breach requiring CGC notification within 10 Business Days, alongside any ASIC reportable situation obligations.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ],
+      "anchor": "code_breach_reporting"
+    },
+    {
+      "id": "GIC-Part15",
+      "clause_number": "Part 15",
+      "section_name": "Part 15: Claims investigation standards",
+      "heading": "Claims investigation standards",
+      "text": "Investigations of claims must follow standards covering general investigation conduct, notice and consent before formal interviews, conduct of interviews (including support persons and interpreters), post interview obligations, external investigator licensing and restrictions on surveillance.",
+      "subclauses": [
+        "Formal interviews require notice and the right to a support person.",
+        "Surveillance subject to restrictions and must be justified."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "investigations",
+        "surveillance",
+        "interviews",
+        "fraud"
+      ],
+      "notes": "An agent must not conduct or simulate a formal fraud interview; fraud suspicions should be referred to the investigations team under Part 15.",
+      "obligation_type": "claims",
+      "agent_relevance": "code",
+      "sectors": [
+        "general_insurance"
+      ]
+    }
+  ]
+}

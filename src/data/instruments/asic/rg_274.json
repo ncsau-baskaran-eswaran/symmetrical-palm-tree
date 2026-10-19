@@ -1,0 +1,195 @@
+{
+  "code": "RG 274",
+  "title": "ASIC Regulatory Guide 274 Product design and distribution obligations",
+  "short_name": "Product design and distribution obligations",
+  "regulator": "ASIC",
+  "instrument_type": "regulatory_guide",
+  "legislative_instrument": "RG 274 (reissued 10 September 2024); guidance on Corporations Act Part 7.8A",
+  "effective_date": "2021-10-05",
+  "amended_date": "2024-09-10",
+  "status": "In Force",
+  "sectors": ["general_insurance", "life_insurance"],
+  "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Authorised Representative", "Insurance Broker", "Insurance Distributor"],
+  "enforceability": "guidance",
+  "source_url": "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-274-product-design-and-distribution-obligations/",
+  "licence": "ASIC regulatory guide (copyright ASIC). Paraphrased only; consult the published guide.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the published PDF (rg274-published-10-september-2024.pdf) downloaded from asic.gov.au on 2026-10-19; the ASIC page shows the September 2024 issue as current with a separate summary of changes attachment (not reviewed). Paragraph numbers, the 10 business day clocks and the interim relief notes (ASIC Instrument 2021/784 on nil complaints and nil information reporting) confirmed from the PDF and cross-checked against Corporations Act ss994C, 994F and 994G in Compilation No. 149. RG 274 is guidance; the obligations themselves are statutory and mostly civil penalty provisions. Private health insurance products are not financial products (Corporations Act s765A(1)(c)) and are outside the DDO regime; medical indemnity insurance is excluded by regulation (RG 274.21).",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Corporations Act 2001 Part 7.8A (ss994A to 994Q)",
+    "ASIC Corporations (Design and Distribution Obligations Interim Measures) Instrument 2021/784",
+    "ASIC Regulatory Guide 271 Internal dispute resolution",
+    "ASIC Regulatory Guide 175 and RG 244 (advice boundaries)"
+  ],
+  "summary": "RG 274 explains how ASIC interprets the design and distribution obligations (DDO) that commenced on 5 October 2021. Issuers of general and life insurance must make, publish and review target market determinations (TMDs), take reasonable steps so distribution is consistent with the TMD, notify ASIC of significant dealings within 10 business days, and keep records. Distributors must not distribute without a TMD, must take reasonable steps for their own distribution, must report complaints numbers and other specified information to issuers within 10 business days after each reporting period, and must notify issuers of significant dealings within 10 business days.",
+  "clauses": [
+    {
+      "id": "RG274-20",
+      "clause_number": "RG 274.20",
+      "section_name": "B: Coverage of the design and distribution obligations",
+      "heading": "Meaning of 'financial product' and products excluded",
+      "text": "DDO applies to products requiring a PDS under Part 7.9 (expressly including general insurance), certain securities, ASIC Act financial products such as regulated credit, and prescribed products. Excluded products include MySuper, margin lending, most ordinary shares, employee share scheme securities and prescribed products such as medical indemnity insurance (RG 274.21). Products continuing to be issued after commencement are covered, and each general insurance renewal is a new issue (RG 274.22 to RG 274.23).",
+      "subclauses": [
+        "RG 274.20: products in scope, including general insurance and life risk products requiring a PDS.",
+        "RG 274.21: excluded products, including medical indemnity insurance.",
+        "RG 274.22 to RG 274.23: new and continuing products covered; legacy closed products not covered; renewals are issues."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["DDO coverage", "renewals", "exclusions"],
+      "notes": "Renewals handled by an AI agent are distribution events subject to the TMD. Private health insurance is outside DDO because it is not a financial product.",
+      "obligation_type": "product",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-62",
+      "clause_number": "RG 274.62",
+      "anchor": "tmd_requirement",
+      "section_name": "D: Obligations for issuers: Preparing a TMD that meets the requirements",
+      "heading": "TMD content and appropriateness requirements",
+      "text": "A TMD is a written document describing the class of consumers in the product's target market and matters relevant to distribution and review (RG 274.59). It must meet the content requirements in s994B(5) and the appropriateness requirements in s994B(8). Content: written; describes the target market; specifies distribution conditions, review triggers and maximum review periods; specifies when distributors must report complaints numbers; and specifies other information distributors must report, by whom and when (RG 274.63). The TMD must be publicly available free of charge before distribution (RG 274.137 to RG 274.138).",
+      "subclauses": [
+        "RG 274.59: what a TMD is.",
+        "RG 274.63: content requirements (target market, distribution conditions, review triggers, review periods, complaints reporting period, other reporting information).",
+        "RG 274.64 to RG 274.66: appropriateness requirements, judged objectively.",
+        "RG 274.118: complaints reporting period must be reasonable; a period of a year or more is unlikely to be appropriate.",
+        "RG 274.137 to RG 274.138: TMD publicly available free of charge before any distribution; promotional material for PDS products must describe the target market or say where the TMD is available."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["target market determination", "distribution conditions", "review triggers", "TMD publication"],
+      "notes": "Statutory basis s994B (offence and civil penalty). An AI distribution agent must be configured with the current TMD for each product, apply its distribution conditions (for example eligibility checks or channel restrictions), and be able to tell customers where the TMD is available. TMD changes must flow to the agent configuration promptly.",
+      "obligation_type": "product",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-140",
+      "clause_number": "RG 274.140",
+      "section_name": "D: Obligations for issuers: Taking reasonable steps in relation to distribution",
+      "heading": "Issuer reasonable steps obligation",
+      "text": "An issuer must take reasonable steps that will, or are reasonably likely to, result in distribution being consistent with the TMD (s994E(1)). This requires effective arrangements likely to direct the product to the target market. The issuer does not breach the obligation merely because a consumer outside the target market acquires the product, and it is not required to guarantee distributor compliance.",
+      "subclauses": [
+        "RG 274.141: effective arrangements to manage identified distribution risks, including higher-risk distributors.",
+        "RG 274.142: consider all relevant factors.",
+        "RG 274.146: consider the choice architecture of the distribution process."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["reasonable steps", "issuer obligations", "choice architecture"],
+      "notes": "Where an insurer deploys an AI agent in its own direct channel, it is both issuer and distributor (RG 274.168). Agent design (questions, defaults, upsell prompts) is part of the reasonable steps assessment.",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-158",
+      "clause_number": "RG 274.158",
+      "section_name": "D: Obligations for issuers: Notifying ASIC of 'significant dealings'",
+      "heading": "Issuer notification of significant dealings to ASIC",
+      "text": "An issuer must notify ASIC in writing, as soon as practicable and in any case within 10 business days after becoming aware, of a significant dealing in its product (other than excluded dealings implementing personal advice) that is not consistent with the TMD (s994G). 'Significant dealing' is undefined; relevant factors include the proportion of consumers outside the target market, actual or potential harm, the nature and extent of inconsistency, the proportion of premium from outside the target market, and the period over which it occurred (RG 274.159 to RG 274.160). Issuers should set objective criteria (RG 274.161). Notifications are lodged through the ASIC Regulatory Portal.",
+      "subclauses": [
+        "RG 274.158: 10 business day notification to ASIC.",
+        "RG 274.160: significance factors.",
+        "RG 274.161: objective criteria recommended.",
+        "RG 274.163 and Table 5: content of the notification."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "10_business_days",
+      "key_topics": ["significant dealing", "ASIC notification", "10 business days"],
+      "notes": "Offence and civil penalty under s994G. Insurers should monitor AI channel sales against TMD criteria to detect significant dealings early.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-170",
+      "clause_number": "RG 274.170",
+      "anchor": "distribution_reasonable_steps",
+      "section_name": "E: Obligations for distributors: Taking reasonable steps in relation to distribution",
+      "heading": "Distributor reasonable steps obligation",
+      "text": "A distributor generally must not distribute a product unless a TMD has been made (RG 274.169) and must take reasonable steps that will, or are reasonably likely to, result in its distribution being consistent with the TMD (s994E(3)). It must have robust product governance arrangements (RG 274.171), take into account all relevant factors, and comply with the TMD's distribution conditions (RG 274.173). It does not fail merely because a consumer outside the target market acquires the product (RG 274.175).",
+      "subclauses": [
+        "RG 274.169: no distribution without a TMD (s994D).",
+        "RG 274.171 to RG 274.173: governance arrangements, relevant factors, compliance with distribution conditions.",
+        "RG 274.179 to RG 274.189: use existing customer information and, where needed, ask questions to assess target market fit.",
+        "RG 274.190 to RG 274.195: questions asked solely to determine target market status are not personal advice (s766B(3A)), but the distributor must not imply it has considered the consumer's personal circumstances or that the product suits them.",
+        "RG 274.197 to RG 274.199: where the distributor becomes aware it is dealing with a consumer outside the target market, it should consider whether to proceed."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["reasonable steps", "distributor obligations", "target market questions", "personal advice boundary"],
+      "notes": "Core runtime constraint for AI sales and quote agents: apply distribution conditions, ask target market questions in a neutral way (ideally after the customer has decided), never state or imply the product is suitable for the customer personally (which risks personal advice and misleading conduct under ASIC Act s12DA), and log out-of-target-market sales. Statutory basis s994E(3), a civil penalty provision.",
+      "obligation_type": "product",
+      "agent_relevance": "runtime",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-212",
+      "clause_number": "RG 274.212",
+      "anchor": "significant_dealing_notification",
+      "section_name": "E: Obligations for distributors: Notifying the issuer of 'significant dealings'",
+      "heading": "Distributor notification of significant dealings to the issuer",
+      "text": "A distributor that becomes aware of a significant dealing in a product that is not consistent with the TMD must notify the issuer in writing as soon as practicable and in any event within 10 business days after becoming aware (s994F(6)). The obligation extends to personal advice providers. Distributors will usually be reporting clusters of their own inconsistent dealings, since they lack the issuer's aggregate view, and distributor and issuer should agree the form and content of notifications.",
+      "subclauses": [
+        "RG 274.212: 10 business day notification to the issuer.",
+        "RG 274.213: applies to personal advice providers.",
+        "RG 274.214: purpose is to support the issuer's TMD review and ASIC reporting.",
+        "RG 274.215: distributors report clusters of their own dealings.",
+        "RG 274.216: agree form and content with the issuer."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "10_business_days",
+      "key_topics": ["significant dealing", "distributor reporting", "10 business days"],
+      "notes": "Offence and civil penalty under s994F(6). An AI distribution channel run by a distributor (broker, retailer, authorised representative) needs monitoring that flags clusters of out-of-target-market sales and triggers notification to the issuer within 10 business days.",
+      "obligation_type": "reporting",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-218",
+      "clause_number": "RG 274.218",
+      "anchor": "complaints_reporting_to_issuer",
+      "section_name": "E: Obligations for distributors: Keeping records and reporting information",
+      "heading": "Distributor reporting of complaints and other information to the issuer",
+      "text": "A distributor must report in writing to the issuer whether it received complaints about the product during the TMD reporting period and, if so, how many, plus any other information acquired in the period that the TMD requires. Reports are due as soon as practicable and in any case within 10 business days after the end of the reporting period (RG 274.219; s994F(4) to (5)). ASIC Instrument 2021/784 relieves distributors from reporting nil complaints or nil information, but actual complaints and acquired information must still be reported (RG 274.217 notes).",
+      "subclauses": [
+        "RG 274.218(a): whether complaints were received and the number.",
+        "RG 274.218(b): other information specified in the TMD.",
+        "RG 274.219: within 10 business days after the end of the reporting period.",
+        "RG 274.217 Notes 1 and 2: nil reporting relief under Instrument 2021/784.",
+        "RG 274.119: issuers will generally need the substance of complaints, not only the number.",
+        "RG 274.221 to RG 274.222: distributors must keep distribution records including complaints numbers."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "10_business_days",
+      "key_topics": ["complaints reporting", "DDO", "distributor records", "10 business days"],
+      "notes": "Offence and civil penalty under s994F(4) and (5). Complaints detected by an AI agent (using the RG 271 definition) must be tagged by product so they can be counted and reported to the issuer for each reporting period. This links RG 271 complaint capture to DDO reporting.",
+      "obligation_type": "reporting",
+      "agent_relevance": "code",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG274-149",
+      "clause_number": "RG 274.149",
+      "section_name": "D: Obligations for issuers: Reviewing the TMD",
+      "heading": "Reviewing the TMD to ensure it remains appropriate",
+      "text": "Issuers must review TMDs within the review periods set in the TMD and when a review trigger or other event suggests the TMD is no longer appropriate. Where the issuer knows of such an event, it must stop distribution as soon as practicable and within 10 business days unless it has completed a review (s994C). Reviews should be outcomes focused and use credible data, including complaints and distributor information.",
+      "subclauses": [
+        "RG 274.149 to RG 274.151: review process forms part of product governance.",
+        "RG 274.153 to RG 274.157: identify problems promptly and use reliable data."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "10_business_days",
+      "key_topics": ["TMD review", "review triggers", "stop distribution"],
+      "notes": "Summary table in RG 274 describes this as reviewing within 10 business days; the statute frames it as ceasing distribution within 10 business days unless the review is done (s994C(3)). AI channels must support an immediate product switch-off.",
+      "obligation_type": "product",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    }
+  ]
+}

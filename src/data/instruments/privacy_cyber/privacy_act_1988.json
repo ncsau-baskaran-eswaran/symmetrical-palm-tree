@@ -1,0 +1,472 @@
+{
+  "code": "Privacy Act 1988",
+  "title": "Privacy Act 1988 (Cth)",
+  "short_name": "Privacy Act",
+  "regulator": "OAIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A03712",
+  "effective_date": "1988-12-14",
+  "amended_date": "2026-06-04",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2004A03712/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the Federal Register of Legislation compilation C2026C00227 (compilation date 4 June 2026, the latest on 2026-10-19) for APPs 1, 3, 5, 6, 10, 11, 12, 13, ss13G, 13H, 26WE, 26WH, 26WK, 26WL and Schedule 2. Checked the Privacy and Other Legislation Amendment Act 2024 (C2024A00128, assent 10 December 2024) commencement table: Schedule 1 Part 15 (automated decisions and privacy policies, APP 1.7 to 1.9, item 88) commences 10 December 2026, and Schedule 2 (statutory tort) commenced 10 June 2025. APP 1.7 to 1.9 are therefore not yet in the compiled text on 2026-10-19; the paraphrase is taken from the amending Act. Item 89 makes APP 1.7 apply to decisions made after commencement even if the arrangement or personal information predates it. Cross-checked with OAIC APP 1.7 to 1.9 Transparency Obligation Fact Sheet (September 2026) and OAIC statutory tort page. APP 11.3 (technical and organisational measures) inserted by the 2024 amending Act and in force from 11 December 2024. Section 13G penalty figures read from the compilation. The date 14 December 1988 is the Act's assent date from general knowledge and was not re-checked. Small business exemption is not relevant to licensed insurers in practice but an SME should confirm entity coverage for any small intermediary.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "OAIC Australian Privacy Principles Guidelines (APP 1 Guidelines version 2.0, September 2026)",
+    "OAIC APP 1.7 to 1.9 Transparency Obligation Fact Sheet (September 2026)",
+    "OAIC Data breach preparation and response guide (Part 4: Notifiable Data Breach scheme)",
+    "OAIC Guidance on privacy and the use of commercially available AI products",
+    "APRA CPS 234 Information Security (72 hour APRA incident notification runs in parallel)"
+  ],
+  "summary": "The Privacy Act regulates how APP entities, including every general, life and private health insurer, collect, use, disclose, secure and give access to personal information through the 13 Australian Privacy Principles (Schedule 1). Health and genetic information is sensitive information that generally needs consent to collect. Part IIIC (the Notifiable Data Breaches scheme) requires a 30 day assessment of suspected breaches and notification of eligible data breaches to the OAIC and affected individuals as soon as practicable. The Privacy and Other Legislation Amendment Act 2024 added a tiered civil penalty regime, APP 11.3, a statutory tort for serious invasions of privacy (Schedule 2, from 10 June 2025) and, from 10 December 2026, a requirement that privacy policies disclose automated decision-making that uses personal information to make or substantially inform decisions significantly affecting individuals (APP 1.7 to 1.9).",
+  "clauses": [
+    {
+      "id": "PRIV-APP1",
+      "clause_number": "APP 1",
+      "section_name": "Schedule 1, Part 1: Consideration of personal information privacy",
+      "heading": "Open and transparent management of personal information",
+      "text": "An APP entity must take reasonable steps to implement practices, procedures and systems that ensure it complies with the APPs and any registered APP code and can deal with privacy inquiries and complaints. It must have a clearly expressed and up to date APP privacy policy, available free of charge and in an appropriate form, describing how it manages personal information.",
+      "subclauses": [
+        "1.2 Implement practices, procedures and systems to comply with the APPs and handle inquiries and complaints.",
+        "1.3 and 1.4 Maintain a privacy policy covering the kinds of information collected and held, how it is collected and held, the purposes of collection, use and disclosure, how to access and seek correction, how to complain and how complaints are dealt with, and whether information is likely to be disclosed overseas (and to which countries, if practicable).",
+        "1.5 and 1.6 Make the policy available free of charge and in a requested form where reasonable."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "privacy policy",
+        "transparency",
+        "privacy governance",
+        "complaints"
+      ],
+      "notes": "An AI agent must be able to point customers to the insurer's privacy policy and must not describe data handling in a way that contradicts it. The automated decision-making disclosure in APP 1.7 to 1.9 is recorded as a separate clause because it commences on 10 December 2026.",
+      "obligation_type": "privacy",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP1-7",
+      "clause_number": "APP 1.7",
+      "anchor": "adm_transparency",
+      "section_name": "Schedule 1, APP 1 (subclauses 1.7 to 1.9, inserted by Privacy and Other Legislation Amendment Act 2024, Schedule 1, Part 15, item 88)",
+      "heading": "Privacy policy disclosure of automated decisions",
+      "text": "From 10 December 2026, if an APP entity has arranged for a computer program to make a decision, or to do something substantially and directly related to making a decision, that could reasonably be expected to significantly affect an individual's rights or interests, and the individual's personal information is used in that operation, the entity's APP privacy policy must describe the kinds of personal information used by such programs, the kinds of decisions made solely by such programs, and the kinds of decisions where such programs do something substantially and directly related to the decision.",
+      "subclauses": [
+        "1.7 Trigger: a computer program makes, or does a thing substantially and directly related to making, a decision that could reasonably be expected to significantly affect an individual's rights or interests, using that individual's personal information.",
+        "1.8(a) Disclose the kinds of personal information used in the operation of such programs.",
+        "1.8(b) Disclose the kinds of decisions made solely by the operation of such programs.",
+        "1.8(c) Disclose the kinds of decisions for which such programs do a thing substantially and directly related to making the decision.",
+        "1.9 Making a decision includes refusing or failing to decide; effects may be adverse or beneficial; examples include decisions affecting rights under a contract and access to a significant service or support.",
+        "Application (item 89): applies to decisions made after commencement even if the program arrangement, the use of information or the information itself predates commencement."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "automated decision-making",
+        "AI transparency",
+        "privacy policy",
+        "underwriting",
+        "claims decisions"
+      ],
+      "notes": "Directly relevant to AI agents and models used in underwriting, pricing, claims triage, fraud scoring and claim denials, which affect contractual rights. The OAIC says human review does not take a decision out of scope and that machine learning or generative AI outputs used in significant decisions will generally be in scope unless subject to extensive human oversight. The obligation stays with the insurer even when a vendor supplies the model. Commences 10 December 2026 under Privacy and Other Legislation Amendment Act 2024 s2 table item 7. A failure to comply with APP 1.7 is listed in s13K, so infringement notices can be issued.",
+      "obligation_type": "privacy",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP3",
+      "clause_number": "APP 3",
+      "anchor": "sensitive_information_consent",
+      "section_name": "Schedule 1, Part 2: Collection of personal information",
+      "heading": "Collection of solicited personal information",
+      "text": "An organisation may only collect personal information that is reasonably necessary for one or more of its functions or activities. It must not collect sensitive information (including health information, genetic information and biometric information) unless the individual consents and the information is reasonably necessary, or a listed exception applies. Collection must be by lawful and fair means and, where reasonable and practicable, directly from the individual.",
+      "subclauses": [
+        "3.2 Personal information must be reasonably necessary for the organisation's functions or activities.",
+        "3.3 Sensitive information requires consent and reasonable necessity unless an exception in 3.4 applies (for example, required or authorised by law, or a permitted general or health situation).",
+        "3.5 Collect only by lawful and fair means.",
+        "3.6 Collect from the individual unless it is unreasonable or impracticable to do so."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "sensitive information",
+        "health information",
+        "consent",
+        "data minimisation",
+        "collection"
+      ],
+      "notes": "An AI agent taking an application or claim must not solicit health, genetic or other sensitive information beyond what is reasonably necessary, and must obtain consent before collecting it. For life insurance, soliciting genetic test information is separately prohibited by ICA s33H from 8 October 2026.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP5",
+      "clause_number": "APP 5",
+      "section_name": "Schedule 1, Part 2: Collection of personal information",
+      "heading": "Notification of the collection of personal information",
+      "text": "At or before the time of collection, or as soon as practicable afterwards, an APP entity must take reasonable steps to notify the individual of, or ensure they are aware of, prescribed matters about the collection.",
+      "subclauses": [
+        "5.2 Matters include: the entity's identity and contact details; collection from a third party or without the individual's awareness; whether collection is required or authorised by law; the purposes of collection; consequences if information is not collected; usual disclosures; the privacy policy and how to access, correct and complain; and likely overseas disclosures and countries."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "At or before collection, or as soon as practicable after.",
+      "key_topics": [
+        "collection notice",
+        "transparency",
+        "overseas disclosure"
+      ],
+      "notes": "A conversational agent that collects personal information must deliver or link to a collection notice at the point of collection, including when the conversation is with an AI system.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP6",
+      "clause_number": "APP 6",
+      "anchor": "use_disclosure",
+      "section_name": "Schedule 1, Part 3: Dealing with personal information",
+      "heading": "Use or disclosure of personal information",
+      "text": "Personal information collected for a particular (primary) purpose must not be used or disclosed for another (secondary) purpose unless the individual consents or an exception applies, such as the individual would reasonably expect the secondary use and it is related to the primary purpose (directly related for sensitive information), or it is required or authorised by law.",
+      "subclauses": [
+        "6.1 No secondary use or disclosure without consent unless 6.2 or 6.3 applies.",
+        "6.2(a) Reasonable expectation and relatedness (directly related for sensitive information).",
+        "6.2(b) to (e) Required or authorised by law, permitted general situations, permitted health situations and enforcement related activities.",
+        "6.5 Written note required for enforcement related disclosures."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "purpose limitation",
+        "secondary use",
+        "disclosure",
+        "third parties",
+        "AI training data"
+      ],
+      "notes": "An AI agent must not reveal one customer's information to another person (including a policyholder's information to a third party claimant or family member) without authority, and must not reuse claims or health data for unrelated purposes such as marketing or model training without consent or a valid exception.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP10",
+      "clause_number": "APP 10",
+      "section_name": "Schedule 1, Part 4: Integrity of personal information",
+      "heading": "Quality of personal information",
+      "text": "An APP entity must take reasonable steps to ensure the personal information it collects is accurate, up to date and complete, and that the information it uses or discloses is accurate, up to date, complete and relevant having regard to the purpose.",
+      "subclauses": [
+        "10.1 Collected information is accurate, up to date and complete.",
+        "10.2 Used or disclosed information is accurate, up to date, complete and relevant to the purpose."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "data quality",
+        "accuracy",
+        "hallucination"
+      ],
+      "notes": "Relevant to AI generated summaries and records: an agent must not record or rely on fabricated or inaccurate details about a customer when making or supporting decisions.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP11",
+      "clause_number": "APP 11",
+      "anchor": "security",
+      "section_name": "Schedule 1, Part 4: Integrity of personal information",
+      "heading": "Security of personal information",
+      "text": "An APP entity must take reasonable steps to protect personal information it holds from misuse, interference and loss and from unauthorised access, modification or disclosure, and must destroy or de-identify information it no longer needs for any authorised purpose unless retention is required by law. Reasonable steps include technical and organisational measures.",
+      "subclauses": [
+        "11.1 Protect against misuse, interference, loss, unauthorised access, modification or disclosure.",
+        "11.2 Destroy or de-identify information no longer needed, subject to legal retention requirements.",
+        "11.3 Reasonable steps include technical and organisational measures (inserted from 11 December 2024)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "information security",
+        "data retention",
+        "prompt injection",
+        "data leakage"
+      ],
+      "notes": "An AI agent must resist attempts (including prompt injection or social engineering) to extract other customers' data, must authenticate before discussing account details, and must not paste personal information into unapproved external tools. A failure of APP 11 that causes unauthorised access or disclosure likely to result in serious harm is an eligible data breach under s26WE.",
+      "obligation_type": "security",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP12",
+      "clause_number": "APP 12",
+      "anchor": "access",
+      "section_name": "Schedule 1, Part 5: Access to, and correction of, personal information",
+      "heading": "Access to personal information",
+      "text": "An APP entity holding personal information about an individual must give the individual access to it on request, subject to listed exceptions. An organisation must respond within a reasonable period, give access in the manner requested where reasonable and practicable, and give written reasons and complaint options if it refuses.",
+      "subclauses": [
+        "12.1 Give access on request.",
+        "12.3 Exceptions for organisations include serious threat to life or safety, unreasonable impact on others' privacy, frivolous requests, legal proceedings, commercially sensitive decision-making processes and unlawful access.",
+        "12.4 Organisations respond within a reasonable period (agencies within 30 days) and give access in the manner requested where reasonable.",
+        "12.8 Any access charge must not be excessive and must not apply to making the request.",
+        "12.9 Written notice of refusal with reasons and complaint mechanisms."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Respond within a reasonable period (OAIC guidance generally treats 30 calendar days as reasonable).",
+      "key_topics": [
+        "access requests",
+        "customer rights",
+        "claims file access"
+      ],
+      "notes": "An AI agent should recognise access requests (including requests for claims files and underwriting information) and route them to the access process instead of refusing or ignoring them.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-APP13",
+      "clause_number": "APP 13",
+      "section_name": "Schedule 1, Part 5: Access to, and correction of, personal information",
+      "heading": "Correction of personal information",
+      "text": "An APP entity must take reasonable steps to correct personal information it holds if it is satisfied the information is inaccurate, out of date, incomplete, irrelevant or misleading, or if the individual asks. If it refuses, it must give reasons and, on request, associate a statement with the information. Organisations must respond within a reasonable period and cannot charge for the request or correction.",
+      "subclauses": [
+        "13.1 Correct information that is inaccurate, out of date, incomplete, irrelevant or misleading.",
+        "13.2 Notify other APP entities of the correction on request where practicable.",
+        "13.3 Written notice of refusal with reasons and complaint mechanisms.",
+        "13.4 Associate a statement with the information on request after refusal.",
+        "13.5 Respond within a reasonable period and do not charge."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "correction",
+        "data quality",
+        "customer rights"
+      ],
+      "notes": "Agents must capture and route correction requests, and must not charge or discourage them.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-S13G",
+      "clause_number": "13G",
+      "section_name": "Part III, Division 1: Interferences with privacy",
+      "heading": "Civil penalty provision for serious interference with privacy",
+      "text": "An entity contravenes a civil penalty provision if it does an act or engages in a practice that is a serious interference with the privacy of an individual. Seriousness factors include the kind and sensitivity of information, consequences, number of individuals affected, whether affected individuals are children or experiencing vulnerability, repetition, and failure to implement compliance practices.",
+      "subclauses": [
+        "(2) Individuals: up to 2,500,000 dollars.",
+        "(3) Bodies corporate: up to the greatest of 50,000,000 dollars, three times the benefit obtained, or (if the benefit cannot be determined) 30% of adjusted turnover during the breach turnover period.",
+        "s13H: a mid-tier civil penalty (up to 2,000 penalty units) applies to any interference with privacy without the seriousness element.",
+        "s13K: infringement notices can be issued for listed administrative breaches, including APP 1.3, APP 1.4 and APP 1.7 privacy policy content."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "penalties",
+        "enforcement",
+        "serious interference"
+      ],
+      "notes": "Sets the penalty exposure for privacy failures by insurer AI agents. Tiered regime (ss13H and 13K) inserted by Privacy and Other Legislation Amendment Act 2024 from 11 December 2024.",
+      "obligation_type": "privacy",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-S26WE",
+      "clause_number": "26WE",
+      "anchor": "eligible_data_breach",
+      "section_name": "Part IIIC, Division 2: Eligible data breaches",
+      "heading": "Eligible data breach",
+      "text": "An eligible data breach occurs where there is unauthorised access to, or unauthorised disclosure of, personal information held by an APP entity (or the information is lost in circumstances where such access or disclosure is likely), and a reasonable person would conclude that the access or disclosure would be likely to result in serious harm to any of the individuals to whom the information relates.",
+      "subclauses": [
+        "(1) Applies to APP entities that hold personal information and must comply with APP 11.",
+        "(2)(a) Unauthorised access or disclosure likely to result in serious harm.",
+        "(2)(b) Loss of information where unauthorised access or disclosure is likely and would be likely to cause serious harm.",
+        "s26WF: no notification needed if remedial action is taken before serious harm results."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Triggers the assessment (s26WH) and notification (ss26WK and 26WL) obligations.",
+      "key_topics": [
+        "data breach",
+        "serious harm",
+        "NDB scheme"
+      ],
+      "notes": "An AI agent that discloses one customer's information to another person, or leaks data through a tool call or prompt injection, may cause an eligible data breach. Health, financial and identity information held by insurers is high risk for serious harm.",
+      "obligation_type": "privacy",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-S26WH",
+      "clause_number": "26WH",
+      "anchor": "ndb_assessment_30_days",
+      "section_name": "Part IIIC, Division 3, Subdivision A: Suspected eligible data breaches",
+      "heading": "Assessment of suspected eligible data breach",
+      "text": "If an entity is aware of reasonable grounds to suspect an eligible data breach, but not yet of reasonable grounds to believe one has occurred, it must carry out a reasonable and expeditious assessment and take all reasonable steps to complete it within 30 days after becoming aware.",
+      "subclauses": [
+        "(2)(a) Carry out a reasonable and expeditious assessment.",
+        "(2)(b) Take all reasonable steps to complete the assessment within 30 days after becoming aware of the grounds for suspicion."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Assessment to be completed within 30 days of becoming aware of reasonable grounds to suspect a breach.",
+      "key_topics": [
+        "data breach assessment",
+        "30 days",
+        "incident response"
+      ],
+      "notes": "The OAIC treats 30 days as a maximum, not a target. Insurers regulated by APRA must also consider the separate 72 hour notification to APRA under CPS 234 para 35, and SOCI reporting if the asset is a critical insurance asset.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-S26WK",
+      "clause_number": "26WK",
+      "anchor": "ndb_commissioner_statement",
+      "section_name": "Part IIIC, Division 3, Subdivision B: General notification obligations",
+      "heading": "Statement about eligible data breach to the Commissioner",
+      "text": "Once an entity is aware of reasonable grounds to believe there has been an eligible data breach, it must prepare a statement and give a copy to the Information Commissioner as soon as practicable.",
+      "subclauses": [
+        "(3) The statement sets out the entity's identity and contact details, a description of the breach, the kinds of information concerned, and recommended steps individuals should take.",
+        "(4) It may also identify other entities whose data was involved."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "As soon as practicable after becoming aware of reasonable grounds to believe an eligible data breach has occurred.",
+      "key_topics": [
+        "OAIC notification",
+        "data breach statement"
+      ],
+      "notes": "No fixed hour limit in the Act; the OAIC has taken enforcement action for failing to notify as soon as practicable under s26WK(2).",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-S26WL",
+      "clause_number": "26WL",
+      "anchor": "ndb_notification",
+      "section_name": "Part IIIC, Division 3, Subdivision B: General notification obligations",
+      "heading": "Entity must notify eligible data breach to individuals",
+      "text": "After preparing the s26WK statement, the entity must, as soon as practicable, take reasonable steps to notify its contents to each affected individual, or to each individual at risk from the breach. If neither is practicable, it must publish the statement on its website and take reasonable steps to publicise it.",
+      "subclauses": [
+        "(2)(a) Notify all individuals to whom the information relates, where practicable.",
+        "(2)(b) Alternatively notify only the individuals at risk of serious harm, where practicable.",
+        "(2)(c) Otherwise publish the statement on the website and publicise it.",
+        "(3) Comply as soon as practicable after completing the statement."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "As soon as practicable after the s26WK statement is prepared.",
+      "key_topics": [
+        "individual notification",
+        "data breach",
+        "customer communication"
+      ],
+      "notes": "Customer-facing agents may be used to deliver breach notifications; they must not downplay the breach or omit the recommended steps.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIV-SCH2",
+      "clause_number": "Sch 2",
+      "anchor": "statutory_tort",
+      "section_name": "Schedule 2: Statutory tort for serious invasions of privacy (inserted by Privacy and Other Legislation Amendment Act 2024, Schedule 2)",
+      "heading": "Cause of action for serious invasions of privacy (Schedule 2, clause 7)",
+      "text": "From 10 June 2025 an individual can sue a person or organisation in tort if the defendant intruded upon their seclusion or misused information relating to them, a person in their position would have had a reasonable expectation of privacy, the invasion was intentional or reckless and serious, and the public interest in privacy outweighs any countervailing public interest. No proof of damage is required.",
+      "subclauses": [
+        "cl 7(1) Elements: intrusion upon seclusion or misuse of information; reasonable expectation of privacy; intentional or reckless; serious; privacy interest outweighs countervailing public interest.",
+        "cl 7(2) Actionable without proof of damage.",
+        "cl 7(7) For misuse of information, it does not matter whether the information is true.",
+        "cl 8 Defences include lawful authority, consent, necessity to prevent a serious threat to life, health or safety, and defamation-style privileges.",
+        "cl 11 Damages, including for emotional distress; no aggravated damages; non-economic plus exemplary damages capped at the greater of 478,550 dollars or the defamation non-economic cap.",
+        "Limitation period: earlier of 1 year after the plaintiff became aware and 3 years after the invasion (to age 21 for minors)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "statutory tort",
+        "misuse of information",
+        "serious invasion of privacy",
+        "litigation risk"
+      ],
+      "notes": "Applies more broadly than the APPs and is enforced by individuals in court, not by the OAIC. Intentional or reckless misuse of health or claims information by insurer staff or systems (for example, surveillance in claims investigations or reckless disclosure by an AI agent) can expose the insurer to tort claims. Commenced 10 June 2025 (Privacy and Other Legislation Amendment Act 2024 s2 table item 8).",
+      "obligation_type": "privacy",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "code": "CPG 235",
+  "title": "Prudential Practice Guide CPG 235 Managing Data Risk",
+  "short_name": "Managing Data Risk (guide)",
+  "regulator": "APRA",
+  "instrument_type": "prudential_practice_guide",
+  "legislative_instrument": "Not a legislative instrument (APRA prudential practice guide)",
+  "effective_date": "2013-09-01",
+  "amended_date": "2013-09-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://handbook.apra.gov.au/ppg/cpg-235",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Prudential practice guides set out APRA's view of sound practice and do not create enforceable requirements. Summary-level stub: only selected paragraphs are captured. Publication month September 2013 from the handbook page. APRA's April 2026 AI letter refers to data risk alongside prudential standards, but CPG 235 itself has not been updated for AI.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 220 Risk Management",
+    "CPS 230 Operational Risk Management",
+    "CPS 234 Information Security",
+    "BCBS 239 (for ADIs)"
+  ],
+  "summary": "CPG 235 sets out APRA's view of sound data risk management: treat data risk as part of operational risk, assess data quality across dimensions such as accuracy, completeness, consistency, timeliness, availability and fitness for use, classify data by criticality and sensitivity, adopt a formal data risk management framework, assign data roles, control data across its lifecycle (capture, processing, retention, publication and disposal), maintain auditability, and run data quality improvement programs. It is relevant to training data, inputs and outputs of insurer AI models.",
+  "clauses": [
+    {
+      "id": "CPG235-16",
+      "clause_number": "16",
+      "section_name": "Data quality",
+      "heading": "Data quality dimensions",
+      "text": "A useful technique is to assess and manage data quality across dimensions such as accuracy, completeness, consistency, timeliness, availability and fitness for use, with relevance depending on the data.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "data quality",
+        "AI training data"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG235-18",
+      "clause_number": "18",
+      "section_name": "Data classification",
+      "heading": "Classify data by criticality and sensitivity",
+      "text": "An entity would classify data by business criticality and sensitivity, considering its end-to-end use, potentially leveraging business impact analysis.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "data classification",
+        "sensitivity"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG235-20",
+      "clause_number": "20",
+      "section_name": "Data risk management framework",
+      "heading": "Formal data risk management framework",
+      "text": "An entity would adopt a systematic, formally approved data risk management framework, with a hierarchy of policies, standards and procedures aligned with other enterprise frameworks, so data risk is considered in change management and business as usual.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "data governance",
+        "framework"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG235-26",
+      "clause_number": "26",
+      "section_name": "Monitoring and assurance",
+      "heading": "Data quality improvement",
+      "text": "An entity would regularly assess data quality and the effectiveness of data risk management and treat control gaps promptly, for example through a data improvement program with target metrics, timeframes and tracked action plans.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "data quality",
+        "monitoring"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

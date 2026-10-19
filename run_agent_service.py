@@ -3,11 +3,11 @@
 
 Examples
 --------
-    # Unhardened banking agent on :9000
-    uv run python run_agent_service.py --sector banking --mode vulnerable --port 9000
+    # Unhardened insurance claims agent on :9000
+    uv run python run_agent_service.py --sector insurance --mode vulnerable --port 9000
 
-    # Runtime APRA MCP guardrail on :9001
-    uv run python run_agent_service.py --sector banking --mode guarded --port 9001
+    # Runtime Guardian MCP guardrail on :9001
+    uv run python run_agent_service.py --sector insurance --mode guarded --port 9001
 
 Then point the prober at it. Because the prober blocks loopback by default (SSRF),
 allowlist the exact URL for the web UI / campaign process:
@@ -27,8 +27,8 @@ from src.agent_service.brains import SECTORS, MODES
 
 def main():
     parser = argparse.ArgumentParser(description="Run the hypothetical APRA agent service.")
-    parser.add_argument("--sector", "-s", default="banking", choices=SECTORS,
-                        help="Regulated sector the agent represents (default: banking)")
+    parser.add_argument("--sector", "-s", default="insurance", choices=SECTORS,
+                        help="Regulated sector the agent represents (default: insurance)")
     parser.add_argument("--mode", "-m", default="vulnerable", choices=MODES,
                         help="Security posture, fixed for this instance (default: vulnerable)")
     parser.add_argument("--host", default="127.0.0.1", help="Bind host (default: 127.0.0.1)")

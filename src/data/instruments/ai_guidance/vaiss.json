@@ -1,0 +1,272 @@
+{
+  "code": "VAISS",
+  "title": "Voluntary AI Safety Standard (10 guardrails)",
+  "short_name": "Voluntary AI Safety Standard",
+  "regulator": "Department of Industry, Science and Resources (National AI Centre)",
+  "instrument_type": "guidance",
+  "legislative_instrument": "",
+  "effective_date": "2024-09-05",
+  "amended_date": "2025-10-21",
+  "status": "Superseded",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails",
+  "licence": "Commonwealth of Australia, CC BY 4.0. Paraphrased.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Guardrail wording checked on industry.gov.au (10 guardrails page) on 2026-10-19. That page states that on 21 October 2025 the Department published the Guidance for AI Adoption, which sets out 6 essential practices and 'evolves' the VAISS; the VAISS is therefore marked Superseded here (see the separate 'Guidance for AI Adoption' entry). The 5 September 2024 publication date is from general knowledge. The VAISS was designed to anticipate proposed mandatory guardrails for high-risk AI, which the National AI Plan (December 2025) did not proceed with. Still useful as a control checklist and still cited by ASIC REP 798. The 'Maps to practice' notes on each guardrail were inferred by the author from the practice headings of the Guidance for AI Adoption implementation guidance; they were not copied from the official crosswalk and should be checked against it.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Guidance for AI Adoption (National AI Centre, October 2025)",
+    "ASIC REP 798",
+    "APRA Letter to Industry on Artificial Intelligence (30 April 2026)",
+    "ISO/IEC 42001 AI management systems"
+  ],
+  "summary": "The Voluntary AI Safety Standard set out 10 voluntary guardrails for organisations developing and deploying AI in Australia: accountability, risk management, data governance and security, testing and monitoring, human oversight, end-user transparency, contestability, supply chain transparency, record keeping and stakeholder engagement. It was the government's interim best practice benchmark and was replaced in October 2025 by the simpler Guidance for AI Adoption (6 essential practices), which includes a crosswalk back to the guardrails.",
+  "clauses": [
+    {
+      "id": "VAISS-G1",
+      "clause_number": "G1",
+      "section_name": "Guardrails",
+      "heading": "Accountability process",
+      "text": "Establish, implement and publish an accountability process covering governance, internal capability and a strategy for regulatory compliance.",
+      "subclauses": [
+        "Assign an overall owner for AI use.",
+        "Build internal capability and training.",
+        "Document a regulatory compliance strategy."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "accountability",
+        "AI governance"
+      ],
+      "notes": "Maps to Guidance for AI Adoption practice 1.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G2",
+      "clause_number": "G2",
+      "section_name": "Guardrails",
+      "heading": "Risk management process",
+      "text": "Establish and implement a risk management process to identify and mitigate AI risks.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk management",
+        "impact assessment"
+      ],
+      "notes": "Maps to practice 3. For APRA entities this sits within the CPS 220 and CPS 230 framework.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G3",
+      "clause_number": "G3",
+      "section_name": "Guardrails",
+      "heading": "Data governance and security",
+      "text": "Protect AI systems and implement data governance measures to manage data quality and provenance.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "data governance",
+        "cyber security",
+        "data quality"
+      ],
+      "notes": "Maps to practice 5.4. Links to CPS 234 and CPG 235.",
+      "obligation_type": "security",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G4",
+      "clause_number": "G4",
+      "section_name": "Guardrails",
+      "heading": "Testing and monitoring",
+      "text": "Test AI models and systems to evaluate performance before deployment and monitor the system once deployed.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "testing",
+        "monitoring",
+        "red teaming",
+        "evaluation"
+      ],
+      "notes": "Maps to practice 5.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G5",
+      "clause_number": "G5",
+      "section_name": "Guardrails",
+      "heading": "Human control or intervention",
+      "text": "Enable human control or intervention in an AI system to achieve meaningful human oversight across the lifecycle.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "human oversight",
+        "escalation",
+        "kill switch"
+      ],
+      "notes": "Maps to practice 6. Relevant to automated claims denial and underwriting decisions.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G6",
+      "clause_number": "G6",
+      "section_name": "Guardrails",
+      "heading": "Inform end-users",
+      "text": "Inform end-users about AI-enabled decisions, interactions with AI and AI-generated content.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "AI disclosure",
+        "transparency",
+        "chatbot disclosure"
+      ],
+      "notes": "Maps to practice 4. From 10 December 2026 privacy policies must also disclose significant automated decisions (Privacy Act APP 1.7).",
+      "obligation_type": "disclosure",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G7",
+      "clause_number": "G7",
+      "section_name": "Guardrails",
+      "heading": "Contestability",
+      "text": "Establish processes for people impacted by AI systems to challenge the use or the outcomes.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "contestability",
+        "complaints",
+        "redress"
+      ],
+      "notes": "Maps to practice 2.2. Aligns with internal dispute resolution under RG 271.",
+      "obligation_type": "complaints",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G8",
+      "clause_number": "G8",
+      "section_name": "Guardrails",
+      "heading": "Supply chain transparency",
+      "text": "Be transparent with other organisations across the AI supply chain about data, models and systems so they can address risks.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "supply chain",
+        "third-party AI",
+        "vendor transparency"
+      ],
+      "notes": "Maps to practice 4.3. Links to CPS 230 material service providers.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G9",
+      "clause_number": "G9",
+      "section_name": "Guardrails",
+      "heading": "Records",
+      "text": "Keep and maintain records so third parties can assess compliance with the guardrails.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "record keeping",
+        "AI register",
+        "audit trail"
+      ],
+      "notes": "Maps to practice 4.1.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "VAISS-G10",
+      "clause_number": "G10",
+      "section_name": "Guardrails",
+      "heading": "Stakeholder engagement",
+      "text": "Engage stakeholders and evaluate their needs and circumstances, focusing on safety, diversity, inclusion and fairness.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "stakeholders",
+        "fairness",
+        "vulnerable customers",
+        "inclusion"
+      ],
+      "notes": "Maps to practice 2.1. Relevant to vulnerable customer obligations in the insurance codes.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

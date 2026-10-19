@@ -1,0 +1,163 @@
+{
+  "code": "RG 78",
+  "title": "ASIC Regulatory Guide 78 Breach reporting by AFS licensees and credit licensees",
+  "short_name": "Breach reporting",
+  "regulator": "ASIC",
+  "instrument_type": "regulatory_guide",
+  "legislative_instrument": "RG 78 (reissued December 2023, updated May 2024, August 2025 and February 2026); guidance on Corporations Act Part 7.6 Division 3",
+  "effective_date": "2021-10-01",
+  "amended_date": "2026-02-16",
+  "status": "In Force",
+  "sectors": ["general_insurance", "life_insurance"],
+  "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Insurance Broker"],
+  "enforceability": "guidance",
+  "source_url": "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-78-breach-reporting-by-afs-licensees-and-credit-licensees/",
+  "licence": "ASIC regulatory guide (copyright ASIC). Paraphrased only; consult the published guide.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked against the published PDF (rg78-published-19-december-2023-20260216.pdf) downloaded from asic.gov.au on 2026-10-19. Its document history records updates in May 2024, August 2025 (reflecting ASIC relief effective 24 June 2025) and February 2026 (following the reissue of RG 34). The amended_date uses the 16 February 2026 date in the PDF filename. Paragraph numbers confirmed directly. Key 2025 change: the statutory investigation threshold in s912D(1)(c) is 30 days, but ASIC Corporations and Credit (Breach Reporting: Reportable Situations) Instrument 2024/620 s6A (as amended) extends it to 60 days, so an investigation becomes reportable on day 61 (RG 78.48 to RG 78.49). Instrument 2024/620 also excludes some breaches from deemed significance (s5 and s6) and allows a 90 day window for further related reportable situations (s7, RG 78.84); the instrument itself was not opened. Penalty figures confirmed from RG 78.124 and RG 78.126. Private health insurers are not AFS licensees for health insurance products, so this regime applies to them only for any AFS-licensed activities.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": ["RG 78 issued September 2008, February 2014, March 2020, September 2021, April 2023 and the August 2025 version (superseded by the February 2026 update)"],
+  "companion_guidance": [
+    "Corporations Act 2001 ss912D, 912DAA, 912DAB",
+    "ASIC Corporations and Credit (Breach Reporting: Reportable Situations) Instrument 2024/620",
+    "ASIC REP 594 Review of selected financial services groups' compliance with the breach reporting obligation",
+    "ASIC Regulatory Guide 271 Internal dispute resolution"
+  ],
+  "summary": "RG 78 explains the breach reporting regime that commenced on 1 October 2021. AFS licensees, including general and life insurers, must report 'reportable situations' to ASIC through the ASIC Regulatory Portal within 30 days after they first know, or are reckless as to whether, there are reasonable grounds to believe one has arisen. Reportable situations include significant breaches or likely significant breaches of core obligations, investigations lasting more than 60 days (as modified by ASIC relief), gross negligence and serious fraud, and certain matters about other licensees' advisers. Some breaches are deemed significant, including civil penalty contraventions and misleading or deceptive conduct. APRA-regulated licensees may satisfy the obligation by reporting to APRA. Failure to report is a civil penalty contravention and an offence.",
+  "clauses": [
+    {
+      "id": "RG78-19",
+      "clause_number": "RG 78.19",
+      "anchor": "reportable_situation",
+      "section_name": "B: What you must report to ASIC: What is a 'reportable situation'?",
+      "heading": "What is a 'reportable situation'?",
+      "text": "Licensees must report all reportable situations to ASIC (s912DAA). ASIC groups them into four types: significant breaches or likely significant breaches of core obligations; investigations into such breaches that continue beyond the threshold, and their outcome if no breach is found; additional reportable situations (gross negligence and serious fraud, which need no significance assessment); and reportable situations about other licensees' financial advisers and mortgage brokers. A 'likely breach' means the licensee is no longer able to comply with a core obligation and the breach, if it occurs, will be significant (RG 78.21).",
+      "subclauses": [
+        "RG 78.20(a): significant breaches or likely significant breaches of core obligations.",
+        "RG 78.20(b): investigations into such breaches (reportable once they run past 60 days under ASIC relief), and the outcome if no breach is found.",
+        "RG 78.20(c): additional reportable situations: gross negligence in providing a financial service and serious fraud (RG 78.63).",
+        "RG 78.20(d): reportable situations about other licensees (s912DAB).",
+        "RG 78.26: additional reportable situations, deemed significant breaches and long-running investigations need no separate significance determination.",
+        "RG 78.28: licensees must report breaches by their representatives, including employees and anyone acting on their behalf."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["reportable situation", "likely breach", "gross negligence", "serious fraud", "representatives"],
+      "notes": "An AI agent acting on the licensee's behalf is part of the licensee's conduct; its failures can create reportable situations. Incident management for AI agents must feed the breach register and the significance assessment. Not applicable to private health insurance products.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG78-23",
+      "clause_number": "RG 78.23",
+      "anchor": "reporting_deadline_30_days",
+      "section_name": "B: What you must report to ASIC",
+      "heading": "Reporting deadline: 30 days",
+      "text": "A report must be lodged with ASIC within 30 days after the licensee first knows that, or is reckless as to whether, there are reasonable grounds to believe a reportable situation has arisen (s912DAA(3)). The test is objective: reasonable grounds exist where there are sufficient facts or information for a reasonable person to believe it (RG 78.85 to RG 78.87). Knowledge of employees and agents acting within authority can be attributed to the licensee (RG 78.92 to RG 78.96). The law allows 30 days (or 90 in limited cases) to complete internal processes, and delays in escalation do not extend the deadline (RG 78.98 to RG 78.101).",
+      "subclauses": [
+        "RG 78.23 and RG 78.83: 30 days from first knowledge or recklessness.",
+        "RG 78.84: a further reportable situation with the same or substantially similar underlying circumstances as one already reported may be reported within 90 days (ASIC Instrument 2024/620 s7), unless ASIC directs a shorter period.",
+        "RG 78.49: an investigation becomes reportable on day 61, with the report due within 30 days of that date.",
+        "RG 78.107: report in the prescribed form through the ASIC Regulatory Portal.",
+        "RG 78.109: APRA-regulated licensees may comply by lodging with APRA (s912DAA(5)).",
+        "RG 78.124: maximum civil penalty for a body corporate is the greatest of 50,000 penalty units, 3 times the benefit, or 10% of turnover capped at 2.5 million penalty units.",
+        "RG 78.126: criminal penalties up to 2,400 penalty units for a body corporate (240 penalty units or 2 years imprisonment, or both, for individuals)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "30_days",
+      "key_topics": ["30 day deadline", "reasonable grounds", "recklessness", "ASIC Regulatory Portal", "penalties"],
+      "notes": "The 30 day clock in s912DAA(3) starts when the licensee (including through staff or agents) first knows or is reckless, not when compliance signs off. For AI agents this means monitoring alerts, customer complaints or QA findings indicating systematic misconduct can start the clock. Escalation paths must be fast enough to investigate and lodge within 30 days.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG78-29",
+      "clause_number": "RG 78.29",
+      "anchor": "core_obligations",
+      "section_name": "B: What you must report to ASIC: What is a breach or likely significant breach of your core obligations?",
+      "heading": "Core obligations",
+      "text": "Licensees must report significant breaches or likely significant breaches of their core obligations as defined in s912D(3). For AFS licensees these are, in summary: the general obligations in s912A and s912B (efficiently, honestly and fairly; conflicts; licence conditions; supervising representatives; reference checking; resources; competence; training; IDR and IDR data reporting; risk management; compensation arrangements; prescribed obligations including cooperating with AFCA); compliance with specified financial services laws including Chapter 7 of the Corporations Act and Division 2 of Part 2 of the ASIC Act; and compliance with prescribed APRA-administered legislation, which includes the Insurance Act 1973, Insurance Contracts Act 1984 and Life Insurance Act 1995 (RG 78.148).",
+      "subclauses": [
+        "RG 78.148(a): s912A and s912B obligations, including IDR compliance with the enforceable parts of RG 271.",
+        "RG 78.148(b): specified financial services laws, including Corporations Act Chapter 7 and ASIC Act Part 2 Division 2.",
+        "RG 78.148(c): APRA-administered laws in reg 7.6.02A, including the Insurance Act 1973, Insurance Contracts Act 1984 and Life Insurance Act 1995.",
+        "RG 78.150: APRA-regulated bodies are generally outside the resources and risk management limbs of s912A, because APRA standards cover them.",
+        "RG 78.30 to RG 78.32: only significant breaches are reportable; check deemed significance first, then the s912D(5) factors."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["core obligations", "Insurance Contracts Act", "ASIC Act", "s912A", "significance"],
+      "notes": "For insurers, breaches of ICA s13 (utmost good faith), s912A (efficiently, honestly and fairly), RG 271 enforceable paragraphs, DDO, hawking and misleading conduct provisions are all potentially reportable. The core obligation list is modified by ASIC Instrument 2024/620 s6.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG78-35",
+      "clause_number": "RG 78.35",
+      "section_name": "B: What you must report to ASIC: What are 'deemed significant breaches'?",
+      "heading": "Deemed significant breaches",
+      "text": "A breach of a core obligation is automatically significant if it is an offence punishable by imprisonment of 3 months or more (dishonesty) or 12 months or more (other cases); a contravention of a civil penalty provision not excluded by regulation; a contravention of the misleading or deceptive conduct provisions (Corporations Act s1041H(1) or ASIC Act s12DA(1)); or a breach that results or is likely to result in material loss or damage to clients. Some breaches are excluded from deemed significance by regulation or ASIC Instrument 2024/620 (RG 78.37 to RG 78.40), and otherwise significance is assessed against the s912D(5) factors (RG 78.45 to RG 78.47).",
+      "subclauses": [
+        "(a) Serious offences (3 months dishonesty, 12 months otherwise).",
+        "(b) Civil penalty contraventions, unless excluded.",
+        "(d) Misleading or deceptive conduct under s1041H(1) or s12DA(1).",
+        "(e) Material loss or damage to clients.",
+        "RG 78.38: ASIC Instrument 2024/620 s6 excludes certain breaches from deeming in defined circumstances."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["deemed significant breach", "misleading or deceptive conduct", "civil penalty", "material loss"],
+      "notes": "Because misleading or deceptive conduct is deemed significant, an AI agent giving customers wrong information about cover or rights can quickly create a reportable situation. Check the Instrument 2024/620 exclusions before concluding a single minor instance is reportable.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG78-48",
+      "clause_number": "RG 78.48",
+      "section_name": "B: What you must report to ASIC: What is a reportable investigation?",
+      "heading": "Reportable investigations (60 days under ASIC relief)",
+      "text": "An investigation into whether a significant breach or likely significant breach of a core obligation has occurred becomes a reportable situation if it continues for more than 60 days (s912D(1)(c) as modified by ASIC Instrument 2024/620 s6A; the statute itself says 30 days). If an investigation concludes within 60 days with no reasonable grounds to believe a reportable situation exists, it is not reportable; if it finds such grounds, the underlying situation must be reported within 30 days (RG 78.49). The outcome of a reported investigation must also be reported.",
+      "subclauses": [
+        "RG 78.49: reportable from day 61; report within 30 days of that date.",
+        "RG 78.57 to RG 78.59: investigations should be timely and policies should set completion expectations.",
+        "RG 78.105: outcome of an investigation lasting more than 60 days must be reported if it finds no breach."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "60_days",
+      "key_topics": ["investigations", "60 day threshold", "ASIC relief", "Instrument 2024/620"],
+      "notes": "Changed in 2025: earlier versions of RG 78 used 30 days, matching the statute. Detection rules should use 60 days as the threshold while the relief remains in force and record the statutory 30 day figure for reference.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG78-135",
+      "clause_number": "RG 78.135",
+      "section_name": "D: Compliance systems and identifying, recording and reporting breaches",
+      "heading": "Compliance systems for breach reporting",
+      "text": "Licensees should have a clear, understood and documented process for identifying and recording incidents, assessing whether each is a reportable situation (with timely, properly resourced investigations), reporting reportable situations to ASIC in the prescribed form within the reporting period, rectifying loss or damage where appropriate, and preventing recurrence. A breach register is not expressly required by law, but ASIC considers one necessary in practice, including to track the number and frequency of similar breaches for the significance test (RG 78.144).",
+      "subclauses": [
+        "(a) Identify and record incidents.",
+        "(b) Assess whether an incident is a reportable situation, with timely investigations.",
+        "(c) Report reportable situations to ASIC within the reporting period.",
+        "(d) Rectify loss or damage where appropriate.",
+        "(e) Prevent recurrence.",
+        "RG 78.136: robust arrangements with authorised representatives.",
+        "RG 78.137: breaches must be escalated promptly.",
+        "RG 78.144 to RG 78.146: breach register and records."
+      ],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": ["breach register", "incident management", "escalation", "compliance systems"],
+      "notes": "Practical guidance for integrating AI agent monitoring, QA sampling and complaint analytics into the incident and breach management process.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": ["general_insurance", "life_insurance"]
+    }
+  ]
+}

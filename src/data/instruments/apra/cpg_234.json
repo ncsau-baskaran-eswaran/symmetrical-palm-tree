@@ -1,0 +1,126 @@
+{
+  "code": "CPG 234",
+  "title": "Prudential Practice Guide CPG 234 Information Security",
+  "short_name": "Information Security (guide)",
+  "regulator": "APRA",
+  "instrument_type": "prudential_practice_guide",
+  "legislative_instrument": "Not a legislative instrument (APRA prudential practice guide)",
+  "effective_date": "2019-06-01",
+  "amended_date": "2019-06-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "guidance",
+  "source_url": "https://handbook.apra.gov.au/ppg/cpg-234",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Prudential practice guides set out APRA's view of sound practice and do not create enforceable requirements. Summary-level stub: only selected paragraphs are captured. Publication month June 2019 from the handbook page. The guide still refers to CPS 232 Business Continuity Management (para 87), which was replaced by CPS 230 from 1 July 2025, so it has not been updated since 2019.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPS 234 Information Security",
+    "CPS 230 Operational Risk Management",
+    "APRA Letter to Industry on Artificial Intelligence (30 April 2026)"
+  ],
+  "summary": "CPG 234 gives APRA's guidance on meeting CPS 234: Board engagement and oversight of information security, roles and responsibilities, third party and related party reliance, an adaptive information security capability, policy framework, asset classification by criticality and sensitivity, control implementation (including identity and access, patching, software security and data leakage), incident detection and response, at least annual testing by functionally independent specialists, internal audit assurance, and notification of material incidents (72 hours) and control weaknesses (10 business days) to APRA.",
+  "clauses": [
+    {
+      "id": "CPG234-8",
+      "clause_number": "8",
+      "section_name": "Roles and responsibilities",
+      "heading": "Board responsibility",
+      "text": "Under CPS 234 the Board is ultimately responsible for information security; to discharge this it could set out how it expects to be engaged, escalation and reporting, and consider the use of third and related parties (para 9).",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "board oversight",
+        "information security"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG234-17",
+      "clause_number": "17",
+      "section_name": "Information security capability",
+      "heading": "Reliance on third parties",
+      "text": "Entities relying on third party or related party information security capability would assess that capability and, where providers rely on further providers, consider the additional vulnerabilities this introduces (para 18).",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "third parties",
+        "supply chain"
+      ],
+      "notes": "Applies to AI platform and model providers.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG234-79",
+      "clause_number": "79",
+      "section_name": "Testing control effectiveness",
+      "heading": "Testing frequency",
+      "text": "A sufficient set of information security controls would be tested at least annually, with controls protecting assets exposed to untrusted environments tested throughout the year; testing must be by appropriately skilled and functionally independent specialists (para 82).",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "control testing",
+        "penetration testing",
+        "independence"
+      ],
+      "notes": "Supports independent red teaming of internet-facing AI agents.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPG234-88",
+      "clause_number": "88",
+      "section_name": "APRA notification",
+      "heading": "Notify APRA as soon as possible",
+      "text": "APRA expects notification of information security incidents and control weaknesses as soon as possible, and within the CPS 234 timeframes, even without complete information about the incident or response.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": "As soon as possible, and no later than 72 hours (incidents) or 10 business days (control weaknesses) under CPS 234.",
+      "key_topics": [
+        "APRA notification",
+        "incident reporting"
+      ],
+      "notes": "CPS 234 para 35: material incidents within 72 hours; para 36: material control weaknesses within 10 business days.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

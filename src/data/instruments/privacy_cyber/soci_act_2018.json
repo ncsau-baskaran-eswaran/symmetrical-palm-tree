@@ -1,0 +1,133 @@
+{
+  "code": "SOCI Act 2018",
+  "title": "Security of Critical Infrastructure Act 2018 (Cth)",
+  "short_name": "SOCI Act",
+  "regulator": "CISC / ASD ACSC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2018A00029",
+  "effective_date": "2018-07-11",
+  "amended_date": "2026-06-04",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2018A00029/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Sections 12H, 30BC and 30BD read from the Federal Register of Legislation compilation C2026C00213 (compilation date 4 June 2026, the latest on 2026-10-19). Note the critical insurance asset definition is s12H (s12J is critical superannuation asset). Confirmed from the Security of Critical Infrastructure (Application) Rules (LIN 22/026) 2022 (F2022L00562, compilation of 4 April 2025) s5(1)(f) that Part 2B (mandatory cyber incident reporting) applies to critical insurance assets. NOT verified on the Register: the asset thresholds that make an insurer 'critical' under the Security of Critical Infrastructure (Definitions) Rules; secondary sources quoting the 2021 draft rules give total assets above 2 billion dollars (general insurance), 5 billion dollars (life) and 0.5 billion dollars (health), and an SME must confirm the made figures. The 'relevant Commonwealth body' under s30BF is understood to be the Australian Signals Directorate (reports via cyber.gov.au), from secondary sources. Commencement of Part 2B (8 July 2022 for most asset classes) is from secondary sources. A second tranche of SOCI amendments was under consultation in July 2026 and may change these obligations. The Act's original commencement date (11 July 2018) is from general knowledge.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Security of Critical Infrastructure (Application) Rules (LIN 22/026) 2022",
+    "Security of Critical Infrastructure (Definitions) Rules (LIN 21/039) 2021",
+    "CISC Mandatory cyber incident reporting guidance",
+    "APRA CPS 234 Information Security (72 hour APRA notification)",
+    "Cyber Security Act 2024 Part 3 (ransomware payment reporting)"
+  ],
+  "summary": "The SOCI Act imposes security obligations on responsible entities for critical infrastructure assets, including critical insurance assets held by general, life and health insurers that meet thresholds set by rules. Part 2B requires the responsible entity to report cyber security incidents to the Australian Signals Directorate: within 12 hours of becoming aware of an incident having a significant impact on the availability of the asset, and within 72 hours for an incident that has had, is having or is likely to have a relevant impact. Oral reports must be followed by a written record within 84 hours (critical) or 48 hours (other). These clocks run alongside APRA CPS 234 (72 hours), the OAIC NDB scheme and ransomware payment reporting.",
+  "clauses": [
+    {
+      "id": "SOCI-S12H",
+      "clause_number": "12H",
+      "anchor": "critical_insurance_asset",
+      "section_name": "Part 1, Division 2: Definitions",
+      "heading": "Meaning of critical insurance asset",
+      "text": "An asset is a critical insurance asset if it is owned or operated by an entity carrying on insurance business, life insurance business or health insurance business (or a related body corporate of such an entity), the entity is critical to the security and reliability of the financial services and markets sector as prescribed by the rules, and the asset is used in connection with carrying on that business.",
+      "subclauses": [
+        "(1)(a) and (b) Insurance business (general insurance): asset of a critical insurer, or of a critical related body corporate, used in connection with insurance business.",
+        "(1)(c) and (d) Life insurance business: asset of a critical life insurer, or of a critical related body corporate, used in connection with life insurance business.",
+        "(1)(e) and (f) Health insurance business: asset of a critical health insurer, or of a critical related body corporate, used in connection with health insurance business.",
+        "(2) to (7) The rules may name specific entities, or set requirements (such as asset thresholds), for an entity to be critical to the sector.",
+        "Note: the rules may also prescribe that a specified critical insurance asset is not a critical infrastructure asset (s9)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "critical infrastructure",
+        "insurance asset",
+        "applicability",
+        "thresholds"
+      ],
+      "notes": "Determines whether an insurer's systems (including AI platforms used in connection with the insurance business) are critical infrastructure assets subject to Part 2B incident reporting. Only insurers above the prescribed thresholds are covered; an SME must confirm the thresholds in the Definitions Rules for each insurer.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "SOCI-S30BC",
+      "clause_number": "30BC",
+      "anchor": "critical_cyber_incident_12h",
+      "section_name": "Part 2B: Notification of cyber security incidents",
+      "heading": "Notification of critical cyber security incidents",
+      "text": "If the responsible entity for a critical infrastructure asset becomes aware that a cyber security incident has occurred or is occurring and has had, or is having, a significant impact (direct or indirect) on the availability of the asset, it must report the incident to the relevant Commonwealth body as soon as practicable and in any event within 12 hours after becoming aware.",
+      "subclauses": [
+        "(1) Report within 12 hours of becoming aware. Civil penalty: 50 penalty units.",
+        "(2) The report may be oral or written.",
+        "(3) If oral, make a written record in the approved form and give it to the Commonwealth body within 84 hours after the oral report. Civil penalty: 50 penalty units.",
+        "(4) A written report must be in the approved form.",
+        "(5) The head of the Commonwealth body may exempt an entity from the written record requirement."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Within 12 hours of becoming aware of a cyber security incident with a significant impact on availability of the asset; written record within 84 hours of an oral report.",
+      "key_topics": [
+        "cyber incident reporting",
+        "12 hours",
+        "availability",
+        "ASD"
+      ],
+      "notes": "Applies only where the insurer is the responsible entity for a critical insurance asset. A compromise of an AI agent platform that takes down claims lodgement or policy servicing could be a critical cyber security incident. Runs in parallel with APRA CPS 234 (72 hours) and CPS 230 (critical operation disruption, 24 hours).",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "SOCI-S30BD",
+      "clause_number": "30BD",
+      "anchor": "other_cyber_incident_72h",
+      "section_name": "Part 2B: Notification of cyber security incidents",
+      "heading": "Notification of other cyber security incidents",
+      "text": "If the responsible entity for a critical infrastructure asset becomes aware that a cyber security incident has occurred, is occurring or is imminent and has had, is having or is likely to have a relevant impact on the asset, it must report the incident to the relevant Commonwealth body as soon as practicable and in any event within 72 hours after becoming aware.",
+      "subclauses": [
+        "(1) Report within 72 hours of becoming aware. Civil penalty: 50 penalty units.",
+        "(2) The report may be oral or written.",
+        "(3) If oral, make a written record in the approved form and give it within 48 hours after the oral report. Civil penalty: 50 penalty units.",
+        "(4) A written report must be in the approved form.",
+        "'Relevant impact' covers impacts on the availability, integrity or reliability of the asset, or the confidentiality of information about or stored in the asset (s8G)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Within 72 hours of becoming aware of a cyber security incident with a relevant impact (including imminent incidents); written record within 48 hours of an oral report.",
+      "key_topics": [
+        "cyber incident reporting",
+        "72 hours",
+        "confidentiality",
+        "integrity",
+        "ASD"
+      ],
+      "notes": "Lower threshold than s30BC: covers confidentiality and integrity impacts and imminent incidents, so data exfiltration through an AI agent could trigger it. The s8G(2) meaning of relevant impact (availability, integrity, reliability, confidentiality) was confirmed against the compilation.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

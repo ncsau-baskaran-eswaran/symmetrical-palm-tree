@@ -1,17 +1,19 @@
-"""Full-text and semantic search engine across APRA prudential standards."""
+"""Full-text search across the regulatory instrument registry."""
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 from src.db import search_clauses
 
 
 def execute_search(
     query: str,
     standard_code: Optional[str] = None,
-    limit: int = 5
+    limit: int = 5,
+    regulator: Optional[str] = None,
+    sector: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Execute search over APRA regulations with ranked scoring and snippets."""
-    results = search_clauses(query=query, standard_code=standard_code, limit=limit)
-    
+    """Execute a ranked search over instrument clauses, with optional instrument, regulator and sector filters."""
+    results = search_clauses(query=query, standard_code=standard_code, limit=limit, regulator=regulator, sector=sector)
+
     formatted = []
     for r in results:
         formatted.append({
@@ -29,6 +31,8 @@ def execute_search(
     return {
         "query": query,
         "standard_filter": standard_code or "all",
+        "regulator_filter": regulator or "all",
+        "sector_filter": sector or "all",
         "total_results": len(formatted),
         "results": formatted
     }

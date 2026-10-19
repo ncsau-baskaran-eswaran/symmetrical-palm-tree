@@ -1,6 +1,40 @@
 {
   "code": "CPS 234",
   "title": "Prudential Standard CPS 234 Information Security",
+  "short_name": "Information Security",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2018L01745",
+  "effective_date": "2019-07-01",
+  "amended_date": "2019-07-01",
+  "status": "In Force",
+  "sectors": [
+    "banking",
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance",
+    "superannuation"
+  ],
+  "entity_types": [
+    "Authorised Deposit-taking Institution (ADI)",
+    "General Insurer",
+    "Life Company / Friendly Society",
+    "Private Health Insurer",
+    "Registrable Superannuation Entity (RSE) Licensee"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://www.legislation.gov.au/F2018L01745/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Text condensed; consult the registered instrument.",
+  "text_kind": "condensed",
+  "verified_on": "",
+  "verification_notes": "Carried over from the original APRA-MCP corpus; not yet re-verified against the registered instrument.",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Prudential Practice Guide CPG 234 Information Security",
+    "CPS 220 Risk Management",
+    "CPS 230 Operational Risk Management"
+  ],
+  "summary": "CPS 234 aims to ensure that an APRA-regulated entity takes measures to be resilient against information security incidents (including cyber-attacks) by maintaining an information security capability commensurate with vulnerabilities and threats. The Board is ultimately responsible. Key mandates include asset classification by criticality/sensitivity, control design and systematic testing by independent specialists, internal audit assurance (including third-party assurance), and strict APRA notification timeframes (within 72 hours for material incidents, and within 10 business days for material control weaknesses).",
   "clauses": [
     {
       "id": "CPS234-OBJ",
@@ -16,7 +50,12 @@
       ],
       "is_mandatory": false,
       "notification_trigger": null,
-      "key_topics": ["objectives", "board_responsibility", "cyber_security", "resilience"],
+      "key_topics": [
+        "objectives",
+        "board_responsibility",
+        "cyber_security",
+        "resilience"
+      ],
       "notes": "Introductory summary framing the standard's statutory intent."
     },
     {
@@ -28,7 +67,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["authority", "acts"],
+      "key_topics": [
+        "authority",
+        "acts"
+      ],
       "notes": "Covers ADIs, General Insurers, Life companies, Private Health Insurers, and RSE licensees."
     },
     {
@@ -46,7 +88,14 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["application", "scope", "sectors", "banking", "insurance", "superannuation"],
+      "key_topics": [
+        "application",
+        "scope",
+        "sectors",
+        "banking",
+        "insurance",
+        "superannuation"
+      ],
       "notes": "Applies across all prudentially regulated Australian financial institutions."
     },
     {
@@ -58,7 +107,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["application", "foreign_adi", "branch_operations"],
+      "key_topics": [
+        "application",
+        "foreign_adi",
+        "branch_operations"
+      ],
       "notes": "Restricts foreign entity compliance obligations to their Australian branch footprint."
     },
     {
@@ -70,7 +123,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["group_compliance", "level_2_head", "level_3_head"],
+      "key_topics": [
+        "group_compliance",
+        "level_2_head",
+        "level_3_head"
+      ],
       "notes": "Extends information security obligations to non-regulated subsidiaries within the financial group."
     },
     {
@@ -82,7 +139,10 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["commencement", "effective_date"],
+      "key_topics": [
+        "commencement",
+        "effective_date"
+      ],
       "notes": "In effect since 1 July 2019."
     },
     {
@@ -94,7 +154,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["third_party", "transition", "contract_renewal"],
+      "key_topics": [
+        "third_party",
+        "transition",
+        "contract_renewal"
+      ],
       "notes": "Transitional period ended on 1 July 2020; all third-party arrangements are now fully subject to CPS 234."
     },
     {
@@ -106,7 +170,10 @@
       "subclauses": [],
       "is_mandatory": false,
       "notification_trigger": null,
-      "key_topics": ["discretion", "exemptions"],
+      "key_topics": [
+        "discretion",
+        "exemptions"
+      ],
       "notes": "APRA discretion must be exercised in writing."
     },
     {
@@ -132,7 +199,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["definitions", "cia_triad", "assets", "vulnerabilities", "incidents"],
+      "key_topics": [
+        "definitions",
+        "cia_triad",
+        "assets",
+        "vulnerabilities",
+        "incidents"
+      ],
       "notes": "Statutory definitions for all key cyber/info-security terms in CPS 234."
     },
     {
@@ -144,7 +217,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["governance", "board_responsibility", "accountability"],
+      "key_topics": [
+        "governance",
+        "board_responsibility",
+        "accountability"
+      ],
       "notes": "Footnote 4: For an RSE licensee, Board means Board of directors or group of individual trustees. Footnote 5: For a foreign ADI, Board refers to senior officer outside Australia."
     },
     {
@@ -156,7 +233,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["governance", "roles_and_responsibilities", "senior_management"],
+      "key_topics": [
+        "governance",
+        "roles_and_responsibilities",
+        "senior_management"
+      ],
       "notes": "Footnote 6: Governing bodies and individuals includes committees, working groups and forums."
     },
     {
@@ -168,7 +249,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["capability", "threat_profile", "sound_operation"],
+      "key_topics": [
+        "capability",
+        "threat_profile",
+        "sound_operation"
+      ],
       "notes": "Capability must scale with the institution's digital footprint and threat environment."
     },
     {
@@ -180,7 +265,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["third_party", "related_party", "capability_assessment", "supply_chain"],
+      "key_topics": [
+        "third_party",
+        "related_party",
+        "capability_assessment",
+        "supply_chain"
+      ],
       "notes": "Footnote 7: Applies to all information assets managed by related/third parties, not only outsourced material activities."
     },
     {
@@ -192,7 +282,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["capability", "continuous_improvement", "vulnerabilities"],
+      "key_topics": [
+        "capability",
+        "continuous_improvement",
+        "vulnerabilities"
+      ],
       "notes": "Requires dynamic updating as threat vectors evolve."
     },
     {
@@ -204,7 +298,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["policy_framework", "standards", "procedures"],
+      "key_topics": [
+        "policy_framework",
+        "standards",
+        "procedures"
+      ],
       "notes": "Must encompass all organizational security policies and guidelines."
     },
     {
@@ -216,7 +314,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["policy_framework", "responsibilities", "compliance"],
+      "key_topics": [
+        "policy_framework",
+        "responsibilities",
+        "compliance"
+      ],
       "notes": "Footnote 8: Parties includes staff, contractors, consultants, related parties, third parties, and customers."
     },
     {
@@ -228,7 +330,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["asset_classification", "criticality", "sensitivity", "third_party_assets"],
+      "key_topics": [
+        "asset_classification",
+        "criticality",
+        "sensitivity",
+        "third_party_assets"
+      ],
       "notes": "Criticality = impact of loss of availability; Sensitivity = impact of loss of confidentiality or integrity."
     },
     {
@@ -245,7 +352,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["controls", "defense_in_depth", "asset_lifecycle", "risk_mitigation"],
+      "key_topics": [
+        "controls",
+        "defense_in_depth",
+        "asset_lifecycle",
+        "risk_mitigation"
+      ],
       "notes": "Footnote 9: Life-cycle refers to planning and design through to decommissioning and disposal."
     },
     {
@@ -257,7 +369,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["third_party", "control_design", "supply_chain_security"],
+      "key_topics": [
+        "third_party",
+        "control_design",
+        "supply_chain_security"
+      ],
       "notes": "Footnote 10: Applies to all third-party managed information assets."
     },
     {
@@ -269,7 +385,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["incident_management", "detection", "response"],
+      "key_topics": [
+        "incident_management",
+        "detection",
+        "response"
+      ],
       "notes": "Requires SOC / SIEM / monitoring capabilities to detect compromises quickly."
     },
     {
@@ -281,7 +401,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["incident_management", "response_plans", "cyber_incident_response"],
+      "key_topics": [
+        "incident_management",
+        "response_plans",
+        "cyber_incident_response"
+      ],
       "notes": "Response plans must cover plausible cyber breach and data loss scenarios."
     },
     {
@@ -296,7 +420,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["incident_management", "escalation", "board_reporting", "post_incident_review"],
+      "key_topics": [
+        "incident_management",
+        "escalation",
+        "board_reporting",
+        "post_incident_review"
+      ],
       "notes": "Full end-to-end incident lifecycle coverage."
     },
     {
@@ -308,7 +437,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["incident_management", "testing", "annual_review", "tabletop_exercise"],
+      "key_topics": [
+        "incident_management",
+        "testing",
+        "annual_review",
+        "tabletop_exercise"
+      ],
       "notes": "Mandates at least annual cyber tabletop or simulation testing."
     },
     {
@@ -326,7 +460,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["testing", "control_effectiveness", "vulnerability_management", "penetration_testing"],
+      "key_topics": [
+        "testing",
+        "control_effectiveness",
+        "vulnerability_management",
+        "penetration_testing"
+      ],
       "notes": "Footnote 11: Untrusted environments where the entity cannot enforce its policies."
     },
     {
@@ -338,7 +477,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["third_party", "testing", "control_effectiveness", "supply_chain"],
+      "key_topics": [
+        "third_party",
+        "testing",
+        "control_effectiveness",
+        "supply_chain"
+      ],
       "notes": "Footnote 12: Entity must verify that vendor testing aligns with CPS 234 standards."
     },
     {
@@ -350,7 +494,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["escalation", "control_deficiencies", "board_reporting", "remediation"],
+      "key_topics": [
+        "escalation",
+        "control_deficiencies",
+        "board_reporting",
+        "remediation"
+      ],
       "notes": "Direct bridge to APRA notification in paragraph 36."
     },
     {
@@ -362,7 +511,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["testing", "independent_specialists", "assurance"],
+      "key_topics": [
+        "testing",
+        "independent_specialists",
+        "assurance"
+      ],
       "notes": "Testers (penetration testers, red teams, auditors) must be functionally independent from system operators."
     },
     {
@@ -374,7 +527,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["testing", "annual_review", "continuous_monitoring"],
+      "key_topics": [
+        "testing",
+        "annual_review",
+        "continuous_monitoring"
+      ],
       "notes": "Triggers on calendar basis (annual) or material changes."
     },
     {
@@ -386,7 +543,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["internal_audit", "assurance", "control_effectiveness", "third_party_audit"],
+      "key_topics": [
+        "internal_audit",
+        "assurance",
+        "control_effectiveness",
+        "third_party_audit"
+      ],
       "notes": "Internal audit must cover third-party and related-party environments."
     },
     {
@@ -398,7 +560,11 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["internal_audit", "skills", "competence"],
+      "key_topics": [
+        "internal_audit",
+        "skills",
+        "competence"
+      ],
       "notes": "Requires technical cyber audit competence."
     },
     {
@@ -413,7 +579,12 @@
       ],
       "is_mandatory": true,
       "notification_trigger": null,
-      "key_topics": ["internal_audit", "third_party_assurance", "soc2", "reliance"],
+      "key_topics": [
+        "internal_audit",
+        "third_party_assurance",
+        "soc2",
+        "reliance"
+      ],
       "notes": "Footnote 13: Applies to all third-party managed information assets."
     },
     {
@@ -428,7 +599,13 @@
       ],
       "is_mandatory": true,
       "notification_trigger": "72_hours",
-      "key_topics": ["notification", "incident_reporting", "72_hours", "material_incident", "regulator_notification"],
+      "key_topics": [
+        "notification",
+        "incident_reporting",
+        "72_hours",
+        "material_incident",
+        "regulator_notification"
+      ],
       "notes": "Footnote 14: Other regulators include domestic government agencies (OAIC, ASIC) and international regulators. Overlap with CPS 230: An incident reported under CPS 234 does not need to be separately reported under CPS 230."
     },
     {
@@ -440,7 +617,12 @@
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": "10_business_days",
-      "key_topics": ["notification", "control_weakness", "10_business_days", "remediation"],
+      "key_topics": [
+        "notification",
+        "control_weakness",
+        "10_business_days",
+        "remediation"
+      ],
       "notes": "Triggers when a material control weakness cannot be remediated promptly."
     }
   ]

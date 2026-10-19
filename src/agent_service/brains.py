@@ -56,16 +56,13 @@ class Brain:
         if verdict != "FAILED":
             raise RuntimeError("MCP audit returned an unknown verdict")
 
-        violations = ", ".join(
-            f"[{item.get('standard', 'APRA')} {item.get('clause', '')}]".strip()
-            for item in audit.get("apra_violations", [])
-        )
-        reason = f" ({violations})" if violations else ""
+        from src.tools.agent_auditor import guardrail_citations, guardrail_fallback_text
+
+        cites = guardrail_citations(audit)
+        reason = f" ({cites})" if cites else ""
         return (
-            "[APRA MCP RUNTIME PRE-FLIGHT GUARDRAIL] Candidate action was blocked before "
-            f"dispatch due to a detected statutory violation{reason}. Under APRA CPS 230 "
-            "Para 29 / CPS 234 Para 21, automated commitments are prohibited; the request "
-            "has been escalated to a licensed human officer."
+            f"[APRA MCP RUNTIME PRE-FLIGHT GUARDRAIL] Candidate reply was withheld before dispatch{reason}; "
+            f"no action has been taken on it. {guardrail_fallback_text(audit)}"
         )
 
 

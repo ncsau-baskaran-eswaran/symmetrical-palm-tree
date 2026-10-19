@@ -1,7 +1,7 @@
 [project]
-name = "apra-mcp"
-version = "0.1.0"
-description = "Model Context Protocol (MCP) server for APRA regulations (CPS 230 & CPS 234)"
+name = "guardian-compliance-mcp"
+version = "0.3.0"
+description = "Guardian Compliance MCP: Australian insurance regulatory compliance (APRA, ASIC, OAIC, Codes of Practice) for AI agents"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -10,6 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
+guardian-compliance-mcp = "src.server:mcp.run"
 apra-mcp = "src.server:mcp.run"
 
 [dependency-groups]

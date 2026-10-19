@@ -14,7 +14,8 @@
         "Likely impact on business operations, depositors, policyholders, or customers",
         "Timeframe for returning to normal operations"
       ],
-      "interaction_notes": "Fastest statutory reporting deadline in APRA regulations. Does NOT get waived if cyber-related; must report to APRA within 24 hours of exceeding tolerance."
+      "interaction_notes": "Fastest statutory reporting deadline in APRA regulations. Does NOT get waived if cyber-related; must report to APRA within 24 hours of exceeding tolerance.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 234",
@@ -30,7 +31,8 @@
         "Remediation and containment steps undertaken",
         "Details of other regulators notified"
       ],
-      "interaction_notes": "De-duplication rule: If an information security incident is reported to APRA under CPS 234 paragraph 35, CPS 230 Footnote 11 confirms it does NOT need to be separately reported under CPS 230 paragraph 33."
+      "interaction_notes": "De-duplication rule: If an information security incident is reported to APRA under CPS 234 paragraph 35, CPS 230 Footnote 11 confirms it does NOT need to be separately reported under CPS 230 paragraph 33.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
@@ -46,7 +48,8 @@
         "Impact on critical operations",
         "Remediation roadmap and control adjustments"
       ],
-      "interaction_notes": "Covers operational failures (fraud, system crash, process breakdown, third-party failure). If purely an info sec incident reported under CPS 234, separate reporting here is exempt per Footnote 11."
+      "interaction_notes": "Covers operational failures (fraud, system crash, process breakdown, third-party failure). If purely an info sec incident reported under CPS 234, separate reporting here is exempt per Footnote 11.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 234",
@@ -62,7 +65,8 @@
         "Reason timely remediation is not feasible",
         "Compensating controls and revised remediation plan"
       ],
-      "interaction_notes": "Applies when vulnerabilities or audit findings cannot be closed within standard SLAs."
+      "interaction_notes": "Applies when vulnerabilities or audit findings cannot be closed within standard SLAs.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
@@ -77,7 +81,8 @@
         "Critical operation supported",
         "Summary of due diligence and contract compliance with CPS 230 para 58"
       ],
-      "interaction_notes": "Post-execution notification for critical operation agreements."
+      "interaction_notes": "Post-execution notification for critical operation agreements.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
@@ -92,7 +97,8 @@
         "Assessment of jurisdictional legal/political risk and cloud sovereignty",
         "Business continuity, disaster recovery, and exit arrangements"
       ],
-      "interaction_notes": "Must occur BEFORE signing or executing the offshoring arrangement or moving data outside Australia."
+      "interaction_notes": "Must occur BEFORE signing or executing the offshoring arrangement or moving data outside Australia.",
+      "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
@@ -108,7 +114,157 @@
         "Key fourth-party dependencies",
         "Risk ratings and contract expiry dates"
       ],
-      "interaction_notes": "Mandatory annual reporting requirement."
+      "interaction_notes": "Mandatory annual reporting requirement.",
+      "regulator": "APRA"
+    },
+    {
+      "regulator": "ASD ACSC",
+      "standard": "SOCI Act 2018",
+      "clause": "30BC",
+      "event_type": "critical_cyber_incident",
+      "timeframe": "12 hours",
+      "timeframe_hours": 12,
+      "timeframe_days": null,
+      "day_basis": null,
+      "urgency": "CRITICAL",
+      "trigger_condition": "Cyber security incident having a significant impact on the availability of a critical infrastructure asset (responsible entities of critical insurance assets only).",
+      "reporting_content": [
+        "Oral or written report to the ASD ACSC",
+        "Written record within 84 hours of an oral report"
+      ],
+      "interaction_notes": "Runs in parallel with CPS 234 Para 35 (72 hours to APRA)."
+    },
+    {
+      "regulator": "ASD ACSC",
+      "standard": "SOCI Act 2018",
+      "clause": "30BD",
+      "event_type": "other_cyber_incident",
+      "timeframe": "72 hours",
+      "timeframe_hours": 72,
+      "timeframe_days": null,
+      "day_basis": null,
+      "urgency": "HIGH",
+      "trigger_condition": "Cyber security incident having a relevant impact on a critical infrastructure asset (critical insurance assets only).",
+      "reporting_content": [
+        "Report to the ASD ACSC"
+      ],
+      "interaction_notes": ""
+    },
+    {
+      "regulator": "ASD / Home Affairs",
+      "standard": "Cyber Security Act 2024",
+      "clause": "ransomware_payment_report",
+      "event_type": "ransomware_payment",
+      "timeframe": "72 hours",
+      "timeframe_hours": 72,
+      "timeframe_days": null,
+      "day_basis": null,
+      "urgency": "HIGH",
+      "trigger_condition": "A ransomware or cyber extortion payment made by or on behalf of an entity above the turnover threshold.",
+      "reporting_content": [
+        "Incident details",
+        "Demand and payment details",
+        "Communications with the extorting entity"
+      ],
+      "interaction_notes": "Check the current turnover threshold and commencement in the corpus file."
+    },
+    {
+      "regulator": "ASIC",
+      "standard": "Corporations Act 2001",
+      "clause": "912DAA",
+      "event_type": "reportable_situation",
+      "timeframe": "30 calendar days",
+      "timeframe_hours": null,
+      "timeframe_days": 30,
+      "day_basis": "calendar days",
+      "urgency": "HIGH",
+      "trigger_condition": "The licensee knows, or is reckless as to whether, there are reasonable grounds to believe a reportable situation has arisen (for example a significant breach of a core obligation, including s912A, or a civil penalty provision).",
+      "reporting_content": [
+        "Prescribed ASIC breach report form via the ASIC Regulatory Portal"
+      ],
+      "interaction_notes": "RG 78. Applies to general and life insurers as AFS licensees; not to private health insurance products."
+    },
+    {
+      "regulator": "OAIC",
+      "standard": "Privacy Act 1988",
+      "clause": "26WH",
+      "event_type": "suspected_eligible_data_breach",
+      "timeframe": "30 calendar days (assessment)",
+      "timeframe_hours": null,
+      "timeframe_days": 30,
+      "day_basis": "calendar days",
+      "urgency": "HIGH",
+      "trigger_condition": "Reasonable grounds to suspect an eligible data breach: assess within 30 days, then notify the OAIC and affected individuals as soon as practicable if eligible (s26WK, s26WL).",
+      "reporting_content": [
+        "Statement to the OAIC",
+        "Notification to affected individuals"
+      ],
+      "interaction_notes": "An OAIC notification also triggers CPS 234 Para 35 (incident notified to another regulator)."
+    },
+    {
+      "regulator": "ASIC (IDR)",
+      "standard": "RG 271",
+      "clause": "idr_response_timeframe",
+      "event_type": "complaint_received",
+      "timeframe": "Acknowledge in 1 business day; respond in 30 calendar days",
+      "timeframe_hours": null,
+      "timeframe_days": 30,
+      "day_basis": "calendar days",
+      "urgency": "MEDIUM",
+      "trigger_condition": "A complaint (any expression of dissatisfaction where a response is expected), including via chat or social media.",
+      "reporting_content": [
+        "Acknowledgement",
+        "IDR response with reasons and AFCA details if not resolved"
+      ],
+      "interaction_notes": "General and life insurers. Private health complaints go to the fund process and the Commonwealth Ombudsman."
+    },
+    {
+      "regulator": "ASIC",
+      "standard": "Corporations Act 2001",
+      "clause": "994G",
+      "event_type": "ddo_significant_dealing",
+      "timeframe": "10 business days",
+      "timeframe_hours": null,
+      "timeframe_days": 10,
+      "day_basis": "business days",
+      "urgency": "MEDIUM",
+      "trigger_condition": "The issuer becomes aware of a significant dealing in the product inconsistent with its target market determination.",
+      "reporting_content": [
+        "Notification to ASIC describing the dealing"
+      ],
+      "interaction_notes": "Distributors must also report significant dealings to the issuer (s994F)."
+    },
+    {
+      "regulator": "Code Governance Committee (ICA)",
+      "standard": "GI Code",
+      "clause": "181",
+      "event_type": "significant_code_breach",
+      "timeframe": "10 business days",
+      "timeframe_hours": null,
+      "timeframe_days": 10,
+      "day_basis": "business days",
+      "urgency": "MEDIUM",
+      "trigger_condition": "A significant breach of the General Insurance Code of Practice.",
+      "reporting_content": [
+        "Report to the Code Governance Committee"
+      ],
+      "interaction_notes": ""
+    },
+    {
+      "regulator": "Life Code Compliance Committee (CALI)",
+      "standard": "Life Code",
+      "clause": "8.13",
+      "event_type": "significant_code_breach",
+      "timeframe": "30 business days",
+      "timeframe_hours": null,
+      "timeframe_days": 30,
+      "day_basis": "business days",
+      "urgency": "MEDIUM",
+      "trigger_condition": "A significant breach of the Life Insurance Code of Practice.",
+      "reporting_content": [
+        "Report to the Life Code Compliance Committee"
+      ],
+      "interaction_notes": ""
     }
   ]
 }

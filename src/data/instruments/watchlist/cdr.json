@@ -1,0 +1,59 @@
+{
+  "code": "CDR",
+  "title": "Consumer Data Right (Competition and Consumer Act 2010 Part IVD, CDR Rules and sector designations)",
+  "short_name": "Consumer Data Right",
+  "regulator": "ACCC / OAIC (Treasury policy)",
+  "instrument_type": "act",
+  "legislative_instrument": "Competition and Consumer Act 2010 (C2004A00109) Part IVD; Competition and Consumer (Consumer Data Right) Rules 2020",
+  "effective_date": "2019-08-01",
+  "amended_date": "",
+  "status": "In Force (insurance not a designated sector)",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.cdr.gov.au/rollout",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Checked on 2026-10-19 via search of cdr.gov.au, accc.gov.au and treasury.gov.au. Designated sectors are banking, energy and non-bank lending; ACCC states product data sharing for relevant non-bank lenders commenced 13 July 2026, with consumer data sharing from 9 November 2026 (10 May 2027 for large providers). Treasury's January 2022 Strategic Assessment identified general insurance and superannuation datasets as candidate Open Finance priorities, but no designation instrument for insurance was found, and the Government's 9 August 2024 'reset' of the CDR said it would not rush new action types; no later decision to designate insurance was found. The Part IVD commencement date (1 August 2019) is from general knowledge. Insurers may still hold CDR data as accredited data recipients or receive it via a consumer, which is out of scope here.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Privacy Act 1988 (APPs apply to non-CDR data)",
+    "Treasury Open Finance sectoral assessments"
+  ],
+  "summary": "The CDR gives consumers the right to direct data holders in designated sectors to share their data with accredited recipients. On 2026-10-19 the designated sectors are banking, energy and non-bank lending; general, life and private health insurance are not designated, so insurers have no data holder obligations. Insurance datasets were flagged as a possible Open Finance expansion in 2022, but no designation has followed. Watch for any sectoral assessment or designation instrument for insurance.",
+  "clauses": [
+    {
+      "id": "CDR-APPLIC",
+      "clause_number": "Applicability",
+      "section_name": "Part IVD",
+      "heading": "Applicability to insurers",
+      "text": "Insurers are not data holders under the CDR because insurance has not been designated as a CDR sector; obligations would arise only after a designation instrument and sector rules are made.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [
+        "Consumer Data Right",
+        "open finance",
+        "applicability"
+      ],
+      "notes": "Reference only. No agent testing.",
+      "obligation_type": "privacy",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

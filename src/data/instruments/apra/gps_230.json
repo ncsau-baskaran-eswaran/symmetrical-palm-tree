@@ -1,0 +1,114 @@
+{
+  "code": "GPS 230",
+  "title": "Prudential Standard GPS 230 Reinsurance Management",
+  "short_name": "Reinsurance Management (general insurance)",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2023L00678",
+  "effective_date": "2023-07-01",
+  "amended_date": "2023-07-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Level 2 Insurance Group"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/gps-230",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Insurance (prudential standard) determination dated 24 May 2023, commencing 1 July 2023 (para 3). Note for the corpus owner: GPS 230 and LPS 230 are reinsurance management standards; they are not industry-specific versions of CPS 230 Operational Risk Management, which applies across industries directly.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "GPG 230 Reinsurance Management (if current)",
+    "CPS 220 Risk Management",
+    "GPS 110 Capital Adequacy"
+  ],
+  "summary": "GPS 230 requires general insurers and Level 2 insurance groups to maintain a reinsurance management framework, including a Board-approved reinsurance management strategy (ReMS), consistent with the business plan and ICAAP; to notify APRA before materially deviating from the ReMS and immediately of anticipated material reinsurance problems; to lodge an annual Reinsurance Statement and reinsurance declaration; to meet the inception date and two month documentation rules; and to obtain APRA approval for limited risk transfer arrangements. It is relevant to AI agents only indirectly and is captured for completeness of the prudential map. Note for the corpus owner: GPS 230 and LPS 230 are reinsurance management standards; they are not industry-specific versions of CPS 230 Operational Risk Management, which applies across industries directly.",
+  "clauses": [
+    {
+      "id": "GPS230-11",
+      "clause_number": "11",
+      "section_name": "Reinsurance management framework",
+      "heading": "Maintain a reinsurance management framework",
+      "text": "A regulated institution must at all times have a reinsurance management framework to manage the risks arising from its reinsurance arrangements, consistent with its business plan and ICAAP (para 15), reviewed as part of the risk management framework (para 17).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "reinsurance",
+        "risk management"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GPS230-22",
+      "clause_number": "22",
+      "section_name": "Reinsurance management strategy",
+      "heading": "No material deviation from the ReMS without Board approval and APRA notice",
+      "text": "The institution must not intentionally deviate in a material way from its ReMS unless the deviation is approved by the Board and notified to APRA before it occurs; the ReMS must be reviewed at least annually (para 20).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Before a material deviation from the ReMS.",
+      "key_topics": [
+        "ReMS",
+        "APRA notification"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GPS230-23",
+      "clause_number": "23",
+      "section_name": "Reinsurance management strategy",
+      "heading": "Immediate notice of anticipated reinsurance problems",
+      "text": "The institution must inform APRA immediately if it anticipates a problem with its reinsurance arrangements likely to materially and adversely affect its capacity to meet obligations, and must put in place and advise APRA of remediation plans.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Immediately on anticipating a material reinsurance problem.",
+      "key_topics": [
+        "APRA notification",
+        "reinsurance failure"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    },
+    {
+      "id": "GPS230-28",
+      "clause_number": "28",
+      "section_name": "Reinsurance Statement",
+      "heading": "Annual Reinsurance Statement and declaration",
+      "text": "Where reinsurance incepts on a common date, the institution must give APRA an annual Reinsurance Statement within two months of inception, together with a reinsurance declaration (paras 36 to 38), and must comply with the inception date rule and two month rule for documenting reinsurance (paras 33, 41 and 42).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Within two months of reinsurance inception.",
+      "key_topics": [
+        "reinsurance statement",
+        "documentation"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance"
+      ]
+    }
+  ]
+}

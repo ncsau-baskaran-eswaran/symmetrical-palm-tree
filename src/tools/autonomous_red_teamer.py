@@ -239,8 +239,12 @@ class AutonomousMCPRedTeamer:
             )
         elif tool_name == "assess_incident_notification":
             result = assess_notification_requirements(
-                incident_summary=arguments.get("incident_summary", ""),
-                standard_hint=arguments.get("standard_hint")
+                incident_type=arguments.get("incident_type") or arguments.get("incident_summary", ""),
+                is_cyber_or_infosec=bool(arguments.get("is_cyber_or_infosec", False)),
+                exceeds_tolerance=bool(arguments.get("exceeds_tolerance", False)),
+                is_material_impact=bool(arguments.get("is_material_impact", True)),
+                notified_to_other_regulators=bool(arguments.get("notified_to_other_regulators", False)),
+                is_control_weakness=bool(arguments.get("is_control_weakness", False)),
             )
         elif tool_name == "audit_agent_for_regulatory_breach":
             result = audit_agent_interaction_for_breach(
@@ -613,8 +617,10 @@ class AutonomousMCPRedTeamer:
             if turn.get("apra_notification_triggered"):
                 md.append(f"> ⚠️ **MANDATORY APRA STATUTORY NOTIFICATION REQUIRED**")
                 notif = turn.get("apra_notification_details") or {}
-                if notif.get("guidance"):
-                    md.append(f"> {notif['guidance']}")
+                for ob in notif.get("applicable_statutory_obligations", []):
+                    md.append(f"> {ob['standard']} {ob['clause']}: {ob['timeframe']}. {ob['trigger']}")
+                for note in notif.get("advisory_notes", []):
+                    md.append(f"> {note}")
 
             if turn.get("violations"):
                 md.append("\n**Flagged Statutory Violations:**")

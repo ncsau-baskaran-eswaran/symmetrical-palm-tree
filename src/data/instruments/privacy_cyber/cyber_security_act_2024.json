@@ -1,0 +1,100 @@
+{
+  "code": "Cyber Security Act 2024",
+  "title": "Cyber Security Act 2024 (Cth)",
+  "short_name": "Cyber Security Act",
+  "regulator": "Department of Home Affairs / ASD ACSC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2024A00098",
+  "effective_date": "2024-11-30",
+  "amended_date": "2024-11-29",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2024A00098/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised version.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Sections 2, 26 and 27 read from the as-made text of Act No. 98 of 2024 on the Federal Register of Legislation (assent 29 November 2024). Commencement table: Part 1 on 30 November 2024; Part 3 (ransomware payment reporting) by Proclamation or, failing that, the day after 6 months from assent, shown in column 3 as 29 May 2025. The Department of Home Affairs ransomware payment reporting factsheet says the obligation is active from 30 May 2025 (the date the Cyber Security (Ransomware Payment Reporting) Rules 2025 took effect); the one day difference should be confirmed by an SME but is immaterial now. The 3 million dollar turnover threshold is set by s6 of the Cyber Security (Ransomware Payment Reporting) Rules 2025, confirmed from the Home Affairs factsheet, not from the Rules text on the Register. Home Affairs describes Phase 1 (education first, 30 May to 31 December 2025) and Phase 2 (compliance and education, from 1 January 2026). No later compilation incorporating amendments to Part 3 was checked.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Cyber Security (Ransomware Payment Reporting) Rules 2025",
+    "Department of Home Affairs Ransomware payment reporting factsheet and FAQ",
+    "ASD cyber.gov.au ransomware payment and cyber extortion payment reporting form",
+    "SOCI Act 2018 Part 2B (cyber incident reporting)",
+    "APRA CPS 234 Information Security"
+  ],
+  "summary": "The Cyber Security Act 2024 establishes smart device security standards (Part 2), mandatory ransomware payment reporting (Part 3), limited use protections for information shared with the National Cyber Security Coordinator (Part 4) and a Cyber Incident Review Board (Part 5). Every insurer with annual turnover above 3 million dollars, and every responsible entity for a critical infrastructure asset to which SOCI Part 2B applies, must report a ransomware or cyber extortion payment made by it or on its behalf to the Australian Signals Directorate within 72 hours. Insurers are also relevant as the party that may fund or make a ransom payment on behalf of a cyber policyholder; the reporting obligation stays with the affected business.",
+  "clauses": [
+    {
+      "id": "CSA-S26",
+      "clause_number": "26",
+      "section_name": "Part 3, Division 2: Ransomware payment reporting",
+      "heading": "Application of Part 3 and meaning of reporting business entity",
+      "text": "Part 3 applies where a cyber security incident has occurred, is occurring or is imminent and affects a reporting business entity, an extorting entity makes a demand to benefit from the incident, and the reporting business entity pays, or knows another entity has paid on its behalf, a payment or benefit (a ransomware payment) directly related to the demand. A reporting business entity is a business carrying on business in Australia with annual turnover above the threshold in the rules (other than Commonwealth or State bodies), or a responsible entity for a critical infrastructure asset to which SOCI Part 2B applies.",
+      "subclauses": [
+        "(1) Incident, demand and ransomware payment (including payment by another entity on the business's behalf).",
+        "(2)(a) Business in Australia with turnover in the previous financial year exceeding the threshold (3 million dollars under the Ransomware Payment Reporting Rules 2025, pro-rated for part years).",
+        "(2)(b) Any responsible entity for a SOCI Part 2B critical infrastructure asset, regardless of turnover.",
+        "(4) Presumption that an incident effected through the internet or similar services is a cyber security incident."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "ransomware",
+        "cyber extortion",
+        "applicability",
+        "turnover threshold"
+      ],
+      "notes": "Virtually every licensed insurer exceeds the turnover threshold. A payment made by a cyber insurer or incident responder on the policyholder's behalf still triggers reporting by the policyholder business.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CSA-S27",
+      "clause_number": "27",
+      "anchor": "ransomware_payment_report",
+      "section_name": "Part 3, Division 2: Ransomware payment reporting",
+      "heading": "Obligation to report following a ransomware payment",
+      "text": "A reporting business entity must give the designated Commonwealth body (the Australian Signals Directorate) a ransomware payment report within 72 hours of making the ransomware payment, or of becoming aware that it was made on its behalf. The report must contain, so far as the entity knows or can reasonably find out, contact and business details of the entity (and of any entity that paid on its behalf), details of the incident and its impact, the demand, the payment, and communications with the extorting entity.",
+      "subclauses": [
+        "(1) Report within 72 hours of the payment, or of becoming aware of it.",
+        "(2) Contents: contact and business details; the cyber security incident and its impact; the demand; the payment; communications with the extorting entity.",
+        "(3) Other information about the incident may be included.",
+        "(4) Use the approved form and any manner prescribed by the rules.",
+        "(5) Civil penalty for failure to report: 60 penalty units.",
+        "ss29 to 32 Limited use and disclosure protections for information in the report."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "Within 72 hours of making the ransomware payment or becoming aware it was made on the entity's behalf.",
+      "key_topics": [
+        "ransomware payment report",
+        "72 hours",
+        "ASD",
+        "cyber extortion"
+      ],
+      "notes": "Report via cyber.gov.au. Separate from, and additional to, SOCI s30BC and s30BD incident reports, APRA CPS 234 notification and OAIC NDB notification. Part 3 commenced at the end of May 2025 (register shows 29 May 2025; Home Affairs states 30 May 2025).",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}

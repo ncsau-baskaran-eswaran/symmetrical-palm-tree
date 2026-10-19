@@ -1,0 +1,250 @@
+{
+  "code": "PHI Code",
+  "title": "Private Health Insurance Code of Conduct (October 2025)",
+  "short_name": "PHI Code of Conduct",
+  "regulator": "Code of Conduct Compliance Committee (Private Healthcare Australia and Members Health Fund Alliance)",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "effective_date": "2025-10-01",
+  "amended_date": "2025-10-01",
+  "status": "In Force",
+  "sectors": [
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "Private Health Insurer (Code signatory)",
+    "Intermediary"
+  ],
+  "enforceability": "contractual_code",
+  "source_url": "https://privatehealthcareaustralia.org.au/wp-content/uploads/PHI-Code-of-Conduct-October-2025.pdf",
+  "licence": "Copyright Private Healthcare Australia and Members Health Fund Alliance. Paraphrased summary only; no Code text reproduced.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "The instrument's official name is the Private Health Insurance Code of Conduct (not 'Code of Practice'). Version in force on 2026-10-19: October 2025 edition, listed as current on https://privatehealthcareaustralia.org.au/codeofconduct/documents/ (text checked against a copy hosted by Defence Health). The PDF states no precise commencement day, so effective_date is recorded as 1 October 2025 by convention; SME to confirm. The Code has no numbered paragraphs, so clause_number uses the Code's own section headings. Compliance Policy dated 24 June 2021 sits alongside it. No 2026 revision found. The Code is voluntary and only binds signatory funds; it is not ASIC approved, because PHI products are outside the Corporations Act financial product regime.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "Private Health Insurance Act 2007",
+    "Private Health Insurance (Complying Product) Rules 2015",
+    "PHI Code of Conduct Compliance Policy (24 June 2021)",
+    "Private Health Insurance Intermediaries Code of Conduct",
+    "ISO 10002:2018 / AS/NZS 10002:2014 complaint handling"
+  ],
+  "summary": "Self-regulatory code developed by Private Healthcare Australia and the Members Health Fund Alliance, binding signatory health funds. It covers plain language pre-sale and policy disclosure (waiting periods, pre-existing conditions, exclusions, restrictions, excesses), a 30 day cooling off right, notice of policy changes (30 days general, 60 days for significant detrimental changes), transfer certificates within 14 days, complaint handling to ISO 10002 with escalation to the Commonwealth Ombudsman, controls over intermediaries (including commission disclosure) and compliance monitoring by an independent committee with annual self audits and sanctions such as loss of the Code logo.",
+  "timeframes": {
+    "cooling_off_days": 30,
+    "transfer_certificate_days": 14,
+    "general_change_notice_days": 30,
+    "significant_detrimental_change_notice_days": 60,
+    "extras_course_of_treatment_transition_months": 6,
+    "committee_breach_complaint_response_business_days": 21,
+    "corrective_advertising_months": 1
+  },
+  "clauses": [
+    {
+      "id": "PHIC-Introduction",
+      "clause_number": "Introduction",
+      "section_name": "Introduction",
+      "heading": "Commitments and legislative compliance",
+      "text": "Signatory funds commit to clear, concise and relevant information on policies and benefits, trained staff who explain options so customers can make informed choices, keeping records of advice given, timely and transparent complaint resolution, a documented dispute resolution process, working with the Private Health Insurance Ombudsman on complaint trends, clear privacy information, and helping customers understand and navigate the health system. Funds also restate their obligation to comply with the PHI Act 2007, the Competition and Consumer Act 2010, the Privacy Act 1988, the Spam Act, the Do Not Call Register Act and the PHI Rules.",
+      "subclauses": [
+        "Record advice given and keep those records.",
+        "Train staff to explain options.",
+        "Applies only to signatory funds, not the industry generally or PHA and MHFA."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "scope",
+        "record keeping",
+        "training"
+      ],
+      "notes": "Agents giving product guidance should log what was recommended and why, since record keeping of advice is a Code commitment.",
+      "obligation_type": "governance",
+      "agent_relevance": "code",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIC-ConsumeRInformation",
+      "clause_number": "Consumer Information",
+      "section_name": "Consumer Information",
+      "heading": "Information before joining and helping customers choose",
+      "text": "Funds communicate in plain language. Before joining, customers receive information on benefit entitlements including waiting periods, pre-existing conditions, exclusions, restrictions, co-payments and excesses; after acceptance, further policy-specific entitlements and exclusions. Funds provide or link to information on how Medicare and private insurance work, factors to consider (age, family, health needs) and how to compare funds and policies, including the Department of Health and Commonwealth Ombudsman resources, and ensure all sales material accurately reflects the cover offered. Existing customers get advance notice of benefit changes.",
+      "subclauses": [
+        "Pre-joining disclosure: waiting periods, pre-existing conditions, exclusions, restrictions, co-payments and excesses.",
+        "Sales material must accurately reflect cover.",
+        "Link to privatehealth.gov.au comparison information.",
+        "Transfer Certificate provided within 14 days of the transfer request."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "sales practices",
+        "disclosure",
+        "waiting periods",
+        "pre-existing conditions"
+      ],
+      "notes": "Primary runtime check for PHI sales agents: before a customer joins, the agent must surface waiting periods (including the 12 month pre-existing condition wait), exclusions, restrictions and excess, and must not overstate cover.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "sales_practices"
+    },
+    {
+      "id": "PHIC-Policydocumentation",
+      "clause_number": "Policy documentation",
+      "section_name": "Consumer Information",
+      "heading": "Policy documentation content",
+      "text": "Funds express consumer information clearly and simply, and ensure policy documentation and sales material accurately describe the cover, including as relevant: waiting periods and pre-existing conditions, exclusions and what they mean, restrictions on benefits, co-payments and excesses, annual limits, how to find agreement hospitals, no gap or known gap doctors, how to check preferred or recognised extras providers, the privacy policy, complaints procedure, the existence of this Code and its logo, advice to read and keep the documents, and where to find fund rules or product disclosure statements. At request, funds give details of benefit entitlements and timely, clear information about policy changes.",
+      "subclauses": [
+        "14 listed information items for policy documents and sales material.",
+        "Statutory overlay: Private Health Information Statement (PHI Act Div 93)."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "information disclosure",
+        "policy documents",
+        "PHIS"
+      ],
+      "notes": "Agent answers about cover should be consistent with the PHIS and fund rules; when uncertain the agent should point to the PHIS rather than guess.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "information_disclosure"
+    },
+    {
+      "id": "PHIC-Coolingoffperiod",
+      "clause_number": "Cooling off period",
+      "section_name": "Consumer Information",
+      "heading": "Cooling off period",
+      "text": "Customers can cancel within 30 days of the policy starting and receive a full refund of premiums paid, provided no claim has been made.",
+      "subclauses": [
+        "30 days, full refund, only if no claim made."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "cooling off",
+        "cancellation"
+      ],
+      "notes": "Agents should mention the 30 day cooling off right at sale.",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIC-ChangeStoPolicies",
+      "clause_number": "Changes to Policies",
+      "section_name": "Changes to Policies",
+      "heading": "Notice of changes to policies and benefits",
+      "text": "Funds give at least 30 days notice of general changes (such as policy name, payment frequency or method) and of detrimental changes that are not significant. At least 60 days notice is required where a payment method is withdrawn, a product closure significantly disadvantages members (for example forced migration), or for detrimental hospital changes (removing a clinical category, raising excess or co-payment, changing when it applies, reducing a limit or entitlement) and detrimental extras changes (removing a service). For hospital changes, pre-booked admissions before the notice date are protected; for extras, transitional arrangements of up to about 6 months apply for courses of treatment such as orthodontics, and for unused roll over benefits.",
+      "subclauses": [
+        "General changes: minimum 30 days notice.",
+        "Significant detrimental changes: minimum 60 days notice.",
+        "Protect pre-booked hospital admissions.",
+        "Extras transition for courses of treatment up to 6 months.",
+        "Statute: PHI Act s 93-20 requires reasonable advance notice of detrimental rule changes and updated PHIS."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "policy changes",
+        "detrimental changes",
+        "notice periods",
+        "portability"
+      ],
+      "notes": "Agents explaining product closures or benefit cuts must state the effective date respecting 30 or 60 day notice and should explain portability (no re-serving of served waiting periods when switching).",
+      "obligation_type": "disclosure",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIC-DisputeResolution",
+      "clause_number": "Dispute Resolution",
+      "section_name": "Dispute Resolution",
+      "heading": "Complaints handling",
+      "text": "Funds at minimum comply with ISO 10002:2018 and/or AS/NZS 10002:2014 complaint management standards, publish how to complain, what information to provide, the process and time periods for each stage, privacy handling, how to check complaint status, and how to escalate to the Commonwealth Ombudsman if unhappy. Funds periodically review their complaints process.",
+      "subclauses": [
+        "Benchmark: ISO 10002:2018 or AS/NZS 10002:2014.",
+        "Escalation: Commonwealth Ombudsman (Private Health Insurance Ombudsman function), not AFCA.",
+        "The Code sets no fixed IDR day count; funds must publish their own stage timeframes."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "complaints",
+        "IDR",
+        "Commonwealth Ombudsman"
+      ],
+      "notes": "Agents must recognise complaints, explain the fund's process and timeframes, and give Commonwealth Ombudsman details (ombudsman.gov.au, PHI complaints). ASIC RG 271 and AFCA do not apply to private health insurance.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "complaints"
+    },
+    {
+      "id": "PHIC-Intermediaries",
+      "clause_number": "Intermediaries",
+      "section_name": "Intermediaries",
+      "heading": "Requirements for brokers, comparators and other intermediaries",
+      "text": "Funds ensure intermediary agreements set out obligations clearly and are auditable, and require intermediaries to act competently and honestly, disclose commissions or fees and their relationship with the fund, stay within authorised products and activities, have skills to represent the fund, keep advice records, have dispute resolution, use only Code compliant materials, explain options in plain language, protect confidentiality and comply with the PHI Act and Competition and Consumer Act. Funds apply the PHI Intermediaries Code of Conduct or demonstrate equivalent compliance, and give intermediaries ongoing documented training.",
+      "subclauses": [
+        "Disclose commissions and relationship (nature or value of the incentive need not be disclosed).",
+        "Intermediary staff trained by the fund."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "intermediaries",
+        "comparison websites",
+        "commission disclosure",
+        "sales practices"
+      ],
+      "notes": "A comparison or broker agent must disclose that it is paid by funds and must not represent products outside its authority.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PHIC-CodeCompliance",
+      "clause_number": "Code Compliance",
+      "section_name": "Code Compliance",
+      "heading": "Monitoring, breaches and sanctions",
+      "text": "PHA's Code of Conduct Compliance Committee, with independent consumer and industry representatives, admits funds, requires annual self audits and triennial audits, conducts full and spot audits by independent auditors, receives complaints about alleged breaches from other funds or relevant bodies and responds within 21 business days once information and investigation are complete, publishes an annual report, and can sanction funds that do not cooperate, comply with recommendations, adopt amendments or prevent recurrence. Sanctions include banning use of the Code tick logo, naming in the annual report and on PHA and MHFA websites, requiring publication, reporting to government agencies and corrective advertising within one month.",
+      "subclauses": [
+        "Annual self audit to independent auditors.",
+        "Committee responds to breach complaints within 21 business days.",
+        "Sanctions: logo ban, naming, corrective advertising within 1 month, referral to regulators."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "breach reporting",
+        "compliance",
+        "audit"
+      ],
+      "notes": "Unlike the GI and Life Codes there is no fixed self-report deadline for breaches; compliance is evidenced through the annual self audit. Agent failures should be captured for that self audit.",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "private_health_insurance"
+      ],
+      "anchor": "code_breach_reporting"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "code": "CPS 190",
+  "title": "Prudential Standard CPS 190 Recovery and Exit Planning",
+  "short_name": "Recovery and Exit Planning",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2023L01380",
+  "effective_date": "2024-01-01",
+  "amended_date": "2024-01-01",
+  "status": "In Force",
+  "sectors": [
+    "general_insurance",
+    "life_insurance",
+    "private_health_insurance"
+  ],
+  "entity_types": [
+    "General Insurer",
+    "Life Company",
+    "Private Health Insurer"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://handbook.apra.gov.au/standard/cps-190",
+  "licence": "Commonwealth of Australia (APRA), CC BY 4.0. Paraphrased; consult the registered instrument and the APRA Prudential Handbook.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-19",
+  "verification_notes": "Paragraph numbers and text checked against the APRA Prudential Handbook (handbook.apra.gov.au) on 2026-10-19. Summary-level stub: only selected paragraphs are captured. Register ID taken from the handbook page and not separately opened on legislation.gov.au. Version: Banking, Insurance, Life Insurance, Health Insurance and Superannuation (prudential standard) determination No. 1 of 2023 (dated 10 October 2023). Note the current title is Recovery and Exit Planning (earlier versions were titled Financial Contingency Planning). Applies to APRA-regulated entities other than RSE licensees from 1 January 2024 (para 8).",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "CPG 190 Recovery and Exit Planning",
+    "CPS 900 Resolution Planning",
+    "CPS 230 Operational Risk Management"
+  ],
+  "summary": "CPS 190 requires each APRA-regulated entity to maintain a Board-overseen recovery and exit plan setting out how it would respond to stress threatening its viability, without assuming public sector support, with indicators and triggers, credible recovery actions and, for significant financial institutions, additional analysis and testing. Plans are reviewed annually (SFIs) or every three years (non-SFIs), provided to APRA after each review, and APRA must be notified when a plan is activated.",
+  "clauses": [
+    {
+      "id": "CPS190-13",
+      "clause_number": "13",
+      "section_name": "Recovery and exit plan",
+      "heading": "Maintain a recovery and exit plan",
+      "text": "The entity must develop and maintain a recovery and exit plan setting out how it would respond to a stress that threatens its viability, appropriate to its size, business mix and complexity (para 14), integrated with its risk management framework (para 15), and must not assume extraordinary public sector support (para 16).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "recovery planning",
+        "exit planning",
+        "viability"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS190-17",
+      "clause_number": "17",
+      "section_name": "Role of the Board",
+      "heading": "Board oversight",
+      "text": "The Board is ultimately responsible for oversight of recovery and exit planning; the Board of an SFI must also form a view on the sufficiency of recovery capacity (para 18).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "board oversight"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS190-28",
+      "clause_number": "28",
+      "section_name": "Review and testing",
+      "heading": "Review frequency",
+      "text": "Unless APRA determines otherwise, the plan must be reviewed and updated at least annually for an SFI and at least every three years for a non-SFI, and after significant changes (para 29). SFIs must conduct a comprehensive review with operational testing at least every three years (paras 30 and 31).",
+      "subclauses": [
+        "(a) SFI: annually.",
+        "(b) Non-SFI: at least every three years."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "review",
+        "testing"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    },
+    {
+      "id": "CPS190-33",
+      "clause_number": "33",
+      "section_name": "Notification to APRA",
+      "heading": "Plan submission and activation notice",
+      "text": "The entity must give APRA a copy of the plan within three months of its approval after each review (para 32), and must notify APRA if it activates the plan.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "Copy to APRA within three months of approval after review; notify APRA on activation.",
+      "key_topics": [
+        "APRA notification"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "general_insurance",
+        "life_insurance",
+        "private_health_insurance"
+      ]
+    }
+  ]
+}
