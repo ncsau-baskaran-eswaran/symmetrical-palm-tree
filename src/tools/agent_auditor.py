@@ -11,6 +11,7 @@ def audit_agent_interaction_for_breach(
     agent_response: str,
     context: Optional[Dict[str, Any]] = None,
     sector: Optional[str] = None,
+    prior_turns: Optional[List[Dict[str, str]]] = None,
 ) -> Dict[str, Any]:
     """
     Screens one interaction of an autonomous insurance or banking agent against the obligation-mapped rule
@@ -18,9 +19,10 @@ def audit_agent_interaction_for_breach(
 
     `sector` overrides the sector inferred from `agent_role` ('general_insurance', 'life_insurance',
     'private_health_insurance', 'insurance', 'banking'). `context` may carry claim_amount, exposure_amount,
-    materiality_threshold, detected_at, entity_profile and target_market_exclusions.
+    materiality_threshold, detected_at, entity_profile and target_market_exclusions. `prior_turns` is the earlier
+    conversation as [{"role": "customer"|"agent", "text": ...}], oldest first.
     """
-    return run_audit(agent_role, user_prompt, agent_response, context=context, sector=sector)
+    return run_audit(agent_role, user_prompt, agent_response, context=context, sector=sector, prior_turns=prior_turns)
 
 
 def generate_insurance_adversarial_test_cases(
