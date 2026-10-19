@@ -5,6 +5,32 @@
 
 ---
 
+## Elevator pitch (30 seconds)
+
+> Australian banks and insurers are putting AI agents in front of customers, and APRA
+> holds the Board accountable when those agents misbehave. We do two things about that.
+>
+> First, we test. Our probe attacks your agent over a normal web connection, the same way
+> a manipulative customer would. It tries to talk the agent into approving a loan or
+> leaking customer data, maps every failure to the CPS 230 or CPS 234 clause it touches,
+> and produces a Board-ready report with a hash-chained evidence record.
+>
+> Second, we enforce. Our pre-flight check sits between the agent and the customer. Every
+> reply is checked before it goes out, and the model can't skip or talk its way around the
+> check. If the check fails, the reply is blocked; if it can't run, nothing is released.
+>
+> Find the gaps, then close them, all against APRA's own standards.
+
+**One-liner:** "We test your AI agents the way an attacker would, and stop unsafe replies
+before they reach a customer, mapped to APRA's own standards."
+
+**For a CRO**, add after the second paragraph: "Detection rules are configurable, so you
+validate them against your own policies." It answers their first diligence question
+before they ask it. Stay within the claims in
+[How we pitch the runtime guardrail](#how-we-pitch-the-runtime-guardrail).
+
+---
+
 ## 1. The problem we're solving
 
 Australian banks, insurers and super funds are putting **autonomous AI agents into production** — lending assistants, claims triage bots, customer-service copilots — often from third-party vendors, with no source access.
@@ -75,6 +101,42 @@ Expose the whole capability as **MCP tools** so it drops into the entity's own s
 - **Runtime guardrail** — pre-flight audit of an agent's draft action *before* dispatch (already prototyped) → continuous, not point-in-time.
 - **CI / release gate** — fail a build if an agent regresses on a CPS control.
 - **Inside the client's own agents** — Claude Desktop, Cursor, IDEs, orchestration frameworks.
+
+#### How we pitch the runtime guardrail
+
+> Most AI agent controls ask the model to police itself. Ours doesn't. Every draft
+> response passes through a service-enforced pre-flight check before it reaches the
+> customer, and the model cannot skip, negotiate around, or switch off that check. If a
+> draft breaches the rules we have configured for CPS 230 and CPS 234 risks, it is
+> blocked. If the check cannot run, nothing is released. Detection rules are configurable
+> and should be validated against your own policies and independent testing. The
+> enforcement guarantee does not depend on them.
+
+**Lead with the enforcement guarantee, not the detection.** The defensible claims are:
+the agent cannot skip the check; a failed check blocks the draft; an unavailable check
+withholds it (HTTP 503) and the service refuses to start without it.
+
+**Do not say:**
+- **"Gold standard"**, even for the enforcement pattern alone. A check the model can't
+  skip is a baseline expectation for regulated systems, and the qualifier gets dropped in
+  decks.
+- **"APRA compliant", "prevents CPS breaches", or "audited against CPS 230/234".** The
+  check matches a small set of configured patterns (`src/tools/agent_auditor.py`), not
+  the standards themselves.
+- **The demo's 100% score as validation.** `/probe` grades with the same function the
+  guardrail enforces with, so a guarded agent scores 100% by construction.
+- **"Escalated to a human officer".** There is no escalation hand-off yet.
+- **"Tamper-resistant audit trail" for the service logs.** They store hashes so customer
+  text stays out of the logs, which is privacy, not tamper evidence. Only the probe's
+  dossier is hash-chained.
+
+**Before this pitch carries weight with a CRO:**
+1. Grade the probe independently: a separate evaluator and test set, so it can catch
+   what the guardrail misses.
+2. Broaden detection: semantic checks, no requirement for attack wording in the prompt,
+   and published false-positive and false-negative rates.
+3. Build a real escalation hand-off (webhook or queue to a review system) before the
+   block notice claims one.
 
 ### 4.4 Close the governance gap with a control-review companion
 The agent orchestrates the **non-observable** clauses too: ingest policies, BCPs, MSP contracts and control-test evidence; run a structured questionnaire; map documents to clauses. One agent, **both** behavioural probing *and* control review → a **unified coverage picture**.

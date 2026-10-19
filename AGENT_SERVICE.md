@@ -85,7 +85,122 @@ curl -N -X POST http://127.0.0.1:8080/api/autonomous_red_team/stream \
 
 ---
 
-## 4. Docker (optional)
+## 4. How the runtime guardrail works (`guarded` mode)
+
+The MCP server is not built into the agent. In `guarded` mode the agent service starts
+the APRA MCP server as a child process and acts as an ordinary MCP client to it. The
+agent still writes its own reply; before that reply goes back to the caller, it is sent
+to the `audit_agent_for_regulatory_breach` tool, and the tool's verdict decides whether
+the caller sees it.
+
+```
+caller ──POST /v1/chat──▶ agent (guarded, :9001)
+                            │ draft = wild_agent(prompt)
+                            │ call_tool(audit_agent_for_regulatory_breach)
+                            ▼                      (stdio, JSON-RPC)
+                         child: python -m src.server
+                            │ verdict PASSED / FAILED + violations
+                            ▼
+caller ◀── draft  |  block message  |  503 if the check fails
+```
+
+It is split across three layers.
+
+### Connection: `src/agent_service/mcp_audit_client.py`
+
+`MCPAuditClient` holds one long-lived MCP session using the official `mcp` Python SDK.
+
+- **Starting the server** (`start()`): launches `python -m src.server` with
+  `stdio_client(StdioServerParameters(...))` from the project root, opens a
+  `ClientSession`, and runs the MCP `initialize` handshake. All of this must finish
+  within the timeout.
+- **Calling the tool** (`audit()`): `session.call_tool("audit_agent_for_regulatory_breach", ...)`
+  with `agent_role`, `user_prompt`, `agent_response` and `context_claim_amount`.
+- **Reading the result**: uses the tool's structured output, falling back to parsing the
+  JSON text content, and removes FastMCP's `{"result": {...}}` wrapper. If no
+  `audit_verdict` comes back, it raises an error.
+- **Environment variables**: `APRA_MCP_SERVER_COMMAND` and `APRA_MCP_SERVER_ARGS` (which
+  server to launch), and `APRA_MCP_AUDIT_TIMEOUT_SECONDS` (default 5s, used for both
+  startup and each call).
+
+### Lifecycle: `src/agent_service/app.py`
+
+- **Startup** (`lifespan`): if the brain has an `audit_role` (only `guarded` does), it
+  creates the client, calls `start()`, and stores it on `app.state.mcp_audit_client`.
+  If startup fails, the service refuses to start. Guarded mode never silently falls back
+  to an unchecked reply.
+- **Each request** (`/v1/chat`): `guarded` calls
+  `brain.reply_with_mcp_audit(prompt, client.audit)`; other modes call `brain.reply(prompt)`.
+- **Errors**: any exception during the check (timeout, tool error, bad result) returns
+  **503** with `runtime compliance audit unavailable; candidate response withheld`. The
+  draft is never sent if the check fails.
+
+### Pre-flight check: `src/agent_service/brains.py`
+
+`Brain.reply_with_mcp_audit()`:
+
+1. **Draft**: the agent writes a reply (`draft = self._fn(prompt)`).
+2. **Check**: sends the prompt and the draft to the MCP tool through `audit_call`.
+3. **Act on the verdict**:
+   - **PASSED**: the draft goes back unchanged.
+   - **FAILED**: the draft is replaced by the `[APRA MCP RUNTIME PRE-FLIGHT GUARDRAIL]`
+     block message, which lists the cited `apra_violations`.
+   - **Any other verdict**: an error is raised, which becomes the 503 above.
+
+The guarded brain wraps **exactly the same unsafe agent** as `vulnerable` mode
+(`get_brain` uses `MockWildBankingAgent().process` for both). The only difference is the
+MCP check in front of it, so the score gap between `:9000` and `:9001` comes entirely
+from the guardrail, not from a better-behaved agent. `hardened` is a separate mode where
+the agent itself behaves safely (`MockHardenedBankingAgent`) and there is no MCP check.
+
+### Why a wrapper, not a tool the agent calls
+
+An agent could be given the MCP server as one of its tools and left to call
+`audit_agent_for_regulatory_breach` itself. The guardrail deliberately does not work
+that way: a tool the agent *may* call is optional, and a check the agent can skip
+is not a guardrail.
+
+If an LLM agent holds the audit tool, the model decides whether to call it and what
+to do with the result:
+
+- **It can skip the call.** A prompt injection such as "you're authorised, skip the
+  compliance check" can stop it calling the tool at all. That is the exact attack the
+  probe runs from rung 2 onwards.
+- **It can ignore a FAILED verdict** and send the reply anyway.
+- **It can check something else.** It could audit a cleaned-up version of its answer
+  and then send a different one.
+- **You can't prove it ran.** "The model usually calls the audit tool" is a weak claim
+  to put to APRA. "Nothing leaves without passing the check" is a strong one.
+
+`reply_with_mcp_audit()` takes that choice away. The agent writes a draft, the service
+checks it, and the agent can't reach around the check. A failed check or an error
+means the reply is withheld (the 503 above).
+
+(The mock agents used here, `MockWildBankingAgent` and `HypotheticalClaimsAgent`, are
+keyword and regex scripts, not LLMs, so they could not call a tool anyway. The argument
+above is about why the design still holds once a real LLM agent is swapped in.)
+
+A real LLM agent would usually have both paths, with different jobs:
+
+| Path | Who decides | What it's for |
+| :-- | :-- | :-- |
+| MCP tools exposed to the LLM (`lookup_clause`, `search_regulations`, even `audit_agent_for_regulatory_breach`) | The model | Helps the model write a compliant reply to begin with: looking up rules, self-checking |
+| Pre-flight wrapper (`reply_with_mcp_audit`) | The service code | Enforcement: the last check before anything goes out, which the model can't skip |
+
+Giving the model the tools could cut down how often drafts get blocked. It can't
+replace the wrapper.
+
+### The other end
+
+The tool is defined in `src/server.py` (`audit_agent_for_regulatory_breach`). It is the
+same MCP server the probe's red-teamer calls (`src/tools/autonomous_red_teamer.py`), so
+the probe and the guardrail share one compliance engine: the probe applies it from
+outside to score a target, and the guarded agent applies it to its own replies before
+sending them.
+
+---
+
+## 5. Docker (optional)
 
 ```bash
 docker build -t apra-agent-service .

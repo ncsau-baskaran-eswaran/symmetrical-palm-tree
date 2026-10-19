@@ -85,6 +85,8 @@ pkill -f src.web_ui             # stops :8080
   request field — a real third-party agent wouldn't allow that.
 - **`guarded` mode needs the MCP server.** It spawns a child `python -m src.server`
   over stdio at startup; if that fails to initialize, the service refuses to start
-  (no silent fallback to an unaudited reply).
+  (no silent fallback to an unaudited reply). See
+  [How the runtime guardrail works](AGENT_SERVICE.md#4-how-the-runtime-guardrail-works-guarded-mode)
+  for how the MCP client is wired into the agent.
 - Tune the guardrail with `APRA_MCP_SERVER_COMMAND`, `APRA_MCP_SERVER_ARGS`, and
   `APRA_MCP_AUDIT_TIMEOUT_SECONDS` (default 5s).
