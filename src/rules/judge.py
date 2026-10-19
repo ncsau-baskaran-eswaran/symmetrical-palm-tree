@@ -8,6 +8,7 @@ REVIEW flags, never automatic breaches: a human confirms anything the rules did 
 import json
 import os
 import re
+import threading
 import time
 from typing import Any, Callable, Dict, FrozenSet, Iterable, List, Optional, Sequence, Tuple
 
@@ -20,6 +21,9 @@ DEFAULT_MODELS = {"anthropic": "claude-sonnet-5-5", "openai": "gpt-4.1", "ollama
 CONFIDENCE_FLOOR = 0.6
 MAX_PRIOR_TURNS = 6
 MAX_PRIOR_CHARS = 3000
+JUDGE_WHEN_MODES = ("always", "rule_clean", "off")
+DEFAULT_JUDGE_WHEN = "rule_clean"
+DEFAULT_BUDGET_MS = 4000.0
 
 
 def set_judge(fn: Optional[JudgeFn]) -> None:
@@ -146,6 +150,49 @@ def effective_judge(context: Dict[str, Any]) -> Dict[str, str]:
     return {"provider": provider, "model": os.environ.get("GUARDIAN_JUDGE_MODEL") or DEFAULT_MODELS.get(provider, "")}
 
 
+def judge_when(context: Dict[str, Any]) -> str:
+    """When the judge runs: always, rule_clean (skip when the rules found a breach) or off. Context beats env."""
+    value = str(context.get("judge_when") or os.environ.get("GUARDIAN_JUDGE_WHEN") or DEFAULT_JUDGE_WHEN).lower().strip()
+    return value if value in JUDGE_WHEN_MODES else DEFAULT_JUDGE_WHEN
+
+
+def judge_budget_ms(context: Dict[str, Any]) -> float:
+    """Hard wall-clock budget for one judge call in ms (context beats env). Zero or less means no budget."""
+    raw = context.get("judge_budget_ms")
+    if raw is None:
+        raw = os.environ.get("GUARDIAN_JUDGE_BUDGET_MS", DEFAULT_BUDGET_MS)
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        return DEFAULT_BUDGET_MS
+
+
+def _run_with_budget(fn: Callable[[], str], budget_ms: float) -> Tuple[bool, Any]:
+    """Run fn on a daemon worker thread; (True, result), or (False, None) when the budget expires.
+
+    A timed-out call is abandoned, not killed: the thread finishes on its own (the provider's own httpx timeout
+    bounds it) and its result is discarded.
+    """
+    if budget_ms <= 0:
+        return True, fn()
+    box: Dict[str, Any] = {}
+
+    def work() -> None:
+        try:
+            box["value"] = fn()
+        except BaseException as exc:  # re-raised in the caller
+            box["error"] = exc
+
+    worker = threading.Thread(target=work, daemon=True, name="guardian-judge")
+    worker.start()
+    worker.join(budget_ms / 1000.0)
+    if worker.is_alive():
+        return False, None
+    if "error" in box:
+        raise box["error"]
+    return True, box["value"]
+
+
 def maybe_judge(
     agent_role: str,
     user_prompt: str,
@@ -161,12 +208,23 @@ def maybe_judge(
     if context.get("judge") is False or (not _injected and provider in ("", "none", "off", "disabled")):
         return {"enabled": False, "status": "disabled (rules only)", "findings": []}
 
+    mode = judge_when(context)
+    if mode == "off":
+        return {"enabled": False, "status": "disabled (judge_when=off, rules only)", "findings": []}
+    if mode == "rule_clean" and already_found:
+        return {"enabled": False, "status": "skipped (rules already found a breach)", "findings": []}
+
     started = time.perf_counter()
     identity = effective_judge(context)
     categories = _category_descriptions(set(rule_categories) | set(extra_categories))
     prompt = build_prompt(agent_role, user_prompt, agent_response, sectors, categories, prior_turns)
     try:
-        raw = _injected(prompt) if _injected else _call_provider(provider, prompt)
+        call = _injected
+        budget_ms = judge_budget_ms(context)
+        finished, raw = _run_with_budget(lambda: call(prompt) if call else _call_provider(provider, prompt), budget_ms)
+        if not finished:
+            return {"enabled": True, "status": "timeout", "budget_ms": budget_ms, "findings": [], **identity,
+                    "elapsed_ms": (time.perf_counter() - started) * 1000}
         findings = _parse(raw, categories, agent_response)
     except Exception as exc:  # the judge must never break the deterministic screen
         return {"enabled": True, "status": f"error: {type(exc).__name__}", "findings": [], **identity,

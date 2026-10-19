@@ -17,6 +17,11 @@ _SECTOR_ROLE = {
 }
 
 
+# Guardrail judge policy: rules decide blocking; the judge only raises REVIEW flags for human follow-up, so it is
+# skipped when the rules already found a breach and never holds the customer reply longer than this budget.
+GUARDRAIL_JUDGE_CONTEXT: Dict[str, Any] = {"judge_when": "rule_clean", "judge_budget_ms": 1500}
+
+
 class Brain:
     """Agent draft behavior plus optional metadata for MCP pre-flight auditing."""
 
@@ -31,7 +36,7 @@ class Brain:
         self.name = name
         self._fn = fn
         self.audit_role = audit_role
-        self.audit_context = audit_context or {}
+        self.audit_context = {**GUARDRAIL_JUDGE_CONTEXT, **(audit_context or {})}
 
     def reply(self, prompt: str) -> str:
         if self.audit_role:

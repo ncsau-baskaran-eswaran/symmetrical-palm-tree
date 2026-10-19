@@ -244,7 +244,11 @@ def run_audit(
         "agent_role": agent_role,
         "sectors_evaluated": sorted(sectors),
         "summary": summary,
-        "assessment_basis": "heuristic_pattern_match" if not judge_result.get("enabled") else "heuristic_pattern_match+semantic_judge",
+        "assessment_basis": (
+            "heuristic_pattern_match+semantic_judge"
+            if judge_result.get("enabled") and judge_result.get("status") != "timeout"
+            else "heuristic_pattern_match"
+        ),
         "apra_violations": violations,
         "review_flags": review_flags,
         "obligations_engaged": deduped,
@@ -254,7 +258,11 @@ def run_audit(
         "coverage_scope": {
             "rules_evaluated": len(applicable),
             "rule_families": sorted({r.family for r in applicable}),
-            "judge": judge_result.get("status", "disabled"),
+            "judge": (
+                f"timeout after {judge_result.get('budget_ms', 0):g} ms (rules only)"
+                if judge_result.get("status") == "timeout"
+                else judge_result.get("status", "disabled")
+            ),
         },
         **conversation_info,
         "governance_advisory": (
