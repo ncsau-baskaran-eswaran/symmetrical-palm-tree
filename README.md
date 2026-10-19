@@ -244,6 +244,32 @@ uv run pytest -v
 
 ---
 
+## Remote deployment
+
+Besides stdio, Guardian can run as one central, access-controlled instance over MCP streamable HTTP (`src/http_server.py`). It serves `/mcp` behind bearer-token auth and an unauthenticated `GET /healthz` (`{"status","tools","corpus_hash"}`).
+
+```bash
+export GUARDIAN_HTTP_TOKENS="token-for-claude,token-for-guardrail"   # or GUARDIAN_HTTP_TOKEN_FILE (one per line)
+uv run python -m src.http_server        # or the guardian-compliance-mcp-http script, once installed
+```
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `GUARDIAN_HTTP_TOKENS` / `GUARDIAN_HTTP_TOKEN_FILE` | none | Accepted bearer tokens. The server refuses to start without any. |
+| `GUARDIAN_HTTP_ALLOW_UNAUTHENTICATED` | unset | `1` allows no tokens, only when bound to loopback (development). |
+| `GUARDIAN_HTTP_HOST` / `GUARDIAN_HTTP_PORT` | `127.0.0.1` / `8765` | Bind address. A warning is printed when binding non-loopback, since the server speaks plain HTTP. |
+| `GUARDIAN_HTTP_RATE_PER_MIN` | `120` | Per-token token bucket (in memory, per process); excess requests get 429. `0` disables. |
+| `GUARDIAN_HTTP_MAX_BODY_BYTES` | `1048576` | Larger request bodies get 413. |
+| `GUARDIAN_HTTP_ALLOWED_HOSTS` | unset | Public Host header names to allow-list (DNS-rebinding protection); when unset the Host check is off and bearer auth is the gate. |
+
+Failed auth returns 401 with `WWW-Authenticate: Bearer`. Tokens are compared in constant time and never logged. Always put a TLS-terminating proxy (nginx, Caddy, a cloud load balancer) in front when exposing beyond localhost. Clients send `Authorization: Bearer <token>` to `https://host/mcp`.
+
+The MCP app needs its session manager started by the ASGI lifespan, so run it with a lifespan-aware server (uvicorn, as `main()` does); in tests use `with TestClient(app):`.
+
+A `Dockerfile` is provided: `docker build -t guardian-mcp . && docker run -p 8765:8765 -e GUARDIAN_HTTP_TOKENS=... guardian-mcp`.
+
+---
+
 ## Connecting to MCP Clients
 
 ### 1. Claude Desktop

@@ -1,0 +1,16 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY src ./src
+RUN pip install --no-cache-dir . \
+    && useradd --create-home --uid 10001 guardian \
+    && chown -R guardian /app
+USER guardian
+
+ENV GUARDIAN_HTTP_HOST=0.0.0.0 GUARDIAN_HTTP_PORT=8765
+EXPOSE 8765
+
+# Set GUARDIAN_HTTP_TOKENS or GUARDIAN_HTTP_TOKEN_FILE at run time; startup fails without them.
+# Terminate TLS in a proxy in front of this container.
+CMD ["python", "-c", "from src.http_server import main; main()"]
