@@ -9,7 +9,7 @@ from datetime import date
 from typing import Any, Dict, Optional
 
 from src.db import get_standard_by_code
-from src.tools.notifications import add_business_days
+from src.tools.notifications import add_business_days_with_basis
 
 _SECTOR_CODE = {"general_insurance": "GI Code", "life_insurance": "Life Code"}
 
@@ -37,6 +37,7 @@ def check_claim_timeframe(
     today: Optional[str] = None,
     product: Optional[str] = None,
     last_update_on: Optional[str] = None,
+    state: Optional[str] = None,
 ) -> Dict[str, Any]:
     code = _SECTOR_CODE.get((sector or "").lower().strip())
     if not code:
@@ -49,6 +50,12 @@ def check_claim_timeframe(
     as_of = _parse(today) or date.today()
     info_done = _parse(info_complete_on)
     checks = []
+    bases: list = []
+
+    def bdays(start: date, days: int) -> date:
+        due, basis = add_business_days_with_basis(start, days, state)
+        bases.append(basis)
+        return due
 
     def check(name: str, due: date, basis: str, citation: str) -> None:
         status = "overdue" if as_of > due else ("due today" if as_of == due else "within timeframe")
@@ -57,7 +64,7 @@ def check_claim_timeframe(
 
     decision_bd = tf.get("claim_decision_after_info_business_days")
     if info_done and decision_bd:
-        check("Decision after all information received", add_business_days(info_done, decision_bd),
+        check("Decision after all information received", bdays(info_done, decision_bd),
               f"{decision_bd} business days after all necessary information is received", "claim_decision_timeframe")
 
     if code == "GI Code":
@@ -79,7 +86,7 @@ def check_claim_timeframe(
     update_bd = tf.get("claim_update_interval_business_days")
     if update_bd:
         anchor = _parse(last_update_on) or lodged
-        check("Next customer update", add_business_days(anchor, update_bd),
+        check("Next customer update", bdays(anchor, update_bd),
               f"Update at least every {update_bd} business days", "claim_updates")
 
     overdue = [c for c in checks if c.get("status") == "overdue"]
@@ -88,9 +95,10 @@ def check_claim_timeframe(
         "sector": sector,
         "as_of": as_of.isoformat(),
         "checks": checks,
+        "day_basis": f"business days ({bases[-1] if bases else add_business_days_with_basis(lodged, 0, state)[1]} excluded)",
         "overdue_count": len(overdue),
         "advisory": (
             "An overdue Code timeframe is a potential Code breach to record and assess for significance. Business days "
-            "exclude national public holidays only; confirm state holidays and any Code exceptions."
+            "exclude the public holidays named in day_basis; confirm local holidays and any Code exceptions."
         ),
     }

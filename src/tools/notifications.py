@@ -129,9 +129,12 @@ def list_all_notification_rules() -> List[Dict[str, Any]]:
 # Multi-regulator obligation clocks (APRA, ASIC, OAIC, Code bodies, ACSC)
 # ============================================================================
 
+import json
+import os
 from datetime import date, datetime, time as dtime, timedelta, timezone
 from functools import lru_cache
-from typing import Iterable, Optional, Union
+from pathlib import Path
+from typing import Iterable, Optional, Tuple, Union
 
 INSURANCE_SECTORS = ("general_insurance", "life_insurance", "private_health_insurance")
 AFSL_SECTORS = ("general_insurance", "life_insurance")
@@ -280,14 +283,58 @@ def national_public_holidays(year: int) -> frozenset:
     return frozenset(days)
 
 
-def add_business_days(start: date, days: int) -> date:
+_HOLIDAY_FILE = Path(__file__).resolve().parent.parent / "data" / "holidays" / "au_public_holidays.json"
+STATES = ("ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA")
+
+
+@lru_cache(maxsize=1)
+def _state_holiday_data() -> Dict[str, Dict[str, frozenset]]:
+    """{state: {year: frozenset of dates}} from the verified data file (whole-day statewide holidays only)."""
+    raw = json.loads(_HOLIDAY_FILE.read_text(encoding="utf-8"))["holidays"]
+    return {st: {yr: frozenset(date.fromisoformat(e["date"]) for e in entries) for yr, entries in years.items()}
+            for st, years in raw.items()}
+
+
+def resolve_state(state: Optional[str] = None) -> Optional[str]:
+    """An explicit state wins, then GUARDIAN_STATE; None when neither is set or the value is not a state code."""
+    value = (state or os.environ.get("GUARDIAN_STATE") or "").strip().upper()
+    return value if value in STATES else None
+
+
+def add_business_days_with_basis(start: date, days: int, state: Optional[str] = None) -> Tuple[date, str]:
+    """Add business days and report which holiday list was used.
+
+    A state's holidays come from the data file; any year the file lacks falls back to the computed national set.
+    """
+    st = resolve_state(state)
+    by_year = _state_holiday_data().get(st, {}) if st else {}
+    fallback_years = set()
+
+    def is_holiday(d: date) -> bool:
+        if str(d.year) in by_year:
+            return d in by_year[str(d.year)]
+        fallback_years.add(d.year)
+        return d in national_public_holidays(d.year)
+
     current = start
     added = 0
     while added < days:
         current += timedelta(days=1)
-        if current.weekday() < 5 and current not in national_public_holidays(current.year):
+        if current.weekday() < 5 and not is_holiday(current):
             added += 1
-    return current
+
+    if not st:
+        basis = "national public holidays only; pass state or set GUARDIAN_STATE for state holidays"
+    elif not fallback_years:
+        basis = f"{st} public holidays"
+    else:
+        years = ", ".join(str(y) for y in sorted(fallback_years))
+        basis = f"national public holidays only (no {st} data for {years})"
+    return current, basis
+
+
+def add_business_days(start: date, days: int, state: Optional[str] = None) -> date:
+    return add_business_days_with_basis(start, days, state)[0]
 
 
 def _parse_when(detected_at: Optional[Union[str, datetime, date]]) -> datetime:
@@ -301,13 +348,13 @@ def _parse_when(detected_at: Optional[Union[str, datetime, date]]) -> datetime:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
 
 
-def _deadline(clock: Dict[str, Any], start: datetime) -> Dict[str, Any]:
+def _deadline(clock: Dict[str, Any], start: datetime, state: Optional[str] = None) -> Dict[str, Any]:
     if "hours" in clock:
         due = start + timedelta(hours=clock["hours"])
         return {"timeframe": f"{clock['hours']} hours", "due": due.isoformat(timespec="minutes"), "day_basis": "clock hours"}
     if "business_days" in clock:
-        due = add_business_days(start.date(), clock["business_days"])
-        return {"timeframe": f"{clock['business_days']} business days", "due": due.isoformat(), "day_basis": "business days (national public holidays excluded; check state holidays)"}
+        due, basis = add_business_days_with_basis(start.date(), clock["business_days"], state)
+        return {"timeframe": f"{clock['business_days']} business days", "due": due.isoformat(), "day_basis": f"business days ({basis} excluded)"}
     due = start.date() + timedelta(days=clock["calendar_days"])
     return {"timeframe": f"{clock['calendar_days']} calendar days", "due": due.isoformat(), "day_basis": "calendar days"}
 
@@ -317,6 +364,7 @@ def assess_regulatory_obligations(
     sectors: Optional[Iterable[str]] = None,
     detected_at: Optional[Union[str, datetime, date]] = None,
     entity_profile: Optional[Dict[str, Any]] = None,
+    state: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Turn breach triggers into dated, per-regulator obligations.
 
@@ -325,6 +373,7 @@ def assess_regulatory_obligations(
         sectors: Sectors the entity operates in; clocks limited to other sectors are reported as not applicable.
         detected_at: When the issue was detected (ISO string or datetime, defaults to now, UTC).
         entity_profile: Optional facts, e.g. {"soci_critical_insurance_asset": True}.
+        state: State or territory code (e.g. VIC) for state public holidays in business-day clocks; defaults to GUARDIAN_STATE.
     """
     profile = entity_profile or {}
     sector_set = set(sectors or INSURANCE_SECTORS)
@@ -357,7 +406,7 @@ def assess_regulatory_obligations(
                 entry = {
                     "trigger": key, "regulator": clock["regulator"], "instrument": code_name,
                     "clause": "code_breach_reporting", "obligation": clock["obligation"], "status": "conditional",
-                    **_deadline(sector_clock, start), "condition": sector_clock["condition"],
+                    **_deadline(sector_clock, start, state), "condition": sector_clock["condition"],
                 }
                 obligations.append(entry)
             continue
@@ -373,12 +422,12 @@ def assess_regulatory_obligations(
             "clause": clock["clause"],
             "obligation": clock["obligation"],
             "status": "conditional" if clock.get("conditional") else "mandatory",
-            **_deadline(clock, start),
+            **_deadline(clock, start, state),
         }
         if clock.get("condition"):
             entry["condition"] = clock["condition"]
         if clock.get("acknowledge_business_days"):
-            entry["acknowledge_by"] = add_business_days(start.date(), clock["acknowledge_business_days"]).isoformat()
+            entry["acknowledge_by"] = add_business_days(start.date(), clock["acknowledge_business_days"], state).isoformat()
         if reason:
             not_applicable.append({**entry, "reason": reason})
         else:
