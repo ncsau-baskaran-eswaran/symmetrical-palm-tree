@@ -178,6 +178,25 @@
   .sec-head p { color: var(--ink-2); font-size: 18px; max-width: 36em; }
   @media (max-width: 860px) { .sec-head { grid-template-columns: 1fr; gap: 16px; } section { padding-block: 64px; } }
 
+  /* market */
+  .market-claim { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; margin-bottom: 40px; }
+  .market-claim h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 750; }
+  .market-claim h2 em { font-style: normal; box-shadow: inset 0 -0.14em 0 var(--accent); }
+  .market-claim p { color: var(--ink-2); font-size: 18px; max-width: 36em; }
+  .compare-wrap { overflow-x: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); }
+  .compare { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 15px; }
+  .compare th, .compare td { text-align: left; vertical-align: top; padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+  .compare thead th { font: 600 11.5px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); background: var(--paper); }
+  .compare tbody tr:last-child td { border-bottom: 0; }
+  .compare td:first-child { font-weight: 650; color: var(--ink); width: 20%; }
+  .compare td .ex { display: block; margin-top: 4px; font: 500 12.5px/1.45 var(--mono); color: var(--ink-3); font-weight: 400; }
+  .compare td.no { color: var(--ink-3); white-space: nowrap; }
+  .compare tr.us td { background: var(--cite-soft); }
+  .compare tr.us td:first-child { color: var(--brand); }
+  .compare td.yes { color: var(--clear); font-weight: 650; white-space: nowrap; }
+  .scan-note { margin-top: 14px; font-size: 14px; color: var(--ink-3); max-width: 70em; }
+  @media (max-width: 860px) { .market-claim { grid-template-columns: 1fr; gap: 16px; } }
+
   /* sector switcher */
   .switch { display: inline-flex; padding: 4px; gap: 4px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; margin-bottom: 24px; flex-wrap: wrap; }
   .switch button { font: 600 15px/1 var(--body); color: var(--ink-2); background: transparent; border: 0; border-radius: 7px; padding: 11px 16px; cursor: pointer; }
@@ -365,6 +384,30 @@
         </div>
         <div class="audit-foot">Actual tool output for a test conversation; customer and agent are synthetic.</div>
       </div>
+    </div>
+  </section>
+
+  <section id="market" aria-labelledby="market-title">
+    <div class="wrap">
+      <div class="market-claim">
+        <h2 id="market-title">The only MCP we found that checks agents against <em>Australian insurance law</em></h2>
+        <p>We scanned the public MCP registries, regtech launches and insurance AI vendors in October 2026. Other servers retrieve legislation, look up registers or run compliance workflows. None we found reads what an insurer's AI agent says and tests it against ASIC, APRA, OAIC, ACCC and Code of Practice obligations.</p>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col">Category</th><th scope="col">What it does</th><th scope="col">Australian insurance obligations</th><th scope="col">Screens agent replies</th><th scope="col">Cites clause and dates deadlines</th></tr>
+          </thead>
+          <tbody>
+            <tr class="us"><td>Guardian Compliance MCP</td><td>Screens every agent reply for 22 breach types across general, life and private health insurance</td><td class="yes">44 instruments</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+            <tr><td>Australian law MCPs<span class="ex">au-eli-mcp, australian-law-mcp, OLEXI</span></td><td>Search and cite Commonwealth legislation and case law</td><td class="no">Legislation text only</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><td>ASIC and APRA data MCPs<span class="ex">ASIC register and enforcement connectors</span></td><td>Look up registers, banned persons and enforcement actions</td><td class="no">Register data</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><td>Compliance platform MCPs<span class="ex">ComplyAI, IBM OpenPages, CISO Assistant, DORA Compliance MCP</span></td><td>Run compliance and GRC workflows such as pre-clearance and evidence collection</td><td class="no">US and EU regimes</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><td>Insurance MCPs<span class="ex">Policy, claims and quoting servers; UK and EU regulatory document search</span></td><td>Connect agents to insurance systems or answer questions over regulatory documents</td><td class="no">UK and EU documents</td><td class="no">No</td><td class="no">No</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scan-note">Market scan in October 2026 of public MCP registries (Glama, Smithery, mcp.so, PulseMCP, MCP Market, Apify), vendor announcements and industry roundups. Descriptions are based on each product's own published listing. Private or unlisted tools may exist; if we have missed one, we would like to hear about it.</p>
     </div>
   </section>
 
