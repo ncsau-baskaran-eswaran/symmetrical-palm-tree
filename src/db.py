@@ -10,11 +10,41 @@ import json
 import os
 import re
 import sqlite3
+import sys
 import tempfile
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
-DB_PATH = Path(__file__).parent / "guardian.db"
+
+
+def _user_cache_dir() -> Path:
+    """Per-user cache directory used when the package directory is read-only (e.g. an installed wheel)."""
+    if sys.platform == "darwin":
+        return Path.home() / "Library" / "Caches" / "guardian-compliance"
+    base = os.environ.get("XDG_CACHE_HOME")
+    return (Path(base) if base else Path.home() / ".cache") / "guardian-compliance"
+
+
+def resolve_db_path() -> Path:
+    """Locate the registry database.
+
+    Order: GUARDIAN_DB_PATH override, then beside the code if that directory is writable (repo checkout), then the
+    per-user cache directory (installed wheel in a read-only site-packages).
+    """
+    override = os.environ.get("GUARDIAN_DB_PATH")
+    if override:
+        path = Path(override).expanduser()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        return path
+    beside_code = Path(__file__).parent
+    if os.access(beside_code, os.W_OK):
+        return beside_code / "guardian.db"
+    cache = _user_cache_dir()
+    cache.mkdir(parents=True, exist_ok=True)
+    return cache / "guardian.db"
+
+
+DB_PATH = resolve_db_path()
 DATA_DIR = Path(__file__).parent / "data"
 INSTRUMENTS_DIR = DATA_DIR / "instruments"
 

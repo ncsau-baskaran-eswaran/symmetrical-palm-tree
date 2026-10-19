@@ -237,6 +237,17 @@ cd apra-mcp
 uv sync
 ```
 
+### Installing as a package
+The project builds as a wheel (`hatchling`), so it runs from any directory without a repo checkout:
+```bash
+uv build                                   # dist/guardian_compliance_mcp-*.whl
+uvx --from /path/to/apra-mcp guardian-compliance-mcp
+# or: pip install dist/*.whl && guardian-compliance-mcp
+```
+The registry database is written beside the code when that directory is writable, otherwise to
+`~/Library/Caches/guardian-compliance` (macOS) or `$XDG_CACHE_HOME/guardian-compliance` (`~/.cache/...`). Set
+`GUARDIAN_DB_PATH` to choose another location.
+
 ### Running Tests
 ```bash
 uv run pytest -v
@@ -257,6 +268,19 @@ Add to `claude_desktop_config.json`, then fully quit and reopen Claude Desktop:
       "args": ["-m", "src.server"],
       "cwd": "/path/to/apra-mcp",
       "env": {"PYTHONPATH": "/path/to/apra-mcp"}
+    }
+  }
+}
+```
+
+Or, without a checkout path or virtualenv, using the packaged entrypoint:
+
+```json
+{
+  "mcpServers": {
+    "guardian-compliance": {
+      "command": "uvx",
+      "args": ["--from", "/path/to/apra-mcp", "guardian-compliance-mcp"]
     }
   }
 }
