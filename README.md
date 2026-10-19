@@ -285,12 +285,21 @@ uv run python -m src.http_server        # or the guardian-compliance-mcp-http sc
 | `GUARDIAN_HTTP_ALLOW_UNAUTHENTICATED` | unset | `1` allows no tokens, only when bound to loopback (development). |
 | `GUARDIAN_HTTP_HOST` / `GUARDIAN_HTTP_PORT` | `127.0.0.1` / `8765` | Bind address. A warning is printed when binding non-loopback, since the server speaks plain HTTP. |
 | `GUARDIAN_HTTP_RATE_PER_MIN` | `120` | Per-token token bucket (in memory, per process); excess requests get 429. `0` disables. |
+| `GUARDIAN_HTTP_RATE_BACKEND` / `GUARDIAN_HTTP_REDIS_URL` | `memory` / unset | `redis` shares the per-token limit (fixed one-minute window) across replicas. Needs `pip install redis`; the server refuses to start if the package or URL is missing. |
+| `GUARDIAN_HTTP_STATELESS` | `0` | `1` serves stateless streamable HTTP with JSON responses: no MCP session ids, so no sticky sessions. |
 | `GUARDIAN_HTTP_MAX_BODY_BYTES` | `1048576` | Larger request bodies get 413. |
 | `GUARDIAN_HTTP_ALLOWED_HOSTS` | unset | Public Host header names to allow-list (DNS-rebinding protection); when unset the Host check is off and bearer auth is the gate. |
 
 Failed auth returns 401 with `WWW-Authenticate: Bearer`. Tokens are compared in constant time and never logged. Always put a TLS-terminating proxy (nginx, Caddy, a cloud load balancer) in front when exposing beyond localhost. Clients send `Authorization: Bearer <token>` to `https://host/mcp`.
 
 The MCP app needs its session manager started by the ASGI lifespan, so run it with a lifespan-aware server (uvicorn, as `main()` does); in tests use `with TestClient(app):`.
+
+**Running several replicas.** By default sessions live in one process and the limit is per process, so replicas would need sticky sessions. For a stateless fleet:
+
+1. Set `GUARDIAN_HTTP_STATELESS=1` on every replica. Each request is then self-contained (no `Mcp-Session-Id`), so the load balancer can route freely.
+2. Share the rate limit: either set `GUARDIAN_HTTP_RATE_BACKEND=redis` with `GUARDIAN_HTTP_REDIS_URL=redis://host:6379/0` (install `redis` in the image; the limiter fails open if Redis is down), or set `GUARDIAN_HTTP_RATE_PER_MIN=0` and rate limit at the proxy (nginx `limit_req`, an ALB/WAF rate rule).
+3. Point load balancer health checks at `GET /healthz` (no auth; compare `corpus_hash` across replicas to spot a stale rollout).
+4. Terminate TLS at the proxy and keep replicas on a private network, with the same tokens on every replica.
 
 `Dockerfile.http` builds the remote server: `docker build -f Dockerfile.http -t guardian-mcp . && docker run -p 8765:8765 -e GUARDIAN_HTTP_TOKENS=... guardian-mcp`. Behind a TLS-intercepting proxy (for example Zscaler), add `--secret id=extra_ca,src="$SSL_CERT_FILE"` to the build; the CA is used only during the build and is not stored in the image.
 

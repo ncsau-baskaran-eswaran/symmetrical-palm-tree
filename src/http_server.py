@@ -15,6 +15,10 @@ Configuration (environment variables):
     GUARDIAN_HTTP_ALLOW_UNAUTHENTICATED    "1" permits no tokens, loopback bind only
     GUARDIAN_HTTP_HOST / GUARDIAN_HTTP_PORT  bind address (127.0.0.1 / 8765)
     GUARDIAN_HTTP_RATE_PER_MIN             requests per token per minute (120, 0 disables)
+    GUARDIAN_HTTP_RATE_BACKEND             "memory" (default, per process) or "redis" (shared)
+    GUARDIAN_HTTP_REDIS_URL                Redis URL, required when the backend is "redis"
+    GUARDIAN_HTTP_STATELESS                "1" serves stateless streamable HTTP (no session ids),
+                                           so replicas need no sticky sessions
     GUARDIAN_HTTP_MAX_BODY_BYTES           request body limit (1048576)
     GUARDIAN_HTTP_ALLOWED_HOSTS            comma-separated public Host header values
 """
@@ -103,6 +107,64 @@ class TokenBucket:
         return True
 
 
+class RedisRateLimiter:
+    """Fixed-window counter shared across replicas through Redis.
+
+    Each key gets one counter per 60 second window (INCR, then EXPIRE on first hit).
+    ``client`` is any object with ``incr(name)`` and ``expire(name, seconds)``, which
+    lets tests inject a fake. Fails open if Redis is unreachable, so an outage does
+    not take the service down (bearer auth still applies).
+    """
+
+    WINDOW_SECONDS = 60
+
+    def __init__(self, client: Any, per_minute: int, prefix: str = "guardian:rate"):
+        self.client = client
+        self.limit = per_minute
+        self.prefix = prefix
+
+    def allow(self, key: str, now: Optional[float] = None) -> bool:
+        now = time.time() if now is None else now
+        window = int(now // self.WINDOW_SECONDS)
+        name = f"{self.prefix}:{key}:{window}"
+        try:
+            count = int(self.client.incr(name))
+            if count == 1:
+                self.client.expire(name, self.WINDOW_SECONDS * 2)
+        except Exception as exc:  # noqa: BLE001 - any backend error must not become a 500
+            print(f"guardian-compliance-mcp-http: rate limiter backend error: {exc}", file=sys.stderr)
+            return True
+        return count <= self.limit
+
+
+def build_rate_limiter(
+    per_minute: int,
+    backend: str = "memory",
+    redis_url: str = "",
+    redis_client: Any = None,
+) -> Optional[Any]:
+    """Return the limiter for the chosen backend, or None when rate limiting is off."""
+    if per_minute <= 0:
+        return None
+    backend = (backend or "memory").strip().lower()
+    if backend == "memory":
+        return TokenBucket(per_minute)
+    if backend != "redis":
+        raise StartupError(f"Unknown GUARDIAN_HTTP_RATE_BACKEND {backend!r}; use 'memory' or 'redis'.")
+    if redis_client is None:
+        if not redis_url:
+            raise StartupError("GUARDIAN_HTTP_RATE_BACKEND=redis requires GUARDIAN_HTTP_REDIS_URL.")
+        try:
+            import redis  # imported lazily: optional dependency
+        except ImportError:
+            raise StartupError(
+                "GUARDIAN_HTTP_RATE_BACKEND=redis needs the 'redis' package. Install it (pip install redis) "
+                "or use the in-memory limiter / rate limiting at the proxy."
+            )
+        redis_client = redis.Redis.from_url(redis_url)
+    return RedisRateLimiter(redis_client, per_minute)
+
+
 class _BodyTooLarge(Exception):
     pass
 
@@ -120,11 +182,15 @@ class GuardMiddleware:
         tokens: List[str],
         rate_per_min: int = DEFAULT_RATE_PER_MIN,
         max_body_bytes: int = DEFAULT_MAX_BODY_BYTES,
+        limiter: Optional[Any] = None,
     ):
         self.app = app
         self.tokens = [t.encode() for t in tokens]
         self.max_body_bytes = max_body_bytes
-        self.bucket = TokenBucket(rate_per_min) if rate_per_min > 0 else None
+        if limiter is not None:
+            self.bucket = limiter
+        else:
+            self.bucket = TokenBucket(rate_per_min) if rate_per_min > 0 else None
 
     def _match_token(self, presented: bytes) -> bool:
         # Check every configured token (no early exit) to avoid timing leaks on position.
@@ -204,6 +270,8 @@ def create_app(
     rate_per_min: int = DEFAULT_RATE_PER_MIN,
     max_body_bytes: int = DEFAULT_MAX_BODY_BYTES,
     allowed_hosts: Optional[List[str]] = None,
+    stateless: bool = False,
+    limiter: Optional[Any] = None,
 ) -> ASGIApp:
     """Build the ASGI app. Run it with a server that honours lifespan (uvicorn does).
 
@@ -223,11 +291,16 @@ def create_app(
         mcp.settings.transport_security = TransportSecuritySettings(
             enable_dns_rebinding_protection=False
         )
+    # Stateless mode drops MCP session ids so any replica can serve any request.
+    mcp.settings.stateless_http = stateless
+    mcp.settings.json_response = stateless
     # The session manager's run() may only be entered once per instance; rebuild it.
     mcp._session_manager = None
     inner = mcp.streamable_http_app()
     inner.router.routes.append(Route(HEALTH_PATH, healthz, methods=["GET"]))
-    return GuardMiddleware(inner, tokens, rate_per_min=rate_per_min, max_body_bytes=max_body_bytes)
+    return GuardMiddleware(
+        inner, tokens, rate_per_min=rate_per_min, max_body_bytes=max_body_bytes, limiter=limiter
+    )
 
 
 def main() -> None:
@@ -252,13 +325,26 @@ def main() -> None:
             file=sys.stderr,
         )
 
+    rate_per_min = int(os.environ.get("GUARDIAN_HTTP_RATE_PER_MIN", DEFAULT_RATE_PER_MIN))
+    try:
+        limiter = build_rate_limiter(
+            rate_per_min,
+            backend=os.environ.get("GUARDIAN_HTTP_RATE_BACKEND", "memory"),
+            redis_url=os.environ.get("GUARDIAN_HTTP_REDIS_URL", "").strip(),
+        )
+    except StartupError as exc:
+        print(f"guardian-compliance-mcp-http: {exc}", file=sys.stderr)
+        raise SystemExit(2)
+
     public_hosts = [h.strip() for h in os.environ.get("GUARDIAN_HTTP_ALLOWED_HOSTS", "").split(",") if h.strip()]
     allowed_hosts = public_hosts + ["127.0.0.1:*", "localhost:*", "127.0.0.1", "localhost"] if public_hosts else None
     app = create_app(
         tokens,
-        rate_per_min=int(os.environ.get("GUARDIAN_HTTP_RATE_PER_MIN", DEFAULT_RATE_PER_MIN)),
+        rate_per_min=rate_per_min,
         max_body_bytes=int(os.environ.get("GUARDIAN_HTTP_MAX_BODY_BYTES", DEFAULT_MAX_BODY_BYTES)),
         allowed_hosts=allowed_hosts,
+        stateless=os.environ.get("GUARDIAN_HTTP_STATELESS", "0") == "1",
+        limiter=limiter,
     )
     uvicorn.run(app, host=host, port=port, log_level="info")
 
