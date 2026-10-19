@@ -10,10 +10,10 @@ Examples
     uv run python run_agent_service.py --sector insurance --mode guarded --port 9001
 
 Then point the prober at it. Because the prober blocks loopback by default (SSRF),
-allowlist the exact URL for the web UI / campaign process:
+allowlist the exact URL for the probe process:
 
     export APRA_PROBER_ALLOWED_LOCAL_URLS="http://127.0.0.1:9000/v1/chat,http://127.0.0.1:9001/v1/chat"
-    uv run python -m src.web_ui        # open http://localhost:8080/probe
+    uv run python run_autonomous_agent.py --target http://127.0.0.1:9000/v1/chat --industry insurance
 """
 
 import argparse

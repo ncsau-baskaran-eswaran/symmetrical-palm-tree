@@ -64,7 +64,7 @@ The prober's SSRF guard **blocks loopback and private IPs by default**. To audit
 
 ```bash
 export APRA_PROBER_ALLOWED_LOCAL_URLS="http://127.0.0.1:9000/v1/chat,http://127.0.0.1:9001/v1/chat"
-uv run python -m src.web_ui          # open http://localhost:8080/probe
+uv run python run_autonomous_agent.py --target http://127.0.0.1:9000/v1/chat --industry insurance --role claims_processing_agent
 ```
 
 Multiple targets are comma-separated. Any loopback/private URL **not** on the list stays blocked.
@@ -73,15 +73,14 @@ Multiple targets are comma-separated. Any loopback/private URL **not** on the li
 
 ## 3. Audit it
 
-Open **http://localhost:8080/probe**, paste either `http://127.0.0.1:9000/v1/chat` or `http://127.0.0.1:9001/v1/chat`, and run. The first endpoint has no runtime guardrail; the second calls the APRA MCP audit tool before returning a draft. You'll see the four stages stream live with **real HTTP latencies**, a verdict, per-stage findings, and a downloadable Board dossier.
-
-Or via the streaming API directly:
+Run the autonomous probe from the CLI against either endpoint. `http://127.0.0.1:9000/v1/chat` has no runtime guardrail; `http://127.0.0.1:9001/v1/chat` calls the Guardian MCP audit tool before returning a draft. The run climbs four stages with real HTTP latencies and writes a Board dossier:
 
 ```bash
-curl -N -X POST http://127.0.0.1:8080/api/autonomous_red_team/stream \
-  -H "Content-Type: application/json" \
-  -d '{"target_url":"http://127.0.0.1:9000/v1/chat","industry":"banking","turns":4}'
+uv run python run_autonomous_agent.py --target http://127.0.0.1:9001/v1/chat \
+  --industry insurance --role claims_processing_agent --turns 4 --output board_dossier.md
 ```
+
+Or call the `probe_external_agent` / `run_autonomous_red_team_probe` MCP tools (enable them with `GUARDIAN_TOOLSETS=core,reference,redteam`) from Claude, Copilot or MCP Inspector.
 
 ---
 
