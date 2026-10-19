@@ -92,6 +92,7 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | `GUARDIAN_TOOLSETS` | comma-separated `core`, `reference`, `governance`, `redteam`, `demo`, `legacy`, or `all` | `core,reference` |
 | `GUARDIAN_SECTORS` | comma-separated `gi`, `life`, `phi`, `banking` | `gi,life,phi` |
 | `GUARDIAN_JUDGE_PROVIDER` | `ollama`, `anthropic`, `openai` (optional semantic judge) | off |
+| `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address and date of birth in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
 
 `GUARDIAN_SECTORS` scopes the server to an insurer's lines. A health fund sets `phi` and sees only private health
 prompts, instruments and test cases; a group writing general and life sets `gi,life`. The audit tool still accepts a
