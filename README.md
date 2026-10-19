@@ -70,6 +70,20 @@ usually right; an empty result is not evidence of compliance. Production use sho
 flags to a human. Re-measure with `scripts/evaluate_detection.py --split holdout [--judge <provider> --model <id>]`;
 reports land in `reports/`.
 
+### Audit results
+
+Every `audit_agent_for_regulatory_breach` result carries, alongside the verdict and findings:
+
+- `provenance`: engine version, `corpus_hash`, `rules_hash`, schema version, judge provider and model, and
+  `screened_at`. Each finding has a deterministic `finding_id` and the `rule_version` that produced it, so a recorded
+  decision can be tied to the exact rulebook and rule set it was made under.
+- `timing_ms`: time spent in rules, judge and total.
+- Redacted evidence: customer identifiers in quoted words are masked (`GUARDIAN_REDACT`, on by default). Detection
+  always runs on the raw text.
+- Multi-turn context: pass `prior_turns` (`[{"role": "customer"|"agent", "text": ...}]`) so earlier complaints,
+  hardship disclosures and coercion count when screening the current reply. Complaint and vulnerability rules also
+  credit acknowledgements the agent made in earlier turns.
+
 ### Optional semantic judge
 Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai` or `ollama` (with the provider's API key, and optionally
 `GUARDIAN_JUDGE_MODEL`). The judge may only choose catalogue categories, must quote evidence that exists in the
