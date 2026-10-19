@@ -41,3 +41,23 @@ jobs:
         with:
           name: dist
           path: dist/
+
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -f Dockerfile.http -t guardian-compliance-mcp:ci .
+      - name: Smoke test (refuses to start without tokens, serves with one)
+        run: |
+          set -e
+          if docker run --rm guardian-compliance-mcp:ci; then echo "started without tokens" && exit 1; fi
+          docker run -d --name gcm -p 8765:8765 -e GUARDIAN_HTTP_TOKENS=ci-token guardian-compliance-mcp:ci
+          for i in $(seq 1 20); do curl -fsS localhost:8765/healthz && break; sleep 1; done
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X POST localhost:8765/mcp)" = "401"
+          docker rm -f gcm
+      # Fail on vulnerabilities that have a fix. Unfixed Debian base findings are tracked in docs/PRODUCTION_READINESS.md.
+      - name: Trivy scan
+        run: |
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.76.0 \
+            image --severity CRITICAL,HIGH --ignore-unfixed --exit-code 1 guardian-compliance-mcp:ci

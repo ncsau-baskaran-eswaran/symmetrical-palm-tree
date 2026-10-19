@@ -15,7 +15,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Multi-turn screening | Done | `prior_turns` on the audit tool; history-aware gates and omission checks |
 | Remote server with authentication | Done | `src/http_server.py`: bearer tokens, rate limit, body limit, `/healthz`, refuses to start unauthenticated off loopback |
 | Corpus change monitoring | Done | `scripts/check_corpus_freshness.py` (`staleness`, `snapshot`, `diff`, `review-pack`); baseline lock of 44 sources |
-| Container image | Done | `Dockerfile.http` builds (286 MB, non-root uid 10001, HEALTHCHECK on /healthz); refuses to start without tokens (exit 2); 401 without and 200 with a token; optional build-time CA secret for TLS-intercepting proxies, not written to any layer; `pip-audit` reports no known vulnerabilities in its 29 Python packages. OS-package scan still needs Docker Scout (Docker Hub login) or Trivy |
+| Container image | Done | `Dockerfile.http` builds (286 MB, non-root uid 10001, HEALTHCHECK on /healthz); refuses to start without tokens (exit 2); 401 without and 200 with a token; optional build-time CA secret for TLS-intercepting proxies, not written to any layer; `pip-audit` reports no known vulnerabilities in its 29 Python packages. Trivy 0.76.0: 0 critical, 0 fixable high; 44 high in Debian 13 base packages (util-linux, ncurses, perl, systemd libs) with no Debian fix yet, none used by the app; CI `image` job builds, smoke-tests and fails on fixable critical/high |
 | Shared rate limiting and stateless HTTP sessions | Done | `GUARDIAN_HTTP_STATELESS=1` (FastMCP `stateless_http` + JSON responses) and `GUARDIAN_HTTP_RATE_BACKEND=redis` (lazy `redis`, fixed-window); tests in `tests/test_http_server.py`; recipe in README "Remote deployment" |
 | Judge latency budget for the runtime guardrail | Done | `GUARDIAN_JUDGE_WHEN` (default `rule_clean`) and `GUARDIAN_JUDGE_BUDGET_MS` (default 4000) with per-call overrides; guarded mode uses 1500 ms; timeout falls back to rules only; `tests/test_judge_budget.py` |
 | Weekly `diff` job and fewer false "changed" results | Done | `.github/workflows/corpus-freshness.yml` (Monday 21:00 UTC, `staleness` then `diff --json`, artifact plus issue on change); `diff` now uses per-source signals (legislation compilation id, PDF hash and length, main-content hash) recorded in `sources.lock.json`; lock regenerated and 44 of 44 sources unchanged on an immediate re-run |
@@ -29,6 +29,7 @@ Test suite: 286 tests pass in all three CI configurations.
 | :--- | :--- |
 | State public holidays | Business-day clocks exclude national holidays only |
 | Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
+| Unfixed Debian base CVEs | 44 high findings await Debian fixes; re-scan weekly, or move to a minimal base (for example a distroless or Wolfi Python image) once it supports Python 3.12+ with pinned tags |
 
 ## Needs people
 
