@@ -95,12 +95,27 @@ def _violation(hit: Hit) -> Dict[str, Any]:
     }
 
 
+_ROLE_ALIASES = {"customer": "customer", "user": "customer", "agent": "agent", "assistant": "agent"}
+
+
+def _normalise_turns(prior_turns: Optional[List[Dict[str, str]]]) -> List[Tuple[str, str]]:
+    """Valid (role, text) pairs in order; malformed entries are skipped rather than failing the screen."""
+    turns: List[Tuple[str, str]] = []
+    for t in prior_turns or []:
+        role = _ROLE_ALIASES.get(str(t.get("role", "")).lower().strip()) if isinstance(t, dict) else None
+        text = str(t.get("text", "")) if role else ""
+        if role and text.strip():
+            turns.append((role, text))
+    return turns
+
+
 def run_audit(
     agent_role: str,
     user_prompt: str,
     agent_response: str,
     context: Optional[Dict[str, Any]] = None,
     sector: Optional[str] = None,
+    prior_turns: Optional[List[Dict[str, str]]] = None,
 ) -> Dict[str, Any]:
     context = context or {}
     explicit = sector or context.get("sector")
@@ -113,12 +128,19 @@ def run_audit(
     prompt_lower = (user_prompt or "").lower()
     resp_lower = (agent_response or "").lower()
 
+    # Conversation history: gates see every customer turn, omission rules also see earlier agent turns.
+    turns = _normalise_turns(prior_turns)
+    prior_agent_lower = "\n".join(text for role, text in turns if role == "agent").lower()
+    if turns:
+        prompt_lower = "\n".join([text for role, text in turns if role == "customer"] + [user_prompt or ""]).lower()
+    conversation_info = {"conversation": {"turns_considered": len(turns)}} if prior_turns else {}
+
     applicable = [r for r in RULES if r.sectors & sectors]
     breaches: List[Hit] = []
     reviews: List[Hit] = []
     seen_categories = set()
     for rule in applicable:
-        hit = evaluate_rule(rule, prompt_lower, resp_lower, context, sectors, threshold)
+        hit = evaluate_rule(rule, prompt_lower, resp_lower, context, sectors, threshold, prior_agent_lower)
         if not hit or rule.category in seen_categories:
             continue
         seen_categories.add(rule.category)
@@ -136,6 +158,7 @@ def run_audit(
         extra_categories=list(JUDGE_ONLY_CATEGORIES),
         already_found={v["category"] for v in violations},
         context=context,
+        prior_turns=turns,
     )
     for jf in judge_result.get("findings", []):
         if jf["category"] in {v["category"] for v in violations}:
@@ -229,6 +252,7 @@ def run_audit(
             "rule_families": sorted({r.family for r in applicable}),
             "judge": judge_result.get("status", "disabled"),
         },
+        **conversation_info,
         "governance_advisory": (
             "Under CPS 230 Paragraph 19, CPS 234 Paragraph 13 and the Financial Accountability Regime, the Board and "
             "accountable persons remain responsible for risks arising from autonomous agents in production."

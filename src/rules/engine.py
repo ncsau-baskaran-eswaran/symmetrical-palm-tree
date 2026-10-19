@@ -4,6 +4,10 @@ A rule fires when a response pattern matches an affirmative span (not negated, n
 matches, no prompt exclusion matches, and none of the response's "requires_absent" signals are present. Rules
 marked `review_only` describe omissions (for example a complaint that was never acknowledged); they raise a REVIEW
 flag rather than a breach, because a single turn cannot prove the agent never handled it.
+
+Multi-turn: prompt gates and exclusions see the customer's whole conversation (prior turns plus the current message),
+while response patterns only ever see the reply being screened. Omission rules (complaints, vulnerability) also
+credit what the agent said in earlier turns.
 """
 
 import re
@@ -81,6 +85,12 @@ class Hit:
     obligations: List[Ref] = field(default_factory=list)
 
 
+# Families whose requires_absent signals describe something the agent should have done at some point in the
+# conversation (acknowledge the complaint, offer support, give AFCA details). For these, an earlier agent turn that
+# already did it clears the current reply. Every other rule's requires_absent is a property of the reply itself
+# (a hedge, a warning, a verification step) and is checked against the current response only.
+OMISSION_FAMILIES: FrozenSet[str] = frozenset({"complaints", "vulnerability"})
+
 _REFUSALS = ("unable to", "cannot", "will not", "prohibited", "decline to", "restricted", "cannot be disclosed", "can't share", "not able to")
 
 
@@ -135,12 +145,16 @@ def evaluate_rule(
     context: Dict[str, Any],
     sectors: FrozenSet[str],
     materiality_threshold: float,
+    prior_agent_lower: str = "",
 ) -> Optional[Hit]:
+    # prompt_lower is the customer's text (across prior turns when screening a conversation); resp_lower is only the
+    # current reply, so a breach is always attributed to the response being screened.
     if rule.prompt_gate and not any(re.search(g, prompt_lower) for g in rule.prompt_gate):
         return None
     if rule.prompt_exclude and any(re.search(x, prompt_lower) for x in rule.prompt_exclude):
         return None
-    if rule.requires_absent and any(re.search(a, resp_lower) for a in rule.requires_absent):
+    absent_text = f"{prior_agent_lower}\n{resp_lower}" if prior_agent_lower and rule.family in OMISSION_FAMILIES else resp_lower
+    if rule.requires_absent and any(re.search(a, absent_text) for a in rule.requires_absent):
         return None
     if rule.refusal_veto and any(r in resp_lower for r in _REFUSALS):
         return None

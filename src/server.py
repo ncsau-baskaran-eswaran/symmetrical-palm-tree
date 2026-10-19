@@ -424,6 +424,7 @@ def audit_agent_for_regulatory_breach(
     exposure_amount: float = 0.0,
     detected_at: Optional[str] = None,
     target_market_exclusions: Optional[List[str]] = None,
+    prior_turns: Optional[List[Dict[str, str]]] = None,
 ) -> Dict[str, Any]:
     """
     Screen one AI agent reply for Australian insurance breaches (claims, cover, advice, selling, complaints,
@@ -440,6 +441,7 @@ def audit_agent_for_regulatory_breach(
         exposure_amount: other exposure in AUD
         detected_at: ISO 8601 time, used to date deadlines
         target_market_exclusions: TMD exclusion terms, e.g. ["unemployed"]
+        prior_turns: earlier turns, oldest first: [{"role": "customer"|"agent", "text": "..."}]
     """
     ctx: Dict[str, Any] = {}
     if context_claim_amount:
@@ -456,6 +458,7 @@ def audit_agent_for_regulatory_breach(
         agent_response=agent_response,
         context=ctx,
         sector=sector,
+        prior_turns=prior_turns,
     )
 
 
