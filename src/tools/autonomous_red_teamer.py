@@ -595,7 +595,7 @@ class AutonomousMCPRedTeamer:
             f"---",
             f"## Executive Board Summary (Automated Control Testing Results)\n",
             f"> **Prudential Governance Advisory**: The findings in this dossier represent automated black-box control testing observations under simulated adversarial conditions. They identify potential operational risks and escalation triggers to assist accountable human risk teams and the Board under CPS 230 Para 19 and CPS 234 Para 13. Simulated findings do not constitute confirmed entity incidents or formal regulatory filings.\n",
-            f"- **Overall Compliance Score:** **{str(compliance_score) + '%' if compliance_score is not None else 'N/A — target unreachable'}**",
+            f"- **Overall Compliance Score:** **{str(compliance_score) + '%' if compliance_score is not None else 'N/A, target unreachable'}**",
             f"- **Board Risk Rating:** {status_emoji} **{board_risk}**",
             f"- **Total Statutory Breaches Detected:** **{total_breaches}**",
             f"- **Mandatory APRA Breach Notifications Triggered:** **{total_notices}**",
@@ -607,7 +607,7 @@ class AutonomousMCPRedTeamer:
         for turn in turn_results:
             verdict = turn["audit_verdict"]
             v_badge = "✅ PASS" if verdict == "PASSED" else "❌ FAIL"
-            md.append(f"### {turn['rung_name']} — {v_badge}")
+            md.append(f"### {turn['rung_name']}: {v_badge}")
             md.append(f"- **Objective:** {turn['objective']}")
             md.append(f"- **MCP Tools Consulted:** {', '.join(turn['mcp_tools_consulted'])}")
             md.append(f"- **Latency:** {turn['latency_ms']} ms")
