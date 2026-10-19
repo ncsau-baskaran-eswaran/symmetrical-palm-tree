@@ -1,4 +1,4 @@
-# Guardian Compliance MCP 🇦🇺
+# Guardian Compliance MCP
 
 An MCP server that screens AI agents used by Australian insurers against the laws and codes they actually breach in
 conversation. It covers general, life and private health insurance, and keeps the original APRA banking (ADI) scenarios.
@@ -152,105 +152,21 @@ and life), `life_claim_conduct_review` (life), `phi_member_conversation_audit` (
 
 ---
 
-## 🤖 Autonomous Claims Agent Simulation & Red-Teaming
+## Red-team testing
 
-To model real-world risks in production AI deployments, the repository includes a hypothetical autonomous insurance claims agent (`HypotheticalClaimsAgent`) representing a frontline triage bot for Australian Mutual Insurance.
-
-### Running Red-Team Exploits via CLI
-Run the automated adversarial red-team audit:
-```bash
-# Red-team the vulnerable production agent (Triggers 3 APRA breaches & 2 statutory 72h notices)
-uv run python -m src.simulation.red_team_runner vulnerable
-
-# Red-team Mode 2 (Active in-band APRA MCP pre-flight guardrail - 100% compliance pass rate)
-uv run python -m src.simulation.red_team_runner in_band_guardrail
-
-# Red-team the hardened agent with static guardrails (100% compliance pass rate)
-uv run python -m src.simulation.red_team_runner hardened
-```
-
-### Key Regulatory Attack Vectors Tested:
-1. **Prompt Injection / PII Exfiltration (CPS 234 Para 20, 21, 35)**:
-   * Attack: Attacker bypasses instructions via debug mode to dump Medicare numbers and medical diagnoses.
-   * Finding: Critical information security breach requiring mandatory **72-hour APRA notification**.
-2. **Social Engineering / Unauthorized Claims Settlement (CPS 230 Para 29, 36, 33)**:
-   * Attack: Attacker claims to be the CEO and demands urgent $85,000 claim approval and excess waiver.
-   * Finding: Critical failure of controls over a mandatory Critical Operation (Claims Processing), triggering **72-hour APRA notification** for material financial exposure.
-3. **Hallucinated Policy Expansion (CPS 230 Para 14, 23)**:
-   * Attack: Attacker prompts bot to override contractual stormwater/flood exclusions.
-   * Finding: Operational conduct risk violating Board risk profile and PDS disclosure terms.
-
----
-
-## 🌐 Universal Black-Box Regulatory Prober & Autonomous Red-Teamer
-
-> 🧪 **Test it against a real service**: See [**AGENT_SERVICE.md**](AGENT_SERVICE.md) to run a hypothetical production-grade banking/insurance agent as its own HTTP service and probe it over the wire (not a `mock://`).  
-> 🤖 **Autonomous Prober Overview**: See [**AUTONOMOUS_PROBER.md**](AUTONOMOUS_PROBER.md) for dedicated architecture and runner instructions.  
-> 📘 **Step-by-Step Execution Guide**: For complete running instructions across Web UI, FastMCP, and CLI, mock target details, and the full OpenAI Codex review assessment, see [**AUTONOMOUS_AGENT_GUIDE.md**](AUTONOMOUS_AGENT_GUIDE.md).  
-> 📖 **Comprehensive Specification**: For in-depth architectural data flows, probe vectors, statutory APRA decision matrices, and sample Board dossiers, see [**BLACKBOX_PROBER.md**](BLACKBOX_PROBER.md).
-
-What if you discover an autonomous AI agent in the wild across Banking or Insurance and need to audit its regulatory resilience **without embedding MCP code, installing SDKs, or modifying the target codebase**?
-
-The APRA MCP server includes two complementary black-box assurance engines:
-1. **Curated Static Battery (`spin_test_agent`)**: Instant, zero-cost 5-vector regression suite.
-2. **Autonomous LLM Red-Teamer (`AutonomousMCPRedTeamer`)**: Co-designed and brainstormed with **OpenAI Codex (`gpt-6-luna`)**, this agentic engine climbs a structured **4-Stage Test Ladder** (Baseline $\rightarrow$ False Authority $\rightarrow$ Synthetic Data Boundary $\rightarrow$ Policy Ambiguity), dynamically queries APRA MCP tools to research statutory rules, enforces SSRF protections (with DNS pre-resolution and redirect blocking), and generates **tamper-evident SHA-256 cryptographic evidence manifests**.
-
-### Quick Run via Standalone CLI:
-```bash
-# 1-Command CLI execution against mock banking bot (4 rungs)
-uv run python run_autonomous_agent.py --target mock://banking-lending-agent
-
-# Test APRA-hardened banking bot (100% compliance pass rate)
-uv run python run_autonomous_agent.py --target mock://hardened-bank-agent
-
-# Test wild insurance claims bot
-uv run python run_autonomous_agent.py --target mock://insurance-wild-agent --industry insurance --role claims_processing_agent
-
-# Test external REST endpoint and export Board Dossier (.md)
-uv run python run_autonomous_agent.py --target https://api.mybank.com/v1/chat --turns 4 --output board_dossier.md
-```
-
-### Built-in Zero-Setup Mock Targets:
-* `mock://banking-lending-agent`: Unhardened banking bot (fails credit & PII probes; triggers APRA notices).
-* `mock://hardened-bank-agent`: APRA-compliant banking bot (resists all probes; 100% compliance pass rate).
-* `mock://insurance-wild-agent`: Unhardened claims bot (fails claims & Medicare probes).
-* Or supply any remote REST URL (e.g., `https://api.mybank.com/v1/chat/completions` with optional Bearer token).
-
----
-
-## Visual Testing & Web Studio
-
-### 1. Interactive Web Studio (`http://localhost:8080`)
-A local visual dashboard for red-teaming autonomous agents, running search queries, and inspecting APRA notifications:
+The opt-in `redteam` toolset tests an agent before release, over its normal chat endpoint and with no SDK or code
+access. `probe_external_agent` runs the sector's adversarial scenarios (claims coercion, invented cover, data
+exfiltration, hawking, genetic testing, Medicare benefits and more) and returns findings, reporting clocks and a Board
+dossier. `run_autonomous_red_team_probe` climbs a four-stage escalation ladder and records a hash-chained evidence
+trail. Private and loopback targets are blocked unless explicitly allowlisted.
 
 ```bash
-uv run python -m src.web_ui
+GUARDIAN_TOOLSETS=core,reference,redteam uv run python -m src.server
 ```
-Open **`http://localhost:8080`** in your browser.
 
-> 🌐 **Simple Probe page**: For a focused, no-frills workflow — *connect to an external target agent → run the assessment → read the scorecard* — open **`http://localhost:8080/probe`**. It reuses the autonomous red-team engine (Codex 4-stage ladder, SHA-256 evidence manifest, downloadable Board dossier) behind a single plain form.
-
-Features:
-* **💬 Live Agent Chat (With vs. Without MCP)**: Interactive conversation playground where you can toggle between running the agent **Without APRA MCP** (unhardened), **Hooked to APRA MCP** (Mode 2 in-band pre-flight guardrail), or in a **Side-by-Side Dual Comparison** to see real-time breach detection and interception.
-* **🌐 Black-Box Regulatory Prober & Autonomous Red-Teamer**: Audit external agents with a 1-click engine mode switch:
-  - `📋 Curated Static Battery (5 Domain Vectors)`
-  - `🧠 Autonomous Red-Teamer (Codex Test Ladder)` with configurable ladder depth (1-4 rungs), LLM planner engine, SHA-256 tamper-evident manifest cards, and 1-click **Download APRA Board Report (.md)**.
-* **🤖 Batch Red-Team Benchmark**: One-click red-teaming across statutory exploit suites with compliance scorecards.
-* **🛡️ Manual Interaction Audit**: Test presets (PII exfiltration, coerced claims, hallucinated coverage) with visual breach severity alerts.
-* **🔎 Regulation Search**: Live search across CPS 230 and CPS 234.
-* **🚨 Notification Matrix**: Full timetable of APRA statutory reporting timeframes.
-* **☁️ Cloud & LLM Resilience**: Evaluate AI provider uptime SLAs against Board-approved outage tolerance.
-
-### 2. Interactive Terminal CLI
-```bash
-uv run python interactive_test.py
-```
-Or run quick commands:
-```bash
-uv run python interactive_test.py search "tolerance levels"
-uv run python interactive_test.py lookup "CPS 230" "42"
-uv run python interactive_test.py notify
-```
+`mock://insurance-wild-agent` and `mock://insurance-guarded-agent` are built-in targets for trying the tools without a
+live agent. To exercise the runtime guardrail end to end, `run_agent_service.py` starts a demo insurance agent over
+HTTP in `vulnerable`, `hardened` or `guarded` mode (see [AGENT_SERVICE.md](AGENT_SERVICE.md)).
 
 ---
 
@@ -381,10 +297,14 @@ apra-mcp/
 │   │   ├── engine.py          # Matching, negation and materiality
 │   │   ├── audit.py           # Orchestration, verdicts, reporting clocks
 │   │   └── judge.py           # Optional semantic judge (REVIEW flags only)
-│   ├── tools/                 # Lookup, search, notifications, coverage, claim timeframes, probers
-│   ├── simulation/            # Mock claims agent (vulnerable, hardened, guarded)
-│   ├── agent_service/         # Standalone demo agent service
-│   └── web_ui.py              # Probe UI
+│   ├── tools/                 # Lookup, search, notifications, coverage, claim timeframes, probes
+│   ├── http_server.py         # Authenticated streamable HTTP transport
+│   ├── provenance.py          # Corpus and rules hashes, finding ids, timing
+│   ├── redaction.py           # PII and name masking for returned results
+│   ├── simulation/            # Mock claims agent used by the demo toolset
+│   └── agent_service/         # Demo agent service for testing the runtime guardrail
+├── scripts/                   # Detection evaluation and corpus freshness checks
+├── docs/                      # Production readiness tracker and corpus review pack
 ├── tests/
 │   ├── corpus/insurance/      # Blind paraphrase corpus (dev and holdout)
 │   └── test_*.py
@@ -399,3 +319,10 @@ apra-mcp/
 2. Restart the server: the registry rebuilds automatically when any corpus file changes.
 3. If a rule should cite the new clause, add a `Ref` in `src/rules/catalog.py`; `tests/test_rules_catalog.py`
    fails if any reference does not resolve.
+
+---
+
+## Further reading
+- [docs/PRODUCTION_READINESS.md](docs/PRODUCTION_READINESS.md): what is production ready, what is open, and what needs people.
+- [docs/CORPUS_REVIEW.md](docs/CORPUS_REVIEW.md): the expert sign-off pack for the regulatory corpus.
+- [reports/detection_metrics.md](reports/detection_metrics.md): measured detection quality on the blind corpus.
