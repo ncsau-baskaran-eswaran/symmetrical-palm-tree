@@ -15,6 +15,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Multi-turn screening | Done | `prior_turns` on the audit tool; history-aware gates and omission checks |
 | Remote server with authentication | Done | `src/http_server.py`: bearer tokens, rate limit, body limit, `/healthz`, refuses to start unauthenticated off loopback |
 | Corpus change monitoring | Done | `scripts/check_corpus_freshness.py` (`staleness`, `snapshot`, `diff`, `review-pack`); baseline lock of 44 sources |
+| Container image | Done | `Dockerfile.http` builds (286 MB, non-root uid 10001, HEALTHCHECK on /healthz); refuses to start without tokens (exit 2); 401 without and 200 with a token; optional build-time CA secret for TLS-intercepting proxies, not written to any layer; `pip-audit` reports no known vulnerabilities in its 29 Python packages. OS-package scan still needs Docker Scout (Docker Hub login) or Trivy |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
 Test suite: 286 tests pass in all three CI configurations.
@@ -23,7 +24,6 @@ Test suite: 286 tests pass in all three CI configurations.
 
 | Item | Why it matters |
 | :--- | :--- |
-| Build and scan `Dockerfile.http` | Not built yet: the Docker daemon was not running during verification |
 | Shared rate limiting and stateless HTTP sessions | The rate limit is per process and sessions are stateful; multiple replicas need sticky sessions or `stateless_http` |
 | State public holidays | Business-day clocks exclude national holidays only |
 | Weekly `diff` job | Suggested in `docs/CORPUS_REVIEW.md`; not yet a scheduled workflow |

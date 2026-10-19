@@ -1,15 +1,24 @@
+# syntax=docker/dockerfile:1
 FROM python:3.12-slim
 
 WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
-RUN pip install --no-cache-dir . \
+
+# Behind a TLS-intercepting proxy (for example Zscaler), pass the proxy's CA bundle as a build secret:
+#   docker build -f Dockerfile.http --secret id=extra_ca,src="$SSL_CERT_FILE" .
+# The secret is only mounted for this step and never written into an image layer.
+RUN --mount=type=secret,id=extra_ca,required=false \
+    if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi \
+    && pip install --no-cache-dir . \
     && useradd --create-home --uid 10001 guardian \
     && chown -R guardian /app
 USER guardian
 
 ENV GUARDIAN_HTTP_HOST=0.0.0.0 GUARDIAN_HTTP_PORT=8765
 EXPOSE 8765
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s \
+    CMD python -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8765/healthz', timeout=4).status == 200 else 1)"
 
 # Set GUARDIAN_HTTP_TOKENS or GUARDIAN_HTTP_TOKEN_FILE at run time; startup fails without them.
 # Terminate TLS in a proxy in front of this container.

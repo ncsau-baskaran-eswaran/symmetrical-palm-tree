@@ -292,7 +292,7 @@ Failed auth returns 401 with `WWW-Authenticate: Bearer`. Tokens are compared in 
 
 The MCP app needs its session manager started by the ASGI lifespan, so run it with a lifespan-aware server (uvicorn, as `main()` does); in tests use `with TestClient(app):`.
 
-`Dockerfile.http` builds the remote server: `docker build -f Dockerfile.http -t guardian-mcp . && docker run -p 8765:8765 -e GUARDIAN_HTTP_TOKENS=... guardian-mcp`.
+`Dockerfile.http` builds the remote server: `docker build -f Dockerfile.http -t guardian-mcp . && docker run -p 8765:8765 -e GUARDIAN_HTTP_TOKENS=... guardian-mcp`. Behind a TLS-intercepting proxy (for example Zscaler), add `--secret id=extra_ca,src="$SSL_CERT_FILE"` to the build; the CA is used only during the build and is not stored in the image.
 
 ---
 
