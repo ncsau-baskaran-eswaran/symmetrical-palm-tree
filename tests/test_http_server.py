@@ -4,8 +4,10 @@ import pytest
 from starlette.testclient import TestClient
 
 from src.http_server import (
+    RedisRateLimiter,
     StartupError,
     TokenBucket,
+    build_rate_limiter,
     create_app,
     load_tokens,
     validate_startup,
@@ -97,3 +99,73 @@ def test_token_bucket_refills():
     assert all(b.allow("k", now=0.0) for _ in range(60))
     assert not b.allow("k", now=0.0)
     assert b.allow("k", now=1.0)
+
+
+def test_stateless_requests_need_no_session_id():
+    with client(stateless=True) as c:
+        r1 = c.post("/mcp", json=INIT, headers=AUTH)
+        assert r1.status_code == 200 and "serverInfo" in r1.text
+        assert "mcp-session-id" not in r1.headers
+        # An independent request with no session id and no initialize handshake.
+        r2 = c.post("/mcp", json={"jsonrpc": "2.0", "id": 2, "method": "tools/list"}, headers=AUTH)
+    assert r2.status_code == 200 and "tools" in r2.text
+
+
+class FakeRedis:
+    """Minimal stand-in for redis.Redis: incr and expire only."""
+
+    def __init__(self):
+        self.counts = {}
+        self.expiries = {}
+
+    def incr(self, name):
+        self.counts[name] = self.counts.get(name, 0) + 1
+        return self.counts[name]
+
+    def expire(self, name, seconds):
+        self.expiries[name] = seconds
+
+
+def test_redis_limiter_fixed_window():
+    fake = FakeRedis()
+    lim = RedisRateLimiter(fake, 2)
+    assert lim.allow("k", now=0.0) and lim.allow("k", now=1.0)
+    assert not lim.allow("k", now=2.0)
+    assert lim.allow("other", now=2.0)
+    assert lim.allow("k", now=61.0)  # next window
+    assert fake.expiries  # counters expire
+
+
+def test_redis_limiter_shared_between_replicas_and_fails_open():
+    fake = FakeRedis()
+    a, b = RedisRateLimiter(fake, 2), RedisRateLimiter(fake, 2)
+    assert a.allow("k", now=0.0) and b.allow("k", now=0.0)
+    assert not a.allow("k", now=0.0) and not b.allow("k", now=0.0)
+
+    class Broken:
+        def incr(self, name):
+            raise ConnectionError("down")
+
+    assert RedisRateLimiter(Broken(), 1).allow("k")
+
+
+def test_redis_limiter_through_app_returns_429():
+    with client(limiter=RedisRateLimiter(FakeRedis(), 2)) as c:
+        codes = [c.post("/mcp", json=INIT, headers=AUTH).status_code for _ in range(4)]
+    assert codes[:2] == [200, 200] and 429 in codes[2:]
+
+
+def test_build_rate_limiter_selection(monkeypatch):
+    assert isinstance(build_rate_limiter(10), TokenBucket)
+    assert build_rate_limiter(0, backend="redis") is None
+    assert isinstance(build_rate_limiter(10, "redis", redis_client=FakeRedis()), RedisRateLimiter)
+    with pytest.raises(StartupError):
+        build_rate_limiter(10, "bogus")
+    with pytest.raises(StartupError, match="REDIS_URL"):
+        build_rate_limiter(10, "redis")
+    # Selected but the package is missing: refuse to start with a clear message.
+    import sys
+
+    monkeypatch.setitem(sys.modules, "redis", None)
+    with pytest.raises(StartupError, match="redis"):
+        build_rate_limiter(10, "redis", redis_url="redis://localhost:6379/0")
