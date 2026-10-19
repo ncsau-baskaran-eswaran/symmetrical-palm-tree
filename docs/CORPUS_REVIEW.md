@@ -40,28 +40,13 @@ Apply to each instrument you are signing off:
 - [ ] Licensing: no verbatim copyrighted text (industry codes especially).
 - [ ] `verification_notes` updated, and `verified_on` set to the review date.
 
-## Optional CI step: weekly source drift check
+## Weekly source drift check
 
-Another workstream owns `.github/workflows/ci.yml`, so this is a suggestion only. A scheduled job that fails (exit
-code 2) when any cited source changes against `src/data/sources.lock.json`:
-
-```yaml
-name: corpus-freshness
-on:
-  schedule:
-    - cron: "0 22 * * 0"   # weekly, Monday 08:00 AEST
-  workflow_dispatch:
-jobs:
-  diff:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install httpx
-      - run: python scripts/check_corpus_freshness.py staleness --fail-on-unverified
-      - run: python scripts/check_corpus_freshness.py diff
-```
+`.github/workflows/corpus-freshness.yml` runs weekly (Monday 21:00 UTC) and on demand. It runs `staleness` (never
+fails the job) and `diff --json`; when a cited source changes against `src/data/sources.lock.json` it uploads the
+JSON report as an artifact and opens or updates a single GitHub issue. Change detection uses the strongest signal per
+source (legislation compilation id, PDF hash and length, or main-content hash), so site navigation and banner
+changes do not raise issues. After a reviewer accepts the new state of a source, refresh the lock with `snapshot`.
 
 ## Instruments
 

@@ -15,6 +15,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | Multi-turn screening | Done | `prior_turns` on the audit tool; history-aware gates and omission checks |
 | Remote server with authentication | Done | `src/http_server.py`: bearer tokens, rate limit, body limit, `/healthz`, refuses to start unauthenticated off loopback |
 | Corpus change monitoring | Done | `scripts/check_corpus_freshness.py` (`staleness`, `snapshot`, `diff`, `review-pack`); baseline lock of 44 sources |
+| Weekly `diff` job and fewer false "changed" results | Done | `.github/workflows/corpus-freshness.yml` (Monday 21:00 UTC, `staleness` then `diff --json`, artifact plus issue on change); `diff` now uses per-source signals (legislation compilation id, PDF hash and length, main-content hash) recorded in `sources.lock.json`; lock regenerated and 44 of 44 sources unchanged on an immediate re-run |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
 Test suite: 286 tests pass in all three CI configurations.
@@ -26,8 +27,6 @@ Test suite: 286 tests pass in all three CI configurations.
 | Build and scan `Dockerfile.http` | Not built yet: the Docker daemon was not running during verification |
 | Shared rate limiting and stateless HTTP sessions | The rate limit is per process and sessions are stateful; multiple replicas need sticky sessions or `stateless_http` |
 | State public holidays | Business-day clocks exclude national holidays only |
-| Weekly `diff` job | Suggested in `docs/CORPUS_REVIEW.md`; not yet a scheduled workflow |
-| Reduce false "changed" results in `diff` | Whole-page hashing flags navigation or banner changes on source sites |
 | Name redaction | Redaction is pattern-based; free-text names and non-AU identifiers are not masked |
 | Judge latency budget for the runtime guardrail | The local judge adds about 12 seconds; run it asynchronously or only on rule-clean replies |
 

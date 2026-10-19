@@ -128,8 +128,85 @@ def test_snapshot_then_diff(corpus, monkeypatch, capsys):
     # One page changes: exit 2.
     pages["https://example.test/OLD"] = (200, b"<p>two, amended</p>")
     assert cf.main(["diff"]) == cf.EXIT_CHANGED
-    assert "CHANGED https://example.test/OLD" in capsys.readouterr().out
+    assert "CHANGED [html_body] https://example.test/OLD" in capsys.readouterr().out
 
 
 def test_diff_without_lock(corpus, capsys):
     assert cf.main(["diff"]) == 1
+
+
+# ---- content signals ----------------------------------------------------------------------------------------------
+
+def _page(nav="<nav>Home | About</nav>", banner="Welcome", main="<p>The obligation is X.</p>"):
+    return (f"<html><body><header>{banner}</header>{nav}<main>{main}</main>"
+            f"<footer>(c) 2026</footer></body></html>").encode()
+
+
+def _record(url, body):
+    return {"reachable": True, "status": 200, "content_length": len(body), **cf.classify_content(url, body)}
+
+
+def _lock_one(url, body):
+    return {"sources": {url: _record(url, body)}}
+
+
+def test_chrome_only_change_is_unchanged():
+    url = "https://example.test/rg"
+    lock = _lock_one(url, _page())
+    new = _page(nav="<nav>Home | About | News</nav><div class='cookie-banner'>Accept</div>", banner="Sale on now")
+    report = cf.diff_against_lock(lock, {url: _record(url, new)})
+    assert report["unchanged"] == [url] and not report["changed"]
+    assert lock["sources"][url]["signal"] == "html_main"
+
+
+def test_main_content_change_is_changed():
+    url = "https://example.test/rg"
+    lock = _lock_one(url, _page())
+    report = cf.diff_against_lock(lock, {url: _record(url, _page(main="<p>The obligation is Y.</p>"))})
+    assert report["changed"][url]["signal"] == "html_main"
+
+
+def test_body_fallback_drops_chrome_by_class_and_tag():
+    a = b"<body><div class='site-nav'>x</div><aside>a</aside><form>f</form><p>Body text</p><script>1</script></body>"
+    b = b"<body><div id='breadcrumb'>y</div><aside>b</aside><form>g</form><p>Body text</p><script>2</script></body>"
+    signal, content = cf.html_signal(a)
+    assert signal == "html_body" and content == b"Body text" and cf.html_signal(b)[1] == content
+
+
+def test_legislation_id_change_is_changed():
+    url = "https://www.legislation.gov.au/C2004A02944/latest/text"
+    lock = _lock_one(url, b"<main>Act text C2024C00063</main>")
+    assert lock["sources"][url]["signal"] == "legislation_id"
+    report = cf.diff_against_lock(lock, {url: _record(url, b"<main>Act text C2025C00148</main>")})
+    change = report["changed"][url]
+    assert change["signal"] == "legislation_id" and "C2024C00063 -> C2025C00148" in change["details"][0]
+
+
+def test_same_legislation_id_with_different_chrome_is_unchanged():
+    url = "https://www.legislation.gov.au/C2004A02944/latest/text"
+    lock = _lock_one(url, b"<nav>old</nav><main>Act text C2024C00063 version A</main>")
+    new = _record(url, b"<nav>new</nav><main>Act text C2024C00063 reworded</main>")
+    assert cf.diff_against_lock(lock, {url: new})["unchanged"] == [url]
+
+
+def test_pdf_uses_raw_hash_and_length():
+    url = "https://example.test/a.pdf"
+    lock = _lock_one(url, b"%PDF-1.7 one")
+    assert lock["sources"][url]["signal"] == "pdf"
+    assert cf.diff_against_lock(lock, {url: _record(url, b"%PDF-1.7 one")})["unchanged"] == [url]
+    assert cf.diff_against_lock(lock, {url: _record(url, b"%PDF-1.7 two")})["changed"][url]["signal"] == "pdf"
+
+
+def test_diff_json_output(corpus, monkeypatch, capsys):
+    codes = ("FRESH", "OLD", "EMPTY", "UNSURE", "GOOD")
+    pages = {f"https://example.test/{c}": (200, _page(main=f"<p>{c}</p>")) for c in codes}
+    monkeypatch.setattr(cf, "make_client", lambda: _mock_client(pages))
+    assert cf.main(["snapshot"]) == 0
+    capsys.readouterr()
+    pages["https://example.test/OLD"] = (200, _page(main="<p>amended</p>"))
+    pages["https://example.test/GOOD"] = httpx.ConnectError("down")
+    assert cf.main(["diff", "--json"]) == cf.EXIT_CHANGED
+    report = json.loads(capsys.readouterr().out)
+    assert report["counts"] == {"changed": 1, "unreachable": 1, "unchanged": 3}
+    assert report["changed"][0]["signal"] == "html_main" and report["changed"][0]["instruments"] == ["OLD"]
+    assert report["unreachable"][0]["url"].endswith("/GOOD")
