@@ -23,7 +23,7 @@ tracked here with the commit that delivered them; items that need people are lis
 | State public holidays | Done | `state` argument or `GUARDIAN_STATE`; verified 2025-2027 data in `src/data/holidays/au_public_holidays.json` (verified 2026-10-19), national fallback reported in `day_basis`; `tests/test_holidays.py` |
 | Lean default tool surface | Done | Toolsets and sector scoping; default ~3,200 tokens of tool definitions |
 
-Test suite: 286 tests pass in all three CI configurations.
+Test suite: 355 tests pass in all three CI configurations.
 
 ## Engineering follow-ups
 
