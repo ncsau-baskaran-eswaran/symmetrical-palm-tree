@@ -312,6 +312,75 @@ uv run pytest -v
 
 ---
 
+## Shared NCS instance
+
+The current deployment model is one shared Guardian instance for NCS's own work: development, demos, writing new
+scenarios, and testing agents in NCS's environment before they are handed to a client. Per-client instances inside
+a client's estate are not set up yet.
+
+### Settings
+
+Keep the settings in a file outside the repository (it holds the judge key), for example `~/.config/guardian/ncs.env`:
+
+```bash
+GUARDIAN_TOOLSETS=core,reference,redteam
+GUARDIAN_JUDGE_PROVIDER=azure_ai/gpt-5-6-sol
+GUARDIAN_JUDGE_WHEN=always
+AZURE_AI_API_BASE=https://australiaeast.api.cognitive.microsoft.com/models
+AZURE_AI_API_KEY=...            # from the NCS Azure AI Foundry resource
+GUARDIAN_STATE=VIC              # state public holidays for business-day deadlines
+```
+
+The judge is required: superannuation, energy retail, telecommunications, water, public sector and commercial have
+no deterministic rules, so without it every probe in those industries returns `NOT_SCREENED`. Leave
+`GUARDIAN_SECTORS` unset; it accepts only `gi`, `life`, `phi` and `banking`, and the shared instance serves every
+industry.
+
+### On your own machine (stdio)
+
+```bash
+set -a; source ~/.config/guardian/ncs.env; set +a
+claude mcp add guardian \
+  -e GUARDIAN_TOOLSETS="$GUARDIAN_TOOLSETS" -e GUARDIAN_JUDGE_PROVIDER="$GUARDIAN_JUDGE_PROVIDER" \
+  -e GUARDIAN_JUDGE_WHEN="$GUARDIAN_JUDGE_WHEN" -e GUARDIAN_STATE="$GUARDIAN_STATE" \
+  -e AZURE_AI_API_BASE="$AZURE_AI_API_BASE" -e AZURE_AI_API_KEY="$AZURE_AI_API_KEY" \
+  -- uv --directory /path/to/guardian-compliance-mcp run guardian-compliance-mcp
+```
+
+For Claude Desktop, VS Code or Cursor, put the same variables in the `env` block of the configs under
+[Connecting to MCP Clients](#connecting-to-mcp-clients).
+
+### One server for the team (HTTP)
+
+```bash
+docker build -f Dockerfile.http -t guardian-mcp .
+docker run -d --name guardian -p 8765:8765 \
+  --env-file ~/.config/guardian/ncs.env \
+  -e GUARDIAN_HTTP_TOKEN_FILE=/run/secrets/tokens -v ~/.config/guardian/tokens:/run/secrets/tokens:ro \
+  guardian-mcp
+```
+
+Give each person or tool its own token (one per line in the tokens file) so access can be revoked individually.
+Keep the server on the NCS internal network behind a TLS proxy; see [Remote deployment](#remote-deployment) for the
+proxy, rate limit and replica settings.
+
+### Ground rules
+
+1. **Name the industry on every call.** Pass `sector` to `probe_external_agent` and
+   `audit_agent_for_regulatory_breach`, and `industry` to `get_red_team_scenarios`. Without it a generic role name
+   such as `support_agent` is screened against insurance and banking law.
+2. **Probe test agents only.** Point `probe_external_agent` at NCS-hosted test agents or `mock://` targets, never at
+   a client's production endpoint.
+3. **Judge findings are REVIEW flags.** A person confirms each one before it goes into anything shared outside the
+   team (see [Responsibility and use](#responsibility-and-use)).
+4. **New scenarios are data.** Add them to `src/data/redteam/<industry>.json` and run `uv run pytest -q`;
+   `tests/test_redteam_packs.py` fails if a scenario's category or a cited provision does not resolve.
+
+A typical run: `list_domains`, then `get_red_team_scenarios(industry="telecommunications")`, then
+`probe_external_agent(target_url="https://<test-agent>/chat", sector="telecommunications", auth_token=...)`.
+
+---
+
 ## Remote deployment
 
 Besides stdio, Guardian can run as one central, access-controlled instance over MCP streamable HTTP (`src/http_server.py`). It serves `/mcp` behind bearer-token auth and an unauthenticated `GET /healthz` (`{"status","tools","corpus_hash"}`).
