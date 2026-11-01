@@ -1,0 +1,284 @@
+{
+  "code": "SPS 515",
+  "title": "Prudential Standard SPS 515 Strategic Planning and Member Outcomes",
+  "short_name": "Strategic Planning and Member Outcomes",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2024L00940 (Superannuation (prudential standard) determination No. 5 of 2024)",
+  "source_version": "F2024L00940 as made (registered 31 July 2024; no compilations listed)",
+  "effective_date": "2025-07-01",
+  "amended_date": "2024-07-31",
+  "status": "In Force",
+  "sectors": [
+    "superannuation"
+  ],
+  "entity_types": [
+    "RSE Licensee"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://www.legislation.gov.au/F2024L00940/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the registered instrument.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the Federal Register text of F2024L00940 (status In force, one version, no known future amendments) and APRA's standards page (https://www.apra.gov.au/standards/sps-515), which shows SPS 515 in force from 1 July 2025. Paragraph numbers were taken from the Federal Register text. Made under SIS Act s34C and pursuant to s29XA. Paragraphs 33 to 43 (MySuper authority cancellation and asset transfer) are summarised in one clause. Pooled superannuation trust carve-outs in paragraph 4 are not reproduced. A compliance SME must confirm before reliance.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [
+    "Earlier version of SPS 515 (APRA page: https://www.apra.gov.au/standards/sps-515-superseded)"
+  ],
+  "companion_guidance": [
+    "SIS Act 1993 s52",
+    "CPS 190 Recovery and Exit Planning"
+  ],
+  "summary": "SPS 515 requires every RSE licensee to set Board-approved strategic objectives that support the outcomes it seeks for beneficiaries, maintain a rolling business plan of at least three years, manage fees, reserves, trustee-level resources and expenditure prudently and in the best financial interests of beneficiaries, monitor performance with triggers that include failing the annual performance test, review business performance annually, document the s52(9) outcomes assessment methodology, and take timely remedial action or prepare for transferring beneficiaries when outcomes are not achieved.",
+  "clauses": [
+    {
+      "id": "SPS515-2",
+      "clause_number": "2",
+      "section_name": "Application and commencement",
+      "heading": "Who it applies to and when",
+      "text": "Applies to all RSE licensees from 1 July 2025 (paragraphs 2 and 5). Paragraphs 33 to 43 apply only to RSE licensees that are, or were, authorised to offer a MySuper product (paragraph 3). Some requirements do not apply in relation to pooled superannuation trusts (paragraph 4).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "application",
+        "commencement",
+        "pooled superannuation trust"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-8",
+      "clause_number": "8",
+      "section_name": "Strategic objectives",
+      "heading": "Board-approved strategic objectives",
+      "text": "An RSE licensee must set specific strategic objectives for the sound and prudent management of its business operations that support the outcomes it seeks for beneficiaries, approved by the Board. Paragraph 9 lists what must inform them, including outcomes sought for beneficiaries, the risk appetite statement, the strategies required by SIS Act s52, the most recent business performance review, the best financial interests duty and the sole purpose test.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "strategic objectives",
+        "member outcomes",
+        "Board approval"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-10",
+      "clause_number": "10",
+      "section_name": "Strategic objectives",
+      "heading": "Retirement income strategy review",
+      "text": "An RSE licensee must review the appropriateness, effectiveness and adequacy of its retirement income strategy (SIS Act s52(8A)) at least every three years.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "retirement income strategy",
+        "review"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-11",
+      "clause_number": "11",
+      "section_name": "Business plan",
+      "heading": "Rolling business plan",
+      "text": "An RSE licensee must keep a written, Board-approved rolling business plan of at least three years covering all its business operations and setting out how it will deliver its strategic objectives. The plan must set out key initiatives with cost, funding and expected results (paragraph 12), be supported by financial projections and assumptions (paragraph 13), and be updated annually (paragraph 14).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "business plan",
+        "financial projections"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-16",
+      "clause_number": "16",
+      "section_name": "Financial resource management: setting fees",
+      "heading": "Setting fees",
+      "text": "An RSE licensee must set each fee prudently and transparently, and be able to demonstrate that charging the fee complies with its legal duties and that the fee is appropriate and proportionate. Using a new fee power, or an existing power for the first time, needs Board approval (paragraph 17).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "fees",
+        "fee setting",
+        "Board approval"
+      ],
+      "notes": "",
+      "obligation_type": "pricing",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-18",
+      "clause_number": "18",
+      "section_name": "Financial resource management: reserves",
+      "heading": "Management of reserves",
+      "text": "The reserving strategy must demonstrate the need for and purpose of each reserve, how it is managed, and a target amount or range including how it is built and replenished equitably across cohorts of beneficiaries. Regular reviews must confirm each reserve remains appropriate and is used for its intended purpose (paragraph 19).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "reserves",
+        "intergenerational equity"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-21",
+      "clause_number": "21",
+      "section_name": "Expenditure management",
+      "heading": "Expenditure decisions",
+      "text": "Expenditure decisions must be for the sound and prudent management of the business and consistent with all legal duties, including the best financial interests duty and the sole purpose test. Under paragraph 22 the RSE licensee must positively demonstrate the purpose of the expenditure, why any incidental benefits remain consistent with its duties, how it is funded, and how it will be monitored.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "expenditure",
+        "best financial interests",
+        "sole purpose test"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-23",
+      "clause_number": "23",
+      "section_name": "Monitoring",
+      "heading": "Monitoring and triggers",
+      "text": "An RSE licensee must monitor progress against its strategic objectives and business plan using key performance indicators and triggers that prompt remedial action or transfer planning. Under paragraph 24 the triggers must at least include failing, or expecting to fail, the annual performance assessment in SIS Act s60C(2).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "monitoring",
+        "triggers",
+        "performance test"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-25",
+      "clause_number": "25",
+      "section_name": "Business performance review",
+      "heading": "Annual business performance review",
+      "text": "An RSE licensee must review annually its performance in achieving its strategic objectives and use the results to improve its operations. Paragraph 26 requires the review to assess outcomes for different cohorts of beneficiaries, including those retired or approaching retirement, against internal and external benchmarks and the s52(9) outcomes assessments.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "business performance review",
+        "member outcomes",
+        "cohorts"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-27",
+      "clause_number": "27",
+      "section_name": "Annual outcomes assessment",
+      "heading": "Outcomes assessment methodology",
+      "text": "An RSE licensee must document the methodology for its annual outcomes assessment under SIS Act s52(9), including how it balanced the statutory factors and benchmarks and how it chose comparison products. Paragraphs 28 and 29 set how MySuper comparison factors are calculated and add matters to assess under s52(11)(e).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "outcomes assessment",
+        "methodology",
+        "MySuper"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-30",
+      "clause_number": "30",
+      "section_name": "Remedial action and transfer planning",
+      "heading": "Remedial action and transfer preparation",
+      "text": "An RSE licensee must be able to show it is taking timely remedial action where expected outcomes are not being achieved (paragraph 30), take timely steps to prepare for a transfer of beneficiaries (paragraph 31), and document a timely plan to respond to an APRA determination that a product failed the annual performance assessment under s60D(1) (paragraph 32).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "remedial action",
+        "successor fund transfer",
+        "performance test failure"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS515-33",
+      "clause_number": "33",
+      "section_name": "MySuper authority cancellation",
+      "heading": "Transferring MySuper assets after cancellation",
+      "text": "Paragraphs 33 to 43 apply if APRA cancels, or notifies that it may cancel, an authority to offer a MySuper product. The Board is accountable for transferring affected MySuper assets within the SIS Act s29SAB timeframe; the licensee must prepare a MySuper assets transfer plan within the time APRA specifies, nominate a receiving MySuper product, assist the receiving licensee, and notify APRA within 10 business days once the transfer is complete (paragraph 43).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "MySuper cancellation",
+        "asset transfer",
+        "APRA notification"
+      ],
+      "notes": "",
+      "obligation_type": "reporting",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    }
+  ]
+}

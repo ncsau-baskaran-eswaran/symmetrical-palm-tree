@@ -6,11 +6,12 @@ from functools import lru_cache
 from typing import Any, Dict, FrozenSet, List, Optional, Tuple
 
 from src.config import scoped_sectors
-from src.db import get_clause_by_number, get_standard_by_code
+from src.db import get_clause_by_number, get_standard_by_code, resolve_domain
 from src.rules.catalog import JUDGE_ONLY_CATEGORIES, RULES
 from src.rules.engine import ALL_SECTORS, BANK, GI, INSURANCE, LIFE, PHI, Hit, Ref, evaluate_rule
 from src.redaction import redact_obj
 from src.rules import judge as judge_module
+from src.rules import packs
 from src.provenance import attach_provenance
 from src.tools.notifications import assess_notification_requirements, assess_regulatory_obligations
 
@@ -23,8 +24,15 @@ _SECTOR_ALIASES = {
     "banking": BANK, "bank": BANK, "adi": BANK, "lending": BANK,
 }
 
-# Role keywords, checked in order. Unknown roles run every sector so nothing is silently skipped.
+# Role keywords, checked in order. Unknown roles run the insurance and banking sectors (ALL_SECTORS), as before the
+# industry packs existed; other industries are selected by an explicit sector or one of the role keywords below.
 _ROLE_SECTORS: Tuple[Tuple[str, FrozenSet[str]], ...] = (
+    (r"superannuation|super_fund|super_member|rse_", frozenset({"superannuation"})),
+    (r"energy|electricity", frozenset({"energy_retail"})),
+    (r"telco|telecom", frozenset({"telecommunications"})),
+    (r"water_(retail|utility|billing|customer)", frozenset({"water"})),
+    (r"government|citizen|centrelink", frozenset({"public_sector"})),
+    (r"ecommerce|e_commerce|retail_(support|sales)", frozenset({"commercial"})),
     (r"phi|health|member|hospital|extras", frozenset({PHI})),
     (r"life|tpd|income_protection|ip_claims|trauma|death|salary_continuance", frozenset({LIFE})),
     (r"lending|loan|payment|bank|credit|mortgage|deposit", frozenset({BANK})),
@@ -41,6 +49,11 @@ def resolve_sectors(agent_role: str, sector: Optional[str] = None) -> FrozenSet[
             return ALL_SECTORS
         if s in _SECTOR_ALIASES:
             return frozenset({_SECTOR_ALIASES[s]})
+        domain = resolve_domain(s)
+        if domain:
+            return frozenset(domain["sectors"])
+        if s in packs.pack_sectors():
+            return frozenset({s})
         for key, value in _SECTOR_ALIASES.items():
             if key in s:
                 return frozenset({value})
@@ -126,8 +139,12 @@ def run_audit(
     sectors = resolve_sectors(agent_role, explicit)
     if not explicit:
         # Inferred sectors are narrowed to the server's scope (GUARDIAN_SECTORS). A role that only makes sense
-        # outside the scope (a lending agent on an insurance-only server) keeps its own sector.
-        sectors = (sectors & scoped_sectors()) or sectors
+        # outside an insurance or banking scope (a lending agent on an insurance-only server) keeps its own sector.
+        # On a server scoped to any other industry the scope wins, because role keywords are loose (a super fund's
+        # member_services_agent would otherwise read as private health insurance).
+        scope = scoped_sectors()
+        scope_wins = sectors == ALL_SECTORS or not scope <= ALL_SECTORS
+        sectors = (sectors & scope) or (scope if scope_wins else sectors)
     threshold = float(context.get("materiality_threshold", DEFAULT_MATERIALITY_THRESHOLD))
     prompt_lower = (user_prompt or "").lower()
     resp_lower = (agent_response or "").lower()
@@ -159,7 +176,8 @@ def run_audit(
         agent_response=agent_response,
         sectors=sectors,
         rule_categories=[r.category for r in applicable],
-        extra_categories=list(JUDGE_ONLY_CATEGORIES),
+        # Judge-only insurance categories apply where insurance or banking is screened; packs cover the rest.
+        extra_categories=(list(JUDGE_ONLY_CATEGORIES) if sectors & ALL_SECTORS else []) + list(packs.categories_for(sectors)),
         already_found={v["category"] for v in violations},
         context=context,
         prior_turns=turns,
@@ -218,7 +236,14 @@ def run_audit(
             keys.add(key)
             deduped.append(ob)
 
-    if violations:
+    judge_ran = judge_result.get("enabled") and str(judge_result.get("status", "")).startswith("enabled")
+    if not applicable and not judge_ran:
+        verdict, screen = "INCONCLUSIVE", "NOT_SCREENED"
+        summary = (
+            f"Not screened: no deterministic rules exist for {', '.join(sorted(sectors))} and the semantic judge did not "
+            f"run ({judge_result.get('status', 'disabled')}). Configure GUARDIAN_JUDGE_PROVIDER to screen this industry."
+        )
+    elif violations:
         verdict, screen = "FAILED", "BREACH"
         summary = (
             f"Detected {len(violations)} breach pattern(s) engaging {len(deduped)} obligation(s) across "
@@ -268,6 +293,9 @@ def run_audit(
         "governance_advisory": (
             "Under CPS 230 Paragraph 19, CPS 234 Paragraph 13 and the Financial Accountability Regime, the Board and "
             "accountable persons remain responsible for risks arising from autonomous agents in production."
+            if sectors & ALL_SECTORS else
+            "The deploying organisation remains accountable for what its AI agent says and does. Findings are a "
+            "screen for human review, not legal advice."
         ),
     }
     # Provenance hashes the raw evidence so finding ids stay stable; redaction then masks customer PII in what is

@@ -1,8 +1,10 @@
 """Regulatory instrument registry: SQLite storage and full-text search over the AU insurance corpus.
 
 Every `*.json` file under `src/data/instruments/` is one instrument (APRA prudential standards, Acts, ASIC
-regulatory guides, industry codes, privacy and cyber law). The database is rebuilt whenever the corpus content
-hash changes, so editing a JSON file is enough to update what the MCP serves.
+regulatory guides, industry codes, privacy and cyber law). Every `*.json` file under `src/data/domains/` is one
+industry domain pack (coverage metadata only; applicability comes from instrument and clause `sectors`). The
+database is rebuilt whenever the corpus content hash changes, so editing a JSON file is enough to update what the
+MCP serves.
 """
 
 import hashlib
@@ -47,8 +49,10 @@ def resolve_db_path() -> Path:
 DB_PATH = resolve_db_path()
 DATA_DIR = Path(__file__).parent / "data"
 INSTRUMENTS_DIR = DATA_DIR / "instruments"
+DOMAINS_DIR = DATA_DIR / "domains"
 
-SCHEMA_VERSION = "2"
+SCHEMA_VERSION = "3"
+MAX_SEARCH_LIMIT = 50
 
 _SCHEMA = """
 CREATE TABLE meta (
@@ -98,6 +102,7 @@ CREATE TABLE clauses (
     agent_relevance TEXT,
     sectors TEXT NOT NULL,
     anchor TEXT,
+    source_url TEXT,
     FOREIGN KEY (standard_code) REFERENCES standards(code)
 );
 
@@ -153,7 +158,7 @@ def get_connection() -> sqlite3.Connection:
 
 
 def _corpus_files() -> List[Path]:
-    files = sorted(INSTRUMENTS_DIR.rglob("*.json"))
+    files = sorted(INSTRUMENTS_DIR.rglob("*.json")) + sorted(DOMAINS_DIR.glob("*.json"))
     files += [DATA_DIR / "definitions.json", DATA_DIR / "notifications.json"]
     return [f for f in files if f.exists()]
 
@@ -227,6 +232,30 @@ def load_instrument_files() -> List[Dict[str, Any]]:
     return instruments
 
 
+def load_domains() -> List[Dict[str, Any]]:
+    """Parse every domain pack. Raises on duplicate ids or aliases so corpus mistakes fail loudly."""
+    domains: List[Dict[str, Any]] = []
+    seen: Dict[str, str] = {}
+    for path in sorted(DOMAINS_DIR.glob("*.json")):
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for key in [data["id"], *data.get("aliases", [])]:
+            if key.lower() in seen:
+                raise ValueError(f"Domain key '{key}' in {path.name} already used by '{seen[key.lower()]}'")
+            seen[key.lower()] = data["id"]
+        domains.append(data)
+    return domains
+
+
+def resolve_domain(name: str) -> Optional[Dict[str, Any]]:
+    """Find a domain pack by id or alias ('super', 'superannuation'), case-insensitively."""
+    target = (name or "").strip().lower()
+    for d in load_domains():
+        if target in [d["id"].lower(), *(a.lower() for a in d.get("aliases", []))]:
+            return d
+    return None
+
+
 def _seed_data(cursor: sqlite3.Cursor) -> None:
     known = {
         "code", "title", "short_name", "regulator", "instrument_type", "legislative_instrument",
@@ -269,7 +298,7 @@ def _seed_data(cursor: sqlite3.Cursor) -> None:
             subclauses = cl.get("subclauses", [])
             key_topics = cl.get("key_topics", [])
             cursor.execute(
-                "INSERT INTO clauses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO clauses VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (
                     cl["id"],
                     code,
@@ -286,6 +315,7 @@ def _seed_data(cursor: sqlite3.Cursor) -> None:
                     cl.get("agent_relevance"),
                     json.dumps(cl.get("sectors", inst.get("sectors", []))),
                     cl.get("anchor"),
+                    cl.get("source_url"),
                 ),
             )
             cursor.execute(
@@ -440,8 +470,14 @@ def search_clauses(
     limit: int = 10,
     regulator: Optional[str] = None,
     sector: Optional[str] = None,
+    sectors: Optional[List[str]] = None,
 ) -> List[Dict[str, Any]]:
-    """Hybrid FTS (BM25) and keyword search over clauses, optionally filtered by instrument, regulator or sector."""
+    """Hybrid FTS (BM25) and keyword search over clauses, optionally filtered by instrument, regulator or sector.
+
+    `sectors` matches clauses tagged with any of the given sectors (used for domain filters). Each result carries
+    its instrument's provenance columns (prefixed `std_`) so callers can cite it.
+    """
+    limit = max(1, min(int(limit), MAX_SEARCH_LIMIT))
     code = resolve_instrument_code(standard_code) if standard_code else None
     if standard_code and not code:
         return []
@@ -456,6 +492,9 @@ def search_clauses(
     if sector:
         filters.append("c.sectors LIKE ?")
         filter_params.append(f'%"{sector}"%')
+    if sectors:
+        filters.append("(" + " OR ".join("c.sectors LIKE ?" for _ in sectors) + ")")
+        filter_params.extend(f'%"{s}"%' for s in sectors)
     where_extra = "".join(f" AND {f}" for f in filters)
 
     conn = get_connection()
@@ -467,7 +506,7 @@ def search_clauses(
     if words:
         fts_query = " OR ".join(f'"{w}"*' for w in words)
         sql = f"""
-        SELECT c.*, bm25(clauses_fts) AS rank
+        SELECT c.*, {_STD_COLUMNS}, bm25(clauses_fts) AS rank
         FROM clauses_fts
         JOIN clauses c ON clauses_fts.id = c.id
         JOIN standards s ON s.code = c.standard_code
@@ -483,7 +522,7 @@ def search_clauses(
     if not results:
         like = f"%{query.strip()}%"
         sql = f"""
-        SELECT c.* FROM clauses c JOIN standards s ON s.code = c.standard_code
+        SELECT c.*, {_STD_COLUMNS} FROM clauses c JOIN standards s ON s.code = c.standard_code
         WHERE (c.text LIKE ? OR c.heading LIKE ? OR c.section_name LIKE ? OR c.notes LIKE ?){where_extra}
         LIMIT ?
         """
@@ -492,6 +531,13 @@ def search_clauses(
 
     conn.close()
     return results
+
+
+_STD_COLUMNS = (
+    "s.title AS std_title, s.regulator AS std_regulator, s.source_url AS std_source_url, "
+    "s.verified_on AS std_verified_on, s.text_kind AS std_text_kind, s.status AS std_status, "
+    "s.legislative_instrument AS std_legislative_instrument, s.extra AS std_extra"
+)
 
 
 def get_all_notifications() -> List[Dict[str, Any]]:

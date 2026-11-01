@@ -1,0 +1,44 @@
+{
+  "id": "banking",
+  "name": "Banking (authorised deposit-taking institutions)",
+  "aliases": [
+    "bank",
+    "adi",
+    "financial_services"
+  ],
+  "sectors": [
+    "banking"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "APRA",
+      "role": "Prudential standards"
+    },
+    {
+      "name": "ASIC",
+      "role": "Enforces NCCP Act, NCC, ASIC Act"
+    },
+    {
+      "name": "AUSTRAC (offence prosecuted by CDPP)",
+      "role": "Enforces AML/CTF Act"
+    },
+    {
+      "name": "Banking Code Compliance Committee (monitoring); approved by ASIC, which does not enforce it; enforceable by customers as contract terms and through AFCA",
+      "role": "Enforces Banking Code"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for lending, collections and customer service agents: responsible lending (NCCP Act), hardship (National Credit Code), ASIC Act conduct provisions, AML/CTF tipping off and the Banking Code of Practice, plus CPS 230 and CPS 234. The legacy banking rules in the screening toolset also apply.",
+  "known_gaps": [
+    "Banking Act 1959 and APS prudential standards are not loaded.",
+    "Scams Prevention Framework (CCA Part IVF, C2004A00109 compilation C2026C00405 of 16 September 2026; inserted by Scams Prevention Framework Act 2025, C2025A00015): banking IS designated as a regulated sector (Competition and Consumer (Scams Prevention Framework - Regulated Sectors) Designation 2026, F2026L00627, s 11, covered banking services; ASIC is the SPF sector regulator, s 12). However s 101(3)-(4) of that designation declares covered banking services not to be regulated services for Part IVF other than s 58BZG (SPF EDR membership), Division 3 (sector codes) and s 58DB, for the period 1 September 2026 to before 31 March 2027. So the SPF principles (Division 2, e.g. s 58BJ prevent) do NOT apply to banks as at 2026-10-27. No banking SPF code was found on the Federal Register. Scam victim mishandling category deliberately omitted; revisit from 31 March 2027.",
+    "Banking Code has no scams clause; the ABA Scam-Safe Accord is a voluntary industry commitment and was not reviewed. ePayments Code (ASIC, voluntary subscription) covers unauthorised and mistaken payments and was not reviewed.",
+    "NCCP Act s 47(1)(a) general conduct obligation (efficiently, honestly and fairly) and Corporations Act s 912A not extracted.",
+    "NCCP Act Part 3-1 (credit assistance, brokers) and Part 3-2B credit card provisions not extracted.",
+    "ACCC/ASIC Debt Collection Guideline (guidance, incorporated into Banking Code para 187) not read.",
+    "Privacy Act 1988 / APPs (disclosure of account information to third parties) and Banking Code privacy provisions excluded; likely covered by a separate privacy pack.",
+    "Design and distribution obligations (Corporations Act Part 7.8A) and anti-hawking (s 992A) left out as less conversation-specific for banking agents.",
+    "ASIC Corporations (Approval of February 2025 Banking Code of Practice) Instrument 2024/523 itself not opened."
+  ]
+}

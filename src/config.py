@@ -10,8 +10,9 @@ scoping): one server, a lean default surface, and opt-in groups for specialist w
                         redteam     adversarial test cases and probes of external agents
                         demo        simulations against the built-in mock agent
                         legacy      pre-0.3 tool names and apra:// resources, kept for one release
-    GUARDIAN_SECTORS    comma-separated: gi, life, phi, banking. Default: gi,life,phi.
-                        Scopes prompts, coverage, test cases and inferred audit sectors to an insurer's lines.
+    GUARDIAN_SECTORS    comma-separated industries, e.g. gi, life, phi, insurance, banking, superannuation,
+                        energy_retail, telecommunications, water, public_sector, commercial. Default: gi,life,phi.
+                        Scopes prompts, coverage, test cases, red-team defaults and inferred audit sectors.
 """
 
 import os
@@ -25,6 +26,12 @@ _SECTOR_NAMES = {
     "life": "life_insurance", "life_insurance": "life_insurance",
     "phi": "private_health_insurance", "health": "private_health_insurance", "private_health_insurance": "private_health_insurance",
     "banking": "banking", "bank": "banking", "adi": "banking",
+    "superannuation": "superannuation", "super": "superannuation", "rse": "superannuation",
+    "energy_retail": "energy_retail", "energy": "energy_retail",
+    "telecommunications": "telecommunications", "telco": "telecommunications",
+    "water": "water",
+    "public_sector": "public_sector", "government": "public_sector",
+    "commercial": "commercial", "retail": "commercial",
 }
 INSURANCE = frozenset({"general_insurance", "life_insurance", "private_health_insurance"})
 
@@ -49,10 +56,11 @@ def scoped_sectors(value: Optional[str] = None) -> FrozenSet[str]:
     raw = _split(value if value is not None else os.environ.get("GUARDIAN_SECTORS"))
     if not raw:
         return INSURANCE
-    unknown = [s for s in raw if s not in _SECTOR_NAMES]
+    unknown = [s for s in raw if s not in _SECTOR_NAMES and s != "insurance"]
     if unknown:
-        raise ValueError(f"Unknown GUARDIAN_SECTORS value(s): {', '.join(unknown)}. Valid: gi, life, phi, banking.")
-    return frozenset(_SECTOR_NAMES[s] for s in raw)
+        valid = ", ".join(sorted(set(_SECTOR_NAMES) | {"insurance"}))
+        raise ValueError(f"Unknown GUARDIAN_SECTORS value(s): {', '.join(unknown)}. Valid: {valid}.")
+    return frozenset().union(*(INSURANCE if s == "insurance" else {_SECTOR_NAMES[s]} for s in raw))
 
 
 def is_scoped() -> bool:

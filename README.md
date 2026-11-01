@@ -3,6 +3,12 @@
 An MCP server that screens AI agents used by Australian insurers against the laws and codes they actually breach in
 conversation. It covers general, life and private health insurance, and keeps the original APRA banking (ADI) scenarios.
 
+Coverage is organised as **industry domain packs** over one shared, cited source library: insurance, banking,
+superannuation, energy retail, telecommunications, water, Commonwealth public sector and commercial (see
+[Coverage by industry](#coverage-by-industry)). Call `list_domains` to see each domain's
+regulators, coverage level, verification dates and known gaps. Why one server rather than one per industry, and how
+to add a domain: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/ADDING_A_DOMAIN.md`](docs/ADDING_A_DOMAIN.md).
+
 It answers three questions for an AI platform or compliance team:
 
 1. **What can this agent breach?** `get_obligations` lists the rule categories that apply to an agent's role and
@@ -17,6 +23,22 @@ It answers three questions for an AI platform or compliance team:
 > semantic judge raises REVIEW flags for rewordings the rules miss. Measured recall and precision on a blind
 > paraphrase corpus are published in [`reports/detection_metrics.md`](reports/detection_metrics.md). Obligations
 > are stored as paraphrased summaries with source links and verification dates, not as legal advice.
+
+### Responsibility and use
+
+NCS uses Guardian as a test aid while it builds and tests AI agents in a client's environment. Suggested wording for
+a statement of work:
+
+> Guardian output (findings, review flags, citations, scores and reports) is a testing aid provided to the Client's
+> risk and compliance team. It is not legal, regulatory or compliance advice and does not certify that an agent
+> complies with any law, code or standard. The Client is responsible for validating each finding against the source
+> obligation, deciding whether a breach has occurred, remediating its agent, and making any notification to a
+> regulator or other party. The Client owns the compliance obligations of its business and of the agents it
+> deploys, including accountability under its own risk management framework (for APRA-regulated entities, CPS 230).
+> A probe that passes, or a run with no findings, is not evidence that no obligation was breached.
+
+Detection accuracy figures in this repository come from small, single-author test sets and are for internal use;
+do not quote them to clients as a performance commitment.
 
 ---
 
@@ -33,8 +55,64 @@ It answers three questions for an AI platform or compliance team:
 | Discrimination | DDA 1992 s46, SDA 1984 s41, ADA 2004 s37 | Underwriting statements on protected attributes |
 | Accountability and AI | FAR Act 2023, ASIC REP 798, Voluntary AI Safety Standard and later guidance | Governance checklist items (not runtime breaches) |
 | Watch list | CDR, Scams Prevention Framework Act 2025, AML/CTF tranche 2 | Mapped as not yet applicable to insurers |
+| Superannuation (reference) | SIS Act 1993 (s52 and s52A covenants, s54B), SPS 515, SPS 530, RG 271 super complaint timeframes (RG 271.79, RG 271.80), plus CPS 230 and CPS 234 | Trustee duties, member outcomes, investment governance, complaint timeframes; verified 2026-10-27, no screening rules |
 
 Call `list_instruments` for the live list with source URLs and verification dates.
+
+## Coverage by industry
+
+NCS uses Guardian to red-team the AI agents it builds for clients. Each industry has a red-team pack
+(`src/data/redteam/<industry>.json`): breach categories a conversational agent can commit, the verified provisions
+each one cites, and adversarial scenarios. Insurance and banking also have the deterministic rules described below.
+
+| Industry | Instruments | Deterministic rule categories | Judge categories | Scenarios |
+| :--- | ---: | ---: | ---: | ---: |
+| Insurance (general, life, private health) | 44 | 23 | 2 | built-in suite |
+| Banking | 8 | 3 | 7 | 14 plus built-in suite |
+| Superannuation | 7 | 0 | 7 | 14 |
+| Energy retail | 5 | 0 | 10 | 20 |
+| Telecommunications | 7 | 0 | 11 | 22 |
+| Water | 4 | 0 | 7 | 14 |
+| Commonwealth public sector | 4 | 0 | 7 | 14 |
+| Commercial (retail and consumer services) | 3 | 0 | 8 | 16 |
+
+### Instruments by industry
+
+Every instrument carries a verification date; CPS 230 and CPS 234 were re-verified on 2026-11-01.
+
+| Industry | Instruments (regulator) |
+| :--- | :--- |
+| Insurance | **APRA:** CPS 190, 220, 230, 234, 510, 511, 520, 900; CPG 230, 234, 235; GPS 230; LPS 230; capital and valuation standards; AI letter 2026. **ASIC:** ICA 1984, ASIC Act 2001, Corporations Act 2001, RG 38, RG 78, RG 271, RG 274, REP 768, REP 798, genetic testing ban. **APRA and ASIC:** FAR Act 2023. **Codes:** GI Code, Life Code, PHI Code. **Health:** PHI Act 2007, Complying Product Rules. **OAIC:** Privacy Act 1988. **ACCC:** ACL, SPF Act 2025, CDR. **AUSTRAC:** AML/CTF Act 2006. **AHRC:** DDA 1992, SDA 1984, ADA 2004. **Cyber:** SOCI Act 2018, Cyber Security Act 2024. **AI guidance:** VAISS, Guidance for AI Adoption, National AI Plan 2025 |
+| Banking | **APRA:** CPS 230, CPS 234. **ASIC:** ASIC Act 2001, NCCP Act, National Credit Code. **AUSTRAC:** AML/CTF Act. **Code:** Banking Code. **OAIC:** Privacy Act 1988 |
+| Superannuation | **APRA:** SIS Act 1993, SPS 515, SPS 530, CPS 230, CPS 234. **ASIC:** RG 271 (super complaint timeframes). **OAIC:** Privacy Act 1988 |
+| Energy retail | **AER:** NERL. **ESC Vic:** Electricity Industry Act (Vic), Energy Retail Code of Practice. **ACCC:** ACL. **OAIC:** Privacy Act 1988 |
+| Telecommunications | **ACMA:** TCP Code, Complaints Standard, Hardship Standard, Identity Determination, Pre-Porting Standard. **ACCC:** ACL. **OAIC:** Privacy Act 1988 |
+| Water | **ESC Vic:** Water Industry Act 1994 (Vic), Water Industry Standard (Urban Customer Service). **IPART NSW:** Sydney Water Operating Licence, Sydney Water Customer Contract |
+| Commonwealth public sector | **OAIC:** FOI Act 1982, Privacy Act 1988. **ART:** ART Act 2024. **Commonwealth Ombudsman:** automated decision-making guide |
+| Commercial | **ACCC:** ACL. **ACMA:** Spam Act 2003. **OAIC:** Privacy Act 1988 |
+
+The Privacy Act is not tagged for water: water corporations are State authorities, outside the Commonwealth APPs.
+
+### Breach categories by industry
+
+| Industry | Deterministic rules | Judge only (REVIEW flags) |
+| :--- | :--- | :--- |
+| Insurance | Claim denial without authority, claim discouragement, complaint not recognised, missing AFCA referral, hallucinated cover, pricing misrepresentation, hawking, DDO outside target market, disclosure coaching, missing general advice warning, personal advice without authorisation, discriminatory underwriting, genetic test request, vulnerability or hardship ignored, unauthorised critical operation commitment, PII leak, disclosure without ID verification, sensitive information over-collection, system prompt exfiltration; PHI only: community rating breach, Medicare benefit promise, waiting period waiver | Claim timeframe misstatement, unfair claims handling |
+| Banking | Unauthorised credit or payment commitment, PII leak, system prompt exfiltration | Hardship request ignored, enforcement threat during hardship, collections harassment, credit commitment without assessment, misleading rates or fees, AML tipping off, vulnerable customer not supported |
+| Superannuation | | Complaint mishandled, death benefit objection dismissed, insurance claim discouraged, member interest conflict, plus privacy baseline |
+| Energy retail | | Ignoring a life support declaration, threatening or misstating disconnection, hardship assistance not offered, payment plan refused, enrolment without explicit informed consent, misleading price or discount, misstating consent dispute rights, plus privacy baseline |
+| Telecommunications | | Hardship not recognised, disconnection threat in hardship, complaint not recognised, complaint timeframe misstated, TIO not disclosed, high-risk transaction without authentication, irresponsible or pressure selling, misleading claims, plus privacy baseline |
+| Water | | Payment assistance not offered, restriction or legal action threatened in hardship, life support or special needs ignored, collecting a disputed amount, insensitive collection communication, misleading billing statement, complaint or ombudsman not mentioned |
+| Commonwealth public sector | | Eligibility advice presented as a decision, review rights omitted or denied, opaque automated decision, no human or accessible alternative, FOI request mishandled, unnecessary personal information collected, personal information disclosed |
+| Commercial | | Consumer guarantee denial, misleading representation, pressure selling or exploitation, reliance on an unfair term, marketing without consent, plus privacy baseline |
+
+The privacy baseline (`src/data/redteam/baseline.json`) adds disclosure without identity verification, sensitive
+information over-collection and unauthorised third-party disclosure.
+
+`get_red_team_scenarios(industry)` lists the scenarios; `probe_external_agent(target_url, sector=<industry>)` runs
+them against an agent endpoint. Industries without rules depend on the semantic judge: with no judge configured a
+reply is `INCONCLUSIVE` / `NOT_SCREENED`, never a pass. Sources were verified from primary text on 2026-10-27 and are
+not yet signed off by a compliance SME; per-industry known gaps are in `list_domains`.
 
 ## What the screen detects
 
@@ -64,6 +142,25 @@ tuned on `dev` only; `holdout` was never tuned against. Results on holdout (120 
 | :--- | ---: | ---: |
 | Rules only (offline, deterministic) | 32% | 93% |
 | Rules plus local judge (Ollama `qwen3:14b`, judge hits are REVIEW flags) | 73% | 80% |
+| Rules plus hosted judge (Azure AI Foundry `gpt-5-6-sol`, Australia East, 2026-10-27) | 96% | 91% |
+
+Industry packs, holdout, Azure judge (2026-10-27). Each set was written by one author who had not seen the category
+descriptions and has **not** been reviewed by an SME; with 15 to 40 lines per pack, treat these as indicative only.
+
+| Pack | Lines (breach) | Recall | Precision |
+| :--- | ---: | ---: | ---: |
+| Superannuation | 20 (12) | 100% | 92% |
+| Privacy baseline | 15 (9) | 100% | 100% |
+| Commercial | 25 (15) | 100% | 94% |
+| Banking | 35 (21) | 95% | 100% |
+| Energy retail | 35 (21) | 95% | 91% |
+| Telecommunications | 40 (24) | 92% | 88% |
+| Water | 35 (21) | 86% | 100% |
+| Commonwealth public sector | 35 (21) | 100% | 100% |
+
+Misses are mostly terse omissions (a reply that simply never offers payment assistance); the most common false alarm
+is `DISCLOSURE_WITHOUT_IDENTITY_VERIFICATION` on account actions taken for the caller. Per-pack reports:
+`reports/detection_metrics_holdout_<pack>_judge-azure_ai-gpt-5-6-sol-default.md`.
 
 The rules reach 100% on the dev set they were tuned on, but they do not generalise to new phrasing. A rule hit is
 usually right; an empty result is not evidence of compliance. Production use should enable the judge and route REVIEW
@@ -85,8 +182,17 @@ Every `audit_agent_for_regulatory_breach` result carries, alongside the verdict 
   credit acknowledgements the agent made in earlier turns.
 
 ### Optional semantic judge
-Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai` or `ollama` (with the provider's API key, and optionally
-`GUARDIAN_JUDGE_MODEL`). The judge may only choose catalogue categories, must quote evidence that exists in the
+Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai`, `azure_ai` or `ollama` (with the provider's API key, and
+optionally `GUARDIAN_JUDGE_MODEL`, or use `provider/model`). NCS's default is Azure AI Foundry in Australia East, so
+transcripts stay in an Australian region:
+
+```bash
+export GUARDIAN_JUDGE_PROVIDER=azure_ai/gpt-5-6-sol
+export AZURE_AI_API_BASE=https://australiaeast.api.cognitive.microsoft.com/models
+export AZURE_AI_API_KEY=...   # from the NCS Azure AI Foundry resource
+```
+
+ The judge may only choose catalogue categories, must quote evidence that exists in the
 response, and its findings are REVIEW flags, never automatic breaches. Without it the screen is fully offline and
 deterministic.
 
@@ -114,30 +220,37 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | Variable | Values | Default |
 | :--- | :--- | :--- |
 | `GUARDIAN_TOOLSETS` | comma-separated `core`, `reference`, `governance`, `redteam`, `demo`, `legacy`, or `all` | `core,reference` |
-| `GUARDIAN_SECTORS` | comma-separated `gi`, `life`, `phi`, `banking` | `gi,life,phi` |
-| `GUARDIAN_JUDGE_PROVIDER` | `ollama`, `anthropic`, `openai` (optional semantic judge) | off |
+| `GUARDIAN_SECTORS` | comma-separated industries: `gi`, `life`, `phi` (or `insurance` for all three), `banking`, `superannuation`, `energy_retail`, `telecommunications`, `water`, `public_sector`, `commercial` | `gi,life,phi` |
+| `GUARDIAN_JUDGE_PROVIDER` | `azure_ai`, `anthropic`, `openai`, `ollama`, optionally as `provider/model` (semantic judge) | off |
 | `GUARDIAN_JUDGE_WHEN` | `always`, `rule_clean`, `off`: when the judge runs | `rule_clean` |
 | `GUARDIAN_JUDGE_BUDGET_MS` | Hard wall-clock budget per judge call | 4000 |
 | `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address, date of birth and person names in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
 | `GUARDIAN_REDACT_NAMES` | `0` turns off person-name masking only (names after cues such as customer or Mr, and common given names followed by a surname, become `[NAME]`); inherits `GUARDIAN_REDACT` | `1` |
 | `GUARDIAN_STATE` | `NSW`, `VIC`, `QLD`, `WA`, `SA`, `TAS`, `ACT` or `NT`: state public holidays in business-day deadlines (2025-2027; other years use national holidays and say so in `day_basis`) | national only |
 
-`GUARDIAN_SECTORS` scopes the server to an insurer's lines. A health fund sets `phi` and sees only private health
-prompts, instruments and test cases; a group writing general and life sets `gi,life`. The audit tool still accepts a
-`sector` per call, which overrides the scope for that call.
+`GUARDIAN_SECTORS` scopes the server to one client's industries. A health fund sets `phi` and sees only private
+health prompts, instruments and test cases; a telco sets `telecommunications`; a bank with an insurance arm sets
+`banking,gi`. Red-team tools default to the scope, and an audit whose role does not name an industry is screened
+against it. A `sector` passed on a call still overrides the scope for that call. See
+[`docs/CLIENT_DEPLOYMENT.md`](docs/CLIENT_DEPLOYMENT.md).
 
 ### Toolsets
 
 | Toolset | Tools | Default |
 | :--- | :--- | :--- |
 | `core` | `audit_agent_for_regulatory_breach`, `triage_customer_message`, `check_claim_timeframe`, `assess_regulatory_obligations`, `map_finding_to_obligations`, `get_obligations`, `get_coverage_map` | on |
-| `reference` | `list_instruments` (pass `code` for one instrument), `lookup_clause`, `search_regulations`, `lookup_definition` | on |
+| `reference` | `list_domains`, `list_instruments` (pass `code` for one instrument, or `domain`), `lookup_clause`, `search_regulations` (`domain` filter), `lookup_definition` | on |
 | `governance` | `get_cps230_requirements`, `check_agent_architecture_compliance`, `analyze_agent_code` | off |
-| `redteam` | `get_insurance_red_team_test_cases`, `probe_external_agent`, `run_autonomous_red_team_probe` (these call external agent endpoints) | off |
+| `redteam` | `get_red_team_scenarios`, `get_insurance_red_team_test_cases`, `probe_external_agent`, `run_autonomous_red_team_probe` (these call external agent endpoints) | off |
 | `demo` | `simulate_agent_red_team_audit`, `compare_simulated_agent_guardrails` | off |
 | `legacy` | pre-0.3 names: `list_supported_standards`, `get_standard_summary`, `assess_incident_notification`, `get_critical_operations`, `get_material_service_providers`, `get_contract_requirements`, `get_standards_interaction`, `get_sector_adversarial_test_suite`, `probe_external_agent_for_apra_breaches`, `run_autonomous_mcp_red_team_probe`, and the `apra://` resources | off |
 
-Measured tool-definition size: default 11 tools, ~3,200 tokens; `core` only 7 tools, ~2,300; `all` 29 tools, ~8,200.
+Measured tool-definition size (before `list_domains` was added): default 11 tools, ~3,200 tokens; `core` only 7 tools, ~2,300; `all` 29 tools, ~8,200. Default is now 12 tools and `all` 30.
+
+Reference answers are traceable: each `search_regulations` and `lookup_clause` result has an `evidence` block
+(`source_url`, `pinpoint`, `version`, `verified_on`, `current_status`, `expert_reviewed`, and `statement_kinds`
+marking the text as a paraphrase of the source and the notes as editorial summary) plus a not-legal-advice
+disclaimer. A search with no match returns `supporting_evidence: false` and says that this does not mean no obligation exists.
 
 ### Resources
 * `guardian://instruments/{code}`: full paraphrased text of any instrument (for example `guardian://instruments/ICA-1984`).
@@ -178,7 +291,8 @@ HTTP in `vulnerable`, `hardened` or `guarded` mode (see [AGENT_SERVICE.md](AGENT
 
 ### Installation
 ```bash
-cd apra-mcp
+git clone https://github.com/ncsau-innovation/guardian-compliance-mcp.git
+cd guardian-compliance-mcp
 uv sync
 ```
 
@@ -186,7 +300,7 @@ uv sync
 The project builds as a wheel (`hatchling`), so it runs from any directory without a repo checkout:
 ```bash
 uv build                                   # dist/guardian_compliance_mcp-*.whl
-uvx --from /path/to/apra-mcp guardian-compliance-mcp
+uvx --from /path/to/guardian-compliance-mcp guardian-compliance-mcp
 # or: pip install dist/*.whl && guardian-compliance-mcp
 ```
 The registry database is written beside the code when that directory is writable, otherwise to
@@ -197,6 +311,75 @@ The registry database is written beside the code when that directory is writable
 ```bash
 uv run pytest -v
 ```
+
+---
+
+## Shared NCS instance
+
+The current deployment model is one shared Guardian instance for NCS's own work: development, demos, writing new
+scenarios, and testing agents in NCS's environment before they are handed to a client. Per-client instances inside
+a client's estate are not set up yet.
+
+### Settings
+
+Keep the settings in a file outside the repository (it holds the judge key), for example `~/.config/guardian/ncs.env`:
+
+```bash
+GUARDIAN_TOOLSETS=core,reference,redteam
+GUARDIAN_JUDGE_PROVIDER=azure_ai/gpt-5-6-sol
+GUARDIAN_JUDGE_WHEN=always
+AZURE_AI_API_BASE=https://australiaeast.api.cognitive.microsoft.com/models
+AZURE_AI_API_KEY=...            # from the NCS Azure AI Foundry resource
+GUARDIAN_STATE=VIC              # state public holidays for business-day deadlines
+```
+
+The judge is required: superannuation, energy retail, telecommunications, water, public sector and commercial have
+no deterministic rules, so without it every probe in those industries returns `NOT_SCREENED`. Leave
+`GUARDIAN_SECTORS` unset so the shared instance serves every industry (a client instance sets it; see
+[`docs/CLIENT_DEPLOYMENT.md`](docs/CLIENT_DEPLOYMENT.md)).
+
+### On your own machine (stdio)
+
+```bash
+set -a; source ~/.config/guardian/ncs.env; set +a
+claude mcp add guardian \
+  -e GUARDIAN_TOOLSETS="$GUARDIAN_TOOLSETS" -e GUARDIAN_JUDGE_PROVIDER="$GUARDIAN_JUDGE_PROVIDER" \
+  -e GUARDIAN_JUDGE_WHEN="$GUARDIAN_JUDGE_WHEN" -e GUARDIAN_STATE="$GUARDIAN_STATE" \
+  -e AZURE_AI_API_BASE="$AZURE_AI_API_BASE" -e AZURE_AI_API_KEY="$AZURE_AI_API_KEY" \
+  -- uv --directory /path/to/guardian-compliance-mcp run guardian-compliance-mcp
+```
+
+For Claude Desktop, VS Code or Cursor, put the same variables in the `env` block of the configs under
+[Connecting to MCP Clients](#connecting-to-mcp-clients).
+
+### One server for the team (HTTP)
+
+```bash
+docker build -f Dockerfile.http -t guardian-mcp .
+docker run -d --name guardian -p 8765:8765 \
+  --env-file ~/.config/guardian/ncs.env \
+  -e GUARDIAN_HTTP_TOKEN_FILE=/run/secrets/tokens -v ~/.config/guardian/tokens:/run/secrets/tokens:ro \
+  guardian-mcp
+```
+
+Give each person or tool its own token (one per line in the tokens file) so access can be revoked individually.
+Keep the server on the NCS internal network behind a TLS proxy; see [Remote deployment](#remote-deployment) for the
+proxy, rate limit and replica settings.
+
+### Ground rules
+
+1. **Name the industry on every call.** Pass `sector` to `probe_external_agent` and
+   `audit_agent_for_regulatory_breach`, and `industry` to `get_red_team_scenarios`. Without it a generic role name
+   such as `support_agent` is screened against insurance and banking law.
+2. **Probe test agents only.** Point `probe_external_agent` at NCS-hosted test agents or `mock://` targets, never at
+   a client's production endpoint.
+3. **Judge findings are REVIEW flags.** A person confirms each one before it goes into anything shared outside the
+   team (see [Responsibility and use](#responsibility-and-use)).
+4. **New scenarios are data.** Add them to `src/data/redteam/<industry>.json` and run `uv run pytest -q`;
+   `tests/test_redteam_packs.py` fails if a scenario's category or a cited provision does not resolve.
+
+A typical run: `list_domains`, then `get_red_team_scenarios(industry="telecommunications")`, then
+`probe_external_agent(target_url="https://<test-agent>/chat", sector="telecommunications", auth_token=...)`.
 
 ---
 
@@ -244,10 +427,10 @@ Add to `claude_desktop_config.json`, then fully quit and reopen Claude Desktop:
 {
   "mcpServers": {
     "guardian-compliance": {
-      "command": "/path/to/apra-mcp/.venv/bin/python",
+      "command": "/path/to/guardian-compliance-mcp/.venv/bin/python",
       "args": ["-m", "src.server"],
-      "cwd": "/path/to/apra-mcp",
-      "env": {"PYTHONPATH": "/path/to/apra-mcp"}
+      "cwd": "/path/to/guardian-compliance-mcp",
+      "env": {"PYTHONPATH": "/path/to/guardian-compliance-mcp"}
     }
   }
 }
@@ -260,7 +443,7 @@ Or, without a checkout path or virtualenv, using the packaged entrypoint:
   "mcpServers": {
     "guardian-compliance": {
       "command": "uvx",
-      "args": ["--from", "/path/to/apra-mcp", "guardian-compliance-mcp"]
+      "args": ["--from", "/path/to/guardian-compliance-mcp", "guardian-compliance-mcp"]
     }
   }
 }
@@ -271,7 +454,7 @@ The repo ships `.vscode/mcp.json` with a `guardian-compliance` stdio server. Ope
 the MCP view, and pick its tools in agent mode.
 
 ### 3. Cursor, Goose and other stdio clients
-* **Command**: `/path/to/apra-mcp/.venv/bin/python`
+* **Command**: `/path/to/guardian-compliance-mcp/.venv/bin/python`
 * **Arguments**: `["-m", "src.server"]` with the repo as working directory.
 
 ### 4. MCP Inspector
@@ -284,7 +467,7 @@ npx @modelcontextprotocol/inspector .venv/bin/python -m src.server
 ## Project Structure
 
 ```
-apra-mcp/
+guardian-compliance-mcp/
 ├── src/
 │   ├── server.py              # FastMCP server (guardian-compliance-mcp)
 │   ├── db.py                  # Instrument registry: SQLite + FTS5, rebuilt when the corpus changes
@@ -323,6 +506,7 @@ apra-mcp/
 ---
 
 ## Further reading
+- [docs/CLIENT_DEPLOYMENT.md](docs/CLIENT_DEPLOYMENT.md): running Guardian for one client engagement, by industry.
 - [docs/PRODUCTION_READINESS.md](docs/PRODUCTION_READINESS.md): what is production ready, what is open, and what needs people.
 - [docs/CORPUS_REVIEW.md](docs/CORPUS_REVIEW.md): the expert sign-off pack for the regulatory corpus.
 - [reports/detection_metrics.md](reports/detection_metrics.md): measured detection quality on the blind corpus.

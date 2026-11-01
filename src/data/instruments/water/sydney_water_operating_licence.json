@@ -1,0 +1,62 @@
+{
+  "code": "Sydney Water Operating Licence",
+  "title": "Sydney Water Operating Licence 2024-2028",
+  "short_name": "Sydney Water Operating Licence",
+  "regulator": "IPART NSW (licence granted under s 12 Sydney Water Act 1994 (NSW))",
+  "instrument_type": "legislative_instrument",
+  "legislative_instrument": "",
+  "source_version": "Operating Licence 2024-2028, term of 4 years from 1 July 2024 (cl 4)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "water"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://sydneywater.com.au/content/dam/sydneywater/documents/sydney-water-operating-licence-2024-2028.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Operating Licence 2024-2028, term of 4 years from 1 July 2024 (cl 4)). Who is bound: NSW, Sydney Water Corporation, within the area of operations in Schedule A (cl 3). Dictionary: 'licence means this operating licence granted under section 12 of the Act to Sydney Water'. Clause text is paraphrased from the source. Not verified: Instrument type is a best fit: it is a licence granted by the Governor under the Act, not a registered legislative instrument. Licence breach consequences under the Sydney Water Act 1994 were not read. The copy read is from Sydney Water's site, not IPART's.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Sydney Water Operating Licence 2024-2028. Bound: NSW, Sydney Water Corporation, within the area of operations in Schedule A (cl 3). Dictionary: 'licence means this operating licence granted under section 12 of the Act to Sydney Water'.",
+  "clauses": [
+    {
+      "id": "SYDNEY_WATER_OPERATING_LICENCE-23",
+      "clause_number": "23",
+      "section_name": "",
+      "heading": "Payment assistance options",
+      "text": "Sydney Water must implement and comply with its payment assistance policy and give it to each residential customer it identifies as experiencing payment difficulty within one business day of identifying them.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 23(2), 23(4)(c). Agent identifies payment difficulty but does not trigger provision of the payment assistance policy or apply it.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "SYDNEY_WATER_OPERATING_LICENCE-27",
+      "clause_number": "27",
+      "section_name": "",
+      "heading": "External dispute resolution scheme",
+      "text": "Sydney Water must be a member of EWON or an alternative external dispute resolution scheme.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 27(1). Context for EWON referral obligations. Licence cl 26 also requires an AS 10002:2022 consistent complaints procedure from 1 July 2025.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    }
+  ]
+}

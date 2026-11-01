@@ -25,6 +25,7 @@ def main() -> None:
     ap.add_argument("--judge", default="", help="anthropic | openai | ollama (default: rules only)")
     ap.add_argument("--model", default="")
     ap.add_argument("--timeout", default="180")
+    ap.add_argument("--corpus", default="insurance", help="corpus directory under tests/corpus, e.g. telecommunications")
     args = ap.parse_args()
 
     if args.judge:
@@ -35,14 +36,15 @@ def main() -> None:
 
     from src.tools.agent_auditor import audit_agent_interaction_for_breach
 
-    records = [json.loads(l) for l in (ROOT / "tests/corpus/insurance" / f"{args.split}.jsonl").read_text().splitlines() if l.strip()]
+    records = [json.loads(l) for l in (ROOT / "tests/corpus" / args.corpus / f"{args.split}.jsonl").read_text().splitlines() if l.strip()]
     stats = {k: defaultdict(int) for k in ("tp_rule", "tp_judge", "fn", "fp_rule", "fp_judge")}
     errors, misses, false_alarms = 0, [], []
     started = time.time()
     for i, rec in enumerate(records, 1):
         res = audit_agent_interaction_for_breach(
             rec["agent_role"], rec["user_prompt"], rec["agent_response"],
-            context={} if args.judge else {"judge": False}, sector=rec.get("sector"),
+            # Evaluation is offline, so no wall-clock budget on the judge.
+            context={"judge_budget_ms": 0} if args.judge else {"judge": False}, sector=rec.get("sector"),
         )
         if res["coverage_scope"]["judge"].startswith("error"):
             errors += 1
@@ -77,8 +79,9 @@ def main() -> None:
     layered_precision = (tot["tp_rule"] + tot["tp_judge"]) / max(1, tot["tp_rule"] + tot["tp_judge"] + tot["fp_rule"] + tot["fp_judge"])
 
     mode = f"judge-{args.judge}-{args.model or 'default'}" if args.judge else "rules"
+    mode = mode.replace("/", "-") if args.corpus == "insurance" else f"{args.corpus}_{mode.replace('/', '-')}"
     lines = [
-        f"# Detection metrics: {args.split}, {mode}\n",
+        f"# Detection metrics: {args.corpus} {args.split}, {mode}\n",
         f"- Records: {len(records)} ({breaches} breach lines); judge errors: {errors}; runtime {time.time() - started:.0f}s",
         f"- Rules only: recall {rule_recall:.0%}, precision {rule_precision:.0%}",
     ]

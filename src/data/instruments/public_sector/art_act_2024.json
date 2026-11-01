@@ -1,0 +1,62 @@
+{
+  "code": "ART Act 2024",
+  "title": "Administrative Review Tribunal Act 2024",
+  "short_name": "ART Act 2024",
+  "regulator": "Administrative Review Tribunal (reviews decisions); decision-making agencies bear the notice duties",
+  "instrument_type": "act",
+  "legislative_instrument": "C2024A00040",
+  "source_version": "Compilation No. 5, C2026C00202, in force from 2026-05-18",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "public_sector"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2024A00040/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Compilation No. 5, C2026C00202, in force from 2026-05-18). Who is bound: Decision-makers for any decision in a review pathway where a decision is or would be a reviewable decision (s266(1)); not courts or the Tribunal (s266(2)). Whole Act commenced 14 October 2024 (s2 table, F2024N00804). The Administrative Appeals Tribunal Act 1975 was repealed in whole by the Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024 (C2024A00038), Schedule 17 item 1. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Matters prescribed by the rules for notices (s267) not read. Whether a particular benefit decision is reviewable by the ART depends on the enabling Act (e.g. social security law has its own review provisions, which may engage the s266(6)(a) exception); not checked. AAT abolition date taken from ART Act commencement (14 October 2024); the consequential Act's own commencement table was not read.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Administrative Review Tribunal Act 2024. Bound: Decision-makers for any decision in a review pathway where a decision is or would be a reviewable decision (s266(1)); not courts or the Tribunal (s266(2)). Whole Act commenced 14 October 2024 (s2 table, F2024N00804). The Administrative Appeals Tribunal Act 1975 was repealed in whole by the Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024 (C2024A00038), Schedule 17 item 1.",
+  "clauses": [
+    {
+      "id": "ART_ACT_2024-266",
+      "clause_number": "266",
+      "section_name": "",
+      "heading": "Decision-maker to give notice of decision and review rights",
+      "text": "(4) The decision-maker must take reasonable steps to give notice of the decision to any person whose interests are affected by the decision. (5) The notice must include notice of the right (if any) to have the decision reviewed, including, for a reviewable decision, the right to apply to the Tribunal for review of the decision.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 266(4), (5). If an agent communicates an adverse decision it must not omit, deny or misstate the right of review (internal review and the ART). Exceptions in s266(6) (e.g. another Act already requires notice; favourable decisions). Failure does not invalidate the decision (s266(7)).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "ART_ACT_2024-268",
+      "clause_number": "268",
+      "section_name": "",
+      "heading": "Requesting reasons for reviewable decision",
+      "text": "A person whose interests are affected by a reviewable decision may request the decision-maker to give the person a statement of reasons for the decision.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 268(1). Agent tells the person they cannot get reasons, or that 'the system decided' and no explanation exists. s268(2): request must be in writing; s269(2): statement within 28 days.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    }
+  ]
+}

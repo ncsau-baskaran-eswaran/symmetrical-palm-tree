@@ -26,8 +26,8 @@
   "source_url": "https://www.legislation.gov.au/F2026L00475/latest/text",
   "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Text condensed; consult the registered instrument.",
   "text_kind": "condensed",
-  "verified_on": "",
-  "verification_notes": "Carried over from the original APRA-MCP corpus; not yet re-verified against the registered instrument.",
+  "verified_on": "2026-11-01",
+  "verification_notes": "Checked on 2026-11-01 against the Federal Register text of F2026L00475 (one version, in force, no compilations). The 2026 determination renumbers the standard: every entry now uses its paragraph number (for example the 72-hour incident notification is paragraph 32, the 24-hour disruption notification paragraph 41, critical operations paragraphs 34 and 35, material service providers paragraphs 48 to 50, formal agreements paragraphs 53 and 54, exemptions paragraph 57 and the 20 business day notification paragraph 60(a)). Footnote 11 (no separate report for a CPS 234 incident) is unchanged. Entries are condensed; several combine adjacent paragraphs and say so in their notes. Not reviewed by a compliance SME.",
   "superseded_standards": [
     "CPS 231 Outsourcing",
     "CPS 232 Business Continuity Management",
@@ -103,8 +103,8 @@
       "notes": "Comprehensive scope across all prudential sectors."
     },
     {
-      "id": "CPS230-P7",
-      "clause_number": "7",
+      "id": "CPS230-P3",
+      "clause_number": "3",
       "section_name": "Application and commencement",
       "heading": "Foreign Branches Application",
       "text": "The obligations imposed by this Prudential Standard on, or in relation to, a foreign ADI, a Category C insurer and an EFLIC apply only in relation to the Australian branch operations of that entity.",
@@ -118,8 +118,8 @@
       "notes": "Applicable to Australian branch activities."
     },
     {
-      "id": "CPS230-P8",
-      "clause_number": "8",
+      "id": "CPS230-P4",
+      "clause_number": "4",
       "section_name": "Application and commencement",
       "heading": "Group Compliance",
       "text": "Where an APRA-regulated entity is the Head of a group, it must comply with a requirement of this Prudential Standard: in its capacity as an APRA-regulated entity; by ensuring that the requirement is applied appropriately throughout the group, including in relation to entities that are not APRA-regulated; and on a group basis.",
@@ -133,11 +133,11 @@
       "notes": "Requirements flow down throughout corporate groups."
     },
     {
-      "id": "CPS230-P13",
-      "clause_number": "13",
+      "id": "CPS230-P6",
+      "clause_number": "6",
       "section_name": "Application and commencement",
       "heading": "Commencement Date",
-      "text": "This Prudential Standard commences on 1 July 2025 (with amended instrument commencing 1 July 2026). Existing service contracts have transitional arrangements up to contract renewal or 1 July 2026.",
+      "text": "This Prudential Standard commences on 1 July 2026.",
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
@@ -145,11 +145,11 @@
         "commencement",
         "transition"
       ],
-      "notes": "Replaces CPS 231, CPS 232, SPS 231, SPS 232, HPS 231."
+      "notes": "Determination No. 1 of 2026 (F2026L00475, registered 29 April 2026) remakes CPS 230 with effect from 1 July 2026."
     },
     {
-      "id": "CPS230-P14",
-      "clause_number": "14",
+      "id": "CPS230-P11",
+      "clause_number": "11",
       "section_name": "Key principles",
       "heading": "Core Principles of Operational Resilience",
       "text": "An APRA-regulated entity must: effectively manage its operational risks, and set and maintain appropriate standards for conduct and compliance; maintain its critical operations within tolerance levels through severe disruptions; and manage the risks associated with the use of service providers. An APRA-regulated entity must identify, assess and manage operational risks that may result from inadequate or failed internal processes or systems, the actions or inactions of people or external drivers and events. Operational risk is inherent in all products, activities, processes and systems.",
@@ -166,7 +166,7 @@
         "conduct",
         "compliance"
       ],
-      "notes": "Foundational mandate covering processes, systems, people, and external events."
+      "notes": "Foundational mandate covering processes, systems, people, and external events. Covers paragraphs 11 and 12."
     },
     {
       "id": "CPS230-P15",
@@ -290,8 +290,8 @@
       "notes": "Requires detailed dependency mapping across technology, people, vendors, and facilities."
     },
     {
-      "id": "CPS230-P29",
-      "clause_number": "29",
+      "id": "CPS230-P28",
+      "clause_number": "28",
       "section_name": "Operational risk controls",
       "heading": "Internal Controls and Remediation",
       "text": "An APRA-regulated entity must design, implement and embed internal controls to mitigate its operational risks in line with its risk appetite and meet its compliance obligations. An APRA-regulated entity must regularly monitor, review and test controls for design and operating effectiveness, the frequency of which must be commensurate with the materiality of the risks being controlled. The results of testing must be reported to senior management and any gaps or deficiencies rectified in a timely manner. An APRA-regulated entity must remediate material weaknesses, control gaps, and failures, addressing root causes.",
@@ -304,11 +304,11 @@
         "remediation",
         "root_cause"
       ],
-      "notes": "Mandates root-cause remediation and tracking open issues in the operational risk profile."
+      "notes": "Mandates root-cause remediation and tracking open issues in the operational risk profile. Covers paragraphs 28 to 30."
     },
     {
-      "id": "CPS230-P32",
-      "clause_number": "32",
+      "id": "CPS230-P31",
+      "clause_number": "31",
       "section_name": "Operational risk incidents",
       "heading": "Incident and Near-Miss Escalation",
       "text": "An APRA-regulated entity must ensure that operational risk incidents and near misses are identified, escalated, recorded and addressed in a timely manner. An APRA-regulated entity must take incidents and near misses into account in its assessment of its operational risk profile and control effectiveness in a timely manner.",
@@ -324,8 +324,8 @@
       "notes": "Explicitly requires tracking 'near misses' alongside actual incidents."
     },
     {
-      "id": "CPS230-P33",
-      "clause_number": "33",
+      "id": "CPS230-P32",
+      "clause_number": "32",
       "section_name": "Operational risk incidents",
       "heading": "Mandatory 72-Hour APRA Notification for Material Operational Risk Incidents",
       "text": "An APRA-regulated entity must notify APRA as soon as possible, and not later than 72 hours, after becoming aware of an operational risk incident that it determines to be likely to have a material financial impact or a material impact on the ability of the entity to maintain its critical operations.",
@@ -344,8 +344,8 @@
       "notes": "Footnote 11: A notification of an information security incident reported under CPS 234 does not need to be separately reported under the notification requirements of this Prudential Standard."
     },
     {
-      "id": "CPS230-P34",
-      "clause_number": "34",
+      "id": "CPS230-P33",
+      "clause_number": "33",
       "section_name": "Business continuity",
       "heading": "Business Continuity Core Mandate",
       "text": "An APRA-regulated entity must: define, identify and maintain a register of its critical operations; take reasonable steps to minimise the likelihood and impact of disruptions to its critical operations; maintain a credible BCP that sets out how it would maintain its critical operations within tolerance levels through disruptions, including disaster recovery planning for critical information assets; activate its BCP if needed in the event of a disruption; and return to normal operations promptly after a disruption is over.",
@@ -367,11 +367,29 @@
       "notes": "Requires DR planning for critical assets and quick recovery."
     },
     {
-      "id": "CPS230-P36",
-      "clause_number": "36",
+      "id": "CPS230-P34",
+      "clause_number": "34",
       "section_name": "Critical operations and tolerance levels",
-      "heading": "Definition and Mandatory Classification of Critical Operations",
-      "text": "Critical operations are processes undertaken by an APRA-regulated entity or its service provider which, if disrupted beyond tolerance levels, would have a material adverse impact on its depositors, policyholders, beneficiaries or other customers, or its role in the financial system. An APRA-regulated entity must, at a minimum, classify the following business operations as critical operations, unless it can justify otherwise: for an ADI: payments, deposit-taking and management, custody, settlements and clearing; for an insurer (general, life, private health): claims processing; for an RSE licensee: investment management and fund administration; and for all APRA-regulated entities: customer enquiries and the systems and infrastructure needed to support critical operations.",
+      "heading": "Definition of critical operations",
+      "text": "Critical operations are processes undertaken by an APRA-regulated entity or its service provider which, if disrupted beyond tolerance levels, would have a material adverse impact on its depositors, policyholders, beneficiaries or other customers, or its role in the financial system.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "critical_operations",
+        "adi",
+        "banking",
+        "insurance",
+        "mandatory_classification"
+      ],
+      "notes": "Paragraph 35 sets the minimum list."
+    },
+    {
+      "id": "CPS230-P35",
+      "clause_number": "35",
+      "section_name": "Critical operations and tolerance levels",
+      "heading": "Mandatory classification of critical operations",
+      "text": "An APRA-regulated entity must, at a minimum, classify the following business operations as critical operations, unless it can justify otherwise: for an ADI: payments, deposit-taking and management, custody, settlements and clearing; for an insurer (general, life, private health): claims processing; for an RSE licensee: investment management and fund administration; and for all APRA-regulated entities: customer enquiries and the systems and infrastructure needed to support critical operations.",
       "subclauses": [
         "for an ADI (Banking): payments, deposit-taking and management, custody, settlements and clearing;",
         "for an Insurer (General, Life, Health): claims processing;",
@@ -390,8 +408,8 @@
       "notes": "Essential baseline: ADIs must classify payments/deposits/settlements; Insurers must classify claims processing."
     },
     {
-      "id": "CPS230-P39",
-      "clause_number": "39",
+      "id": "CPS230-P37",
+      "clause_number": "37",
       "section_name": "Critical operations and tolerance levels",
       "heading": "Establishment of Three Tolerance Levels",
       "text": "For each critical operation, an APRA-regulated entity must establish tolerance levels for: the maximum period of time the entity would tolerate a disruption to the operation; the maximum extent of data loss the entity would accept as a result of a disruption; and minimum service levels the entity would maintain while operating under alternative arrangements during a disruption. APRA may require an APRA-regulated entity to review and change its tolerance levels for a critical operation or set tolerance levels where it identifies heightened risk.",
@@ -408,34 +426,11 @@
         "data_loss",
         "service_levels"
       ],
-      "notes": "Every critical operation must have all three tolerances defined and Board-approved."
+      "notes": "Every critical operation must have all three tolerances defined and Board-approved. Covers paragraphs 37 and 38."
     },
     {
-      "id": "CPS230-P42",
-      "clause_number": "42",
-      "section_name": "Critical operations and tolerance levels",
-      "heading": "Mandatory 24-Hour APRA Notification for Disruption Outside Tolerance",
-      "text": "An APRA-regulated entity must notify APRA as soon as possible, and not later than 24 hours after, if it has suffered a disruption to a critical operation outside tolerance. The notification must cover the nature of the disruption, the action taken, the likely impact on the entity's business operations and the timeframe for returning to normal operations.",
-      "subclauses": [
-        "nature of the disruption;",
-        "action taken;",
-        "likely impact on entity's business operations; and",
-        "timeframe for returning to normal operations."
-      ],
-      "is_mandatory": true,
-      "notification_trigger": "24_hours",
-      "key_topics": [
-        "notification",
-        "24_hours",
-        "disruption",
-        "outside_tolerance",
-        "critical_operation"
-      ],
-      "notes": "Most urgent APRA notification timeframe (24 hours). Triggers as soon as an outage exceeds approved tolerance."
-    },
-    {
-      "id": "CPS230-P43",
-      "clause_number": "43",
+      "id": "CPS230-P39",
+      "clause_number": "39",
       "section_name": "Business continuity plan",
       "heading": "Required Contents of BCP",
       "text": "An APRA-regulated entity's BCP must include: the register of critical operations and associated tolerance levels; triggers to identify a disruption and prompt activation of the plan, and arrangements to direct resources in the event of activation; actions it would take to maintain its critical operations within tolerance levels through disruptions; an assessment of the execution risks, required resources, preparatory measures, including key internal and external dependencies needed to support the effective implementation of the BCP actions; and a communications strategy to support execution of the plan.",
@@ -457,8 +452,31 @@
       "notes": "BCP must be executable and account for external dependencies."
     },
     {
-      "id": "CPS230-P48",
-      "clause_number": "48",
+      "id": "CPS230-P41",
+      "clause_number": "41",
+      "section_name": "Critical operations and tolerance levels",
+      "heading": "Mandatory 24-Hour APRA Notification for Disruption Outside Tolerance",
+      "text": "An APRA-regulated entity must notify APRA as soon as possible, and not later than 24 hours after, if it has suffered a disruption to a critical operation outside tolerance. The notification must cover the nature of the disruption, the action taken, the likely impact on the entity's business operations and the timeframe for returning to normal operations.",
+      "subclauses": [
+        "nature of the disruption;",
+        "action taken;",
+        "likely impact on entity's business operations; and",
+        "timeframe for returning to normal operations."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": "24_hours",
+      "key_topics": [
+        "notification",
+        "24_hours",
+        "disruption",
+        "outside_tolerance",
+        "critical_operation"
+      ],
+      "notes": "Most urgent APRA notification timeframe (24 hours). Triggers as soon as an outage exceeds approved tolerance."
+    },
+    {
+      "id": "CPS230-P42",
+      "clause_number": "42",
       "section_name": "Testing and review",
       "heading": "Systematic BCP Scenario Testing & Annual Exercise",
       "text": "An APRA-regulated entity must have a systematic testing program for its BCP that covers all critical operations and includes an annual business continuity exercise. The program must test the effectiveness of the entity's BCP and its ability to meet tolerance levels in a range of severe but plausible scenarios. The testing program must be tailored to the material risks and include disruptions to services provided by material service providers and scenarios where contingency arrangements are required. Internal audit must periodically review the BCP.",
@@ -476,11 +494,11 @@
         "internal_audit",
         "severe_scenarios"
       ],
-      "notes": "APRA may also mandate an APRA-determined scenario for an entity to test."
+      "notes": "APRA may also mandate an APRA-determined scenario for an entity to test. Covers paragraphs 42, 43 and 45."
     },
     {
-      "id": "CPS230-P51",
-      "clause_number": "51",
+      "id": "CPS230-P46",
+      "clause_number": "46",
       "section_name": "Management of service provider arrangements",
       "heading": "Service Provider Management Policy & Fourth Parties",
       "text": "An APRA-regulated entity must maintain a comprehensive service provider management policy. The policy must cover how the entity will identify material service providers and manage service provider arrangements, including the management of material risks associated with the arrangements. The policy must include: the entity's approach to entering into, monitoring, substituting and exiting agreements with material service providers; the entity's approach to managing the risks associated with material service providers; and the entity's approach to managing the risks associated with any fourth parties that material service providers rely on to deliver a critical operation to the APRA-regulated entity.",
@@ -498,14 +516,34 @@
         "subcontracting",
         "exit_strategy"
       ],
-      "notes": "Footnote 14: Fourth party is a party that a service provider relies on to deliver services to the regulated entity."
+      "notes": "Footnote 14: Fourth party is a party that a service provider relies on to deliver services to the regulated entity. Covers paragraphs 46 and 47."
     },
     {
-      "id": "CPS230-P54",
-      "clause_number": "54",
+      "id": "CPS230-P48",
+      "clause_number": "48",
       "section_name": "Material service providers",
-      "heading": "Definition and Mandatory Classification of Material Service Providers",
-      "text": "An APRA-regulated entity must identify and maintain a register of its material service providers and manage the material risks associated with using these providers. Material service providers are those on which the entity relies to undertake a critical operation or that expose it to material operational risk. An APRA-regulated entity must, at a minimum, classify a provider of the following services as a material service provider, unless it can justify otherwise: for an ADI: credit assessment, funding and liquidity management and mortgage brokerage; for an insurer (general, life, private health): underwriting, claims management, insurance brokerage and reinsurance; for an RSE licensee: fund administration, custodial services, investment management and arrangements with promoters and financial planners; and for all APRA-regulated entities: risk management, core technology services and internal audit. The register must be submitted to APRA annually.",
+      "heading": "Material service providers: register and definition",
+      "text": "An APRA-regulated entity must identify and maintain a register of its material service providers and manage the material risks associated with using these providers. Material service providers are those on which the entity relies to undertake a critical operation or that expose it to material operational risk.[15] Material arrangements are those on which the entity relies to undertake a critical operation or that expose it to material operational risk.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "annual_register",
+      "key_topics": [
+        "material_service_providers",
+        "msp",
+        "adi",
+        "banking",
+        "insurance",
+        "core_technology",
+        "annual_register"
+      ],
+      "notes": "Annual register submission to APRA is mandatory."
+    },
+    {
+      "id": "CPS230-P49",
+      "clause_number": "49",
+      "section_name": "Material service providers",
+      "heading": "Mandatory classification of material service providers",
+      "text": "An APRA-regulated entity must, at a minimum, classify a provider of the following services as a material service provider, unless it can justify otherwise: for an ADI: credit assessment, funding and liquidity management and mortgage brokerage; for an insurer (general, life, private health): underwriting, claims management, insurance brokerage and reinsurance; for an RSE licensee: fund administration, custodial services, investment management and arrangements with promoters and financial planners; and for all APRA-regulated entities: risk management, core technology services and internal audit.",
       "subclauses": [
         "for an ADI (Banking): credit assessment, funding and liquidity management, and mortgage brokerage;",
         "for an Insurer (General, Life, Health): underwriting, claims management, insurance brokerage, and reinsurance;",
@@ -526,10 +564,48 @@
       "notes": "Annual register submission to APRA is mandatory."
     },
     {
-      "id": "CPS230-P58",
-      "clause_number": "58",
+      "id": "CPS230-P50",
+      "clause_number": "50",
+      "section_name": "Material service providers",
+      "heading": "Annual submission of the material service provider register",
+      "text": "An APRA-regulated entity must submit its register of material service providers to APRA on an annual basis.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": "annual_register",
+      "key_topics": [
+        "material_service_providers",
+        "msp",
+        "adi",
+        "banking",
+        "insurance",
+        "core_technology",
+        "annual_register"
+      ],
+      "notes": "Annual register submission to APRA is mandatory."
+    },
+    {
+      "id": "CPS230-P52",
+      "clause_number": "52",
       "section_name": "Service provider agreements",
-      "heading": "Due Diligence & Mandatory Agreement Terms",
+      "heading": "Due diligence before a material arrangement",
+      "text": "Before entering into or materially modifying a material arrangement, an APRA-regulated entity must: undertake appropriate due diligence, including an appropriate selection process and an assessment of the ability of the service provider to provide the service on an ongoing basis; and assess the financial and non-financial risks from reliance on the service provider, including risks associated with geographic location or concentration of the service provider(s) or parties the service provider relies on in providing the service.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "agreements",
+        "contracts",
+        "due_diligence",
+        "subcontracting_liability",
+        "apra_access_rights"
+      ],
+      "notes": "Mandatory terms that must be present in every material contract."
+    },
+    {
+      "id": "CPS230-P53",
+      "clause_number": "53",
+      "section_name": "Service provider agreements",
+      "heading": "Mandatory formal agreement terms",
       "text": "Before entering into or materially modifying a material arrangement, an APRA-regulated entity must undertake appropriate due diligence and assess financial and non-financial risks (including geographic concentration). For all material arrangements, an APRA-regulated entity must maintain a formal legally binding agreement. The formal agreement must, at a minimum: specify services covered and service levels; set out rights, responsibilities, asset/data ownership and control, dispute resolution, audit access, liability, and indemnity; include compliance provisions; require notification of material sub-contractors (fourth parties); require service provider liability for sub-contractor failures; include force majeure provisions; and include termination provisions. The formal agreement must also allow APRA access to documentation, data, on-site visits, and ensure the provider agrees not to impede APRA.",
       "subclauses": [
         "specify services covered and service levels (SLAs);",
@@ -549,11 +625,11 @@
         "subcontracting_liability",
         "apra_access_rights"
       ],
-      "notes": "Mandatory terms that must be present in every material contract."
+      "notes": "Mandatory terms that must be present in every material contract. Covers paragraphs 53 and 54 (APRA access terms)."
     },
     {
-      "id": "CPS230-P63",
-      "clause_number": "63",
+      "id": "CPS230-P57",
+      "clause_number": "57",
       "section_name": "Service provider agreements",
       "heading": "Exemptions for Non-Traditional Service Providers",
       "text": "An APRA-regulated entity need not comply with certain strict contracting requirements (paragraphs 53, 54, 55(d), 59(a), 59(c)) for a material arrangement if: the arrangement is with a service provider that falls within a category listed in the Attachment (Government agencies, Regulators, Central banks, Financial market exchanges, Clearing/settlement facilities, Payment systems/schemes, Financial messaging infrastructures); and the arrangement uses standardised terms or is not documented in a formal agreement.",
@@ -569,8 +645,8 @@
       "notes": "Introduced in updated standard F2026L00475 to provide relief for arrangements like RBA, ASX, SWIFT."
     },
     {
-      "id": "CPS230-P68",
-      "clause_number": "68",
+      "id": "CPS230-P60a",
+      "clause_number": "60(a)",
       "section_name": "Monitoring, notifications and review",
       "heading": "Mandatory 20-Day Agreement Notification to APRA",
       "text": "An APRA-regulated entity must notify APRA as soon as possible and not more than 20 business days after entering into or materially changing an agreement for the provision of a service on which the entity relies to undertake a critical operation.",
@@ -586,8 +662,8 @@
       "notes": "Triggered when entering or materially amending an agreement underpinning a critical operation."
     },
     {
-      "id": "CPS230-P69",
-      "clause_number": "69",
+      "id": "CPS230-P60b",
+      "clause_number": "60(b)",
       "section_name": "Monitoring, notifications and review",
       "heading": "Prior Notification for Material Offshoring Arrangements",
       "text": "An APRA-regulated entity must notify APRA prior to entering into any material offshoring arrangement, or when there is a significant change proposed to the arrangement, including in circumstances where data or personnel relevant to the service being provided will be located offshore.",
@@ -603,8 +679,8 @@
       "notes": "Footnote 16: Must notify APRA *prior* to entering arrangement or shifting data/personnel offshore."
     },
     {
-      "id": "CPS230-P70",
-      "clause_number": "70",
+      "id": "CPS230-P61",
+      "clause_number": "61",
       "section_name": "Monitoring, notifications and review",
       "heading": "Internal Audit Review of Outsourced Critical Operations",
       "text": "An APRA-regulated entity's internal audit function must review any proposed material arrangement involving the outsourcing of a critical operation. The internal audit function must regularly report to the Board or Board Audit Committee on compliance of such arrangements with the entity's service provider management policy.",
@@ -645,5 +721,6 @@
       ],
       "notes": "Relieves entities from having to negotiate bespoke contracts with monopoly or sovereign infrastructures."
     }
-  ]
+  ],
+  "source_version": "F2026L00475 (Determination No. 1 of 2026, as made; in force from 29 April 2026, standard commences 1 July 2026)"
 }

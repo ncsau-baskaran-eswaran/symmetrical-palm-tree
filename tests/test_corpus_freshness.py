@@ -27,6 +27,7 @@ def _inst(code, verified="2026-10-01", notes="Checked.", url=None, regulator="AS
 
 @pytest.fixture
 def corpus(tmp_path, monkeypatch):
+    monkeypatch.setattr(cf, "ALLOWED_HOSTS", cf.ALLOWED_HOSTS | {"example.test"})
     d = tmp_path / "instruments"
     (d / "asic").mkdir(parents=True)
     docs = [
@@ -210,3 +211,30 @@ def test_diff_json_output(corpus, monkeypatch, capsys):
     assert report["counts"] == {"changed": 1, "unreachable": 1, "unchanged": 3}
     assert report["changed"][0]["signal"] == "html_main" and report["changed"][0]["instruments"] == ["OLD"]
     assert report["unreachable"][0]["url"].endswith("/GOOD")
+
+
+def test_fetch_refuses_hosts_outside_the_allow_list():
+    calls = []
+    client = httpx.Client(transport=httpx.MockTransport(lambda r: calls.append(r) or httpx.Response(200)))
+    for url in ("https://169.254.169.254/latest/meta-data", "http://www.legislation.gov.au/x", "https://evil.example.com/a"):
+        rec = cf.fetch_source(client, url)
+        assert rec["reachable"] is False and rec["error"].startswith("DisallowedHost")
+    assert calls == []
+    assert cf.host_allowed("https://www.legislation.gov.au/C2004A00819/latest/text")
+    assert not cf.host_allowed("https://legislation.gov.au.evil.com/x")
+
+
+def test_redirect_to_a_disallowed_host_is_blocked():
+    def handler(request):
+        if request.url.host == "www.asic.gov.au":
+            return httpx.Response(302, headers={"location": "https://10.0.0.5/admin"})
+        return httpx.Response(200, text="internal")
+    client = httpx.Client(transport=httpx.MockTransport(handler), follow_redirects=True,
+                          event_hooks={"request": [cf._check_host]})
+    rec = cf.fetch_source(client, "https://www.asic.gov.au/rg")
+    assert rec["reachable"] is False and "DisallowedHost" in rec["error"]
+
+
+def test_every_corpus_source_is_allowed():
+    blocked = [u for u in cf.unique_sources(cf.load_instruments()) if not cf.host_allowed(u)]
+    assert blocked == []

@@ -1,0 +1,147 @@
+{
+  "code": "Telco Complaints Standard",
+  "title": "Telecommunications (Consumer Complaints Handling) Industry Standard 2018",
+  "short_name": "Telco Complaints Standard",
+  "regulator": "ACMA",
+  "instrument_type": "industry_standard",
+  "legislative_instrument": "F2018L00727",
+  "source_version": "Compilation No. 5, registerId F2026C00008, in force from 2026-01-01 (includes Amendment 2025 (No. 2) F2025L00921). Not replaced; sunsets 2028-10-01 under s 50 Legislation Act 2003 per Register versions API.",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "telecommunications"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/F2018L00727/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Compilation No. 5, registerId F2026C00008, in force from 2026-01-01 (includes Amendment 2025 (No. 2) F2025L00921). Not replaced; sunsets 2028-10-01 under s 50 Legislation Act 2003 per Register versions API.). Who is bound: s 4: carriage service providers, and carriers responsible for network units used in the supply of services by carriage service providers; consumer complaints about supply of carriage services. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Paragraph letters in ss 10, 11 and 13 were partly stripped in the HTML extraction; lettering was inferred from internal cross references (e.g. 'paragraph 10(d)', 'paragraphs 13(1)(g), (h), (i)') and list order. Civil penalty status rests on Telecommunications Act 1997 Part 6 (s 128 compliance, Part 31 penalties), not re-read here.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Telecommunications (Consumer Complaints Handling) Industry Standard 2018. Bound: s 4: carriage service providers, and carriers responsible for network units used in the supply of services by carriage service providers; consumer complaints about supply of carriage services.",
+  "clauses": [
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-5",
+      "clause_number": "5",
+      "section_name": "",
+      "heading": "Definitions",
+      "text": "an expression of dissatisfaction made to a carriage service provider by a consumer in relation to its telecommunications products, the application of its complaints handling process or its network outage complaints handling process, where a response or resolution is explicitly or implicitly expected by the consumer",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 5 (definition of complaint). Agent treats an angry or dissatisfied customer message as a mere enquiry, or refuses to log a complaint when the customer says they want it treated as one.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-11",
+      "clause_number": "11",
+      "section_name": "",
+      "heading": "Complaints management",
+      "text": "clarify with a consumer if they wish to make a complaint where the consumer has made contact and expressed dissatisfaction ... and the member of the personnel is uncertain if the consumer wishes to make a complaint; ... can identify and record a complaint",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 11(c)(ii), (iv). Agent fails to ask whether an ambiguous expression of dissatisfaction is a complaint, or fails to identify and record it.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-12",
+      "clause_number": "12",
+      "section_name": "",
+      "heading": "Acknowledging complaints",
+      "text": "a written or verbal response which indicates that the complaint has been received, a unique reference number or some other unique identifier for the complaint and instructions about how the complaint can be monitored.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 12(1), (2). Complaint received by live chat or phone must be acknowledged immediately (email or post: within 2 working days); agent that gives no reference number or tracking instructions breaches this.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-13",
+      "clause_number": "13",
+      "section_name": "",
+      "heading": "Resolution of complaints",
+      "text": "provide confirmation of a proposed resolution of a complaint, within 10 working days of receiving the complaint; provide confirmation of a proposed resolution of an urgent complaint, and if the consumer accepts the proposed resolution, implement that resolution, within 2 working days",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 13(1)(a), (g), (h), (i). Agent promises timeframes longer than the standard (10 working days; 2 working days for urgent complaints such as hardship or imminent disconnection; billing errors by end of next billing period or 30 calendar days) or misstates them.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-10_D",
+      "clause_number": "10(d)",
+      "section_name": "",
+      "heading": "Minimum requirements - transparency",
+      "text": "\"If you are not satisfied with how we have handled your complaint, you have a right to take it to the Telecommunications Industry Ombudsman, which is a free and independent service\"",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 10(d). Defines the TIO information (contact details, website link, complaints phone number, mandatory statement) the provider must give; agent that discourages or misdescribes TIO access breaches the process.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-10_E",
+      "clause_number": "10(e)",
+      "section_name": "",
+      "heading": "Minimum requirements - transparency",
+      "text": "a consumer's telecommunications service cannot be cancelled for the sole reason that the consumer was unable to resolve the complaint directly with the carriage service provider and pursued options for external dispute resolution.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 10(e). Agent threatens cancellation or account consequences if the customer goes to the TIO.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_COMPLAINTS_STANDARD-15",
+      "clause_number": "15",
+      "section_name": "",
+      "heading": "Complaint prioritisation, escalation and external dispute resolution",
+      "text": "communicates to a carriage service provider that they are dissatisfied with the progress or resolution of a complaint; or enquires about their options to pursue a complaint further, a carriage service provider must, within 24 hours after receiving that communication, advise the consumer about: its internal escalation process; and the information referred to in paragraph 10(d).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(2). Customer asks 'what else can I do?' or says they are unhappy with the outcome and the agent does not explain escalation and the TIO.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    }
+  ]
+}

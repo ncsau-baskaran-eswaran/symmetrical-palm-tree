@@ -3,7 +3,7 @@
     {
       "term": "Critical Operation",
       "standard": "CPS 230",
-      "clause": "36",
+      "clause": "34",
       "definition": "Processes undertaken by an APRA-regulated entity or its service provider which, if disrupted beyond tolerance levels, would have a material adverse impact on its depositors, policyholders, beneficiaries or other customers, or its role in the financial system.",
       "mandatory_examples": {
         "banking_adi": ["Payments", "Deposit-taking and management", "Custody", "Settlements and clearing"],
@@ -17,14 +17,14 @@
     {
       "term": "Tolerance Level",
       "standard": "CPS 230",
-      "clause": "39",
+      "clause": "37",
       "definition": "The maximum acceptable level of disruption an APRA-regulated entity is willing to accept for a critical operation. Must be set for: (1) Maximum period of time tolerable for disruption (downtime); (2) Maximum extent of data loss accepted; and (3) Minimum service levels maintained while operating under alternative arrangements.",
       "mandatory_examples": {}
     },
     {
       "term": "Material Service Provider (MSP)",
       "standard": "CPS 230",
-      "clause": "54",
+      "clause": "48",
       "definition": "A service provider on which an APRA-regulated entity relies to undertake a critical operation or that exposes it to material operational risk. Can be a third party, related party, or connected entity.",
       "mandatory_examples": {
         "banking_adi": ["Credit assessment", "Funding and liquidity management", "Mortgage brokerage"],
@@ -38,7 +38,7 @@
     {
       "term": "Fourth Party",
       "standard": "CPS 230",
-      "clause": "51 (Footnote 14)",
+      "clause": "47 (Footnote 14)",
       "definition": "A party that a service provider relies upon in delivering services to an APRA-regulated entity (i.e. subcontractor of a material service provider). Entities must manage risks of fourth parties supporting critical operations.",
       "mandatory_examples": {}
     },
@@ -73,7 +73,7 @@
     {
       "term": "Material Offshoring Arrangement",
       "standard": "CPS 230",
-      "clause": "69 (Footnote 16)",
+      "clause": "60(b) (Footnote 16)",
       "definition": "A material arrangement where the service provided is undertaken outside Australia. Includes arrangements where the service provider is incorporated in Australia, but the physical location of the service/data is offshore. Requires prior notification to APRA.",
       "mandatory_examples": {}
     }

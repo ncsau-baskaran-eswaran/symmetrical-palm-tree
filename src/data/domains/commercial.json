@@ -1,0 +1,38 @@
+{
+  "id": "commercial",
+  "name": "Commercial businesses (retail and consumer services)",
+  "aliases": [
+    "retail",
+    "ecommerce"
+  ],
+  "sectors": [
+    "commercial"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "Office of the Australian Information Commissioner (OAIC)",
+      "role": "Enforces Privacy Act 1988"
+    },
+    {
+      "name": "Australian Competition and Consumer Commission (ACCC); State and Territory fair trading agencies for the ACL as applied State law",
+      "role": "Enforces ACL"
+    },
+    {
+      "name": "Australian Communications and Media Authority (ACMA)",
+      "role": "Enforces Spam Act 2003"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for retail and e-commerce agents: Australian Consumer Law (misleading conduct, consumer guarantees, unfair terms, pressure selling), Spam Act consent and the Privacy Act. Small businesses with turnover of $3 million or less may be outside the Privacy Act (s6D).",
+  "known_gaps": [
+    "Privacy Act future-dated versions (2026-12-10, 2027-01-01) on the Federal Register were not read; check whether new obligations (e.g. automated decision transparency in APP 1) commence and affect agents.",
+    "Privacy Act APP 1 (privacy policy), APP 5 (collection notice), APP 12/13 (access and correction) deliberately left out as less likely to be breached in a single conversation.",
+    "State and Territory public sector privacy laws (for State agencies) not covered; State authorities are not APP entities.",
+    "ACL s3 consumer definition, CCA s2A Crown application, penalty provisions (s224) not re-read.",
+    "ACL services guarantees (s60 to s62) and services remedies (s267) left out; add for service businesses.",
+    "Spam Act s17/s18 (sender ID, unsubscribe) and Do Not Call Register Act 2006 (telemarketing calls) not excerpted.",
+    "Spam Act latest compilation is dated 10 March 2016; no later compilation was found via the API.",
+    "Corpus entries are research-verified on 2026-10-27 but not signed off by a compliance or legal SME."
+  ]
+}

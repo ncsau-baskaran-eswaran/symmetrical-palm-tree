@@ -8,14 +8,14 @@
   "effective_date": "2011-01-01",
   "amended_date": "",
   "status": "In Force",
-  "sectors": ["private_health_insurance"],
+  "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"],
   "entity_types": ["Private Health Insurer"],
   "enforceability": "statutory_civil_penalty",
   "source_url": "https://www.legislation.gov.au/C2004A00109/latest/text",
   "licence": "CC BY 4.0 (paraphrased)",
   "text_kind": "paraphrase",
-  "verified_on": "",
-  "verification_notes": "Authored from working knowledge of the ACL; section numbers and the exclusion of private health insurance from the ASIC Act financial services consumer protections have not yet been re-verified against legislation.gov.au. A compliance SME must confirm before reliance.",
+  "verified_on": "2026-10-27", "source_version": "C2026C00405 (Compilation No. 167, 16 September 2026)",
+  "verification_notes": "Sections 2, 18, 21, 23, 29, 50, 54, 64, 259 and 263 were checked on 2026-10-27 against compilation C2026C00405 (Compilation No. 167, 16 September 2026, Volume 4 holds Schedule 2) and the existing paraphrases of ss18, 21, 23, 29 and 50 match the text. Section 34, the consumer definition (s3), Crown application (CCA s2A) and penalties were not re-read, nor was the exclusion of private health insurance from the ASIC Act financial services protections. A compliance SME must confirm before reliance.",
   "coverage_default": "reference_only",
   "superseded_standards": [],
   "companion_guidance": [],
@@ -34,7 +34,7 @@
       "notes": "An agent's statement about what a health policy covers, or how much it costs, is conduct in trade or commerce. Remedies include injunctions, damages and corrective orders; there is no pecuniary penalty under s18 itself.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["private_health_insurance"]
+      "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"]
     },
     {
       "id": "ACL-S21",
@@ -49,7 +49,7 @@
       "notes": "Pressure tactics or exploiting a vulnerable member (for example during bereavement or illness) can engage this provision. Civil penalties apply.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["private_health_insurance"]
+      "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"]
     },
     {
       "id": "ACL-S23",
@@ -64,7 +64,7 @@
       "notes": "Relevant to fund rules and policy terms an agent quotes; the agent should not assert a term that a court could find unfair as if it were settled.",
       "obligation_type": "product",
       "agent_relevance": "governance",
-      "sectors": ["private_health_insurance"]
+      "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"]
     },
     {
       "id": "ACL-S29",
@@ -79,7 +79,7 @@
       "notes": "Telling a member that extras pay for GP visits, that a waiting period is waived, or that premiums will never rise can be a false representation about the services or their price. Civil penalties apply.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["private_health_insurance"]
+      "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"]
     },
     {
       "id": "ACL-S34",
@@ -109,7 +109,77 @@
       "notes": "Relevant to automated premium arrears and retention conversations.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["private_health_insurance"]
+      "sectors": ["private_health_insurance", "commercial", "energy_retail", "telecommunications"]
+    },
+    {
+      "id": "ACL-2",
+      "clause_number": "2",
+      "section_name": "",
+      "heading": "Trade or commerce",
+      "text": "Trade or commerce means trade or commerce within Australia or between Australia and places outside Australia, and includes any business or professional activity, whether or not carried on for profit. Most ACL prohibitions apply only to conduct in trade or commerce.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Scope test for most ACL prohibitions.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial",
+        "energy_retail",
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "ACL-54",
+      "clause_number": "54",
+      "section_name": "",
+      "heading": "Guarantee as to acceptable quality",
+      "text": "Goods supplied to a consumer in trade or commerce (other than by auction) come with a guarantee that they are of acceptable quality: fit for all their usual purposes, acceptable in appearance and finish, free from defects, safe and durable, as a reasonable consumer would regard as acceptable.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "An agent that denies a repair, replacement or refund for faulty goods engages this guarantee.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
+    },
+    {
+      "id": "ACL-64",
+      "clause_number": "64",
+      "section_name": "",
+      "heading": "Guarantees cannot be excluded",
+      "text": "A contract term is void to the extent it purports to exclude, restrict or modify the consumer guarantees, the application of the guarantee provisions, or a consumer's rights or remedies for their breach.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "'No refunds' or 'warranty only through the manufacturer' statements engage s64 and s29(1)(m).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
+    },
+    {
+      "id": "ACL-259",
+      "clause_number": "259",
+      "section_name": "",
+      "heading": "Remedies for failure of a consumer guarantee",
+      "text": "If a supplier fails to comply with a consumer guarantee, the consumer may require a remedy within a reasonable time. For a major failure the consumer may reject the goods or seek compensation for reduced value, whether or not the goods are in their original packaging (s259(2), (3), (7)). On rejection the supplier must refund or replace as the consumer chooses, and cannot satisfy a refund by offering goods instead, such as store credit (s263(4), (5)).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Includes s263(4) and (5): a refund cannot be replaced with store credit.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
     }
   ]
 }

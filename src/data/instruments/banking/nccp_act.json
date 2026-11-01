@@ -1,0 +1,79 @@
+{
+  "code": "NCCP Act",
+  "title": "National Consumer Credit Protection Act 2009",
+  "short_name": "NCCP Act",
+  "regulator": "ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2009A00134",
+  "source_version": "C2026C00340, Compilation No. 52, compilation date 1 July 2026 (latest, isCurrent per Federal Register API)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "banking"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2009A00134/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (C2026C00340, Compilation No. 52, compilation date 1 July 2026 (latest, isCurrent per Federal Register API)). Who is bound: Credit licensees that are credit providers under credit contracts (Chapter 3, Part 3-2 heading: 'Licensees that are credit providers under credit contracts: general rules'). Parallel obligations for credit assistance providers (brokers) in Part 3-1 were not extracted. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Only the credit provider provisions (Part 3-2) were read. Whether an AI agent's statement is attributable as the licensee's 'unconditional representation' is a legal characterisation, not tested here. Part 3-2BA low cost credit modifications and regulations prescribing inquiries were not reviewed.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "National Consumer Credit Protection Act 2009. Bound: Credit licensees that are credit providers under credit contracts (Chapter 3, Part 3-2 heading: 'Licensees that are credit providers under credit contracts: general rules'). Parallel obligations for credit assistance providers (brokers) in Part 3-1 were not extracted.",
+  "clauses": [
+    {
+      "id": "NCCP_ACT-128",
+      "clause_number": "128",
+      "section_name": "",
+      "heading": "Obligation to assess unsuitability",
+      "text": "A licensee must not: (a) enter a credit contract with a consumer who will be the debtor under the contract; or (aa) make an unconditional representation to a consumer that the licensee considers that the consumer is eligible to enter a credit contract with the licensee; ... unless the licensee has, within 90 days ... made an assessment",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 128. A lending agent that tells a customer 'you are approved' or 'your limit will be increased' (an unconditional representation) before the assessment and inquiries are done breaches s 128(aa) or (ba). Civil penalty 5,000 penalty units.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "NCCP_ACT-130",
+      "clause_number": "130",
+      "section_name": "",
+      "heading": "Reasonable inquiries etc. about the consumer",
+      "text": "the licensee must, before making the assessment: (a) make reasonable inquiries about the consumer's requirements and objectives in relation to the credit contract; and (b) make reasonable inquiries about the consumer's financial situation; and (c) take reasonable steps to verify the consumer's financial situation",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 130(1). An agent that skips income or expense questions, or offers to waive verification ('no need for payslips, we can approve on what you tell me'), engages s 130(1).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "NCCP_ACT-133",
+      "clause_number": "133",
+      "section_name": "",
+      "heading": "Prohibition on entering, or increasing the credit limit of, unsuitable credit contracts",
+      "text": "A licensee must not: (a) enter a credit contract with a consumer who will be the debtor under the contract; or (b) increase the credit limit of a credit contract with a consumer who is the debtor under the contract; if the contract is unsuitable for the consumer under subsection (2).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 133(1). An agent that pushes ahead with a loan or limit increase after the customer discloses they cannot afford repayments without substantial hardship (s 133(2)(a)) facilitates entry into an unsuitable contract.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 """Corpus freshness monitoring and expert review pack for the regulatory instrument corpus.
 
-    .venv/bin/python scripts/check_corpus_freshness.py staleness [--max-age-days 90] [--fail-on-unverified]
+    .venv/bin/python scripts/check_corpus_freshness.py staleness [--max-age-days 90] [--fail-on-unverified] [--domain super]
     .venv/bin/python scripts/check_corpus_freshness.py snapshot      # online, writes src/data/sources.lock.json
     .venv/bin/python scripts/check_corpus_freshness.py diff [--json]  # online, exit 2 if any source changed
     .venv/bin/python scripts/check_corpus_freshness.py review-pack   # writes docs/CORPUS_REVIEW.md
@@ -29,6 +29,7 @@ import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
 INSTRUMENTS_DIR = ROOT / "src" / "data" / "instruments"
+DOMAINS_DIR = ROOT / "src" / "data" / "domains"
 LOCK_PATH = ROOT / "src" / "data" / "sources.lock.json"
 REVIEW_PATH = ROOT / "docs" / "CORPUS_REVIEW.md"
 
@@ -66,6 +67,18 @@ def load_instruments() -> List[Dict[str, Any]]:
         data["_file"] = str(path.relative_to(INSTRUMENTS_DIR))
         out.append(data)
     return sorted(out, key=lambda d: (str(d.get("regulator", "")), str(d.get("code", ""))))
+
+
+def load_domains() -> List[Dict[str, Any]]:
+    return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(DOMAINS_DIR.glob("*.json"))]
+
+
+def in_domain(instruments: List[Dict[str, Any]], domain: str) -> List[Dict[str, Any]]:
+    """Instruments tagged with any sector of the domain (matched by id or alias). Raises SystemExit if unknown."""
+    for d in load_domains():
+        if domain.lower() in [d["id"].lower(), *(a.lower() for a in d.get("aliases", []))]:
+            return [i for i in instruments if set(d["sectors"]) & set(i.get("sectors", []))]
+    raise SystemExit(f"Unknown domain '{domain}'. Valid: {', '.join(d['id'] for d in load_domains())}.")
 
 
 def uncertainty_items(notes: str) -> List[str]:
@@ -114,6 +127,8 @@ def assess_staleness(
 
 def cmd_staleness(args: argparse.Namespace) -> int:
     instruments = load_instruments()
+    if args.domain:
+        instruments = in_domain(instruments, args.domain)
     findings = assess_staleness(instruments, args.max_age_days)
     by_reg: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for f in findings:
@@ -272,16 +287,43 @@ def classify_content(url: str, body: bytes) -> Dict[str, Any]:
     return {"signal": signal, "sha256": hashlib.sha256(content).hexdigest(), "legislation_id": leg_id}
 
 
+# Egress allow-list: Australian government domains plus the code owners and utilities the corpus cites. Every request,
+# including each redirect hop, must be HTTPS to one of these hosts, so a bad source_url cannot reach internal hosts.
+ALLOWED_HOST_SUFFIXES = (".gov.au",)
+ALLOWED_HOSTS = frozenset({
+    "cali.org.au", "insurancecouncil.com.au", "privatehealthcareaustralia.org.au", "www.ausbanking.org.au",
+    "www.austelco.org.au", "sydneywater.com.au", "www.sydneywater.com.au",
+})
+
+
+class DisallowedHost(httpx.RequestError):
+    pass
+
+
+def host_allowed(url: str) -> bool:
+    u = httpx.URL(url)
+    host = (u.host or "").lower()
+    return u.scheme == "https" and (host in ALLOWED_HOSTS or host.endswith(ALLOWED_HOST_SUFFIXES))
+
+
+def _check_host(request: httpx.Request) -> None:
+    if not host_allowed(str(request.url)):
+        raise DisallowedHost(f"host not in the egress allow-list: {request.url.host}", request=request)
+
+
 def make_client() -> httpx.Client:
     return httpx.Client(
         headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/pdf,*/*;q=0.8"},
         timeout=TIMEOUT_SECONDS,
         follow_redirects=True,
+        event_hooks={"request": [_check_host]},
     )
 
 
 def fetch_source(client: httpx.Client, url: str) -> Dict[str, Any]:
     """Fetch one URL and return its snapshot record. Network errors are recorded, never raised."""
+    if not host_allowed(url):
+        return {"reachable": False, "error": f"DisallowedHost: {httpx.URL(url).host} is not in the egress allow-list"}
     try:
         resp = client.get(url)
     except httpx.HTTPError as exc:
@@ -418,9 +460,9 @@ Generated on {today}. {count} instruments, {clauses} clauses.
 
 | Item | Why it needs a human |
 | --- | --- |
-| ACL (Competition and Consumer Act 2010 Sch 2) | File authored without verification and with no `verified_on`. Section numbers and the exclusion of private health insurance are unchecked. |
-| CPS 230 | Condensed (30 entries) and carried over from the original corpus, not re-verified against the registered instrument. |
-| CPS 234 | Carried over from the original corpus, not re-verified against the registered instrument. |
+| ACL (Competition and Consumer Act 2010 Sch 2) | Verified 2026-10-27 for the cited sections; s34, the consumer definition (s3), Crown application, penalties and the exclusion of private health insurance from the ASIC Act protections were not re-read. |
+| CPS 230 | Re-verified 2026-11-01 against F2026L00475, which renumbers the standard; every citation in the corpus and rules moved to the new paragraph numbers (for example the 72-hour notice is now paragraph 32 and the 24-hour notice paragraph 41). Confirm the renumbered citations. |
+| CPS 234 | Re-verified 2026-11-01 against F2018L01745; paragraph numbers unchanged. |
 | General Insurance Code | Redraft is due to be lodged with ASIC in late October 2026. The corpus holds the 2020 Code (2021 update); clause numbers and obligations may change. |
 | Life Insurance Code | Clause renumbering between versions; confirm every cited clause number against the March 2025 Code. |
 | PHI Complying Product Rules | Confirm the compilation date and number against the Federal Register. |
@@ -450,8 +492,6 @@ fails the job) and `diff --json`; when a cited source changes against `src/data/
 JSON report as an artifact and opens or updates a single GitHub issue. Change detection uses the strongest signal per
 source (legislation compilation id, PDF hash and length, or main-content hash), so site navigation and banner
 changes do not raise issues. After a reviewer accepts the new state of a source, refresh the lock with `snapshot`.
-
-## Instruments
 """
 
 SIGN_OFF = """
@@ -473,6 +513,14 @@ def render_review_pack(instruments: List[Dict[str, Any]], today: Optional[date] 
     today = today or date.today()
     clauses = sum(len(i.get("clauses", [])) for i in instruments)
     parts = [REVIEW_INTRO.format(today=today.isoformat(), count=len(instruments), clauses=clauses)]
+    parts.append("\n## Domains\n")
+    parts.append("| Domain | Coverage | Instruments | Unverified |")
+    parts.append("| --- | --- | --- | --- |")
+    for d in load_domains():
+        mine = [i for i in instruments if set(d["sectors"]) & set(i.get("sectors", []))]
+        unverified = [str(i.get("code")) for i in mine if not (i.get("verified_on") or "").strip()]
+        parts.append(f"| {_cell(d['name'])} | {d.get('coverage', '')} | {len(mine)} | {_cell(', '.join(unverified) or 'none')} |")
+    parts.append("\n## Instruments\n")
     by_reg: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for inst in instruments:
         by_reg[str(inst.get("regulator", ""))].append(inst)
@@ -513,6 +561,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     st = sub.add_parser("staleness", help="offline: list stale, unverified or uncertain instruments")
     st.add_argument("--max-age-days", type=int, default=90)
     st.add_argument("--fail-on-unverified", action="store_true", help="exit 1 if any verified_on is empty")
+    st.add_argument("--domain", help="only instruments in this domain pack (id or alias), e.g. superannuation")
     st.set_defaults(func=cmd_staleness)
     sub.add_parser("snapshot", help="online: fetch sources and write the lock file").set_defaults(func=cmd_snapshot)
     df = sub.add_parser("diff", help="online: compare sources to the lock (exit 2 on change)")

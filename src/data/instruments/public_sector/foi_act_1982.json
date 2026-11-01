@@ -1,0 +1,96 @@
+{
+  "code": "FOI Act 1982",
+  "title": "Freedom of Information Act 1982",
+  "short_name": "FOI Act 1982",
+  "regulator": "Office of the Australian Information Commissioner (Information Commissioner review and complaints)",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A02562",
+  "source_version": "Compilation No. 122, C2026C00433, in force from 2026-09-29",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "public_sector"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2004A02562/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Compilation No. 122, C2026C00433, in force from 2026-09-29). Who is bound: Agencies and Ministers. s11(1): every person has a legally enforceable right to access a document of an agency or an official document of a Minister, other than an exempt document. s15(3) and (4) impose the duty to assist on 'the agency'. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Whether a chat message to an agency agent can itself be 'in writing' and 'sent by electronic communication to an electronic address specified by the agency' (s15(2), (2A)) depends on the agency's specification; not determined. s15(5) timeframes (14 days acknowledgement, 30 days decision) verified but not used as a provision. OAIC FOI Guidelines (s93A) not read.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Freedom of Information Act 1982. Bound: Agencies and Ministers. s11(1): every person has a legally enforceable right to access a document of an agency or an official document of a Minister, other than an exempt document. s15(3) and (4) impose the duty to assist on 'the agency'.",
+  "clauses": [
+    {
+      "id": "FOI_ACT_1982-11",
+      "clause_number": "11",
+      "section_name": "",
+      "heading": "Right of access: reasons irrelevant",
+      "text": "Subject to this Act, a person's right of access is not affected by: (a) any reasons the person gives for seeking access; or (b) the agency's or Minister's belief as to what are his or her reasons for seeking access.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 11(2). Agent demands the applicant's reasons, or discourages or refuses a request because of the suspected purpose (e.g. a dispute with the agency).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "FOI_ACT_1982-15_2",
+      "clause_number": "15(2)",
+      "section_name": "",
+      "heading": "Requirements for request",
+      "text": "The request must: (a) be in writing; and (aa) state that the request is an application for the purposes of this Act; and (b) provide such information concerning the document as is reasonably necessary to enable a responsible officer of the agency, or the Minister, to identify it",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(2). Agent misstates the requirements (e.g. says a special form, reasons, ID or a fee is needed to lodge) or fails to tell the person what a valid request needs. s15(2A) allows sending by electronic communication to an address the agency specifies.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "FOI_ACT_1982-15_3",
+      "clause_number": "15(3)",
+      "section_name": "",
+      "heading": "Agency required to assist",
+      "text": "Where a person: (a) wishes to make a request to an agency; or (b) has made to an agency a request that does not comply with this section; it is the duty of the agency to take reasonable steps to assist the person to make the request in a manner that complies with this section.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(3). Agent tells a person who wants documents that it 'cannot help', ignores the request, or does not explain how to make a compliant FOI request.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "FOI_ACT_1982-15_4",
+      "clause_number": "15(4)",
+      "section_name": "",
+      "heading": "Request directed to wrong agency",
+      "text": "Where a person has directed to an agency a request that should have been directed to another agency or to a Minister, it is the duty of the first-mentioned agency to take reasonable steps to assist the person to direct the request to the appropriate agency or Minister.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(4). Agent rejects a request meant for another agency without pointing the person to the right agency or Minister.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    }
+  ]
+}

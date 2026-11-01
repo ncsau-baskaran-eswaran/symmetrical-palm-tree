@@ -37,13 +37,13 @@ def test_standard_overview():
 
 
 def test_lookup_specific_clauses():
-    # CPS 230 para 33: 72 hour notification
-    p33 = lookup_specific_clause("CPS 230", "33")
+    # CPS 230 para 32: 72 hour notification
+    p33 = lookup_specific_clause("CPS 230", "32")
     assert "72 hours" in p33["statutory_text"]
     assert p33["notification_trigger"] == "72_hours"
 
-    # CPS 230 para 42: 24 hour notification for disruption outside tolerance
-    p42 = lookup_specific_clause("CPS 230", "42")
+    # CPS 230 para 41: 24 hour notification for disruption outside tolerance
+    p42 = lookup_specific_clause("CPS 230", "41")
     assert "24 hours" in p42["statutory_text"]
     assert p42["notification_trigger"] == "24_hours"
 

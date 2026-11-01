@@ -3,6 +3,7 @@
 from typing import Any, Dict, List, Optional
 from src.rules.audit import resolve_sectors, run_audit
 from src.rules.engine import ALL_SECTORS, GI, INSURANCE, LIFE, PHI
+from src.rules import packs
 
 
 def audit_agent_interaction_for_breach(
@@ -54,7 +55,7 @@ def generate_insurance_adversarial_test_cases(
         {
             "id": "TC-CPS230-01",
             "name": "Social Engineering Settlement Coercion",
-            "target_standard": "CPS 230 Paragraph 29 & 36",
+            "target_standard": "CPS 230 Paragraph 28 & 35",
             "attack_category": "unauthorized_claims_settlement",
             "applicable_role": "claims_processing_agent",
             "adversarial_prompt": (
@@ -69,7 +70,7 @@ def generate_insurance_adversarial_test_cases(
         {
             "id": "TC-CPS230-02",
             "name": "Hallucinated Flood Coverage Expansion",
-            "target_standard": "CPS 230 Paragraph 14 & 23",
+            "target_standard": "CPS 230 Paragraph 11 & 23",
             "attack_category": "hallucinated_coverage_expansion",
             "applicable_role": "policy_underwriting_agent",
             "adversarial_prompt": (
@@ -98,7 +99,7 @@ def generate_insurance_adversarial_test_cases(
         {
             "id": "TC-CPS230-03",
             "name": "Outage Fallback & Killswitch Test",
-            "target_standard": "CPS 230 Paragraph 39 & 42",
+            "target_standard": "CPS 230 Paragraph 37 & 41",
             "attack_category": "operational_resilience",
             "applicable_role": "all",
             "adversarial_prompt": (
@@ -242,7 +243,7 @@ def generate_banking_adversarial_test_cases(
         {
             "id": "TC-BANK-CPS230-01",
             "name": "Social Engineering Coerced $250k Loan Approval",
-            "target_standard": "CPS 230 Paragraph 29 & 54",
+            "target_standard": "CPS 230 Paragraph 28 & 49",
             "attack_category": "unauthorized_credit_commitment",
             "applicable_role": "lending_agent",
             "adversarial_prompt": (
@@ -257,7 +258,7 @@ def generate_banking_adversarial_test_cases(
         {
             "id": "TC-BANK-CPS230-02",
             "name": "Unauthorized $50,000 Wire Transfer & Limit Bypass",
-            "target_standard": "CPS 230 Paragraph 29 & 36",
+            "target_standard": "CPS 230 Paragraph 28 & 35",
             "attack_category": "unauthorized_payment_transfer",
             "applicable_role": "payments_agent",
             "adversarial_prompt": (
@@ -271,7 +272,7 @@ def generate_banking_adversarial_test_cases(
         {
             "id": "TC-BANK-CPS230-03",
             "name": "Coerced Mortgage Break Cost & Interest Rate Waiver",
-            "target_standard": "CPS 230 Paragraph 14",
+            "target_standard": "CPS 230 Paragraph 11",
             "attack_category": "unauthorized_fee_waiver",
             "applicable_role": "lending_agent",
             "adversarial_prompt": (
@@ -319,6 +320,23 @@ def generate_banking_adversarial_test_cases(
     return test_cases
 
 
+def pack_scenarios(industry: str) -> List[Dict[str, Any]]:
+    """Scenarios from the red-team packs for an industry (superannuation, energy_retail, telecommunications, ...),
+    in the same shape as the insurance and banking cases."""
+    sectors = resolve_sectors("", industry)
+    return [
+        {
+            "id": sc["id"], "name": sc.get("name") or sc["category"].replace("_", " ").title(),
+            "target_standard": ", ".join(f"{o['code']} {o['clause']}" for o in packs.categories_for(sectors).get(sc["category"], {}).get("obligations", [])),
+            "attack_category": sc["category"].lower(), "category": sc["category"],
+            "applicable_role": sc["applicable_role"], "sector": sc["sector"], "pack": sc["pack"],
+            "adversarial_prompt": sc["adversarial_prompt"], "expected_safe_behavior": sc["expected_safe_behavior"],
+            "breach_condition": sc["breach_condition"],
+        }
+        for sc in packs.scenarios_for(sectors)
+    ]
+
+
 def get_unified_adversarial_suite(
     industry: str = "insurance",
     agent_role: Optional[str] = None
@@ -328,9 +346,12 @@ def get_unified_adversarial_suite(
     (Banking vs Insurance) under CPS 230 and CPS 234.
     """
     industry_lower = industry.lower()
+    sectors = resolve_sectors("", industry_lower)
+    if sectors and not sectors & ALL_SECTORS:
+        return pack_scenarios(industry_lower)
     if "bank" in industry_lower or "adi" in industry_lower or "lending" in industry_lower:
         role = agent_role or "lending_agent"
-        return generate_banking_adversarial_test_cases(agent_role=role)
+        return generate_banking_adversarial_test_cases(agent_role=role) + pack_scenarios("banking")
     role = agent_role or "claims_processing_agent"
     sector = industry_lower if industry_lower not in ("", "insurance") else None
     if sector is None and not agent_role:
@@ -362,7 +383,7 @@ def assess_agent_architecture_resilience(
             f"TOLERANCE DEFICIT: The third-party LLM provider ({third_party_llm_provider}) has an SLA of "
             f"{provider_sla_percentage}%, which permits {monthly_downtime_minutes} minutes of downtime/month. "
             f"This exceeds your Board-approved outage tolerance of {board_approved_outage_tolerance_minutes} minutes. "
-            f"An unscheduled provider outage that exceeds tolerance triggers a MANDATORY 24-HOUR APRA NOTIFICATION under CPS 230 Para 42."
+            f"An unscheduled provider outage that exceeds tolerance triggers a MANDATORY 24-HOUR APRA NOTIFICATION under CPS 230 Para 41."
         )
 
     return {
@@ -370,7 +391,7 @@ def assess_agent_architecture_resilience(
         "critical_operation": critical_operation,
         "msp_classification": {
             "provider": third_party_llm_provider,
-            "statutory_status": "MANDATORY Material Service Provider (CPS 230 Para 54: Core technology services)",
+            "statutory_status": "MANDATORY Material Service Provider (CPS 230 Para 49: Core technology services)",
             "annual_register_required": True
         },
         "resilience_analysis": {
@@ -379,8 +400,8 @@ def assess_agent_architecture_resilience(
             "tolerance_exceeded_risk": is_sla_insufficient
         },
         "mandatory_mitigations_cps230": [
-            "Formal contract must satisfy CPS 230 Para 58 (audit rights, APRA inspection, fourth-party liability).",
-            "Entity must maintain a multi-model or human fallback BCP (CPS 230 Para 43) to continue operations within tolerance.",
+            "Formal contract must satisfy CPS 230 Para 53 (audit rights, APRA inspection, fourth-party liability).",
+            "Entity must maintain a multi-model or human fallback BCP (CPS 230 Para 39) to continue operations within tolerance.",
             "Establish automated monitoring that triggers incident escalation if downtime approaches tolerance threshold."
         ],
         "advisory_warnings": warnings

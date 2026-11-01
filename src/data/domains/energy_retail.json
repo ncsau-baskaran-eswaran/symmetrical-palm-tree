@@ -1,0 +1,38 @@
+{
+  "id": "energy_retail",
+  "name": "Energy retail (electricity and gas retailers)",
+  "aliases": [
+    "energy",
+    "electricity",
+    "gas"
+  ],
+  "sectors": [
+    "energy_retail"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "Australian Energy Regulator (AER)",
+      "role": "Enforces NERL"
+    },
+    {
+      "name": "Essential Services Commission (Victoria)",
+      "role": "Enforces ERCoP, EIA (Vic)"
+    },
+    {
+      "name": "ACCC",
+      "role": "Enforces ACL"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for retailer customer service: explicit informed consent, hardship and payment plans, disconnection limits and life support under the National Energy Retail Law (NECF jurisdictions) and Victoria's Energy Retail Code of Practice and Electricity Industry Act. The National Energy Retail Rules are not loaded (AEMC blocked automated access on 2026-10-27).",
+  "known_gaps": [
+    "National Energy Retail Rules (AEMC) not verified: download the current version in a browser and confirm rule numbers (payment plans, hardship, Part 7 life support) before citing them.",
+    "NERR (current version, r 33 payment plans, Part 3 hardship, Part 6 de-energisation, Part 7 life support registration and prohibition on de-energising registered premises, Energy Marketing Rules) is UNVERIFIED: aemc.gov.au returned HTTP 403. For NECF jurisdictions the life support category therefore has no verified NERR cite; add one once the current NERR is downloaded manually. A 2026 life support amending rule reportedly commences 1 December 2027 and may renumber Part 7.",
+    "Gas Industry Act 2001 (Vic) life support and disconnection parallels (s 48DI, 48DU per ERCoP notes) not read.",
+    "ACL s 18 and 29 cited by number only; verification delegated to another agent.",
+    "Excluded as not conversational: NERL s 43 to 45 (hardship policy development, contents and AER approval), s 40 (consent record keeping), ERCoP billing and security deposit rules.",
+    "Not covered: family violence assistance (ERCoP Part 7, NERR equivalents), Victorian no-cold-calling rule (EIA s 40EB), ERCoP cl 50 marketer identification; candidates for a later pack.",
+    "Corpus entries are research-verified on 2026-10-27 but not signed off by a compliance or legal SME."
+  ]
+}

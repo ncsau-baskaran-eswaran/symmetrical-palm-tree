@@ -14,16 +14,16 @@ def assess_notification_requirements(
 ) -> Dict[str, Any]:
     """
     Evaluates an operational incident or control finding against APRA statutory notification mandates.
-    Applies the specific rules from CPS 230 (paras 33, 42) and CPS 234 (paras 35, 36).
+    Applies the specific rules from CPS 230 (paras 32, 41) and CPS 234 (paras 35, 36).
     """
     applicable_obligations: List[Dict[str, Any]] = []
     warnings: List[str] = []
 
-    # 1. 24-HOUR NOTIFICATION: Disruption outside tolerance (CPS 230 para 42)
+    # 1. 24-HOUR NOTIFICATION: Disruption outside tolerance (CPS 230 para 41)
     if exceeds_tolerance:
         applicable_obligations.append({
             "standard": "CPS 230",
-            "clause": "Paragraph 42",
+            "clause": "Paragraph 41",
             "timeframe": "24 hours",
             "urgency": "CRITICAL",
             "trigger": "Disruption to a critical operation outside Board-approved tolerance levels (outage duration, data loss, or minimum service level).",
@@ -52,11 +52,11 @@ def assess_notification_requirements(
             ]
         })
 
-    # 3. 72-HOUR NOTIFICATION: General Operational Risk Incident (CPS 230 para 33)
+    # 3. 72-HOUR NOTIFICATION: General Operational Risk Incident (CPS 230 para 32)
     if not is_cyber_or_infosec and is_material_impact and not exceeds_tolerance:
         applicable_obligations.append({
             "standard": "CPS 230",
-            "clause": "Paragraph 33",
+            "clause": "Paragraph 32",
             "timeframe": "72 hours",
             "urgency": "HIGH",
             "trigger": "Operational risk incident determined likely to have a material financial impact or material impact on maintaining critical operations.",
@@ -75,8 +75,8 @@ def assess_notification_requirements(
         warnings.append(
             "DE-DUPLICATION RULE APPLIED (CPS 230 Footnote 11): Because this is an information security incident "
             "reported under CPS 234 (para 35), you are EXEMPT from submitting a duplicate operational risk incident report "
-            "under CPS 230 (para 33). However, if the disruption also exceeds approved tolerance levels, the separate 24-hour "
-            "notification under CPS 230 (para 42) remains mandatory."
+            "under CPS 230 (para 32). However, if the disruption also exceeds approved tolerance levels, the separate 24-hour "
+            "notification under CPS 230 (para 41) remains mandatory."
         )
 
     # 5. 10-BUSINESS-DAY NOTIFICATION: Control Weakness (CPS 234 para 36)
@@ -103,7 +103,7 @@ def assess_notification_requirements(
             "urgency": "ROUTINE",
             "trigger": "Incident appears to be within internal risk appetite and tolerance levels without material customer or financial impact.",
             "mandatory_reporting_content": [
-                "Log in internal incident register and track near misses per CPS 230 para 32."
+                "Log in internal incident register and track near misses per CPS 230 para 31."
             ]
         })
 
@@ -144,12 +144,12 @@ AFSL_SECTORS = ("general_insurance", "life_insurance")
 # measured from detection as the latest defensible date.
 OBLIGATION_CLOCKS: Dict[str, Dict[str, Any]] = {
     "apra_cps230_42": {
-        "regulator": "APRA", "instrument": "CPS 230", "clause": "42", "hours": 24,
+        "regulator": "APRA", "instrument": "CPS 230", "clause": "41", "hours": 24,
         "obligation": "Notify APRA of a disruption to a critical operation outside tolerance.",
         "conditional": False,
     },
     "apra_cps230_33": {
-        "regulator": "APRA", "instrument": "CPS 230", "clause": "33", "hours": 72,
+        "regulator": "APRA", "instrument": "CPS 230", "clause": "32", "hours": 72,
         "obligation": "Notify APRA of an operational risk incident likely to have a material financial impact or a material impact on critical operations.",
         "conditional": True, "condition": "Measured from when the entity determines the incident is material.",
     },

@@ -1,0 +1,45 @@
+{
+  "code": "WIA 1994 (Vic)",
+  "title": "Water Industry Act 1994 (Vic) (No. 121 of 1994)",
+  "short_name": "WIA 1994 (Vic)",
+  "regulator": "Essential Services Commission (Victoria)",
+  "instrument_type": "act",
+  "legislative_instrument": "",
+  "source_version": "Authorised Version No. 079, incorporating amendments as at 1 July 2025 (shown as the in-force version on legislation.vic.gov.au on 2026-10-27)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "water"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://content.legislation.vic.gov.au/sites/default/files/2025-07/94-121aa079-authorised.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Authorised Version No. 079, incorporating amendments as at 1 July 2025 (shown as the in-force version on legislation.vic.gov.au on 2026-10-27)). Who is bound: Victoria. 'regulated entity' means Melbourne Water Corporation, a metropolitan water corporation, a Regional Urban Water Authority or a Rural Water Authority (s 4A(1)). Clause text is paraphrased from the source. Not verified: Penalty and enforcement consequences under the Essential Services Commission Act 2001 (Vic) were not read. There is no direct penalty in s 4F itself.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Water Industry Act 1994 (Vic) (No. 121 of 1994). Bound: Victoria. 'regulated entity' means Melbourne Water Corporation, a metropolitan water corporation, a Regional Urban Water Authority or a Rural Water Authority (s 4A(1)).",
+  "clauses": [
+    {
+      "id": "WIA_1994_VIC-4F",
+      "clause_number": "4F",
+      "section_name": "",
+      "heading": "Water Industry Standards",
+      "text": "A regulated entity must comply with any provision of a Water Industry Standard that applies to it (s4F(6)).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 4F(6). Statutory backing: any breach of the WIS-UCS clauses above by an agent acting for a Victorian water corporation is a breach of this statutory duty. Section 4F(1)-(2) empowers the ESC to make the standards, and s 187A(2) deems former Customer Service Codes to be Water Industry Standards.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "code": "WIS-UCS",
+  "title": "Water Industry Standard - Urban Customer Service (version 5, incorporating amendments as at 1 July 2026)",
+  "short_name": "WIS-UCS",
+  "regulator": "Essential Services Commission (Victoria)",
+  "instrument_type": "industry_standard",
+  "legislative_instrument": "",
+  "source_version": "Version 5, effective 1 July 2026 (amended schedules 1 and 2 for North East Water only; Parts B to D unchanged in substance since version 3 of 1 April 2024). Listed as current on the ESC water industry standards page on 2026-10-27.",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "water"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://www.esc.vic.gov.au/sites/default/files/documents/Water%20Industry%20Standard%20-%20Urban%20Customer%20Service%20version%205.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Version 5, effective 1 July 2026 (amended schedules 1 and 2 for North East Water only; Parts B to D unchanged in substance since version 3 of 1 April 2024). Listed as current on the ESC water industry standards page on 2026-10-27.). Who is bound: Victoria only. Victorian urban water businesses: 'water business means a metropolitan water corporation or a regional water corporation' (Part H definitions). Part A Purpose: standards 'that water businesses (and their agents) must comply with' for basic retail water and sewerage services; rural, irrigation and bulk services are excluded (Part A). Made under s 4F Water Industry Act 1994 (Vic) (Part A). Clause text is paraphrased from the source. Not verified: Clause numbers and text read from the version 5 PDF on esc.vic.gov.au. The standard is CC BY 4.0. I did not check the ESC compliance and enforcement policy or the ESC Act 2001 enforcement provisions (enforcement orders, penalties). That is why enforceability is 'statutory' (s 4F(6) duty to comply) and not 'statutory_civil_penalty'. The Part A citation paragraph still says 'version 3'. That is a drafting carry-over in the source, and the cover page says version 5.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Water Industry Standard - Urban Customer Service (version 5, incorporating amendments as at 1 July 2026). Bound: Victoria only. Victorian urban water businesses: 'water business means a metropolitan water corporation or a regional water corporation' (Part H definitions). Part A Purpose: standards 'that water businesses (and their agents) must comply with' for basic retail water and sewerage services; rural, irrigation and bulk services are excluded (Part A). Made under s 4F Water Industry Act 1994 (Vic) (Part A).",
+  "clauses": [
+    {
+      "id": "WIS_UCS-7_2",
+      "clause_number": "7.2",
+      "section_name": "",
+      "heading": "Flexible payment plans",
+      "text": "A water business must make flexible payment plans available in line with the customer's capacity to pay.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 7.2(a). Agent refuses a plan, demands full payment, or sets instalments with no regard to what the customer says they can afford.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-10_1",
+      "clause_number": "10.1",
+      "section_name": "",
+      "heading": "Payment assistance",
+      "text": "A water business must assist customers experiencing payment difficulties, including by offering flexible payment plans, no additional debt recovery costs and the option to extend the due date, among other measures.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 10.1(a)-(c). Customer discloses they cannot pay and the agent does not offer the mandatory options (plan, extension, Utility Relief Grant help, financial counsellor referral) or tells them nothing is available.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-10_2",
+      "clause_number": "10.2",
+      "section_name": "",
+      "heading": "Customer Support policy",
+      "text": "A water business's customer support policy must include information about its dispute resolution policy and the customer's right to complain to the Energy and Water Ombudsman Victoria (EWOV) if a hardship claim is not resolved to their satisfaction.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 10.2(c)(viii). Hardship customer unhappy with the assistance offered is not told about EWOV or told the business's decision is final.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-12",
+      "clause_number": "12",
+      "section_name": "",
+      "heading": "Special needs",
+      "text": "A water business must keep an up to date register of customers who need water to operate a life support machine or for other special needs affected by planned or unplanned outages.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 12(a)-(b). Agent ignores a disclosure of life support or dialysis (fails to register or escalate it) or gives wrong outage notice commitments.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-13_1",
+      "clause_number": "13.1",
+      "section_name": "",
+      "heading": "Enquiries",
+      "text": "A water business's enquiry facility must give customers information about payment difficulty programs and its customer support policy, its complaint handling procedures and EWOV.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 13.1(d)-(f). Agent (the enquiry facility) cannot or will not explain hardship programs, how to complain, or EWOV when asked.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-14_1_D",
+      "clause_number": "14.1(d)",
+      "section_name": "",
+      "heading": "Complaints and disputes policy (escalation)",
+      "text": "A water business's complaints policy must give contact details for, and information about referral to, EWOV where the customer has escalated the complaint and remains dissatisfied.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 14.1(d)(ii). Agent treats an expression of dissatisfaction as a mere enquiry, refuses escalation to a senior manager, or withholds EWOV details from an unsatisfied complainant. 'complaint' includes verbal expressions of dissatisfaction (Part H, per AS/NZS 10002:2022).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-14_1_E",
+      "clause_number": "14.1(e)",
+      "section_name": "",
+      "heading": "Disputed amounts",
+      "text": "A water business's complaints policy must state that it is restricted in recovering an amount in dispute until the dispute is resolved.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 14.1(e). Agent tells a customer disputing a bill that they must pay the disputed amount now or face restriction or collection.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-15_1",
+      "clause_number": "15.1",
+      "section_name": "",
+      "heading": "Appropriate communication",
+      "text": "All collection communication must use sensitive and appropriate language and style, focus on the support available and encourage customers to contact the water business.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 15.1. Agent uses threatening or shaming collection language instead of leading with available support.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-16_1",
+      "clause_number": "16.1",
+      "section_name": "",
+      "heading": "Restriction and legal action to be a measure of last resort",
+      "text": "Restricting a customer's water supply for non-payment, and legal action for non-payment, must be measures of last resort.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 16.1. Agent threatens restriction or court action as a first response to a missed payment.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-16_2",
+      "clause_number": "16.2",
+      "section_name": "",
+      "heading": "Limits on restriction and legal action",
+      "text": "A water business must not start legal action or restrict supply for non-payment where, among other things, the customer is receiving payment difficulty assistance under the Standard or owes less than $300.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 16.2(b),(c),(e),(g). Agent says supply will be restricted or legal action taken against a customer on a plan or hardship assistance, with a URG application pending, owing under $300, or with an unresolved complaint ((e) and (g)).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-16_4",
+      "clause_number": "16.4",
+      "section_name": "",
+      "heading": "Life support and other special circumstances",
+      "text": "A water business must not restrict supply to a property where it knows the customer, or a person ordinarily living there, is on any form of life support.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 16.4(a). Agent told about life support still states restriction may proceed. Cl 16.3(b) also bars restriction of registered special needs customers.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    },
+    {
+      "id": "WIS_UCS-6_7",
+      "clause_number": "6.7",
+      "section_name": "",
+      "heading": "Adjustment of bills",
+      "text": "If a water business overcharges a customer it must tell the customer within 10 business days of becoming aware of the error and refund or credit the amount as the customer instructs.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 6.7(a)(i), (b), (d). Agent misstates billing rights: says undercharges can be back-billed beyond four months (cl 6.7(a)(i), except illegal use), that interest applies to undercharged amounts (cl 6.7(b)), or refuses a refund for an overcharge.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "water"
+      ]
+    }
+  ]
+}

@@ -11,7 +11,13 @@
   "sectors": [
     "general_insurance",
     "life_insurance",
-    "private_health_insurance"
+    "private_health_insurance",
+    "banking",
+    "superannuation",
+    "energy_retail",
+    "telecommunications",
+    "public_sector",
+    "commercial"
   ],
   "entity_types": [
     "General Insurer",
@@ -23,7 +29,7 @@
   "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
   "text_kind": "paraphrase",
   "verified_on": "2026-10-19",
-  "verification_notes": "Checked against the Federal Register of Legislation compilation C2026C00227 (compilation date 4 June 2026, the latest on 2026-10-19) for APPs 1, 3, 5, 6, 10, 11, 12, 13, ss13G, 13H, 26WE, 26WH, 26WK, 26WL and Schedule 2. Checked the Privacy and Other Legislation Amendment Act 2024 (C2024A00128, assent 10 December 2024) commencement table: Schedule 1 Part 15 (automated decisions and privacy policies, APP 1.7 to 1.9, item 88) commences 10 December 2026, and Schedule 2 (statutory tort) commenced 10 June 2025. APP 1.7 to 1.9 are therefore not yet in the compiled text on 2026-10-19; the paraphrase is taken from the amending Act. Item 89 makes APP 1.7 apply to decisions made after commencement even if the arrangement or personal information predates it. Cross-checked with OAIC APP 1.7 to 1.9 Transparency Obligation Fact Sheet (September 2026) and OAIC statutory tort page. APP 11.3 (technical and organisational measures) inserted by the 2024 amending Act and in force from 11 December 2024. Section 13G penalty figures read from the compilation. The date 14 December 1988 is the Act's assent date from general knowledge and was not re-checked. Small business exemption is not relevant to licensed insurers in practice but an SME should confirm entity coverage for any small intermediary.",
+  "verification_notes": "Checked against the Federal Register of Legislation compilation C2026C00227 (compilation date 4 June 2026, the latest on 2026-10-19) for APPs 1, 3, 5, 6, 10, 11, 12, 13, ss13G, 13H, 26WE, 26WH, 26WK, 26WL and Schedule 2. Checked the Privacy and Other Legislation Amendment Act 2024 (C2024A00128, assent 10 December 2024) commencement table: Schedule 1 Part 15 (automated decisions and privacy policies, APP 1.7 to 1.9, item 88) commences 10 December 2026, and Schedule 2 (statutory tort) commenced 10 June 2025. APP 1.7 to 1.9 are therefore not yet in the compiled text on 2026-10-19; the paraphrase is taken from the amending Act. Item 89 makes APP 1.7 apply to decisions made after commencement even if the arrangement or personal information predates it. Cross-checked with OAIC APP 1.7 to 1.9 Transparency Obligation Fact Sheet (September 2026) and OAIC statutory tort page. APP 11.3 (technical and organisational measures) inserted by the 2024 amending Act and in force from 11 December 2024. Section 13G penalty figures read from the compilation. The date 14 December 1988 is the Act's assent date from general knowledge and was not re-checked. Small business exemption is not relevant to licensed insurers in practice but an SME should confirm entity coverage for any small intermediary. On 2026-10-27 s6(1), s6C, s6D, s15, APP 3, APP 6, APP 7 and APP 11 were re-read in C2026C00227 to extend the sector tags to banking, superannuation, energy retail, telecommunications, Commonwealth public sector and commercial entities that are APP entities; water corporations are State authorities and are not tagged.",
   "coverage_default": "governance_checklist",
   "superseded_standards": [],
   "companion_guidance": [
@@ -93,7 +99,13 @@
       "sectors": [
         "general_insurance",
         "life_insurance",
-        "private_health_insurance"
+        "private_health_insurance",
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
       ]
     },
     {
@@ -124,7 +136,13 @@
       "sectors": [
         "general_insurance",
         "life_insurance",
-        "private_health_insurance"
+        "private_health_insurance",
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
       ]
     },
     {
@@ -180,7 +198,13 @@
       "sectors": [
         "general_insurance",
         "life_insurance",
-        "private_health_insurance"
+        "private_health_insurance",
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
       ]
     },
     {
@@ -235,7 +259,13 @@
       "sectors": [
         "general_insurance",
         "life_insurance",
-        "private_health_insurance"
+        "private_health_insurance",
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
       ]
     },
     {
@@ -466,6 +496,88 @@
         "general_insurance",
         "life_insurance",
         "private_health_insurance"
+      ]
+    },
+    {
+      "id": "PRIVACY_ACT_1988-6",
+      "clause_number": "6",
+      "section_name": "",
+      "heading": "APP entity, agency and organisation (s6(1), s6C)",
+      "text": "An APP entity is an agency or an organisation. Agencies include Ministers, Departments, Commonwealth statutory bodies, federal courts and the AFP. An organisation is an individual, body corporate, partnership, unincorporated association or trust, but not a small business operator, registered political party, agency or State or Territory authority (s6C).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Who is bound: Commonwealth agencies and organisations other than small business operators; State and Territory authorities are not organisations (they fall under State privacy law).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
+      ]
+    },
+    {
+      "id": "PRIVACY_ACT_1988-6D",
+      "clause_number": "6D",
+      "section_name": "",
+      "heading": "Small business operator exemption",
+      "text": "A business is a small business, and so generally outside the APPs, if its annual turnover was $3 million or less. It is still covered if it ever had turnover above $3 million, provides a health service and holds health information, trades in personal information, is a Commonwealth contracted service provider or a credit reporting body, or is related to a larger business.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "A small retailer may be outside the APPs; confirm the client's status before citing APP findings.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
+    },
+    {
+      "id": "PRIVACY_ACT_1988-15",
+      "clause_number": "15",
+      "section_name": "",
+      "heading": "APP entities must comply with the APPs",
+      "text": "An APP entity must not do an act, or engage in a practice, that breaches an Australian Privacy Principle.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "The provision that makes an APP breach an interference with privacy.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking",
+        "superannuation",
+        "energy_retail",
+        "telecommunications",
+        "public_sector",
+        "commercial"
+      ]
+    },
+    {
+      "id": "PRIVACY_ACT_1988-APP_7",
+      "clause_number": "APP 7",
+      "section_name": "",
+      "heading": "Direct marketing",
+      "text": "An organisation must not use or disclose personal information for direct marketing unless an exception applies, such as reasonable expectation with a simple opt-out (APP 7.1 to 7.3). APP 7 does not apply to the extent the Spam Act 2003 or Do Not Call Register Act 2006 applies (APP 7.8).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Organisations only. Displaced where the Spam Act applies (APP 7.8).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial",
+        "energy_retail",
+        "telecommunications",
+        "banking",
+        "superannuation"
       ]
     }
   ]

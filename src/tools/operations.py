@@ -5,7 +5,7 @@ from typing import Any, Dict, List
 
 def get_mandatory_critical_operations(sector: str) -> Dict[str, Any]:
     """
-    Returns the statutory baseline critical operations mandated by CPS 230 paragraph 36
+    Returns the statutory baseline critical operations mandated by CPS 230 paragraph 35
     for a specific industry sector (banking, general_insurance, life_insurance, private_health, superannuation).
     """
     sector_lower = sector.lower().strip()
@@ -66,7 +66,7 @@ def get_mandatory_critical_operations(sector: str) -> Dict[str, Any]:
     return {
         "sector": sector,
         "standard": "CPS 230",
-        "clause": "Paragraph 36",
+        "clause": "Paragraph 35",
         "mandatory_sector_critical_operations": matched_sector_ops,
         "mandatory_cross_entity_critical_operations": all_entities_baseline,
         "required_tolerance_levels": [
@@ -80,7 +80,7 @@ def get_mandatory_critical_operations(sector: str) -> Dict[str, Any]:
 
 def get_mandatory_material_service_providers(sector: str) -> Dict[str, Any]:
     """
-    Returns the statutory baseline material service providers mandated by CPS 230 paragraph 54
+    Returns the statutory baseline material service providers mandated by CPS 230 paragraph 49
     for a specific industry sector.
     """
     sector_lower = sector.lower().strip()
@@ -156,22 +156,22 @@ def get_mandatory_material_service_providers(sector: str) -> Dict[str, Any]:
     return {
         "sector": sector,
         "standard": "CPS 230",
-        "clause": "Paragraph 54",
+        "clause": "Paragraph 49",
         "mandatory_sector_msps": matched_msps,
         "mandatory_cross_entity_msps": all_entities_baseline,
-        "annual_submission_mandate": "CPS 230 para 54 requires the complete MSP register to be submitted to APRA annually.",
-        "contract_requirements": "All arrangements with MSPs must satisfy the formal contract requirements in paragraph 58."
+        "annual_submission_mandate": "CPS 230 para 50 requires the complete MSP register to be submitted to APRA annually.",
+        "contract_requirements": "All arrangements with MSPs must satisfy the formal contract requirements in paragraphs 53 and 54."
     }
 
 
 def get_service_provider_contract_checklist() -> Dict[str, Any]:
     """
-    Returns the mandatory contract terms required under CPS 230 paragraph 58,
-    plus the statutory exemptions for non-traditional providers under paragraph 63 and Attachment.
+    Returns the mandatory contract terms required under CPS 230 paragraph 53,
+    plus the statutory exemptions for non-traditional providers under paragraph 57 and Attachment.
     """
     return {
         "standard": "CPS 230",
-        "clause": "Paragraph 58",
+        "clause": "Paragraph 53",
         "mandatory_contract_clauses": [
             "Specify the services covered and associated service levels (SLAs);",
             "Set out rights, responsibilities and expectations of each party, including asset ownership, data ownership and control, dispute resolution, audit access, liability and indemnity;",
@@ -193,5 +193,5 @@ def get_service_provider_contract_checklist() -> Dict[str, Any]:
             "Operators of payment systems and schemes (NPP, EFTPOS, Visa, Mastercard)",
             "Financial messaging infrastructures (SWIFT, SuperStream gateways)"
         ],
-        "exemption_conditions": "Exemption applies if provider falls within Attachment category AND uses standardised terms or lacks a formal negotiated agreement (para 63)."
+        "exemption_conditions": "Exemption applies if provider falls within Attachment category AND uses standardised terms or lacks a formal negotiated agreement (para 57)."
     }

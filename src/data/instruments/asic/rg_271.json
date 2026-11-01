@@ -8,14 +8,14 @@
   "effective_date": "2021-10-05",
   "amended_date": "2021-09-02",
   "status": "In Force",
-  "sectors": ["general_insurance", "life_insurance"],
-  "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Authorised Representative", "Insurance Broker"],
+  "sectors": ["general_insurance", "life_insurance", "superannuation"],
+  "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Authorised Representative", "Insurance Broker", "Superannuation trustee (RSE Licensee)"],
   "enforceability": "statutory",
   "source_url": "https://asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-271-internal-dispute-resolution/",
   "licence": "ASIC regulatory guide (copyright ASIC). Paraphrased only; consult the published guide.",
   "text_kind": "paraphrase",
   "verified_on": "2026-10-19",
-  "verification_notes": "Checked against the published PDF (rg271-published-2-september-2021.pdf) downloaded from asic.gov.au on 2026-10-19; the ASIC page lists no later reissue. Paragraph numbers and timeframes confirmed directly from the PDF text, including Table 2 (maximum IDR timeframes) and the 'Enforceable paragraph' markers. Enforceable paragraphs are binding on AFS licensees because s912A(1)(g)(i) requires IDR procedures to comply with ASIC standards and requirements, which ASIC Instrument 2020/98 sets by reference to those paragraphs (per RG 78 Appendix 1); the instrument itself was not opened. Non-enforceable paragraphs (for example RG 271.51 on acknowledgement) are ASIC expectations. AS/NZS 10002:2014 referenced in the guide has been reissued as AS 10002:2022, but RG 271 still refers to the 2014 definition. Private health insurers are not AFS licensees for health insurance products (Corporations Act s765A(1)(c)), so RG 271 does not govern PHI health insurance complaints, which are handled under the Private Health Insurance framework and the Commonwealth Ombudsman (Private Health Insurance Ombudsman); a PHI insurer's general or life insurance distribution under an AFS licence would be covered.",
+  "verification_notes": "Checked against the published PDF (rg271-published-2-september-2021.pdf) downloaded from asic.gov.au on 2026-10-19; the ASIC page lists no later reissue. Paragraph numbers and timeframes confirmed directly from the PDF text, including Table 2 (maximum IDR timeframes) and the 'Enforceable paragraph' markers. Enforceable paragraphs are binding on AFS licensees because s912A(1)(g)(i) requires IDR procedures to comply with ASIC standards and requirements, which ASIC Instrument 2020/98 sets by reference to those paragraphs (per RG 78 Appendix 1); the instrument itself was not opened. Non-enforceable paragraphs (for example RG 271.51 on acknowledgement) are ASIC expectations. AS/NZS 10002:2014 referenced in the guide has been reissued as AS 10002:2022, but RG 271 still refers to the 2014 definition. Private health insurers are not AFS licensees for health insurance products (Corporations Act s765A(1)(c)), so RG 271 does not govern PHI health insurance complaints, which are handled under the Private Health Insurance framework and the Commonwealth Ombudsman (Private Health Insurance Ombudsman); a PHI insurer's general or life insurance distribution under an AFS licence would be covered. Superannuation additions checked on 2026-10-27 against the same PDF: Table 2 (RG 271.58), RG 271.57, RG 271.59, RG 271.79 and RG 271.80. Superannuation was added to the instrument sectors on that date for the two superannuation clauses only; the other clauses keep their insurance sector tags.",
   "coverage_default": "governance_checklist",
   "superseded_standards": ["RG 165 Licensing: Internal and external dispute resolution (for complaints received before 5 October 2021; withdrawn 5 October 2022)"],
   "companion_guidance": [
@@ -233,6 +233,36 @@
       "obligation_type": "complaints",
       "agent_relevance": "runtime",
       "sectors": ["general_insurance", "life_insurance"]
+    },
+    {
+      "id": "RG271-79",
+      "clause_number": "RG 271.79",
+      "section_name": "C: IDR timeframes: superannuation trustee complaints",
+      "heading": "Superannuation trustee complaints: 45 calendar days and insurance in superannuation",
+      "text": "Table 2 (RG 271.58 and RG 271.59) sets the maximum IDR timeframe for complaints about superannuation trustees, other than complaints about death benefit distributions, at no later than 45 calendar days after receiving the complaint. Under RG 271.79 a complaint about insurance in superannuation may be lodged with either the insurer or the trustee; trustees, insurers and administrators must have arrangements to meet the maximum timeframe whatever the lodgement point, and time runs from the date the complaint is first lodged with either party.",
+      "subclauses": ["RG 271.57: superannuation trustees and RSA providers meet the written-reasons requirement (SIS Act s101(1)(d), RSA Act s47(1)(d)) when they give an IDR response."],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["superannuation complaints", "IDR timeframe", "insurance in superannuation", "45 days"],
+      "notes": "RG 271.79 is marked as an enforceable paragraph in the guide.",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": ["superannuation"]
+    },
+    {
+      "id": "RG271-80",
+      "clause_number": "RG 271.80",
+      "section_name": "C: IDR timeframes: superannuation death benefit distributions",
+      "heading": "Objections to superannuation death benefit distributions: 90 calendar days",
+      "text": "A death benefit decision-maker may propose how and to whom to pay a death benefit and notify potential beneficiaries, who may object within 28 calendar days of receiving the notice (Corporations Act s1056(2)(a)). Table 2 sets the maximum IDR timeframe for complaints about superannuation death benefit distributions at no later than 90 calendar days after that 28 calendar day objection period expires.",
+      "subclauses": ["RG 271.81 to RG 271.85 (enforceable, including notes) set further requirements for these complaints and are not paraphrased here."],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": ["death benefit", "objection", "IDR timeframe", "90 days"],
+      "notes": "Objections to proposed death benefit distributions are complaints (RG 271.32(b)).",
+      "obligation_type": "complaints",
+      "agent_relevance": "runtime",
+      "sectors": ["superannuation"]
     }
   ]
 }

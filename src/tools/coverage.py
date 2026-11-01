@@ -9,7 +9,7 @@ from src.rules.catalog import JUDGE_ONLY_CATEGORIES, RULES
 from src.tools.notifications import assess_regulatory_obligations
 
 # Controls the white-box code auditor verifies (src/code_auditor/analyzer.py).
-CODE_INSPECTED = {("CPS 234", "21"), ("CPS 234", "23"), ("CPS 230", "29"), ("CPS 230", "36")}
+CODE_INSPECTED = {("CPS 234", "21"), ("CPS 234", "23"), ("CPS 230", "28"), ("CPS 230", "35")}
 
 STATUS_ORDER = (
     "runtime_detected",

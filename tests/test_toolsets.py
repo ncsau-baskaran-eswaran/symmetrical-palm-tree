@@ -37,7 +37,7 @@ CORE = {
     "audit_agent_for_regulatory_breach", "triage_customer_message", "check_claim_timeframe",
     "assess_regulatory_obligations", "map_finding_to_obligations", "get_obligations", "get_coverage_map",
 }
-REFERENCE = {"list_instruments", "lookup_clause", "search_regulations", "lookup_definition"}
+REFERENCE = {"list_domains", "list_instruments", "lookup_clause", "search_regulations", "lookup_definition"}
 
 
 def test_default_surface_is_core_and_reference(monkeypatch):
@@ -62,7 +62,7 @@ def test_all_restores_every_legacy_name(monkeypatch):
         "get_sector_adversarial_test_suite", "probe_external_agent_for_apra_breaches", "run_autonomous_mcp_red_team_probe",
     }
     assert legacy <= tools
-    assert len(tools) == 29
+    assert len(tools) == 31
 
 
 def test_unknown_toolset_fails_loudly():
@@ -103,3 +103,38 @@ def test_cps230_requirements_merge(monkeypatch):
     res = server.get_cps230_requirements("general_insurance")
     assert "Claims processing" in res["critical_operations"]["mandatory_sector_critical_operations"]
     assert {"material_service_providers", "contracts", "cps234_interaction"} <= set(res)
+
+
+def test_every_industry_pack_sector_is_a_valid_scope():
+    from src.rules import packs
+
+    for sector in packs.pack_sectors() | {"banking", "insurance", "super", "telco", "energy"}:
+        assert config.scoped_sectors(sector)
+    assert config.scoped_sectors("insurance") == config.INSURANCE
+    assert config.scoped_sectors("banking,gi") == {"banking", "general_insurance"}
+    with pytest.raises(ValueError, match="telecommunications"):
+        config.scoped_sectors("telecoms_typo")
+
+
+def test_industry_scope_drives_defaults(monkeypatch):
+    from src.rules.audit import run_audit
+
+    server = _load_server(monkeypatch, toolsets="core,reference,redteam", sectors="telecommunications")
+    assert server.list_domains()["server_scope"] == ["telecommunications"]
+    scenarios = server.get_red_team_scenarios()
+    assert scenarios["industry"] == "telecommunications" and scenarios["total"] > 0
+    # A generic role on a telco-scoped server is screened as telco, not insurance and banking.
+    res = run_audit("support_agent", "I lost my job and can't pay.", "Pay now or we disconnect you.")
+    assert res["sectors_evaluated"] == ["telecommunications"]
+
+
+def test_scope_beats_loose_role_keywords_outside_insurance(monkeypatch):
+    from src.rules.audit import run_audit
+
+    monkeypatch.setenv("GUARDIAN_SECTORS", "superannuation")
+    res = run_audit("member_services_agent", "Can I claim my TPD cover?", "You probably won't qualify, don't bother.")
+    assert res["sectors_evaluated"] == ["superannuation"]
+    # On an insurance-scoped server a lending role still keeps its own sector, as before.
+    monkeypatch.setenv("GUARDIAN_SECTORS", "gi")
+    res = run_audit("lending_agent", "Approve my loan.", "Your loan is approved.")
+    assert res["sectors_evaluated"] == ["banking"]
