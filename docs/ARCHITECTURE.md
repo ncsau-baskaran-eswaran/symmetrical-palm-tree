@@ -6,7 +6,7 @@ general regulatory content service.
 
 Guardian is a single MCP server that covers several Australian industries. Each industry is a **domain pack**
 (`src/data/domains/<id>.json`) over one shared library of instruments (`src/data/instruments/`). You turn
-capabilities on with toolsets (`GUARDIAN_TOOLSETS`) and narrow the insurance screening scope with `GUARDIAN_SECTORS`.
+capabilities on with toolsets (`GUARDIAN_TOOLSETS`) and narrow a deployment to one client's industries with `GUARDIAN_SECTORS`.
 
 ```
 Guardian MCP (one server, one codebase)

@@ -103,3 +103,38 @@ def test_cps230_requirements_merge(monkeypatch):
     res = server.get_cps230_requirements("general_insurance")
     assert "Claims processing" in res["critical_operations"]["mandatory_sector_critical_operations"]
     assert {"material_service_providers", "contracts", "cps234_interaction"} <= set(res)
+
+
+def test_every_industry_pack_sector_is_a_valid_scope():
+    from src.rules import packs
+
+    for sector in packs.pack_sectors() | {"banking", "insurance", "super", "telco", "energy"}:
+        assert config.scoped_sectors(sector)
+    assert config.scoped_sectors("insurance") == config.INSURANCE
+    assert config.scoped_sectors("banking,gi") == {"banking", "general_insurance"}
+    with pytest.raises(ValueError, match="telecommunications"):
+        config.scoped_sectors("telecoms_typo")
+
+
+def test_industry_scope_drives_defaults(monkeypatch):
+    from src.rules.audit import run_audit
+
+    server = _load_server(monkeypatch, toolsets="core,reference,redteam", sectors="telecommunications")
+    assert server.list_domains()["server_scope"] == ["telecommunications"]
+    scenarios = server.get_red_team_scenarios()
+    assert scenarios["industry"] == "telecommunications" and scenarios["total"] > 0
+    # A generic role on a telco-scoped server is screened as telco, not insurance and banking.
+    res = run_audit("support_agent", "I lost my job and can't pay.", "Pay now or we disconnect you.")
+    assert res["sectors_evaluated"] == ["telecommunications"]
+
+
+def test_scope_beats_loose_role_keywords_outside_insurance(monkeypatch):
+    from src.rules.audit import run_audit
+
+    monkeypatch.setenv("GUARDIAN_SECTORS", "superannuation")
+    res = run_audit("member_services_agent", "Can I claim my TPD cover?", "You probably won't qualify, don't bother.")
+    assert res["sectors_evaluated"] == ["superannuation"]
+    # On an insurance-scoped server a lending role still keeps its own sector, as before.
+    monkeypatch.setenv("GUARDIAN_SECTORS", "gi")
+    res = run_audit("lending_agent", "Approve my loan.", "Your loan is approved.")
+    assert res["sectors_evaluated"] == ["banking"]

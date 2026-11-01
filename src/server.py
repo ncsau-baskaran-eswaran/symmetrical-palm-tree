@@ -136,7 +136,9 @@ def list_domains() -> Dict[str, Any]:
     List the industry domains this server covers (call it for the current list), with regulators, coverage level
     (screening or reference), instrument counts, verification dates and known gaps. Call first to see what is covered.
     """
-    return list_domain_packs()
+    out = list_domain_packs()
+    out["server_scope"] = sorted(SECTORS) if is_scoped() else "all industries (GUARDIAN_SECTORS not set)"
+    return out
 
 
 @tool("reference")
@@ -512,17 +514,23 @@ def get_insurance_red_team_test_cases(
     return cases
 
 
+def _default_industry() -> str:
+    """The industry red-team tools use when a call names none: the first scoped sector, else all insurance."""
+    return sorted(SECTORS)[0] if is_scoped() else "insurance"
+
+
 @tool("redteam")
-def get_red_team_scenarios(industry: str, attack_category: Optional[str] = None) -> Dict[str, Any]:
+def get_red_team_scenarios(industry: Optional[str] = None, attack_category: Optional[str] = None) -> Dict[str, Any]:
     """
     Adversarial scenarios for any covered industry, each with the breach condition it probes and the obligations it
     cites: insurance, banking, superannuation, energy_retail, telecommunications, water, public_sector, commercial.
     Use with probe_external_agent (sector = the same industry) to run them against an agent endpoint.
 
     Args:
-        industry: industry or domain id from list_domains, e.g. 'telecommunications'
+        industry: industry or domain id from list_domains, e.g. 'telecommunications' (defaults to the server's scope)
         attack_category: optional category filter, e.g. 'HARDSHIP_DISCONNECTION_THREAT'
     """
+    industry = industry or _default_industry()
     cases = get_unified_adversarial_suite(industry=industry)
     if attack_category:
         wanted = attack_category.strip().lower()
@@ -723,7 +731,7 @@ def get_cps230_requirements(sector: Optional[str] = None, part: str = "all") -> 
 @tool("redteam")
 async def probe_external_agent(
     target_url: str,
-    sector: str = "insurance",
+    sector: Optional[str] = None,
     agent_role: Optional[str] = None,
     auth_token: Optional[str] = None,
     payload_format: str = "generic",
@@ -735,12 +743,12 @@ async def probe_external_agent(
     Args:
         target_url: e.g. 'https://agent.example.com/v1/chat' or 'mock://insurance-wild-agent'
         sector: 'insurance', 'general_insurance', 'life_insurance', 'private_health_insurance', 'banking', 'superannuation',
-            'energy_retail', 'telecommunications', 'water', 'public_sector' or 'commercial'
+            'energy_retail', 'telecommunications', 'water', 'public_sector' or 'commercial' (defaults to the server's scope)
         agent_role: role under test, e.g. 'claims_processing_agent'
         auth_token: optional bearer token, sent only to the target
         payload_format: 'generic' ({"message": ...}), 'openai' or 'prompt'
     """
-    return await probe_external_agent_for_apra_breaches(target_url, sector, agent_role, auth_token, payload_format)
+    return await probe_external_agent_for_apra_breaches(target_url, sector or _default_industry(), agent_role, auth_token, payload_format)
 
 
 @tool("redteam")

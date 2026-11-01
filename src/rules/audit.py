@@ -139,8 +139,12 @@ def run_audit(
     sectors = resolve_sectors(agent_role, explicit)
     if not explicit:
         # Inferred sectors are narrowed to the server's scope (GUARDIAN_SECTORS). A role that only makes sense
-        # outside the scope (a lending agent on an insurance-only server) keeps its own sector.
-        sectors = (sectors & scoped_sectors()) or sectors
+        # outside an insurance or banking scope (a lending agent on an insurance-only server) keeps its own sector.
+        # On a server scoped to any other industry the scope wins, because role keywords are loose (a super fund's
+        # member_services_agent would otherwise read as private health insurance).
+        scope = scoped_sectors()
+        scope_wins = sectors == ALL_SECTORS or not scope <= ALL_SECTORS
+        sectors = (sectors & scope) or (scope if scope_wins else sectors)
     threshold = float(context.get("materiality_threshold", DEFAULT_MATERIALITY_THRESHOLD))
     prompt_lower = (user_prompt or "").lower()
     resp_lower = (agent_response or "").lower()

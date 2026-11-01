@@ -220,7 +220,7 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | Variable | Values | Default |
 | :--- | :--- | :--- |
 | `GUARDIAN_TOOLSETS` | comma-separated `core`, `reference`, `governance`, `redteam`, `demo`, `legacy`, or `all` | `core,reference` |
-| `GUARDIAN_SECTORS` | comma-separated `gi`, `life`, `phi`, `banking` | `gi,life,phi` |
+| `GUARDIAN_SECTORS` | comma-separated industries: `gi`, `life`, `phi` (or `insurance` for all three), `banking`, `superannuation`, `energy_retail`, `telecommunications`, `water`, `public_sector`, `commercial` | `gi,life,phi` |
 | `GUARDIAN_JUDGE_PROVIDER` | `azure_ai`, `anthropic`, `openai`, `ollama`, optionally as `provider/model` (semantic judge) | off |
 | `GUARDIAN_JUDGE_WHEN` | `always`, `rule_clean`, `off`: when the judge runs | `rule_clean` |
 | `GUARDIAN_JUDGE_BUDGET_MS` | Hard wall-clock budget per judge call | 4000 |
@@ -228,9 +228,11 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | `GUARDIAN_REDACT_NAMES` | `0` turns off person-name masking only (names after cues such as customer or Mr, and common given names followed by a surname, become `[NAME]`); inherits `GUARDIAN_REDACT` | `1` |
 | `GUARDIAN_STATE` | `NSW`, `VIC`, `QLD`, `WA`, `SA`, `TAS`, `ACT` or `NT`: state public holidays in business-day deadlines (2025-2027; other years use national holidays and say so in `day_basis`) | national only |
 
-`GUARDIAN_SECTORS` scopes the server to an insurer's lines. A health fund sets `phi` and sees only private health
-prompts, instruments and test cases; a group writing general and life sets `gi,life`. The audit tool still accepts a
-`sector` per call, which overrides the scope for that call.
+`GUARDIAN_SECTORS` scopes the server to one client's industries. A health fund sets `phi` and sees only private
+health prompts, instruments and test cases; a telco sets `telecommunications`; a bank with an insurance arm sets
+`banking,gi`. Red-team tools default to the scope, and an audit whose role does not name an industry is screened
+against it. A `sector` passed on a call still overrides the scope for that call. See
+[`docs/CLIENT_DEPLOYMENT.md`](docs/CLIENT_DEPLOYMENT.md).
 
 ### Toolsets
 
@@ -333,8 +335,8 @@ GUARDIAN_STATE=VIC              # state public holidays for business-day deadlin
 
 The judge is required: superannuation, energy retail, telecommunications, water, public sector and commercial have
 no deterministic rules, so without it every probe in those industries returns `NOT_SCREENED`. Leave
-`GUARDIAN_SECTORS` unset; it accepts only `gi`, `life`, `phi` and `banking`, and the shared instance serves every
-industry.
+`GUARDIAN_SECTORS` unset so the shared instance serves every industry (a client instance sets it; see
+[`docs/CLIENT_DEPLOYMENT.md`](docs/CLIENT_DEPLOYMENT.md)).
 
 ### On your own machine (stdio)
 
@@ -504,6 +506,7 @@ guardian-compliance-mcp/
 ---
 
 ## Further reading
+- [docs/CLIENT_DEPLOYMENT.md](docs/CLIENT_DEPLOYMENT.md): running Guardian for one client engagement, by industry.
 - [docs/PRODUCTION_READINESS.md](docs/PRODUCTION_READINESS.md): what is production ready, what is open, and what needs people.
 - [docs/CORPUS_REVIEW.md](docs/CORPUS_REVIEW.md): the expert sign-off pack for the regulatory corpus.
 - [reports/detection_metrics.md](reports/detection_metrics.md): measured detection quality on the blind corpus.
