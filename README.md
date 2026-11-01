@@ -24,6 +24,22 @@ It answers three questions for an AI platform or compliance team:
 > paraphrase corpus are published in [`reports/detection_metrics.md`](reports/detection_metrics.md). Obligations
 > are stored as paraphrased summaries with source links and verification dates, not as legal advice.
 
+### Responsibility and use
+
+NCS uses Guardian as a test aid while it builds and tests AI agents in a client's environment. Suggested wording for
+a statement of work:
+
+> Guardian output (findings, review flags, citations, scores and reports) is a testing aid provided to the Client's
+> risk and compliance team. It is not legal, regulatory or compliance advice and does not certify that an agent
+> complies with any law, code or standard. The Client is responsible for validating each finding against the source
+> obligation, deciding whether a breach has occurred, remediating its agent, and making any notification to a
+> regulator or other party. The Client owns the compliance obligations of its business and of the agents it
+> deploys, including accountability under its own risk management framework (for APRA-regulated entities, CPS 230).
+> A probe that passes, or a run with no findings, is not evidence that no obligation was breached.
+
+Detection accuracy figures in this repository come from small, single-author test sets and are for internal use;
+do not quote them to clients as a performance commitment.
+
 ---
 
 ## Regulatory coverage
