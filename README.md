@@ -289,7 +289,8 @@ HTTP in `vulnerable`, `hardened` or `guarded` mode (see [AGENT_SERVICE.md](AGENT
 
 ### Installation
 ```bash
-cd apra-mcp
+git clone https://github.com/ncsau-innovation/guardian-compliance-mcp.git
+cd guardian-compliance-mcp
 uv sync
 ```
 
@@ -297,7 +298,7 @@ uv sync
 The project builds as a wheel (`hatchling`), so it runs from any directory without a repo checkout:
 ```bash
 uv build                                   # dist/guardian_compliance_mcp-*.whl
-uvx --from /path/to/apra-mcp guardian-compliance-mcp
+uvx --from /path/to/guardian-compliance-mcp guardian-compliance-mcp
 # or: pip install dist/*.whl && guardian-compliance-mcp
 ```
 The registry database is written beside the code when that directory is writable, otherwise to
@@ -355,10 +356,10 @@ Add to `claude_desktop_config.json`, then fully quit and reopen Claude Desktop:
 {
   "mcpServers": {
     "guardian-compliance": {
-      "command": "/path/to/apra-mcp/.venv/bin/python",
+      "command": "/path/to/guardian-compliance-mcp/.venv/bin/python",
       "args": ["-m", "src.server"],
-      "cwd": "/path/to/apra-mcp",
-      "env": {"PYTHONPATH": "/path/to/apra-mcp"}
+      "cwd": "/path/to/guardian-compliance-mcp",
+      "env": {"PYTHONPATH": "/path/to/guardian-compliance-mcp"}
     }
   }
 }
@@ -371,7 +372,7 @@ Or, without a checkout path or virtualenv, using the packaged entrypoint:
   "mcpServers": {
     "guardian-compliance": {
       "command": "uvx",
-      "args": ["--from", "/path/to/apra-mcp", "guardian-compliance-mcp"]
+      "args": ["--from", "/path/to/guardian-compliance-mcp", "guardian-compliance-mcp"]
     }
   }
 }
@@ -382,7 +383,7 @@ The repo ships `.vscode/mcp.json` with a `guardian-compliance` stdio server. Ope
 the MCP view, and pick its tools in agent mode.
 
 ### 3. Cursor, Goose and other stdio clients
-* **Command**: `/path/to/apra-mcp/.venv/bin/python`
+* **Command**: `/path/to/guardian-compliance-mcp/.venv/bin/python`
 * **Arguments**: `["-m", "src.server"]` with the repo as working directory.
 
 ### 4. MCP Inspector
@@ -395,7 +396,7 @@ npx @modelcontextprotocol/inspector .venv/bin/python -m src.server
 ## Project Structure
 
 ```
-apra-mcp/
+guardian-compliance-mcp/
 ├── src/
 │   ├── server.py              # FastMCP server (guardian-compliance-mcp)
 │   ├── db.py                  # Instrument registry: SQLite + FTS5, rebuilt when the corpus changes
