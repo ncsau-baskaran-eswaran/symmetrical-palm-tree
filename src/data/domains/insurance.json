@@ -1,0 +1,20 @@
+{
+  "id": "insurance",
+  "name": "Insurance (general, life and private health)",
+  "aliases": ["gi", "life", "phi", "general_insurance", "life_insurance", "private_health_insurance"],
+  "sectors": ["general_insurance", "life_insurance", "private_health_insurance"],
+  "coverage": "screening",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {"name": "APRA", "role": "Prudential standards (CPS 230, CPS 234 and related)"},
+    {"name": "ASIC", "role": "Conduct, disclosure, distribution and dispute resolution for general and life insurance"},
+    {"name": "ACCC", "role": "Australian Consumer Law for private health insurance conduct"},
+    {"name": "OAIC", "role": "Privacy Act and notifiable data breaches"},
+    {"name": "Code bodies", "role": "General Insurance Code, Life Insurance Code and Private Health Insurance Code of Conduct"}
+  ],
+  "scope_notes": "Reference corpus plus runtime screening of AI agent conversations (audit, triage, claim timeframes, reporting clocks). See README for measured detection quality.",
+  "known_gaps": [
+    "Corpus not signed off by a compliance or legal expert; see docs/CORPUS_REVIEW.md open items.",
+    "Capital and valuation standards are out of scope."
+  ]
+}

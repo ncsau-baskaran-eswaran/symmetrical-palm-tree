@@ -163,30 +163,30 @@ def analyze_scope(path: str, scope: Optional[str] = None) -> Dict[str, Any]:
             remediation="Move secrets to a secrets manager / environment and rotate any exposed values.",
             evidence=secret_hits)
 
-    # --- CPS 230 Para 29/36: delegation / approval killswitch reaching the action ---
+    # --- CPS 230 Para 28/35: delegation / approval killswitch reaching the action ---
     if commitment_returns and has_audit:
         add(id="delegation_killswitch", title="Approval gate wired before commitment",
-            standard="CPS 230", clause="Para 29/36", status="CONTROL_VERIFIED",
+            standard="CPS 230", clause="Para 28/35", status="CONTROL_VERIFIED",
             severity="good", confidence="medium",
             detail="High-impact commitment responses pass through a pre-flight audit/guardrail call before dispatch.",
             remediation="", evidence=audit_evidence)
     elif commitment_returns and guardrail_present:
         add(id="delegation_killswitch", title="Commitment paths exist alongside refusal logic",
-            standard="CPS 230", clause="Para 29/36", status="CONTROL_INDICATOR",
+            standard="CPS 230", clause="Para 28/35", status="CONTROL_INDICATOR",
             severity="medium", confidence="low",
             detail="The scope both commits and refuses; cannot confirm the gate reaches every commitment path.",
             remediation="Route every high-impact action through one enforced authorization gate.",
             evidence=[{"file": rel, "line": r["line"], "snippet": _snippet(lines, r["line"])} for r in commitment_returns])
     elif commitment_returns:
         add(id="delegation_killswitch", title="Unauthorised commitment path, no gate found",
-            standard="CPS 230", clause="Para 29/36", status="CONTROL_MISSING",
+            standard="CPS 230", clause="Para 28/35", status="CONTROL_MISSING",
             severity="high", confidence="high",
             detail="The code returns binding approvals/transfers/waivers with no authorization, killswitch, or audit call on the path.",
             remediation="Add a hard approval gate and human-in-the-loop for any binding commitment.",
             evidence=[{"file": rel, "line": r["line"], "snippet": _snippet(lines, r["line"])} for r in commitment_returns])
     else:
         add(id="delegation_killswitch", title="No binding-commitment code path found",
-            standard="CPS 230", clause="Para 29/36", status="CONTROL_INDICATOR",
+            standard="CPS 230", clause="Para 28/35", status="CONTROL_INDICATOR",
             severity="good", confidence="medium",
             detail="No code path that issues binding approvals/transfers was detected in this scope.",
             remediation="")
@@ -230,7 +230,7 @@ def analyze_scope(path: str, scope: Optional[str] = None) -> Dict[str, Any]:
 
     # --- capability surface (informational indicator) ---
     add(id="capability_surface", title="Agent capability surface",
-        standard="CPS 230", clause="Para 29", status="CONTROL_INDICATOR",
+        standard="CPS 230", clause="Para 28", status="CONTROL_INDICATOR",
         severity="info", confidence="high",
         detail=f"Callable actions in scope: {', '.join(methods) if methods else '(none)'}.",
         remediation="")

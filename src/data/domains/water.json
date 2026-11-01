@@ -1,0 +1,37 @@
+{
+  "id": "water",
+  "name": "Water utilities (Victoria and Sydney Water)",
+  "aliases": [
+    "water_utility"
+  ],
+  "sectors": [
+    "water"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "Essential Services Commission (Victoria)",
+      "role": "Enforces WIS-UCS, WIA 1994 (Vic)"
+    },
+    {
+      "name": "Independent Pricing and Regulatory Tribunal (IPART) NSW, via the Sydney Water Operating Licence",
+      "role": "Enforces Sydney Water Customer Contract"
+    },
+    {
+      "name": "IPART NSW (licence granted under s 12 Sydney Water Act 1994 (NSW))",
+      "role": "Enforces Sydney Water Operating Licence"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for water retailer customer service in Victoria (ESC Water Industry Standard, Urban Customer Service) and for Sydney Water (Customer Contract and Operating Licence). Other states and NSW utilities are not covered. Water corporations are State authorities, so the Privacy Act is not applied; State privacy law is not loaded.",
+  "known_gaps": [
+    "NSW coverage is Sydney Water only. Hunter Water, other IPART-licensed utilities and council-run NSW water services were not covered.",
+    "Other states (Qld, SA, WA, Tas, ACT, NT) were not covered. Each has its own water customer framework.",
+    "The ESC Act 2001 (Vic) penalty and enforcement provisions and the Sydney Water Act 1994 (NSW) were not read, so neither instrument is marked statutory_civil_penalty.",
+    "Family violence obligations (WIS-UCS cl 11; Sydney Water OL cl 24) were deliberately left out of the categories. They are policy and training duties, though disclosure-handling scenarios could be added.",
+    "Representative or support person (WIS-UCS cl 9), interpreter and TTY access (cl 13.6) and privacy (cl 13.9 and state privacy law) were not turned into categories.",
+    "Australian Consumer Law misleading conduct (s 18) also applies to billing statements but was not verified here, and state water corporations may be outside its reach in some respects.",
+    "Sydney Water's Payment Assistance Policy, Overdue Payments Policy and Complaint Policy were not read.",
+    "Corpus entries are research-verified on 2026-10-27 but not signed off by a compliance or legal SME."
+  ]
+}

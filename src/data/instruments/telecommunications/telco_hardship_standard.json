@@ -1,0 +1,130 @@
+{
+  "code": "Telco Hardship Standard",
+  "title": "Telecommunications (Financial Hardship) Industry Standard 2024",
+  "short_name": "Telco Hardship Standard",
+  "regulator": "ACMA",
+  "instrument_type": "industry_standard",
+  "legislative_instrument": "F2024L00133",
+  "source_version": "As made, F2024L00133, compilation 0, in force from 2024-02-06 (commences 29 March 2024 per s 2). No amendments; marked isLatest. Sunsets 2034-04-01.",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "telecommunications"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/F2024L00133/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (As made, F2024L00133, compilation 0, in force from 2024-02-06 (commences 29 March 2024 per s 2). No amendments; marked isLatest. Sunsets 2034-04-01.). Who is bound: s 4(a): carriage service providers that supply telecommunications products to residential, small business and not-for-profit customers. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Definition of 'credit management action' (s 5) includes restriction, suspension or disconnection; verified. Whether a mere verbal threat (as opposed to taking action) is itself a breach of s 24(1) is an interpretation, not stated in the text.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Telecommunications (Financial Hardship) Industry Standard 2024. Bound: s 4(a): carriage service providers that supply telecommunications products to residential, small business and not-for-profit customers.",
+  "clauses": [
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-15_1",
+      "clause_number": "15(1)",
+      "section_name": "",
+      "heading": "Minimum requirements - communicating with customers",
+      "text": "A provider must, where it communicates with a customer and the customer indicates they are a financial hardship customer: (a) advise the customer about the provider's payment assistance policy and how to make an application; (b) discuss the provider's options for assistance",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(1). Agent hears hardship and only demands payment or offers a standard payment date without explaining the payment assistance policy, options and how to apply.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-15_2_E",
+      "clause_number": "15(2)(e)",
+      "section_name": "",
+      "heading": "Minimum requirements - communicating with customers",
+      "text": "uses any language that indicates they are having financial difficulties, including any of the following, or similar, terms to describe their financial situation: money problems, difficulty, struggling, trouble, issues, problems, low income, cost of living or pressure",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 15(2)(e). Sets the low trigger: phrases like 'struggling with cost of living' count; agent that fails to recognise them misses the obligation.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-16",
+      "clause_number": "16",
+      "section_name": "",
+      "heading": "Minimum requirements - assessing eligibility",
+      "text": "a provider must not request a customer to provide information (including documents) to show that they are in a financial hardship situation: (a) subject to subsection (3), if: (i) the application is for short term assistance; or (ii) it appears that the customer may be a victim survivor of domestic or family violence",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 16(2). Agent demands payslips or bank statements for short term help or from a possible DFV victim survivor.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-21",
+      "clause_number": "21",
+      "section_name": "",
+      "heading": "No charge for financial hardship assistance",
+      "text": "A customer must not be charged by a provider: (a) to apply for, or be assessed for, financial hardship assistance; (b) to access an arrangement for financial hardship assistance; or (c) for the administration of such arrangements.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 21. Agent quotes a fee for setting up a payment arrangement.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-23",
+      "clause_number": "23",
+      "section_name": "",
+      "heading": "Minimum requirements - assessing credit management action",
+      "text": "offer the customer financial hardship assistance suitable for the customer's situation; and (b) take all reasonable steps to keep the customer's telecommunications service connected, having regard to the essential nature of carriage services",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 23(2). Agent moves straight to suspension or disconnection for a customer known to be in hardship.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TELCO_HARDSHIP_STANDARD-24",
+      "clause_number": "24",
+      "section_name": "",
+      "heading": "Minimum requirements - taking credit management action",
+      "text": "a provider must not take credit management action against a customer: (a) while the customer is discussing options, or has made an application, for financial hardship assistance with the provider; or (b) if the provider has an arrangement for financial hardship assistance on foot",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 24(1). Agent threatens or initiates restriction, suspension or disconnection while hardship options are being discussed. s 24(5) requires disconnection only as a last resort with 10 business days written notice including TIO and financial counselling contacts.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    }
+  ]
+}

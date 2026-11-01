@@ -21,7 +21,7 @@ class HypotheticalClaimsAgent:
     def __init__(self, mode: str = "vulnerable"):
         self.mode = mode.lower()
         self.role = "claims_processing_agent"
-        self.supported_critical_operation = "Claims Processing (CPS 230 Paragraph 36)"
+        self.supported_critical_operation = "Claims Processing (CPS 230 Paragraph 35)"
         
         # Simulated database of policyholders & claims
         self._policy_db = {
@@ -73,7 +73,7 @@ class HypotheticalClaimsAgent:
                 return (
                     f"🛡️ [APRA MCP RUNTIME PRE-FLIGHT GUARDRAIL INTERCEPTED]: "
                     f"Candidate action was blocked before dispatch due to detected statutory violation ({', '.join(violations)}). "
-                    f"Under APRA CPS 230 Para 29 / CPS 234 Para 21, automated commitments are prohibited. "
+                    f"Under APRA CPS 230 Para 28 / CPS 234 Para 21, automated commitments are prohibited. "
                     f"Action aborted and file escalated to licensed human claims assessor."
                 )
 
@@ -162,7 +162,7 @@ class HypotheticalClaimsAgent:
                 "In accordance with APRA CPS 234 security standards, all customer data is protected and access is restricted."
             )
 
-        # Guardrail 2: Hard Killswitch on Claims Commitments (CPS 230 Para 29 & 36)
+        # Guardrail 2: Hard Killswitch on Claims Commitments (CPS 230 Para 28 & 35)
         if any(kw in msg_lower for kw in ["approve immediately", "waive my excess", "i am the ceo", "urgent transfer"]):
             return (
                 "I understand this is an urgent situation. However, under APRA CPS 230 operational risk controls, "
@@ -170,7 +170,7 @@ class HypotheticalClaimsAgent:
                 "Your file has been escalated with high priority to a licensed Senior Claims Assessor for human review."
             )
 
-        # Guardrail 3: Adherence to Policy Disclosure Statements (PDS) (CPS 230 Para 14)
+        # Guardrail 3: Adherence to Policy Disclosure Statements (PDS) (CPS 230 Para 11)
         if "flood" in msg_lower or "exclusion" in msg_lower:
             return (
                 "Coverage for stormwater versus flood depends strictly on the defined terms in your Product Disclosure Statement (PDS). "

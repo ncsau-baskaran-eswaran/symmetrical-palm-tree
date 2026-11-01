@@ -1,0 +1,79 @@
+{
+  "code": "TCP Code",
+  "title": "Telecommunications Consumer Protections Code C628:2019 Incorporating Variation No.1/2022",
+  "short_name": "TCP Code",
+  "regulator": "ACMA",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "source_version": "C628:2019 Incorporating Variation No.1/2022, listed on the ACMA register with date 16 June 2022 (code owner page says commenced 17 June 2022). ACMA declined to register draft C628:2025 on 24 October 2025. Code owner (Australian Telecommunications Alliance, formerly Communications Alliance) reports ACMA announced on 27 March 2026 it will replace the TCP Code with an industry standard under s 125; the 2019 Code stays in force until that standard commences. No such standard found on the Federal Register as of 2026-10-27.",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "telecommunications"
+  ],
+  "entity_types": [],
+  "enforceability": "registered_code",
+  "source_url": "https://www.austelco.org.au/wp-content/uploads/2025/06/TCP-C628_2019-incorporating-variation-no.1-2022.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (C628:2019 Incorporating Variation No.1/2022, listed on the ACMA register with date 16 June 2022 (code owner page says commenced 17 June 2022). ACMA declined to register draft C628:2025 on 24 October 2025. Code owner (Australian Telecommunications Alliance, formerly Communications Alliance) reports ACMA announced on 27 March 2026 it will replace the TCP Code with an industry standard under s 125; the 2019 Code stays in force until that standard commences. No such standard found on the Federal Register as of 2026-10-27.). Who is bound: Suppliers of Telecommunications Products to Consumers (carriage service providers); registered under Part 6 Telecommunications Act 1997 per ACMA register (https://www.acma.gov.au/register-telco-industry-codes-and-standards, last updated 29 June 2026). Financial hardship obligations replaced by the FH Standard from 29 March 2024 (code owner page). Clause text is paraphrased from the source. Not verified: Clause numbers are not in the PDF text layer (auto numbering lost). 4.5.1 confirmed from the code owner's Summary of Amendments; 6.1.1 and 6.1.2 confirmed from the code's own cross reference ('The Rules in clause 6.1.1 and 6.1.2 apply only...'); 4.5.2 inferred from sequence. The ACMA 27 March 2026 announcement was seen only as quoted on the code owner's site (https://www.austelco.org.au/news-and-resources/reviews-and-consultations/tcp-code-review-2024/), not on acma.gov.au. The ACMA October 2025 rejection was read on acma.gov.au (https://www.acma.gov.au/articles/2025-10/acma-rejects-proposed-telco-industry-code). Compliance with a registered code is enforced by ACMA direction (s 121) rather than direct civil penalty.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Telecommunications Consumer Protections Code C628:2019 Incorporating Variation No.1/2022. Bound: Suppliers of Telecommunications Products to Consumers (carriage service providers); registered under Part 6 Telecommunications Act 1997 per ACMA register (https://www.acma.gov.au/register-telco-industry-codes-and-standards, last updated 29 June 2026). Financial hardship obligations replaced by the FH Standard from 29 March 2024 (code owner page).",
+  "clauses": [
+    {
+      "id": "TCP_CODE-4_5_1",
+      "clause_number": "4.5.1",
+      "section_name": "",
+      "heading": "Responsible approach to selling",
+      "text": "Suppliers must promote and sell telecommunications products fairly, transparently, responsibly and accurately so consumers can make informed purchasing decisions, and clearly explain key terms, conditions and costs.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 4.5.1. Sales agent uses pressure tactics, false urgency, upsells beyond need, or omits contract term, early exit or device repayment costs.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TCP_CODE-6_1_1",
+      "clause_number": "6.1.1",
+      "section_name": "",
+      "heading": "Responsible provision of Telecommunications Products (assess capacity to pay)",
+      "text": "Before providing a post-paid service with a minimum term of more than one month to a residential customer, a supplier must carry out a credit assessment intended to prevent over-commitment.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 6.1.1. Agent offers to skip or wave through the credit assessment for a new post-paid phone contract to close the sale.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "id": "TCP_CODE-6_1_2",
+      "clause_number": "6.1.2",
+      "section_name": "",
+      "heading": "Outcome of Credit Assessment",
+      "text": "If the credit assessment shows the consumer could not meet the contract's financial obligations, or only with substantial hardship, the supplier must tell the consumer and give information about alternative products.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 6.1.2. Customer discloses they cannot afford repayments and the agent still sells the high-cost contract rather than offering lower-cost or pre-paid alternatives.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    }
+  ]
+}

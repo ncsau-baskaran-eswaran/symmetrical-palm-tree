@@ -1,0 +1,62 @@
+{
+  "code": "EIA (Vic)",
+  "title": "Electricity Industry Act 2000 (Vic)",
+  "short_name": "EIA (Vic)",
+  "regulator": "Essential Services Commission (Victoria)",
+  "instrument_type": "act",
+  "legislative_instrument": "",
+  "source_version": "Authorised Version No. 107, incorporating amendments as at 9 September 2026",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "energy_retail"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://content.legislation.vic.gov.au/sites/default/files/2026-09/00-68aa107-authorised.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Authorised Version No. 107, incorporating amendments as at 9 September 2026). Who is bound: Licensed retailers and exempt electricity sellers in Victoria (Part 2A Division 6 life support and disconnection provisions, inserted by No. 28/2021). Gas equivalents are in the Gas Industry Act 2001 (Vic) s 48DI and 48DU per the ERCoP notes, not read. Clause text is paraphrased from the source. Not verified: Penalty amounts for 40SG and 40SS were not extracted. Gas Industry Act 2001 (Vic) parallels not read.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Electricity Industry Act 2000 (Vic). Bound: Licensed retailers and exempt electricity sellers in Victoria (Part 2A Division 6 life support and disconnection provisions, inserted by No. 28/2021). Gas equivalents are in the Gas Industry Act 2001 (Vic) s 48DI and 48DU per the ERCoP notes, not read.",
+  "clauses": [
+    {
+      "id": "EIA_VIC-40SG",
+      "clause_number": "40SG",
+      "section_name": "",
+      "heading": "Life support customers and residents: retailer obligations when advised or notified",
+      "text": "Within one business day of being told that a life support resident lives, or intends to live, at a customer's premises, a retailer must record the life support details in its register of life support customers and residents.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 40SG(1). Registration is triggered by the customer's advice alone. An agent that ignores, disbelieves or demands medical proof before accepting a life support declaration, or fails to route it, causes a breach.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "EIA_VIC-40SS",
+      "clause_number": "40SS",
+      "section_name": "",
+      "heading": "Restrictions on retailer or exempt electricity seller disconnecting supply of electricity",
+      "text": "A retailer must not arrange disconnection of a customer's premises if the customer is a registered life support customer, if a disconnection-related complaint is unresolved, or if the customer is receiving and complying with relevant assistance, among other listed protections.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 40SS. An agent that threatens or schedules disconnection of a registered life support customer, a customer with an unresolved disconnection complaint, or one complying with assistance, misstates the law.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    }
+  ]
+}

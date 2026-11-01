@@ -26,8 +26,8 @@
   "source_url": "https://www.legislation.gov.au/F2018L01745/latest/text",
   "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Text condensed; consult the registered instrument.",
   "text_kind": "condensed",
-  "verified_on": "",
-  "verification_notes": "Carried over from the original APRA-MCP corpus; not yet re-verified against the registered instrument.",
+  "verified_on": "2026-11-01",
+  "verification_notes": "Checked on 2026-11-01 against the Federal Register text of F2018L01745 (one version, in force, no compilations). Paragraph numbers 1 to 36 match the registered text, including the 72-hour incident notification (paragraph 35) and the 10 business day control weakness notification (paragraph 36). Paragraph 1 was corrected to cite whole sections of the enabling Acts, as the instrument does. Entries are condensed. Not reviewed by a compliance SME.",
   "superseded_standards": [],
   "companion_guidance": [
     "Prudential Practice Guide CPG 234 Information Security",
@@ -63,7 +63,7 @@
       "clause_number": "1",
       "section_name": "Authority",
       "heading": "Authority",
-      "text": "This Prudential Standard is made under subsection 11AF(1) of the Banking Act 1959, subsection 32(1) of the Insurance Act 1973, subsection 230A(1) of the Life Insurance Act 1995, subsection 92(1) of the Private Health Insurance (Prudential Supervision) Act 2015, and subsection 34C(1) of the Superannuation Industry (Supervision) Act 1993.",
+      "text": "This Prudential Standard is made under section 11AF of the Banking Act 1959, section 32 of the Insurance Act 1973, section 230A of the Life Insurance Act 1995, section 92 of the Private Health Insurance (Prudential Supervision) Act 2015 and section 34C of the Superannuation Industry (Supervision) Act 1993.",
       "subclauses": [],
       "is_mandatory": true,
       "notification_trigger": null,
@@ -625,5 +625,6 @@
       ],
       "notes": "Triggers when a material control weakness cannot be remediated promptly."
     }
-  ]
+  ],
+  "source_version": "F2018L01745 (Determination No. 1 of 2018, as made; one version, in force from 12 December 2018, standard commences 1 July 2019)"
 }

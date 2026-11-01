@@ -2,7 +2,7 @@
   "rules": [
     {
       "standard": "CPS 230",
-      "clause": "42",
+      "clause": "41",
       "event_type": "disruption_outside_tolerance",
       "timeframe": "24 hours",
       "timeframe_hours": 24,
@@ -31,12 +31,12 @@
         "Remediation and containment steps undertaken",
         "Details of other regulators notified"
       ],
-      "interaction_notes": "De-duplication rule: If an information security incident is reported to APRA under CPS 234 paragraph 35, CPS 230 Footnote 11 confirms it does NOT need to be separately reported under CPS 230 paragraph 33.",
+      "interaction_notes": "De-duplication rule: If an information security incident is reported to APRA under CPS 234 paragraph 35, CPS 230 Footnote 11 confirms it does NOT need to be separately reported under CPS 230 paragraph 32.",
       "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
-      "clause": "33",
+      "clause": "32",
       "event_type": "material_operational_risk_incident",
       "timeframe": "72 hours",
       "timeframe_hours": 72,
@@ -70,7 +70,7 @@
     },
     {
       "standard": "CPS 230",
-      "clause": "68",
+      "clause": "60(a)",
       "event_type": "critical_operation_service_agreement",
       "timeframe": "20 business days",
       "timeframe_days": 20,
@@ -79,14 +79,14 @@
       "apra_reporting_content": [
         "Details of service provider and services provided",
         "Critical operation supported",
-        "Summary of due diligence and contract compliance with CPS 230 para 58"
+        "Summary of due diligence and contract compliance with CPS 230 para 53"
       ],
       "interaction_notes": "Post-execution notification for critical operation agreements.",
       "regulator": "APRA"
     },
     {
       "standard": "CPS 230",
-      "clause": "69",
+      "clause": "60(b)",
       "event_type": "material_offshoring_arrangement",
       "timeframe": "Prior to entering",
       "timeframe_days": 0,
@@ -102,7 +102,7 @@
     },
     {
       "standard": "CPS 230",
-      "clause": "54",
+      "clause": "50",
       "event_type": "annual_msp_register",
       "timeframe": "Annual submission",
       "timeframe_days": 365,

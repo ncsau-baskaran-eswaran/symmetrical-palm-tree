@@ -5,6 +5,10 @@ directory into SQLite, and reseeds automatically whenever any corpus file change
 
 ## Licensing rule
 
+- Federal Register of Legislation content is CC BY 4.0. Short unchanged excerpts may be stored as
+  `text_kind: "excerpt"`; every answer citing legislation.gov.au carries the Register's required attribution wording
+  (`evidence.attribution`). State legislation, codes, contracts and guidance are paraphrased.
+
 - Store obligations as **paraphrases** (`text_kind: "paraphrase"`) with a `source_url`. Do not paste statutory or
   code text verbatim. Commonwealth legislation is CC BY 4.0, but industry codes (ICA, FSC, Private Healthcare
   Australia) are copyright works and must never be reproduced.
@@ -25,16 +29,18 @@ directory into SQLite, and reseeds automatically whenever any corpus file change
   "status": "In Force | Not yet commenced | Superseded | Announced (not law)",
   "sectors": ["general_insurance", "life_insurance", "private_health_insurance"],
   "entity_types": ["General Insurer"],
-  "enforceability": "statutory_civil_penalty | statutory | statutory_prudential_standard | contractual_code | guidance | announced",
+  "enforceability": "statutory_civil_penalty | statutory | statutory_prudential_standard | registered_code | contractual_code | guidance | announced",
   "source_url": "https://www.legislation.gov.au/C2004A02944/latest/text",
   "licence": "CC BY 4.0 (paraphrased)",
-  "text_kind": "paraphrase | condensed",
+  "text_kind": "paraphrase | condensed | excerpt",
   "verified_on": "2026-10-19",
   "verification_notes": "What was checked, and anything a compliance SME must confirm.",
   "coverage_default": "reference_only | governance_checklist | out_of_scope_not_agent_testable",
   "superseded_standards": [],
   "companion_guidance": [],
   "summary": "Plain-English purpose and scope.",
+  "source_version": "Optional. Compilation or registration checked, e.g. C2026C00361 (Compilation No. 131).",
+  "expert_reviewed": false,
   "clauses": [
     {
       "id": "ICA-S13",
@@ -49,11 +55,18 @@ directory into SQLite, and reseeds automatically whenever any corpus file change
       "notes": "Practical meaning for an AI insurance agent; penalties; commencement.",
       "obligation_type": "conduct | disclosure | claims | complaints | privacy | security | reporting | governance | product | pricing | discrimination",
       "agent_relevance": "runtime | code | governance | none",
-      "sectors": ["general_insurance", "life_insurance"]
+      "sectors": ["general_insurance", "life_insurance"],
+      "source_url": "Optional deep link to this provision; defaults to the instrument source_url."
     }
   ]
 }
 ```
+
+`sectors` decide applicability: a clause is returned for a domain only if its `sectors` (or the instrument's, when
+the clause has none) include one of the domain's sectors. Tag a sector only where the source confirms the entity
+type is bound. Use `/latest/text` Federal Register URLs as `source_url` so the weekly drift check sees new
+compilations, and record the compilation you actually read in `source_version`. Every reference answer returns
+these fields in an `evidence` block. See `docs/ADDING_A_DOMAIN.md`.
 
 `clause_number` is the citation users type into `lookup_clause` (for example `13`, `20B`, `RG 271.38`, `APP 6`,
 `Ch 7`). Keep it short and stable: detection rules reference instruments by `(code, clause_number)` and a test

@@ -1,0 +1,45 @@
+{
+  "id": "public_sector",
+  "name": "Commonwealth public sector services",
+  "aliases": [
+    "government",
+    "commonwealth",
+    "public"
+  ],
+  "sectors": [
+    "public_sector"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "Office of the Australian Information Commissioner (OAIC)",
+      "role": "Enforces Privacy Act"
+    },
+    {
+      "name": "Office of the Australian Information Commissioner (Information Commissioner review and complaints)",
+      "role": "Enforces FOI Act"
+    },
+    {
+      "name": "Administrative Review Tribunal (reviews decisions); decision-making agencies bear the notice duties",
+      "role": "Enforces ART Act"
+    },
+    {
+      "name": "Commonwealth Ombudsman (with OAIC and Attorney-General's Department)",
+      "role": "Enforces Ombudsman ADM Guide"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for citizen-facing agents of Commonwealth agencies: privacy (agencies are APP entities), FOI requests, notice of review rights under the ART Act 2024, and Ombudsman guidance on automated decisions. State and Territory governments are not covered.",
+  "known_gaps": [
+    "PGPA Act 2013 (C2013A00123) ss25 to 29 (care and diligence; honesty, good faith and proper purpose; use of position; use of information; disclosure of interests) verified as section headings in Compilation No. 4 (C2017C00269, 2017-08-23, which the Register API reports as latest). Left out: they bind officials (people), not an agent's replies; only s28 (use of information) is indirectly relevant and overlaps APP 6.",
+    "Disability Discrimination Act 1992 (Cth) provision of services and goods (likely s24) not opened; it may give an enforceable basis for NO_HUMAN_OR_ACCESSIBLE_ALTERNATIVE, which is currently guidance-only.",
+    "Enabling-Act review rights (e.g. Social Security (Administration) Act 1999 internal review and notice provisions) not checked; these may displace ART Act s266 via s266(6)(a) for specific programs.",
+    "Australian Government Agencies Privacy Code (registered APP code for agencies) not read.",
+    "OAIC FOI Guidelines under FOI Act s93A, and APP Guidelines, not read.",
+    "Archives Act 1983 and Commonwealth secrecy provisions (e.g. Criminal Code s122.4A) not considered.",
+    "Ombudsman Act 1976 and the right to complain to the Ombudsman not verified from statute; Ombudsman complaint option is cited only from the ADM Guide.",
+    "DTA policy detailed requirements, agentic AI addendum and AI technical standard not read; the policy's mandatory status was verified only from the 'Need to know' page.",
+    "APP 1.7 to 1.9 commence 10 December 2026 and are not yet in force at verification date 2026-10-27.",
+    "Corpus entries are research-verified on 2026-10-27 but not signed off by a compliance or legal SME."
+  ]
+}

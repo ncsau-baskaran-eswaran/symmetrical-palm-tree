@@ -3,6 +3,12 @@
 An MCP server that screens AI agents used by Australian insurers against the laws and codes they actually breach in
 conversation. It covers general, life and private health insurance, and keeps the original APRA banking (ADI) scenarios.
 
+Coverage is organised as **industry domain packs** over one shared, cited source library: insurance, banking,
+superannuation, energy retail, telecommunications, water, Commonwealth public sector and commercial (see
+[Coverage by industry](#coverage-by-industry)). Call `list_domains` to see each domain's
+regulators, coverage level, verification dates and known gaps. Why one server rather than one per industry, and how
+to add a domain: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/ADDING_A_DOMAIN.md`](docs/ADDING_A_DOMAIN.md).
+
 It answers three questions for an AI platform or compliance team:
 
 1. **What can this agent breach?** `get_obligations` lists the rule categories that apply to an agent's role and
@@ -33,8 +39,64 @@ It answers three questions for an AI platform or compliance team:
 | Discrimination | DDA 1992 s46, SDA 1984 s41, ADA 2004 s37 | Underwriting statements on protected attributes |
 | Accountability and AI | FAR Act 2023, ASIC REP 798, Voluntary AI Safety Standard and later guidance | Governance checklist items (not runtime breaches) |
 | Watch list | CDR, Scams Prevention Framework Act 2025, AML/CTF tranche 2 | Mapped as not yet applicable to insurers |
+| Superannuation (reference) | SIS Act 1993 (s52 and s52A covenants, s54B), SPS 515, SPS 530, RG 271 super complaint timeframes (RG 271.79, RG 271.80), plus CPS 230 and CPS 234 | Trustee duties, member outcomes, investment governance, complaint timeframes; verified 2026-10-27, no screening rules |
 
 Call `list_instruments` for the live list with source URLs and verification dates.
+
+## Coverage by industry
+
+NCS uses Guardian to red-team the AI agents it builds for clients. Each industry has a red-team pack
+(`src/data/redteam/<industry>.json`): breach categories a conversational agent can commit, the verified provisions
+each one cites, and adversarial scenarios. Insurance and banking also have the deterministic rules described below.
+
+| Industry | Instruments | Deterministic rule categories | Judge categories | Scenarios |
+| :--- | ---: | ---: | ---: | ---: |
+| Insurance (general, life, private health) | 44 | 23 | 2 | built-in suite |
+| Banking | 8 | 3 | 7 | 14 plus built-in suite |
+| Superannuation | 7 | 0 | 7 | 14 |
+| Energy retail | 5 | 0 | 10 | 20 |
+| Telecommunications | 7 | 0 | 11 | 22 |
+| Water | 4 | 0 | 7 | 14 |
+| Commonwealth public sector | 4 | 0 | 7 | 14 |
+| Commercial (retail and consumer services) | 3 | 0 | 8 | 16 |
+
+### Instruments by industry
+
+Every instrument carries a verification date; CPS 230 and CPS 234 were re-verified on 2026-11-01.
+
+| Industry | Instruments (regulator) |
+| :--- | :--- |
+| Insurance | **APRA:** CPS 190, 220, 230, 234, 510, 511, 520, 900; CPG 230, 234, 235; GPS 230; LPS 230; capital and valuation standards; AI letter 2026. **ASIC:** ICA 1984, ASIC Act 2001, Corporations Act 2001, RG 38, RG 78, RG 271, RG 274, REP 768, REP 798, genetic testing ban. **APRA and ASIC:** FAR Act 2023. **Codes:** GI Code, Life Code, PHI Code. **Health:** PHI Act 2007, Complying Product Rules. **OAIC:** Privacy Act 1988. **ACCC:** ACL, SPF Act 2025, CDR. **AUSTRAC:** AML/CTF Act 2006. **AHRC:** DDA 1992, SDA 1984, ADA 2004. **Cyber:** SOCI Act 2018, Cyber Security Act 2024. **AI guidance:** VAISS, Guidance for AI Adoption, National AI Plan 2025 |
+| Banking | **APRA:** CPS 230, CPS 234. **ASIC:** ASIC Act 2001, NCCP Act, National Credit Code. **AUSTRAC:** AML/CTF Act. **Code:** Banking Code. **OAIC:** Privacy Act 1988 |
+| Superannuation | **APRA:** SIS Act 1993, SPS 515, SPS 530, CPS 230, CPS 234. **ASIC:** RG 271 (super complaint timeframes). **OAIC:** Privacy Act 1988 |
+| Energy retail | **AER:** NERL. **ESC Vic:** Electricity Industry Act (Vic), Energy Retail Code of Practice. **ACCC:** ACL. **OAIC:** Privacy Act 1988 |
+| Telecommunications | **ACMA:** TCP Code, Complaints Standard, Hardship Standard, Identity Determination, Pre-Porting Standard. **ACCC:** ACL. **OAIC:** Privacy Act 1988 |
+| Water | **ESC Vic:** Water Industry Act 1994 (Vic), Water Industry Standard (Urban Customer Service). **IPART NSW:** Sydney Water Operating Licence, Sydney Water Customer Contract |
+| Commonwealth public sector | **OAIC:** FOI Act 1982, Privacy Act 1988. **ART:** ART Act 2024. **Commonwealth Ombudsman:** automated decision-making guide |
+| Commercial | **ACCC:** ACL. **ACMA:** Spam Act 2003. **OAIC:** Privacy Act 1988 |
+
+The Privacy Act is not tagged for water: water corporations are State authorities, outside the Commonwealth APPs.
+
+### Breach categories by industry
+
+| Industry | Deterministic rules | Judge only (REVIEW flags) |
+| :--- | :--- | :--- |
+| Insurance | Claim denial without authority, claim discouragement, complaint not recognised, missing AFCA referral, hallucinated cover, pricing misrepresentation, hawking, DDO outside target market, disclosure coaching, missing general advice warning, personal advice without authorisation, discriminatory underwriting, genetic test request, vulnerability or hardship ignored, unauthorised critical operation commitment, PII leak, disclosure without ID verification, sensitive information over-collection, system prompt exfiltration; PHI only: community rating breach, Medicare benefit promise, waiting period waiver | Claim timeframe misstatement, unfair claims handling |
+| Banking | Unauthorised credit or payment commitment, PII leak, system prompt exfiltration | Hardship request ignored, enforcement threat during hardship, collections harassment, credit commitment without assessment, misleading rates or fees, AML tipping off, vulnerable customer not supported |
+| Superannuation | | Complaint mishandled, death benefit objection dismissed, insurance claim discouraged, member interest conflict, plus privacy baseline |
+| Energy retail | | Ignoring a life support declaration, threatening or misstating disconnection, hardship assistance not offered, payment plan refused, enrolment without explicit informed consent, misleading price or discount, misstating consent dispute rights, plus privacy baseline |
+| Telecommunications | | Hardship not recognised, disconnection threat in hardship, complaint not recognised, complaint timeframe misstated, TIO not disclosed, high-risk transaction without authentication, irresponsible or pressure selling, misleading claims, plus privacy baseline |
+| Water | | Payment assistance not offered, restriction or legal action threatened in hardship, life support or special needs ignored, collecting a disputed amount, insensitive collection communication, misleading billing statement, complaint or ombudsman not mentioned |
+| Commonwealth public sector | | Eligibility advice presented as a decision, review rights omitted or denied, opaque automated decision, no human or accessible alternative, FOI request mishandled, unnecessary personal information collected, personal information disclosed |
+| Commercial | | Consumer guarantee denial, misleading representation, pressure selling or exploitation, reliance on an unfair term, marketing without consent, plus privacy baseline |
+
+The privacy baseline (`src/data/redteam/baseline.json`) adds disclosure without identity verification, sensitive
+information over-collection and unauthorised third-party disclosure.
+
+`get_red_team_scenarios(industry)` lists the scenarios; `probe_external_agent(target_url, sector=<industry>)` runs
+them against an agent endpoint. Industries without rules depend on the semantic judge: with no judge configured a
+reply is `INCONCLUSIVE` / `NOT_SCREENED`, never a pass. Sources were verified from primary text on 2026-10-27 and are
+not yet signed off by a compliance SME; per-industry known gaps are in `list_domains`.
 
 ## What the screen detects
 
@@ -64,6 +126,25 @@ tuned on `dev` only; `holdout` was never tuned against. Results on holdout (120 
 | :--- | ---: | ---: |
 | Rules only (offline, deterministic) | 32% | 93% |
 | Rules plus local judge (Ollama `qwen3:14b`, judge hits are REVIEW flags) | 73% | 80% |
+| Rules plus hosted judge (Azure AI Foundry `gpt-5-6-sol`, Australia East, 2026-10-27) | 96% | 91% |
+
+Industry packs, holdout, Azure judge (2026-10-27). Each set was written by one author who had not seen the category
+descriptions and has **not** been reviewed by an SME; with 15 to 40 lines per pack, treat these as indicative only.
+
+| Pack | Lines (breach) | Recall | Precision |
+| :--- | ---: | ---: | ---: |
+| Superannuation | 20 (12) | 100% | 92% |
+| Privacy baseline | 15 (9) | 100% | 100% |
+| Commercial | 25 (15) | 100% | 94% |
+| Banking | 35 (21) | 95% | 100% |
+| Energy retail | 35 (21) | 95% | 91% |
+| Telecommunications | 40 (24) | 92% | 88% |
+| Water | 35 (21) | 86% | 100% |
+| Commonwealth public sector | 35 (21) | 100% | 100% |
+
+Misses are mostly terse omissions (a reply that simply never offers payment assistance); the most common false alarm
+is `DISCLOSURE_WITHOUT_IDENTITY_VERIFICATION` on account actions taken for the caller. Per-pack reports:
+`reports/detection_metrics_holdout_<pack>_judge-azure_ai-gpt-5-6-sol-default.md`.
 
 The rules reach 100% on the dev set they were tuned on, but they do not generalise to new phrasing. A rule hit is
 usually right; an empty result is not evidence of compliance. Production use should enable the judge and route REVIEW
@@ -85,8 +166,17 @@ Every `audit_agent_for_regulatory_breach` result carries, alongside the verdict 
   credit acknowledgements the agent made in earlier turns.
 
 ### Optional semantic judge
-Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai` or `ollama` (with the provider's API key, and optionally
-`GUARDIAN_JUDGE_MODEL`). The judge may only choose catalogue categories, must quote evidence that exists in the
+Set `GUARDIAN_JUDGE_PROVIDER` to `anthropic`, `openai`, `azure_ai` or `ollama` (with the provider's API key, and
+optionally `GUARDIAN_JUDGE_MODEL`, or use `provider/model`). NCS's default is Azure AI Foundry in Australia East, so
+transcripts stay in an Australian region:
+
+```bash
+export GUARDIAN_JUDGE_PROVIDER=azure_ai/gpt-5-6-sol
+export AZURE_AI_API_BASE=https://australiaeast.api.cognitive.microsoft.com/models
+export AZURE_AI_API_KEY=...   # from the NCS Azure AI Foundry resource
+```
+
+ The judge may only choose catalogue categories, must quote evidence that exists in the
 response, and its findings are REVIEW flags, never automatic breaches. Without it the screen is fully offline and
 deterministic.
 
@@ -115,7 +205,7 @@ client, so a Claude or Copilot session carries about 3,200 tokens of tool defini
 | :--- | :--- | :--- |
 | `GUARDIAN_TOOLSETS` | comma-separated `core`, `reference`, `governance`, `redteam`, `demo`, `legacy`, or `all` | `core,reference` |
 | `GUARDIAN_SECTORS` | comma-separated `gi`, `life`, `phi`, `banking` | `gi,life,phi` |
-| `GUARDIAN_JUDGE_PROVIDER` | `ollama`, `anthropic`, `openai` (optional semantic judge) | off |
+| `GUARDIAN_JUDGE_PROVIDER` | `azure_ai`, `anthropic`, `openai`, `ollama`, optionally as `provider/model` (semantic judge) | off |
 | `GUARDIAN_JUDGE_WHEN` | `always`, `rule_clean`, `off`: when the judge runs | `rule_clean` |
 | `GUARDIAN_JUDGE_BUDGET_MS` | Hard wall-clock budget per judge call | 4000 |
 | `GUARDIAN_REDACT` | `1` masks TFN, Medicare, card, BSB and account, email, phone, address, date of birth and person names in returned evidence, probe responses and dossiers; `0` disables (internal debugging only) | `1` |
@@ -131,13 +221,18 @@ prompts, instruments and test cases; a group writing general and life sets `gi,l
 | Toolset | Tools | Default |
 | :--- | :--- | :--- |
 | `core` | `audit_agent_for_regulatory_breach`, `triage_customer_message`, `check_claim_timeframe`, `assess_regulatory_obligations`, `map_finding_to_obligations`, `get_obligations`, `get_coverage_map` | on |
-| `reference` | `list_instruments` (pass `code` for one instrument), `lookup_clause`, `search_regulations`, `lookup_definition` | on |
+| `reference` | `list_domains`, `list_instruments` (pass `code` for one instrument, or `domain`), `lookup_clause`, `search_regulations` (`domain` filter), `lookup_definition` | on |
 | `governance` | `get_cps230_requirements`, `check_agent_architecture_compliance`, `analyze_agent_code` | off |
-| `redteam` | `get_insurance_red_team_test_cases`, `probe_external_agent`, `run_autonomous_red_team_probe` (these call external agent endpoints) | off |
+| `redteam` | `get_red_team_scenarios`, `get_insurance_red_team_test_cases`, `probe_external_agent`, `run_autonomous_red_team_probe` (these call external agent endpoints) | off |
 | `demo` | `simulate_agent_red_team_audit`, `compare_simulated_agent_guardrails` | off |
 | `legacy` | pre-0.3 names: `list_supported_standards`, `get_standard_summary`, `assess_incident_notification`, `get_critical_operations`, `get_material_service_providers`, `get_contract_requirements`, `get_standards_interaction`, `get_sector_adversarial_test_suite`, `probe_external_agent_for_apra_breaches`, `run_autonomous_mcp_red_team_probe`, and the `apra://` resources | off |
 
-Measured tool-definition size: default 11 tools, ~3,200 tokens; `core` only 7 tools, ~2,300; `all` 29 tools, ~8,200.
+Measured tool-definition size (before `list_domains` was added): default 11 tools, ~3,200 tokens; `core` only 7 tools, ~2,300; `all` 29 tools, ~8,200. Default is now 12 tools and `all` 30.
+
+Reference answers are traceable: each `search_regulations` and `lookup_clause` result has an `evidence` block
+(`source_url`, `pinpoint`, `version`, `verified_on`, `current_status`, `expert_reviewed`, and `statement_kinds`
+marking the text as a paraphrase of the source and the notes as editorial summary) plus a not-legal-advice
+disclaimer. A search with no match returns `supporting_evidence: false` and says that this does not mean no obligation exists.
 
 ### Resources
 * `guardian://instruments/{code}`: full paraphrased text of any instrument (for example `guardian://instruments/ICA-1984`).

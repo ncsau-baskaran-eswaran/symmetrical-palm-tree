@@ -8,14 +8,14 @@
   "effective_date": "2002-03-11",
   "amended_date": "2026-09-19",
   "status": "In Force",
-  "sectors": ["general_insurance", "life_insurance"],
+  "sectors": ["general_insurance", "life_insurance", "banking"],
   "entity_types": ["General Insurer", "Life Company", "AFS Licensee", "Authorised Representative", "Insurance Distributor"],
   "enforceability": "statutory_civil_penalty",
   "source_url": "https://www.legislation.gov.au/C2004A00819/latest/text",
   "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
   "text_kind": "paraphrase",
   "verified_on": "2026-10-19",
-  "verification_notes": "Checked against the authorised compilation on the Federal Register of Legislation: Compilation No. 109, compilation date 19 September 2026 (C2026C00429). Confirmed: s12BF(2A) and (2C) prohibitions on proposing, applying or relying on unfair terms; s12BI(1)(f) and (4) insurance-specific main subject matter and excess carve-outs; s12GBA(6) lists Subdiv BA (UCT), Subdiv C (unconscionable conduct), Subdiv D other than s12DA, and Subdiv DA (add-on insurance) as civil penalty provisions; s12GBCA maximum penalty for a body corporate is the greatest of 50,000 penalty units, 3 times the benefit, or 10% of annual turnover capped at 2.5 million penalty units (some ASIC material quotes the higher Australian Consumer Law figures; those do not apply to the ASIC Act). Application of UCT to insurance from 5 April 2021 confirmed from ICA s15(2)(d) and the ICA legislation history (Act No 2 of 2020 Sch 1 items 8 to 10). The 9 November 2023 commencement of UCT civil penalties (Treasury Laws Amendment (More Competition, Better Prices) Act 2022, Sch 2) is from ASIC web material; the endnotes giving that date were not in the downloaded volumes. Commencement date of 11 March 2002 for the principal Act is from general knowledge. Health insurance provided as part of a health insurance business, and health-related business through a health benefits fund, are not financial products for Div 2 (s12BAA(8)(b) and (ba)), so these provisions do not apply to private health insurance products; the Australian Consumer Law (ACCC) covers that conduct instead.",
+  "verification_notes": "Checked against the authorised compilation on the Federal Register of Legislation: Compilation No. 109, compilation date 19 September 2026 (C2026C00429). Confirmed: s12BF(2A) and (2C) prohibitions on proposing, applying or relying on unfair terms; s12BI(1)(f) and (4) insurance-specific main subject matter and excess carve-outs; s12GBA(6) lists Subdiv BA (UCT), Subdiv C (unconscionable conduct), Subdiv D other than s12DA, and Subdiv DA (add-on insurance) as civil penalty provisions; s12GBCA maximum penalty for a body corporate is the greatest of 50,000 penalty units, 3 times the benefit, or 10% of annual turnover capped at 2.5 million penalty units (some ASIC material quotes the higher Australian Consumer Law figures; those do not apply to the ASIC Act). Application of UCT to insurance from 5 April 2021 confirmed from ICA s15(2)(d) and the ICA legislation history (Act No 2 of 2020 Sch 1 items 8 to 10). The 9 November 2023 commencement of UCT civil penalties (Treasury Laws Amendment (More Competition, Better Prices) Act 2022, Sch 2) is from ASIC web material; the endnotes giving that date were not in the downloaded volumes. Commencement date of 11 March 2002 for the principal Act is from general knowledge. Health insurance provided as part of a health insurance business, and health-related business through a health benefits fund, are not financial products for Div 2 (s12BAA(8)(b) and (ba)), so these provisions do not apply to private health insurance products; the Australian Consumer Law (ACCC) covers that conduct instead. On 2026-10-27 ss12DA, 12DB and 12DJ were re-read in C2026C00429 (19 September 2026) and tagged for banking: credit facilities and deposit products are financial products under s12BAA(7).",
   "coverage_default": "governance_checklist",
   "superseded_standards": [],
   "companion_guidance": [
@@ -85,7 +85,7 @@
       "notes": "Not a civil penalty provision (s12GBA(6)(b) excludes s12DA) but gives rise to damages and other orders, and a breach is a deemed significant breach for breach reporting (Corporations Act s912D(4)(c)), so it must be reported to ASIC within 30 days. The highest-risk provision for generative AI agents: any inaccurate statement about cover, exclusions, price, claim status or rights can contravene, regardless of intent. Ground answers in the PDS and policy schedule. Not applicable to private health insurance products.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["general_insurance", "life_insurance"]
+      "sectors": ["general_insurance", "life_insurance", "banking"]
     },
     {
       "id": "ASICA-S12DB",
@@ -106,7 +106,7 @@
       "notes": "Offence and civil penalty provision. Agents must not overstate cover, invent testimonials, misstate premiums or discounts, tell a customer they need a product when they do not, or misdescribe the customer's rights (for example cooling off, AFCA access, or claim entitlements). Not applicable to private health insurance products.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["general_insurance", "life_insurance"]
+      "sectors": ["general_insurance", "life_insurance", "banking"]
     },
     {
       "id": "ASICA-S12DF",
@@ -142,7 +142,7 @@
       "notes": "Offence and civil penalty. Sets limits on automated outbound contact (for example repeated renewal, premium arrears or upsell contacts) and on pressure tactics in sales or claims conversations. Agents should enforce contact frequency caps and honour do-not-contact requests.",
       "obligation_type": "conduct",
       "agent_relevance": "runtime",
-      "sectors": ["general_insurance", "life_insurance"]
+      "sectors": ["general_insurance", "life_insurance", "banking"]
     },
     {
       "id": "ASICA-S12DO",

@@ -1,0 +1,79 @@
+{
+  "code": "NCC",
+  "title": "National Credit Code (Schedule 1 to the National Consumer Credit Protection Act 2009)",
+  "short_name": "NCC",
+  "regulator": "ASIC",
+  "instrument_type": "act",
+  "legislative_instrument": "C2009A00134",
+  "source_version": "C2026C00340, Compilation No. 52, compilation date 1 July 2026, Volume 2 (Schedule 1)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "banking"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2009A00134/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (C2026C00340, Compilation No. 52, compilation date 1 July 2026, Volume 2 (Schedule 1)). Who is bound: Credit providers and debtors under credit contracts regulated by the Code (s 72 text refers to 'the credit provider'; s 89A applies to a credit provider required to give a default notice under s 88). Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Prescribed form of s 72(4) notices and any regulations shortening the s 72(5) periods were not checked.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "National Credit Code (Schedule 1 to the National Consumer Credit Protection Act 2009). Bound: Credit providers and debtors under credit contracts regulated by the Code (s 72 text refers to 'the credit provider'; s 89A applies to a credit provider required to give a default notice under s 88).",
+  "clauses": [
+    {
+      "id": "NCC-72_1",
+      "clause_number": "72(1)",
+      "section_name": "",
+      "heading": "Changes on grounds of hardship: hardship notice",
+      "text": "If a debtor considers that he or she is or will be unable to meet his or her obligations under a credit contract, the debtor may give the credit provider notice (a hardship notice), orally or in writing, of the debtor's inability to meet the obligations.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 72(1). A hardship notice can be given orally, so a customer telling a chat or voice agent 'I can't make my repayments' may be a hardship notice. An agent that fails to recognise it, insists it must be in writing, or does not route it starts the statutory clock without the provider knowing.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "NCC-72_4",
+      "clause_number": "72(4)",
+      "section_name": "",
+      "heading": "Notice of decision on changing credit contract",
+      "text": "The credit provider must ... give the debtor a notice: ... (b) that is in the form (if any) prescribed by the regulations and states: (i) the credit provider and the debtor have not agreed ...; and (ii) the reasons why ...; and (iii) the name and contact details of the AFCA scheme",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 72(4). An agent that refuses hardship on the spot without reasons or AFCA details, or that loses the request so no decision notice issues within the s 72(5) period (generally 21 days), causes a breach. Civil penalty 5,000 penalty units.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "NCC-89A",
+      "clause_number": "89A",
+      "section_name": "",
+      "heading": "Effect of hardship notices on enforcement",
+      "text": "The credit provider must not begin enforcement proceedings against the debtor unless: (a) the credit provider has given the debtor a notice under paragraph 72(4)(b), in response to the current hardship notice, stating that the credit provider and debtor have not agreed to change the credit contract; and (b) the period of 14 days ... has expired.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 89A(2). A collections agent that threatens or initiates repossession or legal action while a hardship notice is pending (no s 72(4)(b) notice plus 14 days) misstates the provider's rights and can trigger a strict liability offence.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    }
+  ]
+}

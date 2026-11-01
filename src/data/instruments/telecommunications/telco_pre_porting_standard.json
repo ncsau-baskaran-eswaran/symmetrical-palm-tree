@@ -1,0 +1,45 @@
+{
+  "code": "Telco Pre-Porting Standard",
+  "title": "Telecommunications (Mobile Number Pre-Porting Additional Identity Verification) Industry Standard 2020",
+  "short_name": "Telco Pre-Porting Standard",
+  "regulator": "ACMA",
+  "instrument_type": "industry_standard",
+  "legislative_instrument": "F2020L00179",
+  "source_version": "As made, F2020L00179, compilation 0, in force from 2020-02-28; marked isLatest. Sunsets 2030-04-01.",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "telecommunications"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/F2020L00179/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (As made, F2020L00179, compilation 0, in force from 2020-02-28; marked isLatest. Sunsets 2030-04-01.). Who is bound: s 4(a): mobile carriage service providers who supply or arrange for the supply of public mobile telecommunications services, and every port of a mobile service number. Obligation falls on the gaining provider. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: Schedule 1 document-based fallback (s 8(3)) not excerpted.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Telecommunications (Mobile Number Pre-Porting Additional Identity Verification) Industry Standard 2020. Bound: s 4(a): mobile carriage service providers who supply or arrange for the supply of public mobile telecommunications services, and every port of a mobile service number. Obligation falls on the gaining provider.",
+  "clauses": [
+    {
+      "id": "TELCO_PRE_PORTING_STANDARD-8",
+      "clause_number": "8",
+      "section_name": "",
+      "heading": "Pre-porting additional identity verification requirements",
+      "text": "Prior to initiating the port of a mobile service number, a gaining carriage service provider must, for all customers, use at least one of the following additional identity verification processes to confirm the requesting person is the rights of use holder of the mobile service number to be ported",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 8(2). Sales agent at the gaining provider initiates a port-in without the SMS verification code, call back or other s 8(2)/(3) process because the customer says the old phone is lost or they are in a hurry.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "telecommunications"
+      ]
+    }
+  ]
+}

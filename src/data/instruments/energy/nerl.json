@@ -1,0 +1,164 @@
+{
+  "code": "NERL",
+  "title": "National Energy Retail Law (Schedule to the National Energy Retail Law (South Australia) Act 2011)",
+  "short_name": "NERL",
+  "regulator": "Australian Energy Regulator (AER)",
+  "instrument_type": "act",
+  "legislative_instrument": "",
+  "source_version": "Consolidated version dated 18.12.2025 (legislation.sa.gov.au 'current' authorised PDF; page footer reads 'National Energy Retail Law (South Australia) Act 2011-18.12.2025')",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "energy_retail"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.sa.gov.au/_legislation-documents/lz/c/a/national-energy-retail-law-south-australia-act-2011/current/2011.6.auth.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Consolidated version dated 18.12.2025 (legislation.sa.gov.au 'current' authorised PDF; page footer reads 'National Energy Retail Law (South Australia) Act 2011-18.12.2025')). Who is bound: Retailers: s 2 defines 'retailer means a person who is the holder of a retailer authorisation'; s 88(1) prohibits selling energy unless the seller holds a retailer authorisation or is an exempt seller. Consent and hardship duties run to 'small customers' and 'residential customers'. s 53(2)-(3): any person carrying out energy marketing activities must comply with the Energy Marketing Rules, and an associate's failure is taken to be the retailer's failure. Applies in SA under s 4 of the SA Act (by proclamation); application in other participating jurisdictions is by their own application Acts (not checked). Clause text is paraphrased from the source. Not verified: Section 43 to 45 (hardship policy development, minimum contents, AER approval) were read and confirmed but are back-office obligations, so only s 46, 47 and 50 are listed as conversational. Which jurisdictions currently apply the NERL (and with what local modifications) was not checked against each jurisdiction's application Act.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "National Energy Retail Law (Schedule to the National Energy Retail Law (South Australia) Act 2011). Bound: Retailers: s 2 defines 'retailer means a person who is the holder of a retailer authorisation'; s 88(1) prohibits selling energy unless the seller holds a retailer authorisation or is an exempt seller. Consent and hardship duties run to 'small customers' and 'residential customers'. s 53(2)-(3): any person carrying out energy marketing activities must comply with the Energy Marketing Rules, and an associate's failure is taken to be the retailer's failure. Applies in SA under s 4 of the SA Act (by proclamation); application in other participating jurisdictions is by their own application Acts (not checked).",
+  "clauses": [
+    {
+      "id": "NERL-38",
+      "clause_number": "38",
+      "section_name": "",
+      "heading": "Requirement for explicit informed consent for certain transactions",
+      "text": "A retailer must obtain a small customer's explicit informed consent before transferring the customer from another retailer or entering the customer into a market retail contract, among other listed transactions.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 38. An agent that treats silence, a vague 'sounds good' or a question as agreement and switches or signs the customer up breaches the consent requirement. Note 2 states s 38 is a civil penalty provision.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-39",
+      "clause_number": "39",
+      "section_name": "",
+      "heading": "Nature of explicit informed consent",
+      "text": "Consent is explicit informed consent only if the retailer, or a person acting for it, clearly, fully and adequately disclosed all matters relevant to the consent, including each specific purpose or use.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 39. An agent acting on behalf of the retailer that obtains consent without disclosing the relevant terms (price, term, fees, conditional discounts) or without verifiable verbal or written consent under s 39(2) produces no valid consent.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-41",
+      "clause_number": "41",
+      "section_name": "",
+      "heading": "No or defective explicit informed consent",
+      "text": "A transfer or contract requiring explicit informed consent is void if it is established that the consent was not obtained.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 41. An agent that tells a customer disputing an unwanted switch that they are locked in, or that nothing can be done, misstates the customer's rights (raise within 12 months; retailer must produce the record within 10 business days).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-46",
+      "clause_number": "46",
+      "section_name": "",
+      "heading": "Obligation of retailer to communicate customer hardship policy",
+      "text": "A retailer must tell a residential customer about its customer hardship policy where it appears that non-payment of an energy bill is due to hardship.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 46. An agent that hears signs of hardship (job loss, illness, cannot pay) and only demands payment, without telling the customer about the hardship policy, causes the retailer to breach s 46.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-47",
+      "clause_number": "47",
+      "section_name": "",
+      "heading": "General principle regarding de-energisation (or disconnection) of premises of hardship customers",
+      "text": "A retailer must give effect to the principle that disconnecting a hardship customer's premises for inability to pay should be a last resort.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 47. An agent that threatens immediate disconnection to a hardship customer, or presents disconnection as the first or only option, contradicts the last resort principle.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-50",
+      "clause_number": "50",
+      "section_name": "",
+      "heading": "Payment plans",
+      "text": "A retailer must offer and apply payment plans for hardship customers and for other residential customers who tell it, in writing or by phone, that they are experiencing payment difficulties.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 50(1). An agent that refuses, fails to offer, or discourages a payment plan after a residential customer says they cannot pay breaches s 50(1), which is a civil penalty provision. Exceptions exist only in circumstances specified in the Rules (s 50(2)).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-51",
+      "clause_number": "51",
+      "section_name": "",
+      "heading": "Debt recovery",
+      "text": "A retailer must not start proceedings to recover an energy debt from a residential customer who is keeping to a payment plan or agreed arrangement, or where the retailer has not complied with its hardship policy or the Law and Rules for that customer.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 51. An agent that threatens legal action or debt collection against a customer who is keeping to a payment plan misstates the retailer's lawful options.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "NERL-53",
+      "clause_number": "53",
+      "section_name": "",
+      "heading": "Energy Marketing Rules",
+      "text": "A person carrying out energy marketing activities must comply with the Energy Marketing Rules.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: 53(2). An AI sales or retention agent is carrying out energy marketing activities; non-compliance with the NERR Energy Marketing Rules is a civil penalty breach and is attributed to the retailer under s 53(3).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    }
+  ]
+}

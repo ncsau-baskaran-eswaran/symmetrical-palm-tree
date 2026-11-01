@@ -1,0 +1,258 @@
+{
+  "code": "SPS 530",
+  "title": "Prudential Standard SPS 530 Investment Governance",
+  "short_name": "Investment Governance",
+  "regulator": "APRA",
+  "instrument_type": "prudential_standard",
+  "legislative_instrument": "F2022L01492 (Superannuation (prudential standard) determination No. 2 of 2022)",
+  "source_version": "F2022L01492 as made (registered 22 November 2022; no compilations listed)",
+  "effective_date": "2023-01-01",
+  "amended_date": "2022-11-22",
+  "status": "In Force",
+  "sectors": [
+    "superannuation"
+  ],
+  "entity_types": [
+    "RSE Licensee"
+  ],
+  "enforceability": "statutory_prudential_standard",
+  "source_url": "https://www.legislation.gov.au/F2022L01492/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the registered instrument.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the Federal Register text of F2022L01492 (status In force, one version, no known future amendments) and APRA's standards page (https://www.apra.gov.au/standards/sps-530), which shows SPS 530 in force from 1 January 2023. Paragraph numbers were taken from the Federal Register text. APRA has published a marked-up draft revised SPS 530 dated September 2026 whose marked-up commencement paragraph appears to change 1 January 2023 to 1 January 2028; its consultation status and final form were not checked, and none of its proposed changes are reflected here. Footnote 11 refers to SPS 231 Outsourcing, which the corpus records as superseded by CPS 230; confirm the current cross-reference. A compliance SME must confirm before reliance.",
+  "coverage_default": "governance_checklist",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "SIS Act 1993 s52(6)",
+    "Draft revised SPS 530 (APRA, September 2026, not in force)"
+  ],
+  "summary": "SPS 530 requires every RSE licensee to have a Board-overseen investment governance framework: specific and measurable return and risk objectives for each investment option, documented investment strategies that address the SIS Act s52(6) factors and diversification, due diligence before selecting investments, independent performance monitoring against benchmarks, at least annual strategy reviews, a Board-approved investment stress testing program, a liquidity management plan, and a valuation governance framework with a Board-approved valuation policy.",
+  "clauses": [
+    {
+      "id": "SPS530-8",
+      "clause_number": "8",
+      "section_name": "The role of the Board",
+      "heading": "Board responsibilities",
+      "text": "The RSE licensee is ultimately responsible for the sound and prudent management of each RSE's investments (paragraph 7). The Board must at least approve investment objectives for each option and an investment strategy for each RSE and option consistent with SIS Act s52(6) and (13), monitor whether objectives are met, and act on investment reports.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "Board",
+        "investment objectives",
+        "investment strategy"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-10",
+      "clause_number": "10",
+      "section_name": "Investment governance framework",
+      "heading": "Investment governance framework",
+      "text": "An RSE licensee must at all times have an investment governance framework, for which the Board is ultimately responsible (paragraph 12). Paragraph 13 lists its minimum content: objectives per option, a reporting measures methodology, investment strategies, Board investment policies, role statements, processes for performance and risk measurement, stress testing, valuation and reporting, and a review process.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "investment governance framework"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-16",
+      "clause_number": "16",
+      "section_name": "Review of the investment governance framework",
+      "heading": "Three-yearly independent review",
+      "text": "The framework's appropriateness, effectiveness and adequacy must be comprehensively reviewed at least every three years by operationally independent, appropriately trained and competent persons.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "independent review",
+        "three-yearly"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-18",
+      "clause_number": "18",
+      "section_name": "Investment objectives",
+      "heading": "Investment objectives",
+      "text": "When formulating each option's strategy, the RSE licensee must set objectives aligned to the RSE's size, business mix and complexity that are specific and measurable and include at least a return objective and a risk objective.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "return objective",
+        "risk objective"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-19",
+      "clause_number": "19",
+      "section_name": "Formulating the investment strategy",
+      "heading": "Documenting the investment strategy and diversification",
+      "text": "For each strategy the RSE licensee must document how it had regard to each SIS Act s52(6) factor (paragraph 19), analyse risk factors, sources of return and their interaction when setting diversification (paragraph 20), and set asset allocation targets, ranges and a rebalancing policy for multi-asset options (paragraph 21). MySuper strategies need further documentation (paragraph 22).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "investment strategy",
+        "diversification",
+        "asset allocation",
+        "MySuper"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-23",
+      "clause_number": "23",
+      "section_name": "Giving effect to the investment strategy",
+      "heading": "Investment selection due diligence",
+      "text": "An RSE licensee must have an investment selection process with due diligence commensurate with each investment before selection, ensuring it understands the investment, how it performs under stress scenarios, and that it is appropriate for the option (paragraph 24).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "due diligence",
+        "investment selection"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-25",
+      "clause_number": "25",
+      "section_name": "Monitoring investments",
+      "heading": "Performance monitoring",
+      "text": "An RSE licensee must set measures and benchmarks to monitor each MySuper product, option and investment, with Board approval of measures other than investment-level benchmarks (paragraph 25), report performance and its drivers regularly to the Board and senior management (paragraph 26), and keep performance assessors operationally independent of those making the investments (paragraph 27).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "performance monitoring",
+        "benchmarks",
+        "independence"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-28",
+      "clause_number": "28",
+      "section_name": "Reviewing the investment strategy",
+      "heading": "Annual strategy review",
+      "text": "Each strategy must have a Board-approved review policy requiring review against objectives at least annually, with triggers for interim reviews, reporting of results to the Board and criteria for change. Board decisions to amend a strategy must be supported by sufficient justification and analysis (paragraph 29).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "strategy review",
+        "annual review"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-30",
+      "clause_number": "30",
+      "section_name": "Investment stress testing",
+      "heading": "Investment stress testing program",
+      "text": "An RSE licensee must have a Board-approved, comprehensive investment stress testing program integrated into its framework, with adverse scenarios for each option (paragraph 31), testing before implementation and at least annually (paragraph 32), documented methodology and roles (paragraph 33), and results reviewed by the Board and reflected in the framework (paragraphs 34 and 35).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "stress testing",
+        "scenarios"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-36",
+      "clause_number": "36",
+      "section_name": "Liquidity and cash flow management",
+      "heading": "Liquidity management plan",
+      "text": "An RSE licensee must have a Board-approved liquidity management plan for each RSE covering every option, ongoing measurement and management, liquidity under stress, defined liquidity events and responses, roles, and key metrics reported to the Board. Liquidity stress testing must form part of the stress testing program (paragraph 38).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "liquidity",
+        "liquidity event",
+        "cash flow"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SPS530-39",
+      "clause_number": "39",
+      "section_name": "Valuation governance framework",
+      "heading": "Valuation governance",
+      "text": "An RSE licensee must have an adequate valuation governance framework to identify and manage valuation risk, including a Board-approved valuation policy covering roles, reporting, methodologies by asset class, external valuations, valuation frequency, interim valuation triggers, back-testing and dispute escalation (paragraph 40).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "valuation",
+        "unlisted assets",
+        "valuation policy"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    }
+  ]
+}

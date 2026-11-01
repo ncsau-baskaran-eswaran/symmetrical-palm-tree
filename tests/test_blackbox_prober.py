@@ -24,7 +24,9 @@ async def test_spin_test_wild_banking_agent():
 
     summary = result["summary"]
     assert result["industry"] == "BANKING"
-    assert summary["compliance_score_percentage"] == 0.0
+    # The mock only answers the legacy APRA probes; banking pack probes get its generic reply.
+    legacy = [r for r in result["detailed_probe_results"] if not r["pack"]]
+    assert legacy and all(r["verdict"] == "FAILED" for r in legacy)
     assert summary["total_regulatory_violations"] >= 4
     assert summary["statutory_apra_notifications_triggered"] >= 3
     assert "CRITICAL REGULATORY NON-COMPLIANCE" in result["executive_board_statement"]
@@ -104,6 +106,7 @@ def test_markdown_report_formatting():
         compliance_score=40.0,
         total_probes=5,
         passed_probes=2,
+        failed_probes=3,
         total_violations=3,
         notifications_triggered=2,
         avg_latency=120.5,
@@ -114,3 +117,45 @@ def test_markdown_report_formatting():
     assert "CPS 230" in report
     assert "CPS 234" in report
     assert "Statutory Remediation Roadmap" in report
+
+
+@pytest.mark.anyio
+async def test_judge_flagged_pack_probes_are_not_scored_as_passes():
+    import json
+    from src.rules import judge
+
+    judge.set_judge(lambda prompt: json.dumps({"findings": [{"category": "HARDSHIP_DISCONNECTION_THREAT",
+        "evidence_span": "", "confidence": 0.9, "reason": "Threatens disconnection."}]}))
+    try:
+        result = await spin_test_agent(target_url="mock://generic-telco-agent", industry="telecommunications")
+    finally:
+        judge.set_judge(None)
+    s = result["summary"]
+    assert s["probes_needing_review"] == s["total_probes_executed"] > 0
+    assert s["passed_probes"] == 0 and s["compliance_score_percentage"] == 0.0
+    assert "COMPLIANT" not in result["executive_board_statement"]
+    report = result["markdown_report"]
+    assert "⚠️ REVIEW" in report and "✅ PASSED" not in report
+    assert "Possible breaches flagged by the semantic judge" in report and "HARDSHIP_DISCONNECTION_THREAT" in report
+    assert "CPS 230" not in report and "CPS 234" not in report
+
+
+@pytest.mark.anyio
+async def test_unscreened_pack_probes_are_not_reported_as_failed():
+    result = await spin_test_agent(target_url="mock://generic-water-agent", industry="water")
+    assert result["summary"]["compliance_score_percentage"] is None
+    assert "🚨 FAILED" not in result["markdown_report"] and "⚪ NOT SCREENED" in result["markdown_report"]
+
+
+@pytest.mark.anyio
+async def test_superannuation_report_is_apra_labelled():
+    result = await spin_test_agent(target_url="mock://generic-super-agent", industry="superannuation")
+    assert result["markdown_report"].startswith("# APRA Prudential Compliance Audit Report")
+
+
+def test_scenario_filter_matches_substrings_and_never_falls_back():
+    from src.server import get_red_team_scenarios
+
+    hits = get_red_team_scenarios("telecommunications", attack_category="hardship")
+    assert hits["total"] > 0 and all("hardship" in c["category"].lower() for c in hits["scenarios"])
+    assert get_red_team_scenarios("telecommunications", attack_category="no_such_category")["total"] == 0

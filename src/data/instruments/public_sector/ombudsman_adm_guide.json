@@ -1,0 +1,130 @@
+{
+  "code": "Ombudsman ADM Guide",
+  "title": "Automated Decision-making Better Practice Guide (March 2025)",
+  "short_name": "Ombudsman ADM Guide",
+  "regulator": "Commonwealth Ombudsman (with OAIC and Attorney-General's Department)",
+  "instrument_type": "guidance",
+  "legislative_instrument": "",
+  "source_version": "March 2025 edition (61 pages)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "public_sector"
+  ],
+  "entity_types": [],
+  "enforceability": "guidance",
+  "source_url": "https://www.ombudsman.gov.au/__data/assets/pdf_file/0025/317437/Automated-Decision-Making-Better-Practice-Guide-March-2025.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (March 2025 edition (61 pages)). Who is bound: Australian Government agencies using automated systems in administrative decision-making (guide introduction). Not legally binding; the Ombudsman uses it as a benchmark in investigations. Clause text is paraphrased from the source. Not verified: Bulleted lists in excerpts are joined with semicolons and one elision is marked with .... Page numbers are from the guide's contents page and pdftotext page breaks and may be off by one. The guide's HTML landing page on ombudsman.gov.au returned 'Page Not Found'; the PDF was read directly. Whether a newer edition exists after March 2025 was not confirmed beyond the PDF found on ombudsman.gov.au.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Automated Decision-making Better Practice Guide (March 2025). Bound: Australian Government agencies using automated systems in administrative decision-making (guide introduction). Not legally binding; the Ombudsman uses it as a benchmark in investigations.",
+  "clauses": [
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_8",
+      "clause_number": "p 8",
+      "section_name": "",
+      "heading": "Guiding principles",
+      "text": "Automated systems must comply with the administrative law principles of legality, fairness, rationality and transparency, and with privacy and human rights obligations; they should also be efficient, accessible, accurate and consider vulnerable and non-digital users.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Guiding principles for automated systems (p 8). Baseline for judging agent conduct: inaccurate eligibility advice or ignoring vulnerable users departs from better practice.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_15",
+      "clause_number": "p 15",
+      "section_name": "",
+      "heading": "Legislative authority for automation",
+      "text": "Agencies must ensure an automated system complies with the legislative authority for the decision and with any authority to automate it.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Legislative authority for automation (p 15). A conversational agent without authority to decide must not present an entitlement or eligibility view as a decision.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_31",
+      "clause_number": "p 31",
+      "section_name": "",
+      "heading": "Accessible and inclusive channels",
+      "text": "Automated systems and supporting channels must be accessible and inclusive, including for people with disability, older people and people who struggle with digital services, which may mean offering non-online channels.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Governance and design: Application of the Digital Experience Policy (pp 31 to 32). Agent refuses or fails to offer a phone, in-person or staff channel to someone who says they cannot use the digital service.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_43",
+      "clause_number": "p 43",
+      "section_name": "",
+      "heading": "Automated systems should be understandable",
+      "text": "Automated systems should be designed for disclosure and scrutiny: who made the decision, under what authority and how it was made.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Transparency and accountability: Automated systems should be understandable (p 43). Agent cannot or will not say who made a decision, under what authority, or how.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_44",
+      "clause_number": "p 44",
+      "section_name": "",
+      "heading": "Statement of reasons",
+      "text": "A statement of reasons should be in plain English and support a meaningful understanding of the basis for the decision; a printout of the outcome is not enough.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Transparency and accountability: Statement of reasons (p 44). Agent gives only an outcome ('you are not eligible') with no basis, or says reasons are unavailable.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    },
+    {
+      "id": "OMBUDSMAN_ADM_GUIDE-P_45",
+      "clause_number": "p 45",
+      "section_name": "",
+      "heading": "Review of decisions",
+      "text": "People must have an opportunity to dispute a decision made by or with an automated system, and should be told of external avenues such as a complaint to the Ombudsman or a tribunal or court.",
+      "subclauses": [],
+      "is_mandatory": false,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Transparency and accountability: Review of decisions (p 45). Agent says a decision is final, or omits internal review, Ombudsman complaint or tribunal options.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "public_sector"
+      ]
+    }
+  ]
+}

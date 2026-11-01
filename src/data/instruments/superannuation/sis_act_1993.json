@@ -1,0 +1,294 @@
+{
+  "code": "SIS Act 1993",
+  "title": "Superannuation Industry (Supervision) Act 1993 (Cth)",
+  "short_name": "SIS Act",
+  "regulator": "APRA",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A04633",
+  "source_version": "C2026C00361 (Compilation No. 131, in force from 10 August 2026)",
+  "effective_date": "",
+  "amended_date": "2026-08-10",
+  "status": "In Force",
+  "sectors": [
+    "superannuation"
+  ],
+  "entity_types": [
+    "RSE Licensee",
+    "Director of a corporate RSE licensee"
+  ],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2004A04633/latest/text",
+  "licence": "Commonwealth of Australia, CC BY 4.0 (legislation.gov.au). Paraphrased; consult the authorised compilation.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the Federal Register compilation C2026C00361 (Compilation No. 131, start date 10 August 2026), listed as the latest version on the C2004A04633 versions page that day. Text of ss52(1), 52(2), 52(3A), 52(6), 52(7), 52(8), 52(8A), 52(9), 52(11), 52(12), 52A and 54B was read from the compilation's text download. Only the provisions listed as clauses are covered. effective_date is left empty because the Act's original commencement provisions were not checked. Which regulator (APRA or ASIC) administers each covenant was not checked; regulator is recorded as APRA for filtering only. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [
+    "SPS 515 Strategic Planning and Member Outcomes",
+    "SPS 530 Investment Governance"
+  ],
+  "summary": "The SIS Act is the principal Commonwealth law regulating superannuation entities. Part 6 deems the governing rules of every registrable superannuation entity to contain covenants binding each trustee (s52) and each director of a corporate trustee (s52A): to act honestly, with the care, skill and diligence of a prudent superannuation trustee, and in the best financial interests of beneficiaries; to manage conflicts; and to formulate and give effect to investment, insurance, risk management and retirement income strategies and annual outcomes assessments. Contravening a s52 or s52A covenant is a civil penalty provision (s54B).",
+  "clauses": [
+    {
+      "id": "SIS-S52",
+      "clause_number": "52",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities",
+      "heading": "Covenants deemed to be in governing rules (overview)",
+      "text": "If the governing rules of a registrable superannuation entity do not contain covenants to the effect of those set out in s52, the rules are taken to contain them. The covenants bind each trustee of the entity and are grouped as general (s52(2)), investment (s52(6)), insurance (s52(7)), risk (s52(8)), retirement income (s52(8A)), annual outcomes assessment (s52(9)), promoting financial interests (s52(12)) and MySuper (s52(13)) covenants.",
+      "subclauses": [
+        "Civil and criminal consequences follow from ss54B, 54C, 55 and 202.",
+        "Civil consequences can arise whether or not the act or omission was intentional; criminal consequences under s202 require proof of dishonesty or intention."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "trustee covenants",
+        "governing rules",
+        "RSE licensee duties"
+      ],
+      "notes": "Start here for trustee duties; look up the subsection clauses for detail.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-2",
+      "clause_number": "52(2)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: General covenants",
+      "heading": "General trustee covenants",
+      "text": "Each trustee must: act honestly in all matters concerning the entity; exercise the care, skill and diligence a prudent superannuation trustee would exercise; perform its duties and exercise its powers in the best financial interests of beneficiaries; prioritise beneficiaries' interests where there is a conflict; treat classes of beneficiaries, and beneficiaries within a class, fairly; keep the entity's assets separate from the trustee's and employer-sponsors' assets; not enter into arrangements that hinder proper performance of its functions; manage any reserves under a prudential strategy; and give beneficiaries access to prescribed information and documents.",
+      "subclauses": [
+        "(a) honesty",
+        "(b) care, skill and diligence of a prudent superannuation trustee (defined in s52(3))",
+        "(c) best financial interests of beneficiaries",
+        "(d) conflicts: give priority to beneficiaries, ensure duties are met and interests not adversely affected despite the conflict, and comply with the prudential standards on conflicts",
+        "(e) and (f) fairness between and within classes of beneficiaries",
+        "(g) separation of assets",
+        "(h) no contracts that hinder the trustee",
+        "(i) strategy for the prudential management of reserves",
+        "(j) access to prescribed information and documents"
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "best financial interests",
+        "conflicts of interest",
+        "prudent trustee",
+        "honesty",
+        "reserves"
+      ],
+      "notes": "Section 52(4) gives the conflicts covenant priority over certain duties of officers and employees under Corporations Act Part 2D.1 and the PGPA Act.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ],
+      "anchor": "trustee_general_covenants"
+    },
+    {
+      "id": "SIS-S52-2C",
+      "clause_number": "52(2)(c)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: General covenants",
+      "heading": "Best financial interests of beneficiaries",
+      "text": "Each trustee must perform its duties and exercise its powers in the best financial interests of the beneficiaries. Section 52(3A) confirms this covenant applies to payments made to a third party by, or on behalf of, the entity.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "best financial interests",
+        "third party payments",
+        "expenditure"
+      ],
+      "notes": "SPS 515 paragraphs 21 and 22 add prudential requirements for expenditure decisions made against this duty.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ],
+      "anchor": "best_financial_interests"
+    },
+    {
+      "id": "SIS-S52-6",
+      "clause_number": "52(6)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Investment covenants",
+      "heading": "Investment covenants",
+      "text": "Each trustee must formulate, regularly review and give effect to an investment strategy for the whole entity and for each investment option, having regard to risk and likely return, diversification, liquidity, the availability of reliable valuation information, the entity's ability to meet liabilities, tax consequences, costs and any other relevant matter. Trustees must also exercise due diligence in developing, offering and reviewing each investment option and ensure the options offered allow adequate diversification.",
+      "subclauses": [
+        "(a)(i) to (viii) matters the investment strategy must have regard to",
+        "(b) due diligence on investment options",
+        "(c) adequate diversification across options offered"
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "investment strategy",
+        "diversification",
+        "liquidity",
+        "valuation"
+      ],
+      "notes": "SPS 530 sets the prudential requirements for giving effect to this covenant.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-7",
+      "clause_number": "52(7)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Insurance covenants",
+      "heading": "Insurance covenants",
+      "text": "Each trustee must formulate, regularly review and give effect to an insurance strategy covering the kinds and levels of cover offered, the basis for offering them having regard to the membership's demographics, and how insurers are chosen. The trustee must consider the cost of cover to all beneficiaries, only offer cover whose cost does not inappropriately erode retirement income, and do everything reasonable to pursue an insurance claim for a beneficiary that has a reasonable prospect of success.",
+      "subclauses": [
+        "(a) insurance strategy",
+        "(b) consider cost to all beneficiaries",
+        "(c) no inappropriate erosion of retirement income",
+        "(d) pursue claims with a reasonable prospect of success"
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "insurance in superannuation",
+        "insurance strategy",
+        "claims",
+        "retirement income erosion"
+      ],
+      "notes": "Relevant where a superannuation member service or agent handles insured benefit claims.",
+      "obligation_type": "claims",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-8",
+      "clause_number": "52(8)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Covenants relating to risk",
+      "heading": "Risk management covenants",
+      "text": "Each trustee must formulate, regularly review and give effect to a risk management strategy covering the trustee's relevant activities and the risks of operating the entity, and must maintain and manage, in accordance with the prudential standards, financial resources (trustee capital, an entity reserve or both) to cover the entity's operational risk.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "risk management strategy",
+        "operational risk financial requirement"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-8A",
+      "clause_number": "52(8A)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Retirement income covenants",
+      "heading": "Retirement income strategy covenants",
+      "text": "Each trustee must formulate, regularly review and give effect to a retirement income strategy meeting s52AA, take reasonable steps to gather the information needed for it, record it in writing together with its determinations, significant decisions and reasons, and publish a summary on the entity's website. Section 52(8B) excludes funds that provide only death, permanent incapacity or temporary incapacity benefits.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "retirement income strategy",
+        "retirement income covenant"
+      ],
+      "notes": "The content requirements in s52AA are not paraphrased in this corpus. SPS 515 paragraph 10 requires review of the strategy at least every three years.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-9",
+      "clause_number": "52(9)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Annual outcomes assessments",
+      "heading": "Annual outcomes assessment",
+      "text": "For a regulated superannuation fund with more than 6 members, each trustee must determine in writing each year, for each MySuper and choice product, whether the financial interests of the beneficiaries holding the product are being promoted, having regard to comparisons with other products and benchmarks, the factors in s52(11) and the latest APRA performance test determination under s60C(2).",
+      "subclauses": [
+        "s52(11) factors include whether options, benefits and facilities, the investment strategy and the insurance strategy are appropriate to those beneficiaries, and whether insurance fees inappropriately erode their retirement income."
+      ],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "member outcomes",
+        "outcomes assessment",
+        "MySuper",
+        "choice product",
+        "performance test"
+      ],
+      "notes": "SPS 515 paragraphs 27 to 29 set how the methodology must be documented and calculated.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52-12",
+      "clause_number": "52(12)",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities: Promoting financial interests",
+      "heading": "Promoting financial interests of beneficiaries",
+      "text": "For a regulated superannuation fund with more than 6 members, each trustee must promote the financial interests of beneficiaries holding a MySuper or choice product, in particular returns after fees, costs and taxes.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "financial interests",
+        "net returns"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S52A",
+      "clause_number": "52A",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities",
+      "heading": "Covenants binding directors of corporate trustees",
+      "text": "Where a trustee of a registrable superannuation entity is a body corporate, the governing rules are taken to contain covenants by each director to act honestly, to exercise the care, skill and diligence of a prudent superannuation entity director, to perform duties and exercise powers in the best financial interests of beneficiaries, and to give beneficiaries' interests priority in conflicts and comply with the prudential standards on conflicts, among other covenants.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "director duties",
+        "best financial interests",
+        "conflicts of interest"
+      ],
+      "notes": "Only the opening covenants of s52A(2) were read; the list is not complete here.",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    },
+    {
+      "id": "SIS-S54B",
+      "clause_number": "54B",
+      "section_name": "Part 6: Provisions relating to governing rules of superannuation entities",
+      "heading": "Contravening s52 and s52A covenants is a civil penalty provision",
+      "text": "A person must not contravene a covenant to the effect of a s52 or s52A covenant contained, or taken to be contained, in the governing rules. These are civil penalty provisions (s193), so Part 21 provides civil and criminal consequences. A contravention does not invalidate a transaction, and loss or damage may be recovered under s55. Section 54C separately prohibits contravening any other covenant, which is not an offence.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [
+        "civil penalty",
+        "enforcement",
+        "covenant contravention"
+      ],
+      "notes": "",
+      "obligation_type": "governance",
+      "agent_relevance": "governance",
+      "sectors": [
+        "superannuation"
+      ]
+    }
+  ]
+}

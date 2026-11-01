@@ -1,0 +1,62 @@
+{
+  "code": "Spam Act 2003",
+  "title": "Spam Act 2003",
+  "short_name": "Spam Act 2003",
+  "regulator": "Australian Communications and Media Authority (ACMA)",
+  "instrument_type": "act",
+  "legislative_instrument": "C2004A01214",
+  "source_version": "Compilation No. 10, registerId C2016C00614, compilation date 10 March 2016 (latest per Federal Register API)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "commercial"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.legislation.gov.au/C2004A01214/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Compilation No. 10, registerId C2016C00614, compilation date 10 March 2016 (latest per Federal Register API)). Who is bound: s16(1): any 'person' who sends or causes to be sent a commercial electronic message with an Australian link (s7), other than a designated commercial electronic message (Schedule 1). No small business exemption. Displaces APP 7 to the extent it applies (Privacy Act APP 7.8(b)). Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: s17 (sender identification) and s18 (functional unsubscribe facility, withdrawal of consent) exist in the compilation but were not excerpted. Schedule 1 (designated messages) and s6 definition of commercial electronic message not excerpted.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Spam Act 2003. Bound: s16(1): any 'person' who sends or causes to be sent a commercial electronic message with an Australian link (s7), other than a designated commercial electronic message (Schedule 1). No small business exemption. Displaces APP 7 to the extent it applies (Privacy Act APP 7.8(b)).",
+  "clauses": [
+    {
+      "id": "SPAM_ACT_2003-16",
+      "clause_number": "16",
+      "section_name": "",
+      "heading": "Unsolicited commercial electronic messages must not be sent",
+      "text": "(1) A person must not send, or cause to be sent, a commercial electronic message that: (a) has an Australian link; and (b) is not a designated commercial electronic message. ... (2) Subsection (1) does not apply if the relevant electronic account-holder consented to the sending of the message.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 16(1), (2). Agent with email/SMS tools sends or schedules promotional messages to a customer (or to a friend the customer referred) who has not consented, or after the customer declined or unsubscribed.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
+    },
+    {
+      "id": "SPAM_ACT_2003-SCH_2_CL_2",
+      "clause_number": "Sch 2, cl 2",
+      "section_name": "",
+      "heading": "Consent: basic definition",
+      "text": "For the purposes of this Act, consent means: (a) express consent; or (b) consent that can reasonably be inferred from: (i) the conduct; and (ii) the business and other relationships; of the individual or organisation concerned.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: Sch 2, cl 2. Agent treats silence, a support enquiry, or a third party's say-so as consent to marketing.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "commercial"
+      ]
+    }
+  ]
+}

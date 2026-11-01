@@ -1,0 +1,96 @@
+{
+  "code": "Banking Code",
+  "title": "2025 Banking Code of Practice (Australian Banking Association)",
+  "short_name": "Banking Code",
+  "regulator": "Banking Code Compliance Committee (monitoring); approved by ASIC, which does not enforce it; enforceable by customers as contract terms and through AFCA",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "source_version": "2025 Banking Code of Practice, transition date 28 February 2025, replaces version dated 5 October 2021; approved by ASIC via ASIC Corporations (Approval of February 2025 Banking Code of Practice) Instrument 2024/523 (24-136MR). ABA page states approval on 27 June 2024. A 2026 independent review is underway (submissions due 11 December 2026).",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "banking"
+  ],
+  "entity_types": [],
+  "enforceability": "contractual_code",
+  "source_url": "https://www.ausbanking.org.au/banking-code/",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (2025 Banking Code of Practice, transition date 28 February 2025, replaces version dated 5 October 2021; approved by ASIC via ASIC Corporations (Approval of February 2025 Banking Code of Practice) Instrument 2024/523 (24-136MR). ABA page states approval on 27 June 2024. A 2026 independent review is underway (submissions due 11 December 2026).). Who is bound: Subscribing banks. Code intro: 'It is a condition of ABA membership that member banks with a retail presence in Australia sign up to the Code.' ASIC 24-136MR: rules 'form part of the contracts between banks and their customers'. Clause text is paraphrased from the source. Not verified: No scams clause exists in the 2025 Code text read (only unauthorised transactions and the ePayments Code reference at paras 153 and 159). Excerpts kept short for copyright. The ASIC instrument 2024/523 itself was not opened; approval date relies on ABA page and ASIC 24-136MR. List of subscribing banks not checked.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "2025 Banking Code of Practice (Australian Banking Association). Bound: Subscribing banks. Code intro: 'It is a condition of ABA membership that member banks with a retail presence in Australia sign up to the Code.' ASIC 24-136MR: rules 'form part of the contracts between banks and their customers'.",
+  "clauses": [
+    {
+      "id": "BANKING_CODE-52",
+      "clause_number": "52",
+      "section_name": "",
+      "heading": "B2: Taking extra care with customers who are experiencing vulnerability",
+      "text": "Banks commit to take extra care with customers who are experiencing vulnerability (paras 52 to 54).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: paras 52 to 54. Para 52 lists indicators (age, disability, mental health, family and/or domestic violence, financial abuse, Financial Difficulty, language barriers). An agent that ignores a disclosed indicator, or fails to offer referrals or a third-party representative (para 54), breaches the commitment.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "BANKING_CODE-167",
+      "clause_number": "167",
+      "section_name": "",
+      "heading": "D1: Financial Difficulty",
+      "text": "Where a customer is experiencing financial difficulty, the bank will try to help, be compassionate in understanding their situation, and discuss the options it can offer (paras 167 to 175).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: paras 167 to 175. Excerpt from para 169. Para 168 defines Financial Difficulty broadly; para 172 requires a prompt response; para 175 commits to work toward a sustainable solution. An agent that dismisses or delays a financial difficulty disclosure breaches these.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "BANKING_CODE-170",
+      "clause_number": "170",
+      "section_name": "",
+      "heading": "We will give you a choice to have us deal with your financial counsellor or representative",
+      "text": "A customer in financial difficulty can ask the bank to deal with their financial counsellor or representative instead of with them, and the bank will do so (paras 170 and 171).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: paras 170 to 171. A collections agent that keeps pressing the customer directly after being told a financial counsellor is acting (outside the para 171 exceptions).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    },
+    {
+      "id": "BANKING_CODE-187",
+      "clause_number": "187",
+      "section_name": "",
+      "heading": "We will comply with debt collection guidelines",
+      "text": "Banks will comply with the ACCC and ASIC Debt Collection Guideline for Collectors and Creditors when collecting debts.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: para 187. Incorporates the Debt Collection Guideline into the bank's contractual commitments, so harassing or misleading collection conduct by an agent is a Code breach as well as an ASIC Act risk.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    }
+  ]
+}

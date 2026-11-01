@@ -85,6 +85,34 @@
       "signal": "pdf",
       "status": 200
     },
+    "https://content.legislation.vic.gov.au/sites/default/files/2025-07/94-121aa079-authorised.pdf": {
+      "content_length": 804297,
+      "etag": "\"686328da-c45c9\"",
+      "final_url": "https://content.legislation.vic.gov.au/sites/default/files/2025-07/94-121aa079-authorised.pdf",
+      "instruments": [
+        "WIA 1994 (Vic)"
+      ],
+      "last_modified": "Tue, 01 Jul 2025 00:16:26 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "f1a65160710af704e34218fcec15e49feaeabae47302e3633a0c320cba149b2d",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://content.legislation.vic.gov.au/sites/default/files/2026-09/00-68aa107-authorised.pdf": {
+      "content_length": 1754329,
+      "etag": "\"6aa10613-1ac4d9\"",
+      "final_url": "https://content.legislation.vic.gov.au/sites/default/files/2026-09/00-68aa107-authorised.pdf",
+      "instruments": [
+        "EIA (Vic)"
+      ],
+      "last_modified": "Wed, 09 Sep 2026 07:09:07 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "944db4b0e778a76ec13a3f53705eb102c736c2a55868a54bb80e4b5aff1330ec",
+      "signal": "pdf",
+      "status": 200
+    },
     "https://handbook.apra.gov.au/": {
       "content_length": 335740,
       "etag": "\"1792405135\"",
@@ -281,6 +309,34 @@
       "signal": "pdf",
       "status": 200
     },
+    "https://sydneywater.com.au/content/dam/sydneywater/documents/customer-contract.pdf": {
+      "content_length": 9471889,
+      "etag": "\"908791-63ffed4481200-gzip\"",
+      "final_url": "https://www.sydneywater.com.au/content/dam/sydneywater/documents/customer-contract.pdf",
+      "instruments": [
+        "Sydney Water Customer Contract"
+      ],
+      "last_modified": "Tue, 30 Sep 2025 06:26:16 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "44c30a045f061aa9026123bd522ea29dfa02a462e6d62b8f96aa49b5348fb834",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://sydneywater.com.au/content/dam/sydneywater/documents/sydney-water-operating-licence-2024-2028.pdf": {
+      "content_length": 16020696,
+      "etag": "\"f474d8-625d1cbed8f00-gzip\"",
+      "final_url": "https://www.sydneywater.com.au/content/dam/sydneywater/documents/operating-licence.pdf",
+      "instruments": [
+        "Sydney Water Operating Licence"
+      ],
+      "last_modified": "Fri, 01 Nov 2024 03:47:40 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "46af0424be8a5fd4959b9203d07de22f3efbe7cb0b32c4eb3455ad05cb767752",
+      "signal": "pdf",
+      "status": 200
+    },
     "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance": {
       "content_length": 218145,
       "etag": "\"1792036405\"",
@@ -323,6 +379,34 @@
       "signal": "html_main",
       "status": 200
     },
+    "https://www.ausbanking.org.au/banking-code/": {
+      "content_length": 216806,
+      "etag": null,
+      "final_url": "https://www.ausbanking.org.au/banking-code/",
+      "instruments": [
+        "Banking Code"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "fdeb64d42a6fdb317250f51bdf259d8b68eb7e2551e1701415921735734ab1bc",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.austelco.org.au/wp-content/uploads/2025/06/TCP-C628_2019-incorporating-variation-no.1-2022.pdf": {
+      "content_length": 1143005,
+      "etag": "\"6878a0e2-1170dd\"",
+      "final_url": "https://www.austelco.org.au/wp-content/uploads/2025/06/TCP-C628_2019-incorporating-variation-no.1-2022.pdf",
+      "instruments": [
+        "TCP Code"
+      ],
+      "last_modified": "Thu, 17 Jul 2025 07:06:10 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "20c300e23e584d0949bfe18845bdce4b11d09d78141f6f8840a0ae3dc8a00b13",
+      "signal": "pdf",
+      "status": 200
+    },
     "https://www.cdr.gov.au/rollout": {
       "content_length": 31842,
       "etag": "\"1792413662\"",
@@ -335,6 +419,34 @@
       "reachable": true,
       "sha256": "f6496c12fb586ed64e6f706fec60af29f459a9839c64d2b55993124cdd3c5ec3",
       "signal": "html_main",
+      "status": 200
+    },
+    "https://www.esc.vic.gov.au/sites/default/files/documents/Energy%20Retail%20Code%20of%20Practice%20%28version%207%29.pdf": {
+      "content_length": 1552200,
+      "etag": "\"6ac325a0-17af48\"",
+      "final_url": "https://www.esc.vic.gov.au/sites/default/files/documents/Energy%20Retail%20Code%20of%20Practice%20%28version%207%29.pdf",
+      "instruments": [
+        "ERCoP"
+      ],
+      "last_modified": "Mon, 05 Oct 2026 04:20:48 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "00fe3ab65042750728e1310499d3457b36aeb86b8e362de741980a1db02d7ba2",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://www.esc.vic.gov.au/sites/default/files/documents/Water%20Industry%20Standard%20-%20Urban%20Customer%20Service%20version%205.pdf": {
+      "content_length": 906227,
+      "etag": "\"6a55abef-dd3f3\"",
+      "final_url": "https://www.esc.vic.gov.au/sites/default/files/documents/Water%20Industry%20Standard%20-%20Urban%20Customer%20Service%20version%205.pdf",
+      "instruments": [
+        "WIS-UCS"
+      ],
+      "last_modified": "Tue, 14 Jul 2026 03:24:31 GMT",
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "797d125b253523c0f3998fe9d9f85a1cb6fa4babcc4b968ae9e5b98e075ea0c0",
+      "signal": "pdf",
       "status": 200
     },
     "https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails": {
@@ -407,6 +519,20 @@
       "signal": "legislation_id",
       "status": 200
     },
+    "https://www.legislation.gov.au/C2004A01214/latest/text": {
+      "content_length": 110224,
+      "etag": "W/\"1ae90-ZLPokVGNtHUz71nytkfhougo+/A\"",
+      "final_url": "https://www.legislation.gov.au/C2004A01214/latest/text",
+      "instruments": [
+        "Spam Act 2003"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2016C00614",
+      "reachable": true,
+      "sha256": "8aefcfcd4e4b6426d7efabd14c99d95356c3f5331d0f44b556b0505fe90b228d",
+      "signal": "legislation_id",
+      "status": 200
+    },
     "https://www.legislation.gov.au/C2004A01302/latest/text": {
       "content_length": 116636,
       "etag": "W/\"1c79c-M5H1M39qAOMtFOzRA6KSeh1VqXE\"",
@@ -418,6 +544,20 @@
       "legislation_id": "C2026C00266",
       "reachable": true,
       "sha256": "79ebcfe241bac48ff0f92cb048feec12c2316148c8107e1a6dec96de865a2e17",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2004A02562/latest/text": {
+      "content_length": 202869,
+      "etag": "W/\"31875-Ps49aqm7/eN7lkoeMwlKMOJ2fV4\"",
+      "final_url": "https://www.legislation.gov.au/C2004A02562/latest/text",
+      "instruments": [
+        "FOI Act 1982"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00433",
+      "reachable": true,
+      "sha256": "df461086ec15ff877d6db3ad09860eafca959d3f4c3c9a78d43cc990b5dc32dc",
       "signal": "legislation_id",
       "status": 200
     },
@@ -477,11 +617,26 @@
       "signal": "legislation_id",
       "status": 200
     },
+    "https://www.legislation.gov.au/C2004A04633/latest/text": {
+      "content_length": 467369,
+      "etag": "W/\"721a9-e3I2FRbhhweAk/n/42kDMUVFk/0\"",
+      "final_url": "https://www.legislation.gov.au/C2004A04633/latest/text",
+      "instruments": [
+        "SIS Act 1993"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00361",
+      "reachable": true,
+      "sha256": "c2c4e246fd02c67970920e77ffd6a484c30fae94fa990aa977066b14118dff55",
+      "signal": "legislation_id",
+      "status": 200
+    },
     "https://www.legislation.gov.au/C2006A00169/latest/text": {
       "content_length": 289235,
       "etag": "W/\"469d3-aqdcSRM8BRwok7qjlYy8ybyNNro\"",
       "final_url": "https://www.legislation.gov.au/C2006A00169/latest/text",
       "instruments": [
+        "AML/CTF Act",
         "AML/CTF Act 2006"
       ],
       "last_modified": null,
@@ -502,6 +657,21 @@
       "legislation_id": "C2026C00412",
       "reachable": true,
       "sha256": "efd209d5bd87568394332d762196387c26d1460dfb4117d42e6acc2d1e1bf35e",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2009A00134/latest/text": {
+      "content_length": 647713,
+      "etag": "W/\"9e221-Klb62lwHKr72nNqMwHmMxafAZmo\"",
+      "final_url": "https://www.legislation.gov.au/C2009A00134/latest/text",
+      "instruments": [
+        "NCC",
+        "NCCP Act"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00340",
+      "reachable": true,
+      "sha256": "518df4937104f0ac3c48ee2b5f8b204d59d9ec13d94f7426e0405ea3ef7166c1",
       "signal": "legislation_id",
       "status": 200
     },
@@ -530,6 +700,20 @@
       "legislation_id": "C2025C00148",
       "reachable": true,
       "sha256": "8c821c9dc8fe7e52d394e31b172b5fe3908b14620205b77629ad4eb8cf65287f",
+      "signal": "legislation_id",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/C2024A00040/latest/text": {
+      "content_length": 282367,
+      "etag": "W/\"44eff-9kLoKhPzZZ5cf19iz5CeZ6tyhrM\"",
+      "final_url": "https://www.legislation.gov.au/C2024A00040/latest/text",
+      "instruments": [
+        "ART Act 2024"
+      ],
+      "last_modified": null,
+      "legislation_id": "C2026C00202",
+      "reachable": true,
+      "sha256": "7b6ced1fd6a5a043a35478422d431ea9d02ff92b864648f62a088bc59514a353",
       "signal": "legislation_id",
       "status": 200
     },
@@ -589,6 +773,20 @@
       "signal": "legislation_id",
       "status": 200
     },
+    "https://www.legislation.gov.au/F2018L00727/latest/text": {
+      "content_length": 75004,
+      "etag": "W/\"124fc-ZLQs7Hp9bQiTbqRmHx/2PmCSC1I\"",
+      "final_url": "https://www.legislation.gov.au/F2018L00727/latest/text",
+      "instruments": [
+        "Telco Complaints Standard"
+      ],
+      "last_modified": null,
+      "legislation_id": "F2026C00008",
+      "reachable": true,
+      "sha256": "9c1860c769496281ccb2bbc1926ab2b2c0e8c0c565cf6612b0747bbf1b5df44c",
+      "signal": "legislation_id",
+      "status": 200
+    },
     "https://www.legislation.gov.au/F2018L01745/latest/text": {
       "content_length": 76820,
       "etag": "W/\"12c14-KBrMXqTlAayT3g7OJKpOSOm3MMM\"",
@@ -600,6 +798,76 @@
       "legislation_id": null,
       "reachable": true,
       "sha256": "b53885c9e92b7837342d61330b1fab2d040983a93f4b415ac78e669ec196e7ba",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2020L00179/latest/text": {
+      "content_length": 76378,
+      "etag": "W/\"12a5a-06VV7Iq/boGJQaqsSM4lllK+DbA\"",
+      "final_url": "https://www.legislation.gov.au/F2020L00179/latest/text",
+      "instruments": [
+        "Telco Pre-Porting Standard"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "89a06b5e6a44debb292d09c958fdbeddb05da61c9f8e4e62332d571e27489210",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2022L00548/latest/text": {
+      "content_length": 77796,
+      "etag": "W/\"12fe4-zv+M0kNm0yZ6q0rxbCOvqWdgXPw\"",
+      "final_url": "https://www.legislation.gov.au/F2022L00548/latest/text",
+      "instruments": [
+        "Telco Identity Determination"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "810728b087824977458b81206d3f06645e736d4a64d502ae1d748dd075a1892d",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2022L01492/latest/text": {
+      "content_length": 75464,
+      "etag": "W/\"126c8-jwR71HWe1qDg4w6pA3Wd1U65Eg0\"",
+      "final_url": "https://www.legislation.gov.au/F2022L01492/latest/text",
+      "instruments": [
+        "SPS 530"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "b0462742e084882bcf7f1964e9431af6955a99d8bdedb2a555a32267f4196baf",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2024L00133/latest/text": {
+      "content_length": 95560,
+      "etag": "W/\"17548-DdU+nshupJ3H3Qb6MXu0bPR3hFo\"",
+      "final_url": "https://www.legislation.gov.au/F2024L00133/latest/text",
+      "instruments": [
+        "Telco Hardship Standard"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "5831788922f7dc6d20f43dea16ba8978f5c0601096e0dac42301c0a8317c90e5",
+      "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.gov.au/F2024L00940/latest/text": {
+      "content_length": 75361,
+      "etag": "W/\"12661-uWh/D1hGrwHYs4JD4DXW+tkjq44\"",
+      "final_url": "https://www.legislation.gov.au/F2024L00940/latest/text",
+      "instruments": [
+        "SPS 515"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "063061c6c925d72653ef8f35e7a1bf1b58f9e16e4b79674c855d4a4365559298",
       "signal": "html_main",
       "status": 200
     },
@@ -615,6 +883,34 @@
       "reachable": true,
       "sha256": "456350cde8d4746dffca4b8c7200aa2a1b895d7104be2881586da7c624b71b0c",
       "signal": "html_main",
+      "status": 200
+    },
+    "https://www.legislation.sa.gov.au/_legislation-documents/lz/c/a/national-energy-retail-law-south-australia-act-2011/current/2011.6.auth.pdf": {
+      "content_length": 1284721,
+      "etag": null,
+      "final_url": "https://www.legislation.sa.gov.au/_legislation-documents/lz/c/a/national-energy-retail-law-south-australia-act-2011/current/2011.6.auth.pdf",
+      "instruments": [
+        "NERL"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "0ea70a4d01091ea89a850178cf0d2370fb37e1b8bb2f6dc603901b99e6bac1bd",
+      "signal": "pdf",
+      "status": 200
+    },
+    "https://www.ombudsman.gov.au/__data/assets/pdf_file/0025/317437/Automated-Decision-Making-Better-Practice-Guide-March-2025.pdf": {
+      "content_length": 582386,
+      "etag": null,
+      "final_url": "https://www.ombudsman.gov.au/__data/assets/pdf_file/0025/317437/Automated-Decision-Making-Better-Practice-Guide-March-2025.pdf",
+      "instruments": [
+        "Ombudsman ADM Guide"
+      ],
+      "last_modified": null,
+      "legislation_id": null,
+      "reachable": true,
+      "sha256": "fc6b1b6a989128e9351f31d9c80987806e05f09f147dc55cf5005398fbeee2d2",
+      "signal": "pdf",
       "status": 200
     }
   },

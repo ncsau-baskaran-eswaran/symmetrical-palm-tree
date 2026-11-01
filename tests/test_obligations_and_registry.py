@@ -16,6 +16,7 @@ def test_registry_rebuilds_when_corpus_changes(tmp_path, monkeypatch):
     inst.write_text('{"code": "DEMO 1", "title": "Demo", "clauses": [{"id": "D-1", "clause_number": "1", "text": "first"}]}')
     monkeypatch.setattr(db, "DATA_DIR", data)
     monkeypatch.setattr(db, "INSTRUMENTS_DIR", data / "instruments")
+    monkeypatch.setattr(db, "DOMAINS_DIR", data / "domains")
     monkeypatch.setattr(db, "DB_PATH", tmp_path / "t.db")
 
     db.init_db()

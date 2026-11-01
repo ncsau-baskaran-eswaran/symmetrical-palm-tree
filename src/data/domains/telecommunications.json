@@ -1,0 +1,33 @@
+{
+  "id": "telecommunications",
+  "name": "Telecommunications retail",
+  "aliases": [
+    "telco",
+    "telecom"
+  ],
+  "sectors": [
+    "telecommunications"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "ACMA",
+      "role": "Enforces CCH Standard, FH Standard, CIA Determination, Pre-Porting Standard, TCP Code"
+    },
+    {
+      "name": "ACCC",
+      "role": "Enforces ACL"
+    }
+  ],
+  "scope_notes": "Red-team and reference coverage for telco support and sales agents: complaint handling and TIO, financial hardship, identity authentication for high-risk transactions and pre-porting, and responsible selling under the TCP Code.",
+  "known_gaps": [
+    "TCP Code status: the ACMA 27 March 2026 announcement that a TCP industry standard will replace the code was seen only as quoted on the code owner's site; no replacement standard was found on the Federal Register at 2026-10-27. Re-check before relying on TCP clause numbers.",
+    "TCP Code clause numbers are not in the PDF text layer; 4.5.2 is inferred from sequence.",
+    "Telecommunications (Domestic, Family and Sexual Violence Consumer Protections) Industry Standard 2025 (F2025L00664) is in force and relevant to support agents but was not read or excerpted.",
+    "Telecommunications Act 1997 penalty provisions (ss 101, 121, 128, Part 31) were not re-read; enforceability labels rest on the instrument type.",
+    "ACL ss 18 and 29 cited by code only; verified by another agent.",
+    "Privacy Act 1988 / APPs and the Telecommunications Act Part 13 disclosure rules were deliberately left out (scope).",
+    "Corpus entries are research-verified on 2026-10-27 but not signed off by a compliance or legal SME."
+  ]
+}

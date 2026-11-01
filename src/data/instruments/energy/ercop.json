@@ -1,0 +1,198 @@
+{
+  "code": "ERCoP",
+  "title": "Energy Retail Code of Practice (Victoria)",
+  "short_name": "ERCoP",
+  "regulator": "Essential Services Commission (Victoria)",
+  "instrument_type": "industry_code",
+  "legislative_instrument": "",
+  "source_version": "Version 7, effective 1 October 2026 (ESC page lists it as 'Current version'; cl 2 says last amended 1 October 2026)",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "energy_retail"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory_civil_penalty",
+  "source_url": "https://www.esc.vic.gov.au/sites/default/files/documents/Energy%20Retail%20Code%20of%20Practice%20%28version%207%29.pdf",
+  "licence": "Copyright the publisher. Paraphrased only; consult the source.",
+  "text_kind": "paraphrase",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (Version 7, effective 1 October 2026 (ESC page lists it as 'Current version'; cl 2 says last amended 1 October 2026)). Who is bound: cl 5(1)-(2): made under s 47(1) of the Essential Services Commission Act 2001 (Vic); 'applies to, and must be complied with by, all retailers in respect of their activities in relation to small customers and exempt persons'. Exempt persons only where a clause says so. Schedule 1 lists civil penalty requirements. Clause text is paraphrased from the source. Not verified: The brief referred to payment difficulty as Part 3; in Version 7 it is Part 6 (Part 3 is customer retail contracts) and life support is Part 8. Victorian Utility Relief Grant thresholds and the Commission's payment difficulty guideline referenced in cl 141(1)(g) were not read.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Energy Retail Code of Practice (Victoria). Bound: cl 5(1)-(2): made under s 47(1) of the Essential Services Commission Act 2001 (Vic); 'applies to, and must be complied with by, all retailers in respect of their activities in relation to small customers and exempt persons'. Exempt persons only where a clause says so. Schedule 1 lists civil penalty requirements.",
+  "clauses": [
+    {
+      "id": "ERCOP-7",
+      "clause_number": "7",
+      "section_name": "",
+      "heading": "Explicit informed consent",
+      "text": "Consent is explicit informed consent only if the retailer, or a person acting for it, disclosed all relevant matters clearly, fully and in plain English, including each specific purpose or use, and the small customer was competent to give it.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 7(1). Victorian version adds plain English and competence. An agent that signs up a confused or apparently incapable customer, or skips disclosure, obtains no valid consent.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-26",
+      "clause_number": "26",
+      "section_name": "",
+      "heading": "Pre-contractual duty of retailers",
+      "text": "A retailer must obtain a small customer's explicit informed consent before entering the customer into a market retail contract.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 26(4). Enrolling a Victorian customer on a market offer without explicit informed consent. Civil penalty requirement (Schedule 1).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-38",
+      "clause_number": "38",
+      "section_name": "",
+      "heading": "Minimum standards - customers entitled to clear advice",
+      "text": "Before obtaining consent to a customer retail contract, a retailer must explain in a readily understandable way the terms under which amounts payable may vary with the customer's actions (for example conditional discounts), among other matters.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 38(1). An agent that closes a sale without explaining conditional discounts or how the retailer may change prices breaches this civil penalty requirement.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-48",
+      "clause_number": "48",
+      "section_name": "",
+      "heading": "Manner of advertising conditional discounts",
+      "text": "When advertising a conditional discount, a retail marketer must state the conditions clearly and conspicuously, and the conditional discount must not be the most prominent price-related matter.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 48. An agent that leads with 'save 30%' without the conditions, or headlines a conditional discount, breaches cl 48 (48(1) and 48(2) are civil penalty requirements).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-130",
+      "clause_number": "130",
+      "section_name": "",
+      "heading": "Payment arrangements",
+      "text": "A retailer must accept a residential customer's payment proposal, or revised proposal, that meets the Code's requirements.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 130(2). An agent that rejects a compliant proposal (equal payments at intervals up to one month, arrears cleared within two years, covering ongoing use, based on reasonable forecast) breaches a civil penalty requirement.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-128",
+      "clause_number": "128",
+      "section_name": "",
+      "heading": "Minimum assistance (tailored assistance)",
+      "text": "Tailored assistance for residential customers in arrears includes repaying arrears over up to two years by regular payments, and specific advice about government and non-government assistance such as Utility Relief Grants and energy concessions.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 128(1). An agent that tells a customer in arrears they must pay in full, or omits Utility Relief Grant and concession information, denies a statutory entitlement.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-141",
+      "clause_number": "141",
+      "section_name": "",
+      "heading": "Retailer obligations",
+      "text": "A retailer must, whenever relevant, including when a residential customer contacts it, give clear and unambiguous information about the payment difficulty assistance available, in a timely way.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 141(1)(c). An agent that fails to tell a customer who raises payment difficulty about Part 6 assistance breaches a civil penalty requirement and undermines the precondition for any later disconnection (cl 187(1)(a)).",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-143",
+      "clause_number": "143",
+      "section_name": "",
+      "heading": "Restriction on conditions",
+      "text": "A retailer must not make payment difficulty assistance conditional on the customer providing personal or financial information or waiving an entitlement under the Code.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 143(1). An agent that says 'send me your bank statements first' or 'you must give up your concession' before offering assistance breaches this civil penalty requirement.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-187",
+      "clause_number": "187",
+      "section_name": "",
+      "heading": "Residential customer only to be disconnected as a last resort for non-payment",
+      "text": "Disconnection for non-payment is a last resort; a retailer must not arrange disconnection of a residential customer's premises where total arrears are under $1,000 (including GST).",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 187. An agent that threatens disconnection for arrears under $1,000, or before assistance obligations under cl 141 are met, misstates the law. 187(2) is a civil penalty requirement; the $1,000 figure is new in Version 7.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    },
+    {
+      "id": "ERCOP-165",
+      "clause_number": "165",
+      "section_name": "",
+      "heading": "Ongoing retailer obligations (life support)",
+      "text": "Within one business day of being told of a change to life support equipment requirements or contact details, a retailer must update its register of life support customers and residents.",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: cl 165(1). An agent that does not capture or route a life support update, so the register is not updated within one business day, causes a civil penalty breach.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "energy_retail"
+      ]
+    }
+  ]
+}

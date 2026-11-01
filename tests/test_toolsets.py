@@ -37,7 +37,7 @@ CORE = {
     "audit_agent_for_regulatory_breach", "triage_customer_message", "check_claim_timeframe",
     "assess_regulatory_obligations", "map_finding_to_obligations", "get_obligations", "get_coverage_map",
 }
-REFERENCE = {"list_instruments", "lookup_clause", "search_regulations", "lookup_definition"}
+REFERENCE = {"list_domains", "list_instruments", "lookup_clause", "search_regulations", "lookup_definition"}
 
 
 def test_default_surface_is_core_and_reference(monkeypatch):
@@ -62,7 +62,7 @@ def test_all_restores_every_legacy_name(monkeypatch):
         "get_sector_adversarial_test_suite", "probe_external_agent_for_apra_breaches", "run_autonomous_mcp_red_team_probe",
     }
     assert legacy <= tools
-    assert len(tools) == 29
+    assert len(tools) == 31
 
 
 def test_unknown_toolset_fails_loudly():

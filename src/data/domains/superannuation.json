@@ -1,0 +1,31 @@
+{
+  "id": "superannuation",
+  "name": "Superannuation (APRA-regulated funds and RSE licensees)",
+  "aliases": [
+    "super",
+    "rse",
+    "rse_licensee"
+  ],
+  "sectors": [
+    "superannuation"
+  ],
+  "coverage": "reference",
+  "owner": "Guardian maintainers",
+  "regulators": [
+    {
+      "name": "APRA",
+      "role": "Prudential regulation of RSE licensees: SIS Act covenants and SPS prudential standards"
+    },
+    {
+      "name": "ASIC",
+      "role": "Internal dispute resolution standards (RG 271) for superannuation trustees"
+    }
+  ],
+  "scope_notes": "Example reference domain. Covers the SIS Act s52 and s52A covenants and their civil penalty consequences, SPS 515 Strategic Planning and Member Outcomes, SPS 530 Investment Governance, the RG 271 superannuation complaint timeframes, and the cross-industry CPS 230 and CPS 234. Self managed superannuation funds (SIS Act s52B, ATO-regulated) are out of scope. No runtime screening rules exist for this domain.",
+  "known_gaps": [
+    "SIS Regulations 1994, SPS 220 Risk Management, SPS 114 Operational Risk Financial Requirement, CPS 190 Recovery and Exit Planning (all cross-referenced by the loaded standards) and APRA prudential practice guides are not loaded.",
+    "SIS Act s52AA retirement income strategy requirements, s60C to s60D performance test and MySuper rules beyond s52(13) are not paraphrased.",
+    "Corporations Act 2001 obligations for superannuation products (disclosure, advice, product design and distribution) are not loaded for this domain.",
+    "APRA published a draft revised SPS 530 (September 2026) whose marked-up text appears to propose commencement on 1 January 2028; the loaded text is the in-force 2023 standard."
+  ]
+}

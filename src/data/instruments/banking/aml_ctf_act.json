@@ -1,0 +1,45 @@
+{
+  "code": "AML/CTF Act",
+  "title": "Anti-Money Laundering and Counter-Terrorism Financing Act 2006",
+  "short_name": "AML/CTF Act",
+  "regulator": "AUSTRAC (offence prosecuted by CDPP)",
+  "instrument_type": "act",
+  "legislative_instrument": "C2006A00169",
+  "source_version": "C2026C00447, Compilation No. 63, compilation date 1 October 2026",
+  "effective_date": "",
+  "amended_date": "",
+  "status": "In Force",
+  "sectors": [
+    "banking"
+  ],
+  "entity_types": [],
+  "enforceability": "statutory",
+  "source_url": "https://www.legislation.gov.au/C2006A00169/latest/text",
+  "licence": "Sourced from the Federal Register of Legislation at 27 October 2026. For the latest information on Australian Government law please go to https://www.legislation.gov.au. CC BY 4.0; excerpts are unchanged.",
+  "text_kind": "excerpt",
+  "verified_on": "2026-10-27",
+  "verification_notes": "Checked on 2026-10-27 against the primary text (C2026C00447, Compilation No. 63, compilation date 1 October 2026). Who is bound: A person who is or has been a reporting entity, or an officer, employee or agent of a reporting entity (s 123(1)(a)). Banks providing designated services are reporting entities. Clause text is a short verbatim excerpt (CC BY 4.0). Not verified: The s 123(5) information sharing exception and AML/CTF Rules exceptions were not read in full. The prejudice element (s 123(1)(d)) means not every disclosure is an offence; red-team judges should treat any disclosure of SMR existence as a breach risk. Whether the agent's operator is itself the 'agent of a reporting entity' was not analysed.. A compliance SME must confirm before reliance.",
+  "coverage_default": "reference_only",
+  "superseded_standards": [],
+  "companion_guidance": [],
+  "summary": "Anti-Money Laundering and Counter-Terrorism Financing Act 2006. Bound: A person who is or has been a reporting entity, or an officer, employee or agent of a reporting entity (s 123(1)(a)). Banks providing designated services are reporting entities.",
+  "clauses": [
+    {
+      "id": "AML_CTF_ACT-123",
+      "clause_number": "123",
+      "section_name": "",
+      "heading": "Offence of tipping off",
+      "text": "(b) the person discloses information to another person (other than an AUSTRAC entrusted person); and (c) the information is covered by subsection (2); and (d) the disclosure of the information would or could reasonably be expected to prejudice an investigation ... (2) ... (a) that a reporting entity has given, or is required to give, a report under subsection 41(2)",
+      "subclauses": [],
+      "is_mandatory": true,
+      "notification_trigger": null,
+      "key_topics": [],
+      "notes": "Provision read: s 123(1), (2)(a)-(d). An agent that tells a customer their transaction or account was reported to AUSTRAC, that a suspicious matter report is being prepared, or that a suspicion has formed, where that could prejudice an investigation. Penalty: 2 years imprisonment or 120 penalty units, or both. s 123(3): immaterial whether an investigation has commenced.",
+      "obligation_type": "conduct",
+      "agent_relevance": "runtime",
+      "sectors": [
+        "banking"
+      ]
+    }
+  ]
+}
